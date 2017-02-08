@@ -80,7 +80,7 @@
     <Compile Include="SeleniumGetMethods.cs" />
     <Compile Include="SeleniumSetMethods.cs" />
     <Compile Include="SeleniumWindowMethods.cs" />
-    <Compile Include="ValPortal.cs" />
+    <Compile Include="Global.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
