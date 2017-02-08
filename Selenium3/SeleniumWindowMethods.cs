@@ -55,10 +55,13 @@ namespace Selenium3
 
         }
 
-        public static void Assertion(Assert assert)
+        public static void Assertion(Alert alert)
         {
-            if (assert == Assert.Accept)
+            if (alert == Alert.Accept)
                 PropertiesCollection.driver.SwitchTo().Alert().Accept();
+
+            if (alert == Alert.Dismiss)
+                PropertiesCollection.driver.SwitchTo().Alert().Dismiss();
 
         }
 

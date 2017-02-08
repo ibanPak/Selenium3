@@ -53,9 +53,10 @@ namespace Selenium3
     }
 
     // Strongly Typed Variable
-    enum Assert
+    enum Alert
     {
-        Accept
+        Accept,
+        Dismiss
 
     }
 
