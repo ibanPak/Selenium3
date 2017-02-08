@@ -34,26 +34,31 @@ namespace Selenium3
             if (windowsactions == WinType.Main)
                 PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
 
-
         }
 
-        public static void iFrame(string frame)
+        public static void iFrame(string Frame)
         {
-            PropertiesCollection.driver.SwitchTo().Frame(frame);
+            PropertiesCollection.driver.SwitchTo().Frame(Frame);
 
         }
 
-        public static void ScreenShot(string fName)
+        public static void ScreenShot(string FileName)
         {
             Screenshot ss = ((ITakesScreenshot)PropertiesCollection.driver).GetScreenshot();
-            ss.SaveAsFile("c:/" + fName + ".png", System.Drawing.Imaging.ImageFormat.Png);
+            ss.SaveAsFile("c:/" + FileName + ".png", System.Drawing.Imaging.ImageFormat.Png);
 
         }
-
 
         public static void Sleep(int sec)
         {
             System.Threading.Thread.Sleep(sec * (1000));
+
+        }
+
+        public static void Assertion(Assert assert)
+        {
+            if (assert == Assert.Accept)
+                PropertiesCollection.driver.SwitchTo().Alert().Accept();
 
         }
 
