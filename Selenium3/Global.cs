@@ -15,19 +15,17 @@ namespace Selenium3
 {
     class Global
     {
+        public static string MMddyyMinus1 = DateTime.Today.AddMonths(-1).ToString("MM-dd-yy");
+        public static string MMddyyDate = DateTime.Today.ToString("MM-dd-yy");
+        public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
+        public static string LoanNum = DateTime.Now.ToString("MMddyyHHmm").TrimStart('0');
+        public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
 
-        internal class Vars
+
+        public static void ConsoleOut(string displaytext)
         {
-            public static string MMddyyMinus1 = DateTime.Today.AddMonths(-1).ToString("MM-dd-yy");
-
-            public static string MMddyyDate = DateTime.Today.ToString("MM-dd-yy");
-
-            public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
-
-            public static string LoanNum = DateTime.Now.ToString("MMddyyHHmm").TrimStart('0');
-
-            public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-
+            Console.WriteLine(" ");
+            Console.WriteLine(displaytext);
 
         }
 
