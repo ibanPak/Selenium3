@@ -77,10 +77,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REO.cs" />
     <Compile Include="SeleniumGetMethods.cs" />
     <Compile Include="SeleniumSetMethods.cs" />
     <Compile Include="SeleniumWindowMethods.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="ValPortal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
