@@ -17,13 +17,7 @@ namespace Selenium3
 
         public static void GetPropertyIdSample()
         {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://uat-reo2.res.net/");
-
-            SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
-            SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", "Yeshh1");
-            SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", "Yeshh1");
-            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+            Login.qaREO();
 
             // Properties - Search for properties
             SeleniumSetMethods.Wait(ElementType.LinkText, "Properties");
