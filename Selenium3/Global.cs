@@ -20,7 +20,8 @@ namespace Selenium3
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddyyHHmm").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-
+        public static string OrderID = "0";
+        public static string StreetAddress = "0";
 
         public static void ConsoleOut(string displaytext)
         {
