@@ -71,6 +71,9 @@ namespace Selenium3
                 new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).SelectByText(value);
             if (elementtype == ElementType.CssSelector)
                 new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByText(value);
+            if (elementtype == ElementType.XPath)
+                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
+
         }
 
 
@@ -91,7 +94,7 @@ namespace Selenium3
 
             if (elementtype == ElementType.XPath)
             {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(10));
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element)));
             }
 
@@ -115,6 +118,46 @@ namespace Selenium3
 
         }
 
+
+        public static void WaitMinutes(ElementType elementtype, string element, int minutes)
+        {
+            if (elementtype == ElementType.Id)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+            }
+
+            if (elementtype == ElementType.Name)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element)));
+            }
+
+            if (elementtype == ElementType.XPath)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element)));
+            }
+
+            if (elementtype == ElementType.CssSelector)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element)));
+            }
+
+            if (elementtype == ElementType.LinkText)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element)));
+            }
+
+            if (elementtype == ElementType.PartialLinkText)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
+            }
+
+        }
 
 
     }

@@ -47,8 +47,24 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
 
 
+        }
+
+        public static void ScheduledTasks()
+        {
+            // Navigate to URL
+            SeleniumSetMethods.Navigate("http://autodeploy.res.net/Portal/ScheduledTasks?env=QA&portalsOnly=true&portalsOnly=false");
+/*
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
+            SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", "test");
+            SeleniumSetMethods.EnterText(ElementType.Id, "password", "P@ssw0rd1");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
+*/
 
         }
+
+
+
 
     }
 

@@ -23,12 +23,31 @@ namespace Selenium3
         public static string OrderID = "0";
         public static string StreetAddress = "0";
 
+        public static void ReadySetGo()
+        {
+            IWebDriver driver = new ChromeDriver();
+            PropertiesCollection.driver = driver;
+            SeleniumWindowMethods.WindowActions(ActType.Maximize);
+
+        }
+
+        public static void Done()
+        {
+            Global.ConsoleOut("Test was completed successfully");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumWindowMethods.WindowActions(ActType.Close);
+
+        }
+
+
         public static void ConsoleOut(string displaytext)
         {
             Console.WriteLine(" ");
             Console.WriteLine(displaytext);
 
         }
+
+
 
 
     }

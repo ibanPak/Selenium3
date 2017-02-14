@@ -55,6 +55,12 @@ namespace Selenium3
 
         }
 
+        public static void ThrottlingSleep()
+        {
+            System.Threading.Thread.Sleep(400);
+
+        }
+
         public static void Assertion(Alert alert)
         {
             if (alert == Alert.Accept)
