@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent.cs" />
+    <Compile Include="Buyer.cs" />
     <Compile Include="ConsoleWindow.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />

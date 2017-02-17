@@ -116,6 +116,7 @@ namespace Selenium3
                 wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
             }
 
+
         }
 
 
@@ -156,9 +157,15 @@ namespace Selenium3
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
                 wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
             }
-
         }
 
+        public static void AlertWait()
+        {
+            WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.AlertIsPresent());
+
+
+        }
 
     }
 
