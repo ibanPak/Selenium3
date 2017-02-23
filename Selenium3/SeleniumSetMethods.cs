@@ -31,6 +31,11 @@ namespace Selenium3
                 PropertiesCollection.driver.FindElement(By.Id(element)).SendKeys(value);
             if (elementtype == ElementType.Name)
                 PropertiesCollection.driver.FindElement(By.Name(element)).SendKeys(value);
+            if (elementtype == ElementType.XPath)
+                PropertiesCollection.driver.FindElement(By.XPath(element)).SendKeys(value);
+            if (elementtype == ElementType.CssSelector)
+                PropertiesCollection.driver.FindElement(By.CssSelector(element)).SendKeys(value);
+
         }
 
         // Clear Text Field

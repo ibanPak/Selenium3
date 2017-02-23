@@ -87,6 +87,7 @@
     <Compile Include="SeleniumWindowMethods.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="ValPortal.cs" />
+    <Compile Include="Vendor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

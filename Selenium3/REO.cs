@@ -17,7 +17,6 @@ namespace Selenium3
 
         public static void GetPropertyIdSample()
         {
-            Login.qaREO();
 
             // Properties - Search for properties
             SeleniumSetMethods.Wait(ElementType.LinkText, "Properties");
