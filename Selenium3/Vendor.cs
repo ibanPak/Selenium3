@@ -105,14 +105,6 @@ namespace Selenium3
 
         }
 
-        public static void Test()
-        {
-
-           
-
-
-        }
-
 
 
     }

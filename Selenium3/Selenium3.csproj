@@ -77,15 +77,22 @@
     <Compile Include="Agent.cs" />
     <Compile Include="Buyer.cs" />
     <Compile Include="ConsoleWindow.cs" />
+    <Compile Include="FMBBPO.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="PNMACBPO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyCure.cs" />
+    <Compile Include="RentalAnalysis.cs" />
     <Compile Include="REO.cs" />
+    <Compile Include="REOTasks.cs" />
+    <Compile Include="Runner.cs" />
     <Compile Include="SeleniumGetMethods.cs" />
     <Compile Include="SeleniumSetMethods.cs" />
     <Compile Include="SeleniumWindowMethods.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="Unified53BPO.cs" />
     <Compile Include="ValPortal.cs" />
     <Compile Include="Vendor.cs" />
   </ItemGroup>

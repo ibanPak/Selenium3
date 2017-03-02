@@ -15,39 +15,153 @@ namespace Selenium3
     class REO
     {
 
-        public static void GetPropertyIdSample()
+        public static void AddNewProperty(string StreetName)
         {
-
-            // Properties - Search for properties
+            // Properties - Add New Property
             SeleniumSetMethods.Wait(ElementType.LinkText, "Properties");
             SeleniumSetMethods.Click(ElementType.LinkText, "Properties");
-            SeleniumSetMethods.Wait(ElementType.Name, "btnSearchProp");
-            SeleniumSetMethods.Click(ElementType.Name, "btnSearchProp");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "span.ui-button-text");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "span.ui-button-text");
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
 
-            // Click on Property - 411 Mars
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "411 Mars");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "411 Mars");
+            // Add New Property iFrame
+            SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_CLIENTPA']");
+            Global.ConsoleOut("Open Popup - New Property");
+
+            // Client - Popup
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Wait(ElementType.Name, "csClientId");
+            SeleniumSetMethods.EnterText(ElementType.Name, "csClientId", "7224");
+            SeleniumSetMethods.Wait(ElementType.Name, "btnRedraw");
+            SeleniumSetMethods.Click(ElementType.Name, "btnRedraw");
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Click(ElementType.CssSelector, "img");
+            Global.ConsoleOut("Popup closing");
+
+            // Switch back to main window - Asset Manager Popup
+            SeleniumWindowMethods.WindowType(WinType.Main);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA']");
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            SeleniumSetMethods.Wait(ElementType.Name, "msAmId");
+            SeleniumSetMethods.EnterText(ElementType.Name, "msAmId", "3287");
+            SeleniumSetMethods.Wait(ElementType.Name, "btnRedraw");
+            SeleniumSetMethods.Click(ElementType.Name, "btnRedraw");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "img");
+
+            // Switch back to main window - File Manager Popup
+            SeleniumWindowMethods.WindowType(WinType.Main);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA2']");
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            SeleniumSetMethods.Wait(ElementType.Name, "msAmId");
+            SeleniumSetMethods.Clear(ElementType.Name, "msAmId");
+            SeleniumSetMethods.Wait(ElementType.Name, "btnRedraw");
+            SeleniumSetMethods.Click(ElementType.Name, "btnRedraw");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'Jon1']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'Jon1']");
+
+            // Switch back to main window - Asset Manager Popup
+            SeleniumWindowMethods.WindowType(WinType.Main);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.iFrame("externalSite");
+            
+            Global.StreetAddress = (Global.StreetNum + " " + StreetName);
+            Global.ConsoleOut("Street Address: " + Global.StreetAddress);
+            SeleniumSetMethods.Wait(ElementType.Name, "paPropAddr");
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropAddr", Global.StreetAddress);
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropCity", "Irvine");
+            SeleniumSetMethods.SelectDropDown(ElementType.Name, "paPropState", "California");
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropZip", "92620");
+
+            // Loan Information
+            SeleniumSetMethods.EnterText(ElementType.Name, "Loan_Number", Global.LoanNum);
+            SeleniumSetMethods.EnterText(ElementType.Name, "Borrower_First", "FirstName");
+            SeleniumSetMethods.EnterText(ElementType.Name, "Borrower_Last", "LastName");
+            SeleniumSetMethods.SelectDropDown(ElementType.Name, "paPropType", "SFR");
+
+            // Add Attorney - Popup
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_FCATTNYPA']");
+            Global.ConsoleOut("Open Popup - Attorney");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'Just']");
+
+            // Switch back to main window 
+            SeleniumWindowMethods.WindowType(WinType.Main);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.EnterText(ElementType.Name, "Fc_Saledt", Global.LastMonth);
+            SeleniumSetMethods.EnterText(ElementType.Name, "Unpd_Bal", "250000");
+            SeleniumSetMethods.EnterText(ElementType.Name, "Fc_Apr_Value", "500000");
+            SeleniumSetMethods.EnterText(ElementType.Name, "Fc_Apr_Dte", Global.LastYear);
+            SeleniumSetMethods.EnterText(ElementType.Name, "txtpaNote", "Do you want to build a snowman?");
+            SeleniumSetMethods.Click(ElementType.Name, "txtpaNote");
+            SeleniumSetMethods.Click(ElementType.Name, "btnAdd");
+            SeleniumWindowMethods.Sleep(3);
 
             // Get Property ID from Property Details page
             string PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
 
-            // Print Property ID
-            Console.WriteLine(" ");
-            Console.WriteLine("Order ID: " + PropertyID);
-            Console.WriteLine(" ");
+            // Screen Capture
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.ScreenShot("REO New Property");
 
-            SeleniumWindowMethods.Sleep(5);
+        }
 
-            // End Test
-            SeleniumWindowMethods.WindowActions(ActType.Close);
+        public static void AddAgent()
+        {
+     /*       // Look up property
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", "858135");
+            SeleniumSetMethods.Click(ElementType.Name, "btnQuickSearch");  */
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
 
+            // Add Edit this Property iFrame
+            SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.Clear(ElementType.Name, "pdUpb");
+            SeleniumSetMethods.EnterText(ElementType.Name, "pdUpb", "350000");
+            SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
+
+            // Focus Main page
+            SeleniumWindowMethods.WindowType(WinType.Main);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPINS']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPINS']");
+            Global.ConsoleOut("The value for this field should be ($350,000): "
+                   + SeleniumGetMethods.GetTextValue(ElementType.Name, "piFcBal"));
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#column2 > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > a:nth-child(1)");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#column2 > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > a:nth-child(1)");
+
+            // Assign Agent
+            SeleniumWindowMethods.iFrame("imsb-iframe");
+        /*  Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "span.imsb-goback");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "span.imsb-goback"); */
+            SeleniumSetMethods.Wait(ElementType.Name, "apsFirst");
+            SeleniumSetMethods.EnterText(ElementType.Name, "apsFirst", "ivan");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "input.btnGreen");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Name, "btnAssign_250922");
+            SeleniumSetMethods.Click(ElementType.Name, "btnAssign_250922");
+
+            // Log out of REO
+            SeleniumWindowMethods.Sleep(2);
+  //          SeleniumSetMethods.Click(ElementType.CssSelector, ".top > li:nth-child(5) > a:nth-child(1) > span:nth-child(1)");
+            SeleniumWindowMethods.Sleep(2);
 
         }
 
 
 
     }
-
 
 
 

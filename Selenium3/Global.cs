@@ -15,13 +15,14 @@ namespace Selenium3
 {
     class Global
     {
-        public static string MMddyyMinus1 = DateTime.Today.AddMonths(-1).ToString("MM-dd-yy");
+        public static string LastMonth = DateTime.Today.AddMonths(-1).ToString("MM/dd/yyyy");
+        public static string LastYear = DateTime.Today.AddYears(-1).ToString("MM/dd/yyyy");
         public static string MMddyyDate = DateTime.Today.ToString("MM-dd-yy");
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddyyHHmm").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-        public static string OrderID = "29725";
-        public static string StreetAddress = "222 Rush Lily";
+        public static string OrderID = "0";
+        public static string StreetAddress = "0";
         public static DateTime StartDT;
         public static DateTime EndDT;
 
@@ -55,15 +56,12 @@ namespace Selenium3
 
         }
 
-
         public static void ConsoleOut(string displaytext)
         {
             Console.WriteLine(" ");
             Console.WriteLine(displaytext);
 
         }
-
-
 
 
     }

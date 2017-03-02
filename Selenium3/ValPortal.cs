@@ -124,7 +124,6 @@ namespace Selenium3
 
         }
 
-
         public static void CreateNewRentalAnalysis(string StreetName)
         {
             // Order Queue Page
@@ -211,80 +210,6 @@ namespace Selenium3
 
         }
 
-        public static void CompleteU53Order()
-        {
-         
-            // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.AlertWait();
-            SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
-
-
-        }
-
-        public static void CompleteRAOrder()
-        {
-
-            // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.AlertWait();
-            SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
-
-
-        }
-
-        public static void CompleteAppraisal()
-        {
-
-            // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Audit");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Audit");
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
-            SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
-            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
-            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
-            SeleniumWindowMethods.Sleep(15);
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Logout");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
-
-
-        }
-
         public static void CreateNewFMBBPO(string StreetName)
         {
             // Order Queue Page
@@ -325,6 +250,84 @@ namespace Selenium3
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot("FMB BPO");
+
+        }
+
+        public static void CompleteU53Order()
+        {
+         
+            // Order Queue Page
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
+
+        }
+
+        public static void CompleteRAOrder()
+        {
+
+            // Order Queue Page
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumWindowMethods.Sleep(15);
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
+
+        }
+
+        public static void CompleteAppraisal()
+        {
+
+            // Order Queue Page
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Audit");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Audit");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumWindowMethods.Sleep(15);
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Logout");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
 
         }
 

@@ -24,21 +24,19 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-          
+            Runner.REOFlow1();
 
             Global.Cooldown();
 
             // Test was completed successfully
-            // Global.Done();
+            Global.Done();
 
 
 
         }
 
 
-
     }
-
 
 
 }
