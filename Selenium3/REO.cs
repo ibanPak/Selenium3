@@ -108,6 +108,8 @@ namespace Selenium3
 
             // Get Property ID from Property Details page
             string PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+            Global.OrderID = PropertyID;
+            Global.ConsoleOut("Property ID: " + PropertyID);
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
@@ -117,10 +119,7 @@ namespace Selenium3
 
         public static void AddAgent()
         {
-     /*       // Look up property
-            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
-            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", "858135");
-            SeleniumSetMethods.Click(ElementType.Name, "btnQuickSearch");  */
+   
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
 
@@ -151,11 +150,6 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Name, "btnAssign_250922");
             SeleniumSetMethods.Click(ElementType.Name, "btnAssign_250922");
-
-            // Log out of REO
-            SeleniumWindowMethods.Sleep(2);
-  //          SeleniumSetMethods.Click(ElementType.CssSelector, ".top > li:nth-child(5) > a:nth-child(1) > span:nth-child(1)");
-            SeleniumWindowMethods.Sleep(2);
 
         }
 

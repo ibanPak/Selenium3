@@ -90,7 +90,39 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Name, "btnSaveSubmit");
 
         }
-        
+
+        public static void CancelTasks()
+        {
+
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "SCRA Referral (Custom)");
+            SeleniumSetMethods.Click(ElementType.LinkText, "SCRA Referral (Custom)");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Sivad Custom task (Custom)");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Sivad Custom task (Custom)");
+            SeleniumSetMethods.Wait(ElementType.Id, "Test1");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Test1", "yellow");
+            SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Agent Listing Contract");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Agent Listing Contract");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "122314 Custom Task (Custom)");
+            SeleniumSetMethods.Click(ElementType.LinkText, "122314 Custom Task (Custom)");
+            SeleniumSetMethods.Wait(ElementType.Id, "073113ListingCheckboxListCustom_test");
+            SeleniumSetMethods.Click(ElementType.Id, "073113ListingCheckboxListCustom_test");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnUpdateAsDone");
+            SeleniumSetMethods.Click(ElementType.Id, "btnUpdateAsDone");
+
+        }
+
 
     }
 

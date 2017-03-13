@@ -79,6 +79,7 @@
     <Compile Include="ConsoleWindow.cs" />
     <Compile Include="FMBBPO.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Logout.cs" />
     <Compile Include="PNMACBPO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />

@@ -78,7 +78,8 @@ namespace Selenium3
                 new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByText(value);
             if (elementtype == ElementType.XPath)
                 new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
-
+            if (elementtype == ElementType.CssSelector)
+                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
         }
 
 

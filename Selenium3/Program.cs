@@ -16,21 +16,18 @@ namespace Selenium3
     class Program
     {
 
-        
         static void Main(string[] args)
         {
-            
+
             // Start your engines !!!
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
-
             Runner.REOFlow1();
 
             Global.Cooldown();
 
             // Test was completed successfully
-            Global.Done();
-
+            // Global.Done();
 
 
         }
@@ -40,3 +37,4 @@ namespace Selenium3
 
 
 }
+

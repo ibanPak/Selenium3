@@ -31,8 +31,6 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(3);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
 
         }
 
@@ -269,7 +267,6 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
 
         }
 
@@ -296,7 +293,6 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
 
         }
 
@@ -326,9 +322,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Logout");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Logout");
-
+        
         }
 
 

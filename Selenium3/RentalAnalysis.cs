@@ -357,7 +357,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[9]");
             SeleniumWindowMethods.WindowType(WinType.Main);
             SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
+            
 
         }
 
