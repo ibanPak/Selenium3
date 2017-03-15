@@ -45,6 +45,8 @@ namespace Selenium3
                 PropertiesCollection.driver.FindElement(By.Id(element)).Clear();
             if (elementtype == ElementType.Name)
                 PropertiesCollection.driver.FindElement(By.Name(element)).Clear();
+            if (elementtype == ElementType.CssSelector)
+                PropertiesCollection.driver.FindElement(By.CssSelector(element)).Clear();
 
         }
 
@@ -78,8 +80,7 @@ namespace Selenium3
                 new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByText(value);
             if (elementtype == ElementType.XPath)
                 new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
-            if (elementtype == ElementType.CssSelector)
-                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
+
         }
 
 

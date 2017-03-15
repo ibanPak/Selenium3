@@ -71,11 +71,9 @@ namespace Selenium3
         public static void qaBuyer(string username, string password)
         {
             // Navigate to web page
-            SeleniumSetMethods.Navigate("https://qa-buyer.res.net/");
+            SeleniumSetMethods.Navigate("https://qa-buyer.res.net/login");
 
             // Login Pages
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Login");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Login");
             SeleniumSetMethods.Wait(ElementType.Id, "UsernameOrEmail");
             SeleniumSetMethods.EnterText(ElementType.Id, "UsernameOrEmail", username);
             SeleniumSetMethods.EnterText(ElementType.Name, "PasswordLogin", password);

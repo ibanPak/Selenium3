@@ -22,7 +22,7 @@ namespace Selenium3
             // Start your engines !!!
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
-            Runner.REOFlow1();
+            Runner.Sample();
 
             Global.Cooldown();
 
