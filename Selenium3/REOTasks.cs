@@ -91,7 +91,7 @@ namespace Selenium3
 
         }
 
-        public static void CancelTasks()
+        public static void AssetMGRTasks()
         {
 
             SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
@@ -121,8 +121,85 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.Id, "btnUpdateAsDone");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateAsDone");
 
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Sivad Custom task (Custom)");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Sivad Custom task (Custom)");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Test1", "Enter Comment");
+            SeleniumSetMethods.Click(ElementType.Id, "btnUpdateAsDone");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Home Owners Assoc Information Request");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Home Owners Assoc Information Request");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Tax Research Request");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Tax Research Request");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Listing Acknowledgement");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Listing Acknowledgement");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Referral Agreement");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Referral Agreement");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Winterization Requirements Request");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Winterization Requirements Request");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Occupancy Status Request");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Occupancy Status Request");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+
         }
 
+        public static void PropertyInspection()
+        {
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Property Inspection");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Property Inspection");
+            SeleniumSetMethods.Wait(ElementType.Name, "inspDate_visit");
+            SeleniumSetMethods.EnterText(ElementType.Name, "inspDate_visit", Global.LastMonth);
+            SeleniumSetMethods.Click(ElementType.Name, "inspStatus_vacant");
+            SeleniumSetMethods.Click(ElementType.Name, "inspStatus_Personal_No");
+            SeleniumSetMethods.EnterText(ElementType.Name, "insp_23446296_5", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+            SeleniumSetMethods.Click(ElementType.Name, "inspRe_keyed_No");
+            SeleniumSetMethods.Click(ElementType.Name, "inspLockBox_Yes");
+            SeleniumSetMethods.EnterText(ElementType.Name, "inspLockBox_Code", "12345");
+            SeleniumSetMethods.Click(ElementType.Name, "inspEvid_MOLD_No");
+            SeleniumSetMethods.Click(ElementType.Name, "inspSmoke_Yes");
+            SeleniumSetMethods.EnterText(ElementType.Name, "inspSmoke_How_many", "6");
+            SeleniumSetMethods.Click(ElementType.Name, "inspAir_cond_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspAir_cond_Opt_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspEvid_Hazardous_No");
+            SeleniumSetMethods.Click(ElementType.Name, "inspPool_No");
+            SeleniumSetMethods.Click(ElementType.Name, "inspCarpet_Yes");
+            SeleniumSetMethods.EnterText(ElementType.Name, "inspCarpet_Location", "Everywhere I look");
+            SeleniumSetMethods.Click(ElementType.Name, "inspCarpet_Recom_Clean_Yes");
+            SeleniumSetMethods.EnterText(ElementType.Name, "inspCarpet_Why", "Yes it's pretty dirty");
+            SeleniumSetMethods.Click(ElementType.Name, "inspSprinkler_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspSprinkler_Time_Pres_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspSprinkler_Oper_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspWater_Heater_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspWater_Heater_CA_Yes");
+            SeleniumSetMethods.Click(ElementType.Name, "inspRegulations_No");
+            SeleniumSetMethods.Click(ElementType.Name, "inspSafety_Hazards_No");
+            SeleniumSetMethods.Click(ElementType.Name, "inspEvid_Damage_No");
+            SeleniumSetMethods.EnterText(ElementType.Name, "insp_23446296_25", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+            SeleniumSetMethods.EnterText(ElementType.Name, "inspsignature_name", "iben");
+            SeleniumSetMethods.Click(ElementType.Name, "btnSaveSubmit");
+            SeleniumSetMethods.Click(ElementType.XPath, "xpath=(//input[@name='btnUpdate'])[2]");
+
+
+        }
+
+
+       
 
     }
 

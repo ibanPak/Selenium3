@@ -210,23 +210,55 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");
             SeleniumSetMethods.Click(ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");
             
+            
+        }
 
-            // Test Ended Close Window
+        public static void Sample()
+        {
+            // Sample Code to Execute
+            String PropertyID = "507635";
+            Global.OrderID = PropertyID;
 
-            Console.WriteLine("Test execution has completed");
+            Login.qaBuyer("qapaidbuyer03", "P@ssw0rd1");
 
-
-
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertiesTabLink > span > b");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#propertiesTabLink > span > b");
+            SeleniumSetMethods.Wait(ElementType.Id, "location");
+            SeleniumSetMethods.EnterText(ElementType.Id, "location", "Atlanta, GA");
+            SeleniumSetMethods.Click(ElementType.Id, "propertiesSubmit");
+            SeleniumSetMethods.Wait(ElementType.Id, "additionalInfoLnk");
+            SeleniumSetMethods.Click(ElementType.Id, "additionalInfoLnk");
+            SeleniumSetMethods.Wait(ElementType.Id, "searchPropertyID");
+            SeleniumSetMethods.EnterText(ElementType.Id, "searchPropertyID", Global.OrderID);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "div.searchbtn > #propertiesSubmit > span > b");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "div.searchbtn > #propertiesSubmit > span > b");
+            // Click on Property Returned
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Properties/Details/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Properties/Details/']");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#tab_offers > a > span > b");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#tab_offers > a > span > b");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "div.expandable");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "div.expandable");
+            // Click on First Offer
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#poffer_tbl > tbody > tr > td > a");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#poffer_tbl > tbody > tr > td > a");
+            SeleniumSetMethods.Wait(ElementType.Id, "offerAction");
+            SeleniumSetMethods.EnterText(ElementType.Id, "offerAction", "Counter");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.EnterText(ElementType.Id, "offerAction", "Counter");
+            SeleniumSetMethods.Wait(ElementType.Id, "copyRecentOfferLink");
+            SeleniumSetMethods.Click(ElementType.Id, "copyRecentOfferLink");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Clear(ElementType.CssSelector, "td[id=\"Offer#2\"] input[id$=\"__LoanAmount\"]");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.EnterText(ElementType.CssSelector, "td[id=\"Offer#2\"] input[id$=\"__LoanAmount\"]", "300000.00");
 
 
 
         }
 
 
-
     }
-
-
 
 
 }

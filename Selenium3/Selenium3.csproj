@@ -87,6 +87,7 @@
     <Compile Include="PropertyCure.cs" />
     <Compile Include="RentalAnalysis.cs" />
     <Compile Include="REO.cs" />
+    <Compile Include="REOBPO.cs" />
     <Compile Include="REOTasks.cs" />
     <Compile Include="Runner.cs" />
     <Compile Include="SeleniumGetMethods.cs" />

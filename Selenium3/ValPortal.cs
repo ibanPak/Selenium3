@@ -25,10 +25,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "Filters_ProviderHasLocationZip");
             SeleniumSetMethods.EnterText(ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchProviderAssignment");
-            SeleniumWindowMethods.Sleep(3);
+            SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
             SeleniumSetMethods.Click(ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
-            SeleniumWindowMethods.Sleep(3);
+            SeleniumWindowMethods.Sleep(5);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
 
@@ -149,7 +149,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
+      //      SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
@@ -219,7 +219,7 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "New Chase");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "acme");
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", "BPO");
@@ -235,7 +235,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
+   //         SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
@@ -251,7 +251,7 @@ namespace Selenium3
 
         }
 
-        public static void CompleteU53Order()
+        public static void CompleteBPOOrder()
         {
          
             // Order Queue Page
@@ -267,6 +267,20 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
+            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumWindowMethods.Sleep(15);
 
         }
 
@@ -283,6 +297,13 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);

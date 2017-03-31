@@ -1,15 +1,22 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Firefox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
+
 
 namespace Selenium3
 {
     class PNMACBPO
     {
 
-        public static void PNMAC()
+        public static void CompleteBPO()
         {
             SeleniumSetMethods.Click(ElementType.Id, "Subject_InspectionDate");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[2]");

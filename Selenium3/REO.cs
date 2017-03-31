@@ -141,15 +141,32 @@ namespace Selenium3
 
             // Assign Agent
             SeleniumWindowMethods.iFrame("imsb-iframe");
-        /*  Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "span.imsb-goback");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "span.imsb-goback"); */
             SeleniumSetMethods.Wait(ElementType.Name, "apsFirst");
             SeleniumSetMethods.EnterText(ElementType.Name, "apsFirst", "ivan");
             SeleniumSetMethods.Click(ElementType.CssSelector, "input.btnGreen");
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Name, "btnAssign_250922");
             SeleniumSetMethods.Click(ElementType.Name, "btnAssign_250922");
+
+            //Pre Marketing Tab
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
+
+            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoOrdDt");
+            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
+            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
+
+            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoOrdDt", Global.MMddyyDate);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
+            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoDueDt", Global.NextMonth);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
+
+            SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
 
         }
 

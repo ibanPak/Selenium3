@@ -175,6 +175,7 @@ namespace Selenium3
                 SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
+
         }
 
     }

@@ -90,7 +90,7 @@ namespace Selenium3
             if (elementtype == ElementType.Id)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+               wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
             }
 
             if (elementtype == ElementType.Name)

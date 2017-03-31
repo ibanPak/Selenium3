@@ -17,12 +17,13 @@ namespace Selenium3
     {
         public static string LastMonth = DateTime.Today.AddMonths(-1).ToString("MM/dd/yyyy");
         public static string LastYear = DateTime.Today.AddYears(-1).ToString("MM/dd/yyyy");
-        public static string MMddyyDate = DateTime.Today.ToString("MM-dd-yy");
+        public static string NextMonth = DateTime.Today.AddMonths(1).ToString("MM/dd/yyyy");
+        public static string MMddyyDate = DateTime.Today.ToString("MM/dd/yyyy");
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-        public static string OrderID = "0";
-        public static string StreetAddress = "0";
+        public static string OrderID = "30152";
+        public static string StreetAddress = "1222 Rose Arch";
         
 
         public static DateTime StartDT;

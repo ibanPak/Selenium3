@@ -120,6 +120,19 @@ namespace Selenium3
 
         }
 
+        public static void qaCed(string username, string password)
+        {
+            // Navigate to web page
+            SeleniumSetMethods.Navigate("http://192.168.1.112:8080/");
+
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "User");
+            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
+            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
+            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
+
+        }
+
 
     }
 
