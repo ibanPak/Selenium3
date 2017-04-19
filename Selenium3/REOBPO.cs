@@ -225,6 +225,8 @@ namespace Selenium3
                 , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H5.jpg");
             SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(44) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
                 , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H6.jpg");
+            SeleniumSetMethods.Click(ElementType.Name, "upDoneDate");
+            SeleniumSetMethods.Wait(ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return");
  

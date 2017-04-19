@@ -68,6 +68,19 @@ namespace Selenium3
 
         }
 
+        public static void uatREO(string username, string password)
+        {
+            // Navigate to URL
+            SeleniumSetMethods.Navigate("https://uat-reo2.res.net/");
+
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
+            SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
+            SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
+            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+
+        }
+
         public static void qaBuyer(string username, string password)
         {
             // Navigate to web page
@@ -117,6 +130,19 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
             SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
             SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
+
+        }
+
+        public static void uatAgent(string username, string password)
+        {
+            // Navigate to URL
+            SeleniumSetMethods.Navigate("https://uat-agent.res.net/");
+
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "username");
+            SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
+            SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
+            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
 
         }
 

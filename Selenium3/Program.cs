@@ -16,19 +16,17 @@ namespace Selenium3
 
         static void Main(string[] args)
         {
-        
+
             // Start your engines !!!
             ConsoleWindow.ConsoleAttributes();
-
             Global.ReadySetGo();
 
-            Runner.REOFlow1();
+            Runner.qaFMBFlow1();
 
             Global.Cooldown();
 
             // Test was completed successfully
             // Global.Done();
-
 
         }
 

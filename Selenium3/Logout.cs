@@ -28,7 +28,14 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
 
         }
-        
+
+        public static void Vendor()
+        {
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Authentication/Logout']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Authentication/Logout']");
+
+        }
+
 
     }
 

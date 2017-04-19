@@ -154,7 +154,7 @@ namespace Selenium3
 
         public static void PropertyInspection()
         {
-            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+       /*     SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
             SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
@@ -162,12 +162,15 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             SeleniumSetMethods.Wait(ElementType.LinkText, "Property Inspection");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Property Inspection");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Property Inspection");  */
             SeleniumSetMethods.Wait(ElementType.Name, "inspDate_visit");
             SeleniumSetMethods.EnterText(ElementType.Name, "inspDate_visit", Global.LastMonth);
             SeleniumSetMethods.Click(ElementType.Name, "inspStatus_vacant");
             SeleniumSetMethods.Click(ElementType.Name, "inspStatus_Personal_No");
-            SeleniumSetMethods.EnterText(ElementType.Name, "insp_23446296_5", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#form-questions > table > tbody > tr > td:nth-child(1) > ul > li:nth-child(1) > div > ul > li:nth-child(1) > input[type=\"file\"]"
+                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+
+            //    SeleniumSetMethods.EnterText(ElementType.Name, "insp_23446296_5", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
             SeleniumSetMethods.Click(ElementType.Name, "inspRe_keyed_No");
             SeleniumSetMethods.Click(ElementType.Name, "inspLockBox_Yes");
             SeleniumSetMethods.EnterText(ElementType.Name, "inspLockBox_Code", "12345");
@@ -190,7 +193,8 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Name, "inspRegulations_No");
             SeleniumSetMethods.Click(ElementType.Name, "inspSafety_Hazards_No");
             SeleniumSetMethods.Click(ElementType.Name, "inspEvid_Damage_No");
-            SeleniumSetMethods.EnterText(ElementType.Name, "insp_23446296_25", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#form-questions > table > tbody > tr > td:nth-child(2) > ul > li:nth-child(7) > div > ul > li:nth-child(1) > input[type=\"file\"]"
+                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
             SeleniumSetMethods.EnterText(ElementType.Name, "inspsignature_name", "iben");
             SeleniumSetMethods.Click(ElementType.Name, "btnSaveSubmit");
             SeleniumSetMethods.Click(ElementType.XPath, "xpath=(//input[@name='btnUpdate'])[2]");

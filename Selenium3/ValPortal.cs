@@ -122,7 +122,7 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewRentalAnalysis(string StreetName)
+        public static void CreateNewRentalAnalysis(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
@@ -133,23 +133,23 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "Beatrice Rental Survey Co");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", "Rental Analysis");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", "Rental Analysis Exterior");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-      //      SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
@@ -253,10 +253,14 @@ namespace Selenium3
 
         public static void CompleteBPOOrder()
         {
-         
+
             // Order Queue Page
+            Random r = new Random();
+            int n = 0;
+
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Filters_OrderId", Global.OrderID);
             SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
@@ -274,10 +278,14 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
+            n = r.Next(3);
+            Global.ConsoleOut("CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            n = r.Next(3);
+            Global.ConsoleOut("CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
@@ -288,6 +296,9 @@ namespace Selenium3
         {
 
             // Order Queue Page
+            Random r = new Random();
+            int n = 0;
+
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
@@ -307,10 +318,14 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
+            n = r.Next(3);
+            Global.ConsoleOut("CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            n = r.Next(3);
+            Global.ConsoleOut("CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
@@ -321,6 +336,9 @@ namespace Selenium3
         {
 
             // Order Queue Page
+            Random r = new Random();
+            int n = 0;
+
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
@@ -336,10 +354,14 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_0");
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_0");
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_0");
+            n = r.Next(3);
+            Global.ConsoleOut("CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            n = r.Next(3);
+            Global.ConsoleOut("CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
