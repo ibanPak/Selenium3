@@ -713,7 +713,7 @@ namespace Selenium3
 
         }
 
-        public static void U53ExteriorAttachments()
+        public static void qaAttachments()
         {
             SeleniumSetMethods.Wait(ElementType.CssSelector, "button.r-button.r-button-expand-all");
             SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-expand-all");
@@ -766,6 +766,70 @@ namespace Selenium3
             SeleniumSetMethods.Clear(ElementType.Id, "productUpload_230_fileupload");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(ElementType.Id, "productUpload_230_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.WaitMinutes(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
+            SeleniumWindowMethods.ThrottlingSleep();
+            Global.ConsoleOut("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
+            SeleniumWindowMethods.Sleep(30);
+            SeleniumSetMethods.Click(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
+            Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[10]");
+            SeleniumWindowMethods.WindowType(WinType.Main);
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
+
+        }
+
+        public static void uatAttachments()
+        {
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            // Add Exterior Attachments to U53 Order
+            Global.ConsoleOut("Begin adding images at " + DateTime.Now);
+            SeleniumSetMethods.Clear(ElementType.Id, "97_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "97_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "99_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "99_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "100_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "100_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "69_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "69_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "70_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "70_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "71_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "71_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "72_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "72_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C7.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "73_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "73_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C8.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "74_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "74_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C9.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "28_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "productUpload_1554_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "productUpload_1554_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.WaitMinutes(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
             SeleniumWindowMethods.ThrottlingSleep();

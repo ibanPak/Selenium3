@@ -23,7 +23,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "username");
+            SeleniumSetMethods.Clear(ElementType.Id, "username");
             SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
+            SeleniumSetMethods.Clear(ElementType.Id, "password");
             SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
             SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
 
@@ -36,7 +38,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
+            SeleniumSetMethods.Clear(ElementType.Id, "usernameEmail");
             SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", username);
+            SeleniumSetMethods.Clear(ElementType.Id, "password");
             SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
             SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
 
@@ -49,7 +53,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
+            SeleniumSetMethods.Clear(ElementType.Id, "usernameEmail");
             SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", username);
+            SeleniumSetMethods.Clear(ElementType.Id, "password");
             SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
             SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
 
@@ -62,7 +68,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
+            SeleniumSetMethods.Clear(ElementType.Id, "amLoginId");
             SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "amIdentity");
             SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
             SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
 
@@ -75,7 +83,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
+            SeleniumSetMethods.Clear(ElementType.Id, "amLoginId");
             SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "amIdentity");
             SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
             SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
 
@@ -88,7 +98,9 @@ namespace Selenium3
 
             // Login Pages
             SeleniumSetMethods.Wait(ElementType.Id, "UsernameOrEmail");
+            SeleniumSetMethods.Clear(ElementType.Id, "UsernameOrEmail");
             SeleniumSetMethods.EnterText(ElementType.Id, "UsernameOrEmail", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "PasswordLogin");
             SeleniumSetMethods.EnterText(ElementType.Name, "PasswordLogin", password);
             SeleniumSetMethods.Click(ElementType.Id, "submitForm");
 
@@ -101,7 +113,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "Username");
+            SeleniumSetMethods.Clear(ElementType.Id, "Username");
             SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
             SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
             SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
 
@@ -114,7 +128,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "Username");
+            SeleniumSetMethods.Clear(ElementType.Id, "Username");
             SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
             SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
             SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
 
@@ -127,7 +143,24 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "User");
+            SeleniumSetMethods.Clear(ElementType.Id, "User");
             SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
+            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
+            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
+
+        }
+
+        public static void uatPropertyCure(string username, string password)
+        {
+            // Navigate to web page
+            SeleniumSetMethods.Navigate("https://uat-propertycure.res.net/");
+
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "User");
+            SeleniumSetMethods.Clear(ElementType.Id, "User");
+            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
             SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
             SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
 
@@ -140,7 +173,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "username");
+            SeleniumSetMethods.Clear(ElementType.Id, "username");
             SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
+            SeleniumSetMethods.Clear(ElementType.Id, "password");
             SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
             SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
 
@@ -153,7 +188,9 @@ namespace Selenium3
 
             // Login Page
             SeleniumSetMethods.Wait(ElementType.Id, "User");
+            SeleniumSetMethods.Clear(ElementType.Id, "User");
             SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
             SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
             SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
 

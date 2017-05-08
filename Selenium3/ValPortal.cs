@@ -20,6 +20,7 @@ namespace Selenium3
             // Provider Assign
             SeleniumSetMethods.Wait(ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumSetMethods.Click(ElementType.CssSelector, "img.lookupPopupIcon");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "Filters_Radius");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "Filters_Radius", "50+");
             SeleniumSetMethods.Click(ElementType.Id, "Filters_ProviderHasLocationZip");
@@ -34,7 +35,7 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewAppraisal(string StreetName)
+        public static void CreateNewAppraisal(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
@@ -45,12 +46,13 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "acme");
+            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", "Appraisal");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", "2055 Exterior Residential");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "Purpose", "New Loan Purchase");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
@@ -59,9 +61,9 @@ namespace Selenium3
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
@@ -79,9 +81,10 @@ namespace Selenium3
 
         }
 
-        public static void CreateNEWPNMAC(string StreetName)
+        public static void CreateNEWPNMAC(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
@@ -90,21 +93,22 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "PNMAC");
+            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", "BPO");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", "Exterior");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
@@ -133,6 +137,7 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
@@ -165,7 +170,7 @@ namespace Selenium3
             
         }
 
-        public static void CreateNewOrderU53(string StreetName)
+        public static void CreateNewUnified53(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
@@ -176,21 +181,22 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "Unified 53");
+            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", "BPO");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", "Broker Price Opinion Exterior Inspection");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
@@ -208,7 +214,7 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewFMBBPO(string StreetName)
+        public static void CreateNewFMBBPO(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
             SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
@@ -219,25 +225,28 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", "acme");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", "BPO");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", "Exterior");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
             SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-   //         SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
+            SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
 
             // Get Order ID from Order Details page

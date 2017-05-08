@@ -45,7 +45,7 @@ namespace Selenium3
         public static void ScreenShot(string FileName)
         {
             Screenshot ss = ((ITakesScreenshot)PropertiesCollection.driver).GetScreenshot();
-            ss.SaveAsFile("c:/" + FileName + ".png", System.Drawing.Imaging.ImageFormat.Png);
+            ss.SaveAsFile("c:/" + FileName + ".png", ScreenshotImageFormat.Png);
 
         }
 

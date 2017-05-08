@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium;
 
 namespace Selenium3
 {
@@ -21,8 +22,7 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            Runner.qaFMBFlow1();
-
+          
             Global.Cooldown();
 
             // Test was completed successfully

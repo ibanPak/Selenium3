@@ -11,6 +11,7 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
 
+
 namespace Selenium3
 {
     class Global
@@ -22,8 +23,8 @@ namespace Selenium3
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-        public static string OrderID = "29741";
-        public static string StreetAddress = "221 Rush Lily";
+        public static string OrderID = "0";
+        public static string StreetAddress = "0";
         
 
         public static DateTime StartDT;
@@ -31,7 +32,9 @@ namespace Selenium3
 
         public static void ReadySetGo()
         {
-            IWebDriver driver = new ChromeDriver();
+             IWebDriver driver = new ChromeDriver();
+            // IWebDriver driver = new InternetExplorerDriver();
+            //  IWebDriver driver = new FirefoxDriver();
             PropertiesCollection.driver = driver;
             SeleniumWindowMethods.WindowActions(ActType.Maximize);
             Global.StartDT = DateTime.Now;

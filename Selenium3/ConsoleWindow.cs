@@ -36,7 +36,7 @@ namespace Selenium3
             Console.ForegroundColor = ConsoleColor.Cyan;
 
             int xpos = 2000;
-            int ypos = 300;
+            int ypos = 100;
             SetWindowPos(MyConsole, 0, xpos, ypos, 0, 0, SWP_NOSIZE);
 
 
