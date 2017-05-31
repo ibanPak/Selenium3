@@ -174,6 +174,23 @@ namespace Selenium3
 
         }
 
+        public static void Find(ElementType elementtype, string element)
+        {
+            if (elementtype == ElementType.Id)
+                PropertiesCollection.driver.FindElement(By.Id(element));
+            if (elementtype == ElementType.Name)
+                PropertiesCollection.driver.FindElement(By.Name(element));
+            if (elementtype == ElementType.XPath)
+                PropertiesCollection.driver.FindElement(By.XPath(element));
+            if (elementtype == ElementType.CssSelector)
+                PropertiesCollection.driver.FindElement(By.CssSelector(element));
+            if (elementtype == ElementType.LinkText)
+                PropertiesCollection.driver.FindElement(By.LinkText(element));
+            if (elementtype == ElementType.PartialLinkText)
+                PropertiesCollection.driver.FindElement(By.PartialLinkText(element));
+
+        }
+
     }
 
 }

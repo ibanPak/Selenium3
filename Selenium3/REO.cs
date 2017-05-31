@@ -107,9 +107,24 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(3);
 
             // Get Property ID from Property Details page
-            string PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
-            Global.OrderID = PropertyID;
-            Global.ConsoleOut("Property ID: " + PropertyID);
+
+            try
+            {
+                string PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+                Global.OrderID = PropertyID;
+                Global.ConsoleOut("Property ID: " + PropertyID); ;
+            }
+            catch
+            {
+                SeleniumSetMethods.Wait(ElementType.Name, "btnAdd");
+                SeleniumSetMethods.Click(ElementType.Name, "btnAdd");
+                SeleniumWindowMethods.Sleep(2);
+                string PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+                Global.OrderID = PropertyID;
+                Global.ConsoleOut("Property ID: " + PropertyID); ;
+
+            }
+            
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
@@ -119,7 +134,7 @@ namespace Selenium3
 
         public static void AddAgent()
         {
-   
+           
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
 

@@ -49,12 +49,13 @@ namespace Selenium3
             if (elementtype == ElementType.Id)
                 return new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
             if (elementtype == ElementType.Name)
-                return new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
+                return new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
             else return String.Empty;
 
         }
 
 
+      
 
     }
 

@@ -19,7 +19,8 @@ namespace Selenium3
         {
             // REO Flow Org1
             Login.qaREO("Yeshh1", "Yeshh1");
-            REO.AddNewProperty("Encore");
+            IfExists.Id_Refresh("globalPropertySearch");
+            REO.AddNewProperty("Rincon");
             REO.AddAgent();
             Logout.REO();
             Login.qaAgent("QATest23@usres.com", "blue123");
@@ -29,8 +30,9 @@ namespace Selenium3
             Agent.OpenREOTasks("Referral Agreement"); REOTasks.ReferralFeeAgreement("iben");
             Agent.OpenREOTasks("HOA information task"); REOTasks.HOAInformation();
             Agent.OpenREOTasks("Listing Addendum"); REOTasks.ListingAddendum("iben");
-            Logout.Agent();  
-            Login.qaREO("Yeshh1", "Yeshh1"); 
+            Logout.Agent();
+            Login.qaREO("Yeshh1", "Yeshh1");
+            IfExists.Id_Refresh("globalPropertySearch");
             REOTasks.AssetMGRTasks();
             Logout.REO();
             Global.ConsoleOut("Run Amp Order Sync");
@@ -136,7 +138,7 @@ namespace Selenium3
         {
             // Property Cure Add Property
             Login.qaPropertyCure("qatest1", "Pwd12345678!");
-            PropertyCure.AddNewProperty("testing", "Irvine", "California", "92620");
+        //    PropertyCure.AddNewProperty("testing", "Irvine", "California", "92620");
             PropertyCure.AddNewUser("iBen", "Nguyen-Cuu", "ibenPak", "iben@gmail.com", "blue123");
 
         }

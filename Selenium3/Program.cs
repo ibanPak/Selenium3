@@ -22,7 +22,8 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-          
+            qaRunner.qaREOFlowOrg1();
+
             Global.Cooldown();
 
             // Test was completed successfully

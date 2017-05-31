@@ -228,7 +228,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Name, "upDoneDate");
             SeleniumSetMethods.Wait(ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(ElementType.Name, "btnUploadPics");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return");
+            SeleniumWindowMethods.Sleep(5);
  
         }
 

@@ -156,7 +156,7 @@ namespace Selenium3
         {
             // Property Cure Add Property
             Login.uatPropertyCure("qatest1", "Pwd12345678!");
-            PropertyCure.AddNewProperty("testing", "Irvine", "California", "92620");
+         //   PropertyCure.AddNewProperty("testing", "Irvine", "California", "92620");
             PropertyCure.AddNewUser("iBen", "Nguyen-Cuu", "ibenPak", "iben@gmail.com", "blue123");
 
         }

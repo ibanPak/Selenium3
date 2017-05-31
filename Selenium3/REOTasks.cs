@@ -1,8 +1,14 @@
-﻿using System;
+﻿using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Firefox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium;
 
 namespace Selenium3
 {
@@ -99,14 +105,17 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
             SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
+
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "SCRA Referral (Custom)");
-            SeleniumSetMethods.Click(ElementType.LinkText, "SCRA Referral (Custom)");
+            IfExists.Link_Back("SCRA Referral (Custom)");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
-            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Sivad Custom task (Custom)");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Sivad Custom task (Custom)");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[3]"); 
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Sivad Custom task (Custom)");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.Id, "Test1");
             SeleniumSetMethods.EnterText(ElementType.Id, "Test1", "yellow");
             SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
@@ -114,47 +123,64 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.LinkText, "Agent Listing Contract");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "122314 Custom Task (Custom)");
-            SeleniumSetMethods.Click(ElementType.LinkText, "122314 Custom Task (Custom)");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("122314 Custom Task (Custom)");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.Id, "073113ListingCheckboxListCustom_test");
             SeleniumSetMethods.Click(ElementType.Id, "073113ListingCheckboxListCustom_test");
             SeleniumSetMethods.Wait(ElementType.Id, "btnUpdateAsDone");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateAsDone");
 
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Sivad Custom task (Custom)");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Sivad Custom task (Custom)");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Sivad Custom task (Custom)");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.EnterText(ElementType.Id, "Test1", "Enter Comment");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateAsDone");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Home Owners Assoc Information Request");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Home Owners Assoc Information Request");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Home Owners Assoc Information Request");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Tax Research Request");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Tax Research Request");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Tax Research Request");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Listing Acknowledgement");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Listing Acknowledgement");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Listing Acknowledgement");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Referral Agreement");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Referral Agreement");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Referral Agreement");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Winterization Requirements Request");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Winterization Requirements Request");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Winterization Requirements Request");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Occupancy Status Request");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Occupancy Status Request");
+
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+            IfExists.Link_Back("Occupancy Status Request");
+            IfExists.Id_Refresh("globalPropertySearch");
             SeleniumSetMethods.Wait(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
 
         }
 
+    
+
         public static void PropertyInspection()
         {
-       /*     SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+
+       /*   SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
             SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");

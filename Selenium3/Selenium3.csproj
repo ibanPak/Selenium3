@@ -62,6 +62,7 @@
     <Compile Include="Buyer.cs" />
     <Compile Include="ConsoleWindow.cs" />
     <Compile Include="FMBBPO.cs" />
+    <Compile Include="IfExists.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Logout.cs" />
     <Compile Include="PNMACBPO.cs" />
