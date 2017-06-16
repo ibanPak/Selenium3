@@ -229,7 +229,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(ElementType.Name, "btnUploadPics");
             SeleniumWindowMethods.Sleep(5);
- 
+
         }
 
     }

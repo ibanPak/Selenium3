@@ -16,12 +16,10 @@ namespace Selenium3
 
     class PropertiesCollection
     {
-
         //Auto-implemented property
         public static IWebDriver driver { get; set; }
 
     }
-
 
     // Strongly Typed Variable
     enum ElementType
@@ -59,9 +57,6 @@ namespace Selenium3
         Dismiss
 
     }
-
-
-  
 
 
 }

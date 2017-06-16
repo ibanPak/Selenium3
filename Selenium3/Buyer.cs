@@ -210,7 +210,6 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");
             SeleniumSetMethods.Click(ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");
             
-            
         }
 
         public static void Sample()
@@ -252,8 +251,6 @@ namespace Selenium3
             SeleniumSetMethods.Clear(ElementType.CssSelector, "td[id=\"Offer#2\"] input[id$=\"__LoanAmount\"]");
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.EnterText(ElementType.CssSelector, "td[id=\"Offer#2\"] input[id$=\"__LoanAmount\"]", "300000.00");
-
-
 
         }
 

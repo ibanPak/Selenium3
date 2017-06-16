@@ -407,7 +407,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "LandListPrice", "488888");
             SeleniumSetMethods.EnterText(ElementType.Id, "ProviderComments", "The subject is a conforming home within a neighborhood that has declining values of 3% over the prior twelve months. Demand remains strong in this area while short sales and");
             SeleniumSetMethods.EnterText(ElementType.Name, "Addendum", "testing");
-           
 
         }
 
@@ -778,6 +777,7 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(5);
+
         }
 
         public static void uatFMBAttachments()
@@ -840,7 +840,9 @@ namespace Selenium3
        /*     SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(5);  */
+
         }
+
 
     }
 

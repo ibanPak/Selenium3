@@ -59,7 +59,7 @@ namespace Selenium3
 
         public static void Sample()
         {
-            
+            // Sample snips of code
             SeleniumSetMethods.Wait(ElementType.Id, "btnClear");
             SeleniumSetMethods.Click(ElementType.Id, "btnClear");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Inspections");
@@ -97,7 +97,7 @@ namespace Selenium3
 
         public static void Sample2()
         {
-
+            // Sample snips of code
             Login.qaPropertyCure("qatest", "P@ssw0rd1");
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Property");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Property");

@@ -26,7 +26,6 @@ namespace Selenium3
         public static string OrderID = "0";
         public static string StreetAddress = "0";
         
-
         public static DateTime StartDT;
         public static DateTime EndDT;
 

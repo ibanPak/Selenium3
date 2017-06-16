@@ -175,20 +175,18 @@ namespace Selenium3
 
         }
 
-    
-
         public static void PropertyInspection()
         {
 
-       /*   SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
-            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
-            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Property Inspection");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Property Inspection");  */
+            /*   SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+                 SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+                 SeleniumWindowMethods.Sleep(1);
+                 SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
+                 SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
+                 SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+                 SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+                 SeleniumSetMethods.Wait(ElementType.LinkText, "Property Inspection");
+                 SeleniumSetMethods.Click(ElementType.LinkText, "Property Inspection");  */
             SeleniumSetMethods.Wait(ElementType.Name, "inspDate_visit");
             SeleniumSetMethods.EnterText(ElementType.Name, "inspDate_visit", Global.LastMonth);
             SeleniumSetMethods.Click(ElementType.Name, "inspStatus_vacant");
@@ -225,11 +223,8 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Name, "btnSaveSubmit");
             SeleniumSetMethods.Click(ElementType.XPath, "xpath=(//input[@name='btnUpdate'])[2]");
 
-
         }
 
-
-       
 
     }
 

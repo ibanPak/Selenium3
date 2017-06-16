@@ -130,7 +130,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "ProviderComments");
 
             // Enter Text
-
             SeleniumSetMethods.EnterText(ElementType.Id, "PennyMac_Subject_OwnerName", "Owner");
             SeleniumSetMethods.EnterText(ElementType.Id, "PennyMac_VendorOrderId", "123-66");
             SeleniumSetMethods.EnterText(ElementType.Id, "Subject_ParcelNumber", "123-333-55");
@@ -510,7 +509,6 @@ namespace Selenium3
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(5);
-
 
         }
 

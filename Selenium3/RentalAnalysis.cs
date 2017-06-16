@@ -357,7 +357,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[9]");
             SeleniumWindowMethods.WindowType(WinType.Main);
             SeleniumWindowMethods.Sleep(5);
-            
 
         }
 
@@ -416,7 +415,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[9]");
             SeleniumWindowMethods.WindowType(WinType.Main);
             SeleniumWindowMethods.Sleep(5);
-
 
         }
 

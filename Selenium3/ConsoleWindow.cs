@@ -39,8 +39,6 @@ namespace Selenium3
             int ypos = 100;
             SetWindowPos(MyConsole, 0, xpos, ypos, 0, 0, SWP_NOSIZE);
 
-
-
         }
 
 

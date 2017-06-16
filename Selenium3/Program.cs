@@ -17,7 +17,6 @@ namespace Selenium3
 
         static void Main(string[] args)
         {
-
             // Start your engines !!!
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
