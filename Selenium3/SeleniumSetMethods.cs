@@ -19,8 +19,8 @@ namespace Selenium3
         // Navigate to URL
         public static void Navigate(string URL)
         {
-
             PropertiesCollection.driver.Navigate().GoToUrl(URL);
+
         }
 
 

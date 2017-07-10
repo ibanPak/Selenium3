@@ -18,12 +18,18 @@ namespace Selenium3
         static void Main(string[] args)
         {
             // Start your engines !!!
-            ConsoleWindow.ConsoleAttributes();
-            Global.ReadySetGo();
+            //   ConsoleWindow.ConsoleAttributes();
+            //   Global.ReadySetGo();
 
-            qaRunner.qaREOFlowOrg1();
+            string Dolla;
 
-            Global.Cooldown();
+            Dolla = Convert.ToDouble("1234567890123.12345").ToString("N");
+
+            Global.ConsoleOut("Should look like this: " + Dolla);
+
+            Console.Read();
+
+         //   Global.Cooldown();
 
             // Test was completed successfully
             // Global.Done();
