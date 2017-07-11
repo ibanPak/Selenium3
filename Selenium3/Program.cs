@@ -29,6 +29,7 @@ namespace Selenium3
 
             Console.Read();
 
+
          //   Global.Cooldown();
 
             // Test was completed successfully
