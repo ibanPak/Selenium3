@@ -18,12 +18,15 @@ namespace Selenium3
 
         public static void Search()
         {
+
+            // Navigate to web page
+            SeleniumSetMethods.Navigate("https://qa-buyer.res.net");
             SeleniumSetMethods.Wait(ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Click(ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Wait(ElementType.Id, "location");
             SeleniumSetMethods.EnterText(ElementType.Id, "location", "34747");
-            SeleniumSetMethods.Wait(ElementType.Id, "propertiesSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "propertiesSubmit");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertiesSubmit > img");
+            SeleniumSetMethods.Click(ElementType.CssSelector,"#propertiesSubmit > img");
             SeleniumWindowMethods.ScreenShot("SoPurdy");
             SeleniumSetMethods.Wait(ElementType.Id, "clearPropertiesSearch");
             SeleniumSetMethods.Click(ElementType.Id, "clearPropertiesSearch");
@@ -33,8 +36,8 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Wait(ElementType.Id, "location");
             SeleniumSetMethods.EnterText(ElementType.Id, "location", "Springfield");
-            SeleniumSetMethods.Wait(ElementType.Id, "propertiesSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "propertiesSubmit");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertiesSubmit > img");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#propertiesSubmit > img");
             SeleniumSetMethods.Wait(ElementType.Id, "clearPropertiesSearch");
             SeleniumSetMethods.Click(ElementType.Id, "clearPropertiesSearch");
             SeleniumSetMethods.Wait(ElementType.Id, "logoBP");
@@ -43,8 +46,8 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Wait(ElementType.Id, "location");
             SeleniumSetMethods.EnterText(ElementType.Id, "location", "34747, Reunion, FL");
-            SeleniumSetMethods.Wait(ElementType.Id, "propertiesSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "propertiesSubmit");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertiesSubmit > img");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#propertiesSubmit > img");
             SeleniumSetMethods.Wait(ElementType.Id, "clearPropertiesSearch");
             SeleniumSetMethods.Click(ElementType.Id, "clearPropertiesSearch");
             SeleniumSetMethods.Wait(ElementType.Id, "logoBP");
@@ -53,8 +56,8 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Wait(ElementType.Id, "location");
             SeleniumSetMethods.EnterText(ElementType.Id, "location", "30004");
-            SeleniumSetMethods.Wait(ElementType.Id, "propertiesSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "propertiesSubmit");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertiesSubmit > img");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#propertiesSubmit > img");
             SeleniumSetMethods.Wait(ElementType.Id, "withinRadius");
             SeleniumSetMethods.EnterText(ElementType.Id, "withinRadius", "50 Miles");
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");

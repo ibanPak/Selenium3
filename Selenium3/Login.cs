@@ -181,6 +181,21 @@ namespace Selenium3
 
         }
 
+        public static void qaLossMitt(string username, string password)
+        {
+            // Navigate to web page
+            SeleniumSetMethods.Navigate("https://qa-shortsale.res.net/Authentication/LogOn?ReturnUrl=%2fConnections");
+
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "Username");
+            SeleniumSetMethods.Clear(ElementType.Id, "Username");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
+            SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
+            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+
+        }
+
         public static void qaCed(string username, string password)
         {
             // Navigate to web page

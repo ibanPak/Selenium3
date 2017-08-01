@@ -33,7 +33,7 @@ namespace Selenium3
         {
              IWebDriver driver = new ChromeDriver();
             // IWebDriver driver = new InternetExplorerDriver();
-            //  IWebDriver driver = new FirefoxDriver();
+            // IWebDriver driver = new FirefoxDriver();
             PropertiesCollection.driver = driver;
             SeleniumWindowMethods.WindowActions(ActType.Maximize);
             Global.StartDT = DateTime.Now;

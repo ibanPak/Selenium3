@@ -18,28 +18,27 @@ namespace Selenium3
         static void Main(string[] args)
         {
             // Start your engines !!!
-            //   ConsoleWindow.ConsoleAttributes();
-            //   Global.ReadySetGo();
+            ConsoleWindow.ConsoleAttributes();
+            Global.ReadySetGo();
 
-            string Dolla;
+            Login.qaLossMitt("qaservicer", "P@ssw0rd1");
+            SeleniumSetMethods.Wait(ElementType.Id, "AddressSearchString");
+            SeleniumSetMethods.EnterText(ElementType.Id, "AddressSearchString", "123");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.EnterText(ElementType.Id, "AddressSearchString", Keys.Enter);
 
-            Dolla = Convert.ToDouble("1234567890123.12345").ToString("N");
-
-            Global.ConsoleOut("Should look like this: " + Dolla);
-
-            Console.Read();
-
-
-         //   Global.Cooldown();
+            Global.Cooldown();
 
             // Test was completed successfully
             // Global.Done();
 
         }
 
+      
 
     }
 
 
 }
 
+    
