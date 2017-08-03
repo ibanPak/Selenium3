@@ -31,10 +31,13 @@ namespace Selenium3
 
         public static void ReadySetGo()
         {
-             IWebDriver driver = new ChromeDriver();
+            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver2 = new ChromeDriver();
             // IWebDriver driver = new InternetExplorerDriver();
             // IWebDriver driver = new FirefoxDriver();
+
             PropertiesCollection.driver = driver;
+            PropertiesCollection.driver2 = driver2;
             SeleniumWindowMethods.WindowActions(ActType.Maximize);
             Global.StartDT = DateTime.Now;
             Global.ConsoleOut("Test started @ " + Global.StartDT);

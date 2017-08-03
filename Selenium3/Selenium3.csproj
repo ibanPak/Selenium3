@@ -74,8 +74,11 @@
     <Compile Include="REOBPO.cs" />
     <Compile Include="REOTasks.cs" />
     <Compile Include="qaRunner.cs" />
+    <Compile Include="SeleniumGetMethods2.cs" />
     <Compile Include="SeleniumGetMethods.cs" />
+    <Compile Include="SeleniumSetMethods2.cs" />
     <Compile Include="SeleniumSetMethods.cs" />
+    <Compile Include="SeleniumWindowMethods2.cs" />
     <Compile Include="SeleniumWindowMethods.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="uatRunner.cs" />

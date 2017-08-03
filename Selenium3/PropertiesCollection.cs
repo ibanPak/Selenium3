@@ -18,6 +18,7 @@ namespace Selenium3
     {
         //Auto-implemented property
         public static IWebDriver driver { get; set; }
+        public static IWebDriver driver2 { get; set; }
 
     }
 
