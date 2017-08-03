@@ -21,12 +21,7 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            Login.qaLossMitt("qaservicer", "P@ssw0rd1");
-            SeleniumSetMethods.Wait(ElementType.Id, "AddressSearchString");
-            SeleniumSetMethods.EnterText(ElementType.Id, "AddressSearchString", "123");
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.EnterText(ElementType.Id, "AddressSearchString", Keys.Enter);
-
+            
             Global.Cooldown();
 
             // Test was completed successfully
