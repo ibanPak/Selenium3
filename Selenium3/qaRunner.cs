@@ -134,12 +134,14 @@ namespace Selenium3
 
         }
 
-        public static void PCFlow1Org1()
+        public static void PCFlow1()
         {
-            // Property Cure Add Property
-            Login.qaPropertyCure("qatest1", "Pwd12345678!");
-        //    PropertyCure.AddNewProperty("testing", "Irvine", "California", "92620");
-        //    PropertyCure.AddNewUser("iBen", "Nguyen-Cuu", "ibenPak", "iben@gmail.com", "blue123");
+            // Property Cure Add Property, Violation
+            Login.qaPropertyCure("ibenPn", "Green!23");
+            PropertyCure.AddNewProperty("Rose Arch", "Irvine", "California", "92620", "CSFB 2");
+            PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
+
+            PropertyCure.FileUpload("\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
 
         }
 

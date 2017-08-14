@@ -24,6 +24,7 @@ namespace Selenium3
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
         public static string OrderID = "0";
+        public static string PropteryID = "176";
         public static string StreetAddress = "0";
         
         public static DateTime StartDT;
@@ -31,13 +32,12 @@ namespace Selenium3
 
         public static void ReadySetGo()
         {
-            IWebDriver driver = new ChromeDriver();
-            IWebDriver driver2 = new ChromeDriver();
+             IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
+            // IWebDriver driver2 = new ChromeDriver(); PropertiesCollection.driver2 = driver2;
             // IWebDriver driver = new InternetExplorerDriver();
             // IWebDriver driver = new FirefoxDriver();
-
             PropertiesCollection.driver = driver;
-            PropertiesCollection.driver2 = driver2;
+
             SeleniumWindowMethods.WindowActions(ActType.Maximize);
             Global.StartDT = DateTime.Now;
             Global.ConsoleOut("Test started @ " + Global.StartDT);
