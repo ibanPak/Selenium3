@@ -24,7 +24,8 @@ namespace Selenium3
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
         public static string OrderID = "0";
-        public static string PropteryID = "176";
+        public static string PropteryID = "196";
+        public static string UniversalID = "0";
         public static string StreetAddress = "0";
         
         public static DateTime StartDT;

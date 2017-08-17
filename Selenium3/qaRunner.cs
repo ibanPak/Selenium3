@@ -138,10 +138,17 @@ namespace Selenium3
         {
             // Property Cure Add Property, Violation
             Login.qaPropertyCure("ibenPn", "Green!23");
-            PropertyCure.AddNewProperty("Rose Arch", "Irvine", "California", "92620", "CSFB 2");
-            PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
+            /*  PropertyCure.AddNewProperty("Great Lawn", "Irvine", "California", "92620", "CSFB 2");
+              PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
+              PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
+              PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");
+              PropertyCure.AddNewSE(Global.PropteryID, "George Washington (DollarBill)");
+              PropertyCure.AddNewInspection(Global.PropteryID, "George Washington (DollarBill)");
+              PropertyCure.AddNewHazardClaim(Global.PropteryID, "George Washington (DollarBill)"); 
+              PropertyCure.AddNewPropertyRegistration(Global.PropteryID, "George Washington (DollarBill)"); */
 
-            PropertyCure.FileUpload("\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            PropertyCure.AddNewNote(Global.PropteryID);
+            PropertyCure.FileUpload(Global.PropteryID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
 
         }
 
