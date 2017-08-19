@@ -152,12 +152,21 @@ namespace Selenium3
 
         }
 
-        public static void PCFlow1Org1()
+        public static void PCFlow1()
         {
-            // Property Cure Add Property
-            Login.uatPropertyCure("qatest1", "Pwd12345678!");
-         //   PropertyCure.AddNewProperty("testing", "Irvine", "California", "92620");
-            PropertyCure.AddNewUser("iBen", "Nguyen-Cuu", "ibenPak", "iben@gmail.com", "blue123");
+            // Property Cure Regresssion Flow 1
+            Login.uatPropertyCure("ibenPn", "Green!23");
+            PropertyCure.AddNewProperty("Irvine", "Irvine", "California", "92620", "CSFB 2");
+            PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewSE(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewInspection(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewHazardClaim(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewPropertyRegistration(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewNote(Global.PropteryID);
+            PropertyCure.FileUpload(Global.PropteryID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            Logout.PropertyCure();
 
         }
 

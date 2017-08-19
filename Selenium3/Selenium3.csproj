@@ -81,6 +81,7 @@
     <Compile Include="SeleniumWindowMethods2.cs" />
     <Compile Include="SeleniumWindowMethods.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="stgRunner.cs" />
     <Compile Include="uatRunner.cs" />
     <Compile Include="Unified53BPO.cs" />
     <Compile Include="ValPortal.cs" />

@@ -21,7 +21,12 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            qaRunner.PCFlow1();
+            //qaRunner.PCFlow1();
+            //uatRunner.PCFlow1();
+
+            stgRunner.PCFlow1();
+
+            SeleniumWindowMethods.Sleep(5);
 
             Global.Cooldown();
 

@@ -136,21 +136,34 @@ namespace Selenium3
 
         public static void PCFlow1()
         {
-            // Property Cure Add Property, Violation
+            // Property Cure Regresssion Flow 1
             Login.qaPropertyCure("ibenPn", "Green!23");
-            /*  PropertyCure.AddNewProperty("Great Lawn", "Irvine", "California", "92620", "CSFB 2");
-              PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
-              PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
-              PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");
-              PropertyCure.AddNewSE(Global.PropteryID, "George Washington (DollarBill)");
-              PropertyCure.AddNewInspection(Global.PropteryID, "George Washington (DollarBill)");
-              PropertyCure.AddNewHazardClaim(Global.PropteryID, "George Washington (DollarBill)"); 
-              PropertyCure.AddNewPropertyRegistration(Global.PropteryID, "George Washington (DollarBill)"); */
-
+            PropertyCure.AddNewProperty("Irvine", "Irvine", "California", "92620", "CSFB 2");
+            PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewSE(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewInspection(Global.PropteryID, "George Washington (DollarBill)");
+            PropertyCure.AddNewHazardClaim(Global.PropteryID, "George Washington (DollarBill)"); 
+            PropertyCure.AddNewPropertyRegistration(Global.PropteryID, "George Washington (DollarBill)"); 
             PropertyCure.AddNewNote(Global.PropteryID);
             PropertyCure.FileUpload(Global.PropteryID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            Logout.PropertyCure();
 
         }
+
+        public static void PcCleanSlate()
+        {
+            // Property Cure Regresssion Flow 1
+            Login.uatPropertyCure("ibenPn", "Green!23");
+            PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
+            PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
+
+            Logout.PropertyCure();
+
+        }
+
+
 
 
     }

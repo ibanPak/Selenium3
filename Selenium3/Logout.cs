@@ -36,6 +36,13 @@ namespace Selenium3
 
         }
 
+        public static void PropertyCure()
+        {
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "i.fa.fa-caret-down");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "i.fa.fa-caret-down");
+            SeleniumSetMethods.Click(ElementType.Id, "btnLogout");
+
+        }
 
     }
 

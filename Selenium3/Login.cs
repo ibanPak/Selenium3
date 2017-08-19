@@ -166,6 +166,21 @@ namespace Selenium3
 
         }
 
+        public static void stgPropertyCure(string username, string password)
+        {
+            // Navigate to web page
+            SeleniumSetMethods.Navigate("https://stg-propertycure.res.net/");
+
+            // Login Page
+            SeleniumSetMethods.Wait(ElementType.Id, "User");
+            SeleniumSetMethods.Clear(ElementType.Id, "User");
+            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
+            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
+            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
+            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
+
+        }
+
         public static void uatAgent(string username, string password)
         {
             // Navigate to URL

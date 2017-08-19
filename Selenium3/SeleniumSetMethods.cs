@@ -28,7 +28,7 @@ namespace Selenium3
         public static void EnterText(ElementType elementtype, string element, string value)
         {
             if (elementtype == ElementType.Id)
-               PropertiesCollection.driver.FindElement(By.Id(element)).SendKeys(value);
+                PropertiesCollection.driver.FindElement(By.Id(element)).SendKeys(value);
             if (elementtype == ElementType.Name)
                 PropertiesCollection.driver.FindElement(By.Name(element)).SendKeys(value);
             if (elementtype == ElementType.XPath)
@@ -90,8 +90,7 @@ namespace Selenium3
             if (elementtype == ElementType.Id)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                SeleniumWindowMethods.Sleep(3);
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+               wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
             }
 
             if (elementtype == ElementType.Name)

@@ -19,22 +19,42 @@ namespace Selenium3
         public static void AddNewUser(string FirstName, string LastName, string Username, string Email, string Password)
         {
             // Add new User using variables
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "span.username");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "span.username");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-2");
-            SeleniumSetMethods.Click(ElementType.XPath, "//div[@id='dtUserSearch_wrapper']/div/div[3]/div/a[3]/span");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "span.username");           
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/User']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/User']");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "i.fa.fa-plus");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "i.fa.fa-plus");
             SeleniumSetMethods.Wait(ElementType.Id, "FirstName");
-            SeleniumSetMethods.EnterText(ElementType.Id, "FirstName", "Fred");
-            SeleniumSetMethods.EnterText(ElementType.Id, "LastName", "Flinstone");
-            SeleniumSetMethods.EnterText(ElementType.Id, "UserName", "Bedrock");
-            SeleniumSetMethods.EnterText(ElementType.Id, "EmailAddress", "Bedrock@gmail.com");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Password", "passwrod1");
+            SeleniumSetMethods.EnterText(ElementType.Id, "FirstName", FirstName);
+            SeleniumSetMethods.EnterText(ElementType.Id, "LastName", LastName);
+            SeleniumSetMethods.EnterText(ElementType.Id, "UserName", Username);
+            SeleniumSetMethods.Clear(ElementType.Id, "Email");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Email", Email);
+            SeleniumSetMethods.Clear(ElementType.Id, "Password");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Password", Password);
             SeleniumSetMethods.Click(ElementType.Id, "Show_Password");
-            SeleniumSetMethods.EnterText(ElementType.Id, "PasswordConfirmation", "password1");
+            SeleniumSetMethods.EnterText(ElementType.Id, "PasswordConfirmation", Password);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "IsActive", "Yes");
-            SeleniumSetMethods.Click(ElementType.Id, "UserRoles");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "div.multiSelectOptions:nth-child(2) > label:nth-child(1)");
-            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[5]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[6]");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Select All");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[9]");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "input.check-all");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Click(ElementType.CssSelector, "input.check-all");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@type='checkbox'])[3]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@type='checkbox'])[4]");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//input[@type='checkbox'])[5]");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientPermissions_0__HasAccess", "True");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientPermissions_1__HasAccess", "True");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientPermissions_2__HasAccess", "True");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientPermissions_3__HasAccess", "True");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientPermissions_4__HasAccess", "True");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientPermissions_5__HasAccess", "True");
+            SeleniumSetMethods.Click(ElementType.Id, "btnUpdateDetail");
 
         }
 
@@ -96,9 +116,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.LinkText, "George Washington (DollarBill)");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "DirectorId", "George Washington (DollarBill)");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[11]");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SupervisorId", "QA Tester (qatest)");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SupervisorId", "George Washington (DollarBill)");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[12]");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SpecialistId", "QATester PropertyCure (PropertyCure)");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SpecialistId", "George Washington (DollarBill)");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[13]");
             SeleniumSetMethods.EnterText(ElementType.Id, "MailingStreet1", "25520 Commercentre Drive");
             SeleniumSetMethods.EnterText(ElementType.Id, "MailingCity", "Lake Forest");
@@ -132,9 +152,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-6");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-6");
-            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/Violations/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/Violations/']");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddViolation");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddViolation");
             SeleniumWindowMethods.Sleep(2);
@@ -148,8 +169,8 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "CurrentFines", "100.00");
             SeleniumSetMethods.EnterText(ElementType.Id, "DailyFines", "5.05");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Info Complete");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "HearingDataLkUp", "Info Complete");
+            SeleniumSetMethods.Click(ElementType.LinkText, "All Data Received");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "HearingDataLkUp", "All Data Received");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[5]");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Select All");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[6]");
@@ -225,9 +246,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-8");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-8");
-            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/Utilities/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/Utilities/']");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddUtility");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddUtility");
             SeleniumSetMethods.Wait(ElementType.Id, "UtilityAcctNumber");
@@ -287,8 +309,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-10");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-10");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/OtaBids/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/OtaBids/']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddOtaBid");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddOtaBid");
             SeleniumSetMethods.Wait(ElementType.Id, "BidNumber");
@@ -336,8 +359,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-12");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-12");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/ServErrors/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/ServErrors/']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddServiceError");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddServiceError");
             SeleniumSetMethods.EnterText(ElementType.Id, "BidNumber", "12345");
@@ -397,8 +421,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-14");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-14");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/Inspection/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/Inspection/']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddInspection");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddInspection");
             SeleniumSetMethods.Click(ElementType.XPath, "//button[@type='button']");
@@ -465,8 +490,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateTabBody");
 
             // Preservation/Construction Info
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-6");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-6");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Inspection/Preservation/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Inspection/Preservation/']");
             SeleniumSetMethods.Wait(ElementType.Id, "DamageDesc");
             SeleniumSetMethods.EnterText(ElementType.Id, "DamageAmt", "100.01");
             SeleniumSetMethods.EnterText(ElementType.Id, "RepairedValue", "100.02");
@@ -482,8 +508,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdatePreservation");
 
             // Sale/Rent Info
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-8");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-8");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Inspection/Sale/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Inspection/Sale/']");
             SeleniumSetMethods.Wait(ElementType.Id, "ListingAgentName");
             SeleniumSetMethods.EnterText(ElementType.Id, "ListingAgentName", "Listing Agent Name");
             SeleniumSetMethods.EnterText(ElementType.Id, "ListingAgentPhoneNumber", "949-123-4567");
@@ -494,8 +521,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateSale");
 
             // Corrected Property Address
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-10");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-10");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Inspection/Property/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Inspection/Property/']");
             SeleniumSetMethods.Wait(ElementType.Id, "CorrectedStreet1");
             SeleniumSetMethods.EnterText(ElementType.Id, "CorrectedStreet1", "Street Address 1");
             SeleniumSetMethods.EnterText(ElementType.Id, "CorrectedStreet2", "Street Address 2");
@@ -506,14 +534,17 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "CorrectedZIP", "92620");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateProperty");
 
+            /*
             // Inspections Notes
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-12");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-12");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Note/Notes?']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Note/Notes?']");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddNote ");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddNote ");
             SeleniumSetMethods.EnterText(ElementType.Id, "taNoteDetail", "test note");
             SeleniumSetMethods.Click(ElementType.LinkText, "Save");
-
+            */
         }
 
         public static void AddNewHazardClaim(string PropId, string RepresentativeId)
@@ -526,8 +557,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-16");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-16");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/HazardClaims/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/HazardClaims/']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddHazardClaim");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddHazardClaim");
             SeleniumSetMethods.Click(ElementType.XPath, "//button[@type='button']");
@@ -578,8 +610,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-18");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-18");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Property/PropRegistration/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Property/PropRegistration/']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddProperty");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddProperty");
             SeleniumSetMethods.Click(ElementType.XPath, "//button[@type='button']");
@@ -624,8 +657,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-20");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-20");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/Note/Notes?']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/Note/Notes?']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddNote");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddNote");
             SeleniumSetMethods.Wait(ElementType.Id, "taNoteDetail");
@@ -646,8 +680,9 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
             SeleniumSetMethods.Wait(ElementType.LinkText, PropId);
             SeleniumSetMethods.Click(ElementType.LinkText, PropId);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-22");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-22");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/UploadFile/FileUpload?']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/UploadFile/FileUpload?']");
             SeleniumSetMethods.Wait(ElementType.Id, "btnUpload");
             SeleniumSetMethods.EnterText(ElementType.Id, "fileUpload", FilePath);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "div.ui-dialog-buttonset > #btnUpload");
