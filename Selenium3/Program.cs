@@ -21,19 +21,40 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            //qaRunner.PCFlow1();
-            //uatRunner.PCFlow1();
+            Login.stgPropertyCure("ibenPn", "Green!23");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Properties");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Properties");
+            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchFilters");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSearchFilters");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/Detail/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/Detail/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/Violations/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/Violations/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/OtaBids/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/OtaBids/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/ServErrors/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/ServErrors/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/Inspection/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/Inspection/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/HazardClaims/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/HazardClaims/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property/PropRegistration/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property/PropRegistration/']");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *='/Property//Note/Notes?/']");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *='/Property//Note/Notes?/']");
 
-            stgRunner.PCFlow1();
-
-            SeleniumWindowMethods.Sleep(5);
-
-            Global.Cooldown();
-
-            SeleniumWindowMethods.Sleep(5);
-
-            // Test was completed successfully
-            Global.Done();
+           
+            //    SeleniumSetMethods.Wait(ElementType.LinkText, Global.PropteryID);
+            //    SeleniumSetMethods.Click(ElementType.LinkText, Global.PropteryID);
 
         }
 

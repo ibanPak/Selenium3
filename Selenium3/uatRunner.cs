@@ -156,7 +156,7 @@ namespace Selenium3
         {
             // Property Cure Regresssion Flow 1
             Login.uatPropertyCure("ibenPn", "Green!23");
-            PropertyCure.AddNewProperty("Irvine", "Irvine", "California", "92620", "CSFB 2");
+            PropertyCure.AddNewProperty("Roosevelt", "Irvine", "California", "92620", "CSFB 2");
             PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");

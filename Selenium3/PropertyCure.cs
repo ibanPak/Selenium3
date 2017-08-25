@@ -71,9 +71,12 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, PropState);
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyStateLkUp", PropState);
             SeleniumSetMethods.EnterText(ElementType.Id, "PropertyZip", PropZipCode);
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[2]");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Aging");
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[3]");
             SeleniumSetMethods.Click(ElementType.LinkText, "Open");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyTypeLkUp", "1 Unit");
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(ElementType.LinkText, "1 Unit");
             SeleniumSetMethods.EnterText(ElementType.Id, "PropertyRefId", "RefID"+Global.LoanNum);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumber", Global.LoanNum);
             SeleniumSetMethods.EnterText(ElementType.Id, "PriorLoanNumber", "Prev Loan No");
@@ -101,6 +104,8 @@ namespace Selenium3
                 "#page > span > b").Replace("Property ID", "").TrimStart();
             Global.ConsoleOut("Property ID: " + Global.PropteryID + " Successfully Created");
 
+            // Adding Property Details
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "MostRecentValue");
             SeleniumSetMethods.EnterText(ElementType.Id, "MostRecentValue", "100.01");
             SeleniumSetMethods.EnterText(ElementType.Id, "TaxAssesessedValueAmt", "100.02");
@@ -220,8 +225,9 @@ namespace Selenium3
             Global.OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
               "#page > span > b:nth-child(5)").Replace("Violation ID:", "").TrimStart();
             Global.ConsoleOut("Violation ID: " + Global.OrderID + " Successfully Created");
-            
+
             // Add Violation Detail
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnUpdateTabHead");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateTabHead");
             SeleniumSetMethods.Wait(ElementType.Id, "ViolationReason");
@@ -284,6 +290,7 @@ namespace Selenium3
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
 
             // Add Utility Detail
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnUpdateTabHead");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateTabHead");
             SeleniumSetMethods.Wait(ElementType.Id, "ServiceMonthLkUp");
@@ -342,6 +349,7 @@ namespace Selenium3
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
 
             // Add OTA Bid Notes
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnAddNote ");
             SeleniumSetMethods.Click(ElementType.Id, "btnAddNote ");
             SeleniumSetMethods.EnterText(ElementType.Id, "taNoteDetail", "OTA Note text detail ");
@@ -390,8 +398,8 @@ namespace Selenium3
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
 
             // SE Bid Info
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "VendorCost");
-
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[5]");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "EntityResponsibleLkUp", "Borrower");
             SeleniumSetMethods.EnterText(ElementType.Id, "OrgFaultReason", "Reason Servicer Errors");
@@ -473,6 +481,7 @@ namespace Selenium3
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
 
             // Inspection Info
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "IsVacant_0");
             SeleniumSetMethods.Click(ElementType.Id, "IsVacant_0");
             SeleniumSetMethods.Click(ElementType.Id, "IsTenantOccupied_0");
@@ -587,6 +596,8 @@ namespace Selenium3
                 "#page > span > b:nth-child(5)").TrimStart();
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
 
+            // Add Hazard Claim Info
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "ClaimInfo");
             SeleniumSetMethods.EnterText(ElementType.Id, "ClaimInfo", "Claim Info Area");
             SeleniumSetMethods.EnterText(ElementType.Id, "DisbursementType", "Disbursement Type Area");
@@ -674,6 +685,7 @@ namespace Selenium3
 
         public static void FileUpload(string PropId, string FilePath)
         {
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Properties");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Properties");
             SeleniumSetMethods.Wait(ElementType.Id, "btnSearchFilters");

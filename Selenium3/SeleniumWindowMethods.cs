@@ -57,7 +57,7 @@ namespace Selenium3
 
         public static void ThrottlingSleep()
         {
-            System.Threading.Thread.Sleep(350);
+            System.Threading.Thread.Sleep(Global.ThrottleSleep);
 
         }
 

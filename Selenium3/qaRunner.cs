@@ -138,7 +138,7 @@ namespace Selenium3
         {
             // Property Cure Regresssion Flow 1
             Login.qaPropertyCure("ibenPn", "Green!23");
-            PropertyCure.AddNewProperty("Irvine", "Irvine", "California", "92620", "CSFB 2");
+            PropertyCure.AddNewProperty("Encore", "Irvine", "California", "92620", "CSFB 2");
             PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");
@@ -158,15 +158,10 @@ namespace Selenium3
             Login.uatPropertyCure("ibenPn", "Green!23");
             PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
-
             Logout.PropertyCure();
 
         }
 
-
-
-
     }
-
 
 }
