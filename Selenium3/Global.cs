@@ -61,7 +61,7 @@ namespace Selenium3
         public static void Done()
         {
             Global.ConsoleOut("Test was completed successfully");
-            SeleniumWindowMethods.Sleep(2);
+            SeleniumWindowMethods.Sleep(5);
             SeleniumWindowMethods.WindowActions(ActType.Close);
 
         }

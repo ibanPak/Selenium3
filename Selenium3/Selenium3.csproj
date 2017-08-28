@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Agent.cs" />
     <Compile Include="Buyer.cs" />
+    <Compile Include="Endurance.cs" />
     <Compile Include="ConsoleWindow.cs" />
     <Compile Include="FMBBPO.cs" />
     <Compile Include="IfExists.cs" />
