@@ -18,15 +18,15 @@ namespace Selenium3
         public static void PropertyCure()
         {
             
-            int tries = 0;
+            int cycles = 0;
             int failcount = 0;
 
-            while (tries < 1000000)
+            while (cycles < 1000000)
             {
                 try
                 {
-                    tries = tries + 1;
-                    Global.ConsoleOut("Number of tries: " + tries);
+                    cycles = cycles + 1;
+                    Global.ConsoleOut("Number of cycles: " + cycles);
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Properties");
                     SeleniumSetMethods.Click(ElementType.PartialLinkText, "Properties");
@@ -127,7 +127,7 @@ namespace Selenium3
                 }
                 if (failcount == 15)
                 {
-                    Global.ConsoleOut("Max Failed Count: " + tries);
+                    Global.ConsoleOut("Max Failed Count: " + cycles);
                     break; // handle error and break/return
                 }
 
