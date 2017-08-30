@@ -152,6 +152,17 @@ namespace Selenium3
 
         }
 
+        public static void PCAddDefaultUsers()
+        {
+            // Adding Default Users
+            SeleniumWindowMethods.Sleep(3);
+            Login.stgPropertyCure("ditechadmin", "Pwd12345678!");
+            PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
+            SeleniumWindowMethods.Sleep(3);
+            PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
+            Logout.PropertyCure();
+        }
+
         public static void PCFlow1()
         {
             // Property Cure Regresssion Flow 1

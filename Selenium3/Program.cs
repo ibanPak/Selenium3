@@ -22,7 +22,8 @@ namespace Selenium3
             Login.uatPropertyCure("ibenPn", "Green!23");
             Endurance.PropertyCure();
             Global.Cooldown();
-            Global.Done();
+            //Global.Done();
+
         }
 
     }

@@ -123,11 +123,12 @@ namespace Selenium3
                     Global.ConsoleOut("Error: " + ex.ToString());
                     failcount = failcount + 1;
                     Global.ConsoleOut("failcount: " + failcount);
+                    SeleniumWindowMethods.ScreenShot("Error");
 
                 }
                 if (failcount == 15)
                 {
-                    Global.ConsoleOut("Max Failed Count: " + cycles);
+                    Global.ConsoleOut("Max Failed Count: " + cycles + " test has aborted");
                     break; // handle error and break/return
                 }
 

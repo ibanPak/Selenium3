@@ -45,8 +45,9 @@ namespace Selenium3
         public static void ScreenShot(string FileName)
         {
             Screenshot ss = ((ITakesScreenshot)PropertiesCollection.driver).GetScreenshot();
-            ss.SaveAsFile("c:/" + FileName + ".png", ScreenshotImageFormat.Png);
-
+            string filename = "c:/" + FileName + "_" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss") + ".png";
+            ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
+            Global.ConsoleOut("Screen Shoot Captured: " + filename);
         }
 
         public static void Sleep(int sec)
@@ -71,8 +72,6 @@ namespace Selenium3
 
         }
 
-
     }
-
 
 }
