@@ -137,6 +137,7 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);

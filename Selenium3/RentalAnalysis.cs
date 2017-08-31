@@ -11,6 +11,7 @@ namespace Selenium3
 
         public static void CompleteRentalAnalysis()
         {
+            SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Begin input @ " + DateTime.Now);
             SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumWindowMethods.ThrottlingSleep();

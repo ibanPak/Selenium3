@@ -119,7 +119,7 @@ namespace Selenium3
         public static void Unified53Org1()
         {
             // UAT Org 1 RAFlow1
-            Login.uatValPortal("bryan", "qatest16"); ;
+            Login.uatValPortal("bryan", "qatest16"); 
             ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250418");
             Logout.ValPortal();

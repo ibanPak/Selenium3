@@ -47,7 +47,7 @@ namespace Selenium3
         {
             // Rental Analysis Org1
             Login.qaValPortal("test", "P@ssw0rd1");
-            ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
+            ValPortal.CreateNewRentalAnalysis("Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
             Login.qaAgent("QATest23@usres.com", "blue123");
@@ -81,11 +81,30 @@ namespace Selenium3
 
         }
 
+        public static void Unified53Org1()
+        {
+            // QA Org 1 Unified53Org1
+            Login.qaValPortal("test", "P@ssw0rd1");
+            ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
+            ValPortal.ManualProviderAssign("250922");
+            Logout.ValPortal();
+            Login.qaAgent("QATest23@usres.com", "blue123");
+            Agent.AcceptScheduleAppointment();
+            Agent.OpenBPO();
+            Unified53BPO.U53Order();
+            Unified53BPO.uatAttachments();
+            Logout.Agent();
+            Login.qaValPortal("test", "P@ssw0rd1");
+            ValPortal.CompleteBPOOrder();
+            Logout.ValPortal();
+
+        }
+
         public static void PNMACFlow1Org1()
         {
-            // PNMAC BPO Org1
+            //PNMAC BPO Org1
             Login.qaValPortal("test", "P@ssw0rd1");
-            ValPortal.CreateNEWPNMAC("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
+            ValPortal.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Meadowood", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
             Login.qaAgent("QATest23@usres.com", "blue123");
@@ -105,7 +124,7 @@ namespace Selenium3
             Login.qaValPortal("test", "P@ssw0rd1");
             ValPortal.CreateNewFMBBPO("acme", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
-            Logout.ValPortal(); 
+            Logout.ValPortal();
             Login.qaAgent("QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
@@ -121,7 +140,7 @@ namespace Selenium3
         {
             // Appraisal Org1
             Login.qaValPortal("test", "P@ssw0rd1");
-            ValPortal.CreateNewAppraisal("ACME Inc", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
+            ValPortal.CreateNewAppraisal("acme", "Appraisal", "2055 Exterior Residential", "Encore", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("30005");
             Logout.ValPortal();
             Login.qaVendor("qaappraisalvendor", "P@ssw0rd1");
