@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agent.cs" />
+    <Compile Include="AutoFill.cs" />
     <Compile Include="Buyer.cs" />
     <Compile Include="Endurance.cs" />
     <Compile Include="ConsoleWindow.cs" />

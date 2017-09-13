@@ -158,8 +158,9 @@ namespace Selenium3
             // Adding Default Users
             SeleniumWindowMethods.Sleep(3);
             Login.stgPropertyCure("ditechadmin", "Pwd12345678!");
-            PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
-            SeleniumWindowMethods.Sleep(3);
+            //SeleniumWindowMethods.Sleep(2);
+            //PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
+            SeleniumWindowMethods.Sleep(2);
             PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
             Logout.PropertyCure();
         }

@@ -124,7 +124,7 @@ namespace Selenium3
                     failcount = failcount + 1;
                     Global.ConsoleOut("failcount: " + failcount);
                     SeleniumWindowMethods.ScreenShot("Error");
-
+                    Global.ConsoleOut("Error Time Stamp: " + DateTime.Now);
                 }
                 if (failcount == 15)
                 {

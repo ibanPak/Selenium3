@@ -28,7 +28,7 @@ namespace Selenium3
         public static string UniversalID = "0";
         public static string Value = "0";
         public static string StreetAddress = "831 Roosevelt";
-        public static int ThrottleSleep = 30/(1000);
+        public static int ThrottleSleep = 15*(1000);
 
         public static DateTime StartDT;
         public static DateTime EndDT;
@@ -37,9 +37,8 @@ namespace Selenium3
         {
              IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
             // IWebDriver driver2 = new ChromeDriver(); PropertiesCollection.driver2 = driver2;
-            // IWebDriver driver = new InternetExplorerDriver();
-            // IWebDriver driver = new FirefoxDriver();
-            PropertiesCollection.driver = driver;
+            // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
+            // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
 
             SeleniumWindowMethods.WindowActions(ActType.Maximize);
             Global.StartDT = DateTime.Now;

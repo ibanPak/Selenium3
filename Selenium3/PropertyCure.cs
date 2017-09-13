@@ -22,8 +22,8 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "span.username");
             SeleniumSetMethods.Click(ElementType.CssSelector, "span.username");           
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= '/User']");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= '/User']");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "User Management");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "User Management");
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "i.fa.fa-plus");
             SeleniumSetMethods.Click(ElementType.CssSelector, "i.fa.fa-plus");
