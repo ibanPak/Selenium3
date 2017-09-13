@@ -453,7 +453,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "abPrevLP", "350000");
             SeleniumSetMethods.EnterText(ElementType.Name, "abCurrLP", "375000");
             SeleniumSetMethods.EnterText(ElementType.Name, "abCond", "good");
-            SeleniumSetMethods.EnterText(ElementType.Name, "txtabMktComments", "PMarket Market plan : Start  TESTS is interested in receiving information about your company and services.  Due to the diversity of our customer base and their varying geographical regi
+            SeleniumSetMethods.EnterText(ElementType.Name, "txtabMktComments", "PMarket Market plan : Start  TESTS is interested in receiving information about your company and services.  Due to the diversity of our customer base and their varying geographical regions, we review additions based  on particular needs in key areasEND255");
             SeleniumSetMethods.Click(ElementType.Name, "cbRI_roof");
             SeleniumSetMethods.Click(ElementType.Name, "cbRI_termite");
             SeleniumSetMethods.EnterText(ElementType.Name, "abRI_other", "test");
