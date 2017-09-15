@@ -16,218 +16,419 @@ namespace Selenium3
     class Login
     {
 
-        public static void qaAgent(string username, string password)
+        public static void REO(ENV portal, string username, string password)
         {
-            // Navigate to URL
-            SeleniumSetMethods.Navigate("https://qa-agent.res.net/");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "globalPropertySearch";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("https://qa-reo2.res.net/");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("https://uat-reo2.res.net/");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("https://stg-reo2.res.net/");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("https://reo2.res.net/");
 
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "username");
-            SeleniumSetMethods.Clear(ElementType.Id, "username");
-            SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
-            SeleniumSetMethods.Clear(ElementType.Id, "password");
-            SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
-            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+                    // Login Page
+                    SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
+                    SeleniumSetMethods.Clear(ElementType.Id, "amLoginId");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
+                    SeleniumSetMethods.Clear(ElementType.Name, "amIdentity");
+                    SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
+                    SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
 
-        public static void qaValPortal(string username, string password)
+        public static void Agent(ENV portal, string username, string password)
         {
-            // Navigate to URL
-            SeleniumSetMethods.Navigate("http://qa-valuation.res.net/");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "propertySrchTxt";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("https://qa-agent.res.net/");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("https://uat-agent.res.net/");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("https://stg-agent.res.net/");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("https://agent.res.net/");
+                    
+                    // Login Page
+                    SeleniumSetMethods.Wait(ElementType.Id, "username");
+                    SeleniumSetMethods.Clear(ElementType.Id, "username");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
+                    SeleniumSetMethods.Clear(ElementType.Id, "password");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
+                    SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
 
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
-            SeleniumSetMethods.Clear(ElementType.Id, "usernameEmail");
-            SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", username);
-            SeleniumSetMethods.Clear(ElementType.Id, "password");
-            SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
-            SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
 
-        public static void uatValPortal(string username, string password)
+        public static void ValPortal(ENV portal, string username, string password)
         {
-            // Navigate to URL
-            SeleniumSetMethods.Navigate("http://uat-valuation.res.net/");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "searchBar";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("http://qa-valuation.res.net/");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("http://uat-valuation.res.net/");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("http://stg-valuation.res.net/");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("http://valuation.res.net/");
 
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
-            SeleniumSetMethods.Clear(ElementType.Id, "usernameEmail");
-            SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", username);
-            SeleniumSetMethods.Clear(ElementType.Id, "password");
-            SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
-            SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
+                    // Login Page
+                    SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
+                    SeleniumSetMethods.Clear(ElementType.Id, "usernameEmail");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", username);
+                    SeleniumSetMethods.Clear(ElementType.Id, "password");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
+                    SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
 
-        public static void qaREO(string username, string password)
+        public static void PropertyCure(ENV portal, string username, string password)
         {
-            // Navigate to URL
-            SeleniumSetMethods.Navigate("https://qa-reo2.res.net/");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "globalPropertySearch";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("https://qa-vendor.res.net/");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("https://uat-propertycure.res.net/");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("https://stg-propertycure.res.net/");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("https://propertycure.res.net/");
 
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
-            SeleniumSetMethods.Clear(ElementType.Id, "amLoginId");
-            SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "amIdentity");
-            SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
-            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+                    // Login Page
+                    SeleniumSetMethods.Wait(ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
+                    SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
 
-        public static void uatREO(string username, string password)
+        public static void Vendor(ENV portal, string username, string password)
         {
-            // Navigate to URL
-            SeleniumSetMethods.Navigate("https://uat-reo2.res.net/");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "globalPropertySearch";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("https://qa-vendor.res.net/");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("https://uat-vendor.res.net/");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("https://stg-vendor.res.net/");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("https://vendor.res.net/");
 
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
-            SeleniumSetMethods.Clear(ElementType.Id, "amLoginId");
-            SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "amIdentity");
-            SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
-            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+                    // Login Page
+                    SeleniumSetMethods.Wait(ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
+                    SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
 
-        public static void qaBuyer(string username, string password)
+        public static void LossMit(ENV portal, string username, string password)
         {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://qa-buyer.res.net/login");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "globalPropertySearch";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("https://qa-shortsale.res.net");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("https://uat-shortsale.res.net");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("https://stg-shortsale.res.net");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("https://shortsale.res.net");
 
-            // Login Pages
-            SeleniumSetMethods.Wait(ElementType.Id, "UsernameOrEmail");
-            SeleniumSetMethods.Clear(ElementType.Id, "UsernameOrEmail");
-            SeleniumSetMethods.EnterText(ElementType.Id, "UsernameOrEmail", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "PasswordLogin");
-            SeleniumSetMethods.EnterText(ElementType.Name, "PasswordLogin", password);
-            SeleniumSetMethods.Click(ElementType.Id, "submitForm");
+                    // Login Page
+                    SeleniumSetMethods.Wait(ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
+                    SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
 
-        public static void uatVendor(string username, string password)
+        public static void Buyer(ENV portal, string username, string password)
         {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://uat-vendor.res.net/");
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "logoBP";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                        SeleniumSetMethods.Navigate("https://qa-buyer.res.net/login");
+                    if (portal == ENV.UAT)
+                        SeleniumSetMethods.Navigate("https://uat-buyer.res.net/login");
+                    if (portal == ENV.STG)
+                        SeleniumSetMethods.Navigate("https://stg-buyer.res.net/login");
+                    if (portal == ENV.PROD)
+                        SeleniumSetMethods.Navigate("https://buyer.res.net/login");
 
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "Username");
-            SeleniumSetMethods.Clear(ElementType.Id, "Username");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
-            SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
-            SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
+                    // Login Pages
+                    SeleniumSetMethods.Wait(ElementType.Id, "UsernameOrEmail");
+                    SeleniumSetMethods.Clear(ElementType.Id, "UsernameOrEmail");
+                    SeleniumSetMethods.EnterText(ElementType.Id, "UsernameOrEmail", username);
+                    SeleniumSetMethods.Clear(ElementType.Name, "PasswordLogin");
+                    SeleniumSetMethods.EnterText(ElementType.Name, "PasswordLogin", password);
+                    SeleniumSetMethods.Click(ElementType.Id, "submitForm");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
 
         }
-
-        public static void qaVendor(string username, string password)
-        {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://qa-vendor.res.net/");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "Username");
-            SeleniumSetMethods.Clear(ElementType.Id, "Username");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
-            SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
-            SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
-
-        }
-
-        public static void qaPropertyCure(string username, string password)
-        {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://qa-propertycure.res.net/");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "User");
-            SeleniumSetMethods.Clear(ElementType.Id, "User");
-            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
-            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
-            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
-
-        }
-
-        public static void uatPropertyCure(string username, string password)
-        {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://uat-propertycure.res.net/");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "User");
-            SeleniumSetMethods.Clear(ElementType.Id, "User");
-            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
-            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
-            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
-
-        }
-
-        public static void stgPropertyCure(string username, string password)
-        {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://stg-propertycure.res.net/");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "User");
-            SeleniumSetMethods.Clear(ElementType.Id, "User");
-            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
-            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
-            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
-
-        }
-
-        public static void uatAgent(string username, string password)
-        {
-            // Navigate to URL
-            SeleniumSetMethods.Navigate("https://uat-agent.res.net/");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "username");
-            SeleniumSetMethods.Clear(ElementType.Id, "username");
-            SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
-            SeleniumSetMethods.Clear(ElementType.Id, "password");
-            SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
-            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
-
-        }
-
-        public static void qaLossMitt(string username, string password)
-        {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("https://qa-shortsale.res.net/Authentication/LogOn?ReturnUrl=%2fConnections");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "Username");
-            SeleniumSetMethods.Clear(ElementType.Id, "Username");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
-            SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
-            SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
-
-        }
-
-        public static void qaCed(string username, string password)
-        {
-            // Navigate to web page
-            SeleniumSetMethods.Navigate("http://192.168.1.112:8080/");
-
-            // Login Page
-            SeleniumSetMethods.Wait(ElementType.Id, "User");
-            SeleniumSetMethods.Clear(ElementType.Id, "User");
-            SeleniumSetMethods.EnterText(ElementType.Id, "User", username);
-            SeleniumSetMethods.Clear(ElementType.Name, "Pass");
-            SeleniumSetMethods.EnterText(ElementType.Name, "Pass", password);
-            SeleniumSetMethods.Click(ElementType.XPath, "//input[@value='Log in']");
-
-        }
-
 
     }
-
 
 }

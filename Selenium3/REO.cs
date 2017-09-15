@@ -131,7 +131,6 @@ namespace Selenium3
 
             }
             
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot("REO New Property");
@@ -140,12 +139,17 @@ namespace Selenium3
 
         public static void AddAgent()
         {
-           
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
 
             // Add Edit this Property iFrame
             SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.Wait(ElementType.Name, "pdUpb");
             SeleniumSetMethods.Clear(ElementType.Name, "pdUpb");
             SeleniumSetMethods.EnterText(ElementType.Name, "pdUpb", "350000");
             SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
@@ -180,24 +184,28 @@ namespace Selenium3
                 Global.ConsoleOut("Confirmation Message: Not Present");
             }
 
-        //Pre Marketing Tab
-        SeleniumWindowMethods.Sleep(3);
+        }
+
+        public static void PreMarket()
+        {
+            //Pre Marketing Tab
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
+            SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
-
             SeleniumSetMethods.Clear(ElementType.Name, "pmBpoOrdDt");
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-
             SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoOrdDt", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoDueDt", Global.NextMonth);
+            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
+            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoOrdDt", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-
+            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
+            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoDueDt", Global.NextMonth);
+            SeleniumWindowMethods.Sleep(1);            
             SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
 
         }

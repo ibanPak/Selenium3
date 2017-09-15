@@ -18,7 +18,7 @@ namespace Selenium3
         {
             // Adding Default Users
             SeleniumWindowMethods.Sleep(3);
-            Login.stgPropertyCure("ditechadmin", "Pwd12345678!");
+            Login.PropertyCure(ENV.STG, "ditechadmin", "Pwd12345678!");
             PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             SeleniumWindowMethods.Sleep(3);
             PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
@@ -29,7 +29,7 @@ namespace Selenium3
         {
             // Property Cure Regresssion Flow 1
             SeleniumWindowMethods.Sleep(3);
-            Login.stgPropertyCure("ibenPn", "Green!23");
+            Login.PropertyCure(ENV.STG, "ibenPn", "Green!23");
             PropertyCure.AddNewProperty("Encore", "Irvine", "California", "92620", "CSFB 2");
             PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");

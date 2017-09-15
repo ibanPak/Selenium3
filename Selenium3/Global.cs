@@ -23,11 +23,11 @@ namespace Selenium3
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-        public static string OrderID = "30426";
+        public static string OrderID = "858282";
         public static string PropteryID = "3941";
         public static string UniversalID = "0";
         public static string Value = "0";
-        public static string StreetAddress = "913 Encore";
+        public static string StreetAddress = "915 Irvine";
         public static int ThrottleSleep = 15*(1000);
 
         public static DateTime StartDT;

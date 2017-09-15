@@ -43,7 +43,6 @@ namespace Selenium3
 
         }
 
-
         public static string GetFromDDL(ElementType elementtype, string element)
         {
             if (elementtype == ElementType.Id)
@@ -54,8 +53,6 @@ namespace Selenium3
 
         }
 
-
     }
-
 
 }

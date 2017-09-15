@@ -18,12 +18,13 @@ namespace Selenium3
         public static void qaREOFlowOrg1()
         {
             // REO Flow Org1
-            Login.qaREO("Yeshh1", "Yeshh1");
+            Login.REO(ENV.QA, "Yeshh1", "Yeshh1");
             IfExists.Id_Refresh("globalPropertySearch");
             REO.AddNewProperty("Irvine");
             REO.AddAgent();
+            REO.PreMarket();
             Logout.REO();
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.OpenREOTasks("Winterization"); REOTasks.Winterization("iben");
             Agent.OpenREOTasks("Occupancy Status Task"); REOTasks.OccupancyStatusTask();
             Agent.OpenREOTasks("Tax Research Task"); REOTasks.TaxResearchTask();
@@ -31,12 +32,12 @@ namespace Selenium3
             Agent.OpenREOTasks("HOA information task"); REOTasks.HOAInformation();
             Agent.OpenREOTasks("Listing Addendum"); REOTasks.ListingAddendum("iben");
             Logout.Agent();
-            Login.qaREO("Yeshh1", "Yeshh1");
+            Login.REO(ENV.QA, "Yeshh1", "Yeshh1");
             IfExists.Id_Refresh("globalPropertySearch");
             REOTasks.AssetMGRTasks();
             Logout.REO();
             Global.ConsoleOut("Run Amp Order Sync");
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.OpenREOTasks("BPO task"); REOBPO.BPOtask();
             Agent.OpenREOTasks("BPO Pictures"); REOBPO.BPOPictures();
             Logout.Agent();
@@ -46,17 +47,17 @@ namespace Selenium3
         public static void RAFlow1Org1()
         {
             // Rental Analysis Org1
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNewRentalAnalysis("Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenRentalAnalysis();
             RentalAnalysis.CompleteRentalAnalysis();
             RentalAnalysis.qaAttachments();
             Logout.Agent();
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteRAOrder();
             Logout.ValPortal();
 
@@ -65,17 +66,17 @@ namespace Selenium3
         public static void RAFlow1Org3()
         {
             // Rental Analysis Org3
-            Login.qaValPortal("test3", "P@ssw0rd4");
+            Login.ValPortal(ENV.QA,"test3", "P@ssw0rd4");
             ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenRentalAnalysis();
             RentalAnalysis.CompleteRentalAnalysis();
             RentalAnalysis.qaAttachments();
             Logout.Agent();
-            Login.qaValPortal("test3", "P@ssw0rd4");
+            Login.ValPortal(ENV.QA,"test3", "P@ssw0rd4");
             ValPortal.CompleteRAOrder();
             Logout.ValPortal();
 
@@ -84,17 +85,17 @@ namespace Selenium3
         public static void Unified53Org1()
         {
             // QA Org 1 Unified53Org1
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             Unified53BPO.U53Order();
             Unified53BPO.uatAttachments();
             Logout.Agent();
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteBPOOrder();
             Logout.ValPortal();
 
@@ -103,16 +104,16 @@ namespace Selenium3
         public static void PNMACFlow1Org1()
         {
             //PNMAC BPO Org1
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Meadowood", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             PNMACBPO.CompleteBPO();
             Logout.Agent();
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteBPOOrder();
             Logout.ValPortal();
 
@@ -121,17 +122,17 @@ namespace Selenium3
         public static void FMBFlow1Org1()
         {
             // FMB BPO Org1
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNewFMBBPO("acme", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
-            Login.qaAgent("QATest23@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             FMBBPO.FMB();
             FMBBPO.qaFMBAttachments();
             Logout.Agent();
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteBPOOrder();
             Logout.ValPortal();
 
@@ -139,15 +140,15 @@ namespace Selenium3
         public static void AppraisalOrg1()
         {
             // Appraisal Org1
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNewAppraisal("acme", "Appraisal", "2055 Exterior Residential", "Encore", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("30005");
             Logout.ValPortal();
-            Login.qaVendor("qaappraisalvendor", "P@ssw0rd1");
+            Login.Vendor(ENV.QA, "qaappraisalvendor", "P@ssw0rd1");
             Vendor.AcceptScheduleAppointment();
             Vendor.UploadAppraisal();
             Logout.Vendor();
-            Login.qaValPortal("test", "P@ssw0rd1");
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteAppraisal();
             Logout.ValPortal();
 
@@ -157,9 +158,9 @@ namespace Selenium3
         {
             // Adding Default Users
             SeleniumWindowMethods.Sleep(3);
-            Login.stgPropertyCure("ditechadmin", "Pwd12345678!");
-            //SeleniumWindowMethods.Sleep(2);
-            //PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
+            Login.PropertyCure(ENV.QA, "ditechadmin", "Pwd12345678!");
+            SeleniumWindowMethods.Sleep(2);
+            PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             SeleniumWindowMethods.Sleep(2);
             PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
             Logout.PropertyCure();
@@ -168,7 +169,7 @@ namespace Selenium3
         public static void PCFlow1()
         {
             // Property Cure Regresssion Flow 1
-            Login.qaPropertyCure("ibenPn", "Green!23");
+            Login.PropertyCure(ENV.QA, "ibenPn", "Green!23");
             PropertyCure.AddNewProperty("Encore", "Irvine", "California", "92620", "CSFB 2");
             PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");

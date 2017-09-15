@@ -59,5 +59,14 @@ namespace Selenium3
 
     }
 
+    // Strongly Typed Variable
+    enum ENV
+    {
+        QA,
+        UAT,
+        STG,
+        PROD
+        
+    }
 
 }

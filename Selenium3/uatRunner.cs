@@ -18,11 +18,11 @@ namespace Selenium3
         public static void REOFlowOrg1()
         {
             // REO Flow Org1
-            Login.uatREO("prodkath2", "qatest10");
+            Login.REO(ENV.UAT,"prodkath2", "qatest10");
             REO.AddNewProperty("Bay Tree");
             REO.AddAgent();
             Logout.REO();
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.OpenREOTasks("Winterization"); REOTasks.Winterization("iben");
             Agent.OpenREOTasks("Occupancy Status Task"); REOTasks.OccupancyStatusTask();
             Agent.OpenREOTasks("Tax Research Task"); REOTasks.TaxResearchTask();
@@ -30,11 +30,11 @@ namespace Selenium3
             Agent.OpenREOTasks("HOA information task"); REOTasks.HOAInformation();
             Agent.OpenREOTasks("Listing Addendum"); REOTasks.ListingAddendum("iben");
             Logout.Agent();
-            Login.uatREO("prodkath2", "qatest10");
+            Login.REO(ENV.UAT, "prodkath2", "qatest10");
             REOTasks.AssetMGRTasks();
             Logout.REO();
             Global.ConsoleOut("Run Amp Order Sync");
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.OpenREOTasks("BPO task"); REOBPO.BPOtask();
             Agent.OpenREOTasks("BPO Pictures"); REOBPO.BPOPictures();
             Logout.Agent();
@@ -44,17 +44,17 @@ namespace Selenium3
         public static void RAFlow1Org1()
         {
             // UAT Org 1 RAFlow1
-            Login.uatValPortal("bryan", "qatest16"); ;
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16"); ;
             ValPortal.CreateNewRentalAnalysis("Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250418");
             Logout.ValPortal();
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenRentalAnalysis();
             RentalAnalysis.CompleteRentalAnalysis();
             RentalAnalysis.uatAttachments();
             Logout.Agent(); 
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CompleteRAOrder();
             Logout.ValPortal();
 
@@ -63,17 +63,17 @@ namespace Selenium3
         public static void RAFlow1Org3()
         {
             // UAT Org 3 RAFlow1
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250418");
             Logout.ValPortal();
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenRentalAnalysis();
             RentalAnalysis.CompleteRentalAnalysis();
             RentalAnalysis.uatAttachments();
             Logout.Agent();
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CompleteRAOrder();
             Logout.ValPortal();
 
@@ -82,16 +82,16 @@ namespace Selenium3
         public static void PNMACFlow1Org1()
         {
             // PNMAC BPO Org1
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CreateNEWPNMAC("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             PNMACBPO.CompleteBPO();
             Logout.Agent();
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CompleteBPOOrder();
             Logout.ValPortal();
 
@@ -100,17 +100,17 @@ namespace Selenium3
         public static void FMBFlow1Org1()
         {
             // FMB BPO Org1
-           Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CreateNewFMBBPO("ACME Inc", "BPO", "Exterior", "Viola", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250418");
             Logout.ValPortal();  
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             FMBBPO.FMB();
             FMBBPO.uatFMBAttachments();
             Logout.Agent();  
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CompleteBPOOrder();
             Logout.ValPortal();
 
@@ -119,17 +119,17 @@ namespace Selenium3
         public static void Unified53Org1()
         {
             // UAT Org 1 RAFlow1
-            Login.uatValPortal("bryan", "qatest16"); 
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16"); 
             ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250418");
             Logout.ValPortal();
-            Login.uatAgent("QATest25@usres.com", "blue123");
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             Unified53BPO.U53Order();
             Unified53BPO.uatAttachments();
             Logout.Agent();  
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CompleteBPOOrder();
             Logout.ValPortal();
 
@@ -138,15 +138,15 @@ namespace Selenium3
         public static void AppraisalOrg1()
         {
             // Appraisal Org1
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CreateNewAppraisal("ACME Inc", "Appraisal", "1004 Interior Residential", "Dublin", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("30005");
             Logout.ValPortal();
-            Login.uatVendor("qaappraisalvendor", "P@ssw0rd1");
+            Login.Vendor(ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");
             Vendor.AcceptScheduleAppointment();
             Vendor.UploadAppraisal();
             Logout.Vendor();
-            Login.uatValPortal("bryan", "qatest16");
+            Login.ValPortal(ENV.UAT, "bryan", "qatest16");
             ValPortal.CompleteAppraisal();
             Logout.ValPortal();
 
@@ -156,7 +156,7 @@ namespace Selenium3
         {
             // Adding Default Users
             SeleniumWindowMethods.Sleep(3);
-            Login.stgPropertyCure("ditechadmin", "Pwd12345678!");
+            Login.PropertyCure(ENV.UAT, "ditechadmin", "Pwd12345678!");
             PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             SeleniumWindowMethods.Sleep(3);
             PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
@@ -166,7 +166,7 @@ namespace Selenium3
         public static void PCFlow1()
         {
             // Property Cure Regresssion Flow 1
-            Login.uatPropertyCure("ibenPn", "Green!23");
+            Login.PropertyCure(ENV.UAT, "ibenPn", "Green!23");
             PropertyCure.AddNewProperty("Roosevelt", "Irvine", "California", "92620", "CSFB 2");
             PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
@@ -181,8 +181,6 @@ namespace Selenium3
 
         }
 
-
     }
-
 
 }
