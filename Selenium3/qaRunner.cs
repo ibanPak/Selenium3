@@ -20,7 +20,7 @@ namespace Selenium3
             // REO Flow Org1
             Login.qaREO("Yeshh1", "Yeshh1");
             IfExists.Id_Refresh("globalPropertySearch");
-            REO.AddNewProperty("Rincon");
+            REO.AddNewProperty("Irvine");
             REO.AddAgent();
             Logout.REO();
             Login.qaAgent("QATest23@usres.com", "blue123");

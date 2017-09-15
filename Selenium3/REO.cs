@@ -30,8 +30,10 @@ namespace Selenium3
             Global.ConsoleOut("Open Popup - New Property");
 
             // Client - Popup
+            SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(WinType.Popup);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Name, "csClientId");
             SeleniumSetMethods.EnterText(ElementType.Name, "csClientId", "7224");
             SeleniumSetMethods.Wait(ElementType.Name, "btnRedraw");
@@ -43,6 +45,7 @@ namespace Selenium3
 
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(WinType.Main);
+            SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame("externalSite");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA']");
@@ -55,6 +58,7 @@ namespace Selenium3
 
             // Switch back to main window - File Manager Popup
             SeleniumWindowMethods.WindowType(WinType.Main);
+            SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame("externalSite");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA2']");
@@ -73,6 +77,7 @@ namespace Selenium3
             
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Name, "paPropAddr");
             SeleniumSetMethods.EnterText(ElementType.Name, "paPropAddr", Global.StreetAddress);
             SeleniumSetMethods.EnterText(ElementType.Name, "paPropCity", "Irvine");
@@ -116,6 +121,7 @@ namespace Selenium3
             }
             catch
             {
+                SeleniumWindowMethods.Sleep(2);
                 SeleniumSetMethods.Wait(ElementType.Name, "btnAdd");
                 SeleniumSetMethods.Click(ElementType.Name, "btnAdd");
                 SeleniumWindowMethods.Sleep(2);
@@ -162,9 +168,20 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Name, "btnAssign_250922");
             SeleniumSetMethods.Click(ElementType.Name, "btnAssign_250922");
+            try
+            {
+                SeleniumWindowMethods.Assertion(Alert.Accept);
+                // Alert present; set the flag
+                Global.ConsoleOut("Accepted Confirmation Message");
+            }
+            catch
+            {
+                // Alert not present
+                Global.ConsoleOut("Confirmation Message: Not Present");
+            }
 
-            //Pre Marketing Tab
-            SeleniumWindowMethods.Sleep(3);
+        //Pre Marketing Tab
+        SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
 

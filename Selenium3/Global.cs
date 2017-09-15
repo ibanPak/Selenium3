@@ -27,7 +27,7 @@ namespace Selenium3
         public static string PropteryID = "3941";
         public static string UniversalID = "0";
         public static string Value = "0";
-        public static string StreetAddress = "831 Roosevelt";
+        public static string StreetAddress = "913 Encore";
         public static int ThrottleSleep = 15*(1000);
 
         public static DateTime StartDT;

@@ -195,7 +195,7 @@ namespace Selenium3
 
         }
 
-        public static void BPOPictures()
+        public static void BPOPicturesOLD()
         {
             SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
                 , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
@@ -229,6 +229,26 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(ElementType.Name, "btnUploadPics");
             SeleniumWindowMethods.Sleep(5);
+
+        }
+
+        public static void BPOPictures()
+        {
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return");
+
+            int SleepTime = 2;
+            int i = 1;
+
+            while (i < 37)
+            {
+                SeleniumSetMethods.EnterText(ElementType.CssSelector, "input.dz-hidden-input:nth-of-type(1)"
+                //SeleniumSetMethods.EnterText(ElementType.CssSelector, "input.dz-hidden-input:nth-child(65)"
+                    , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\Numbers\\" + i + ".jpg");
+                SeleniumWindowMethods.Sleep(SleepTime);
+
+                i = i + 1;
+            }
 
         }
 
