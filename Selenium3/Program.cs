@@ -17,12 +17,10 @@ namespace Selenium3
 
         static void Main(string[] args)
         {
-            //ConsoleWindow.ConsoleAttributes();
+            ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            Login.Buyer(ENV.QA, "qapaidbuyer03", "P@ssw0rd1");
-            Global.ConsoleOut("Test was successful");
-          
+            qaRunner.FMBFlow1Org1();
 
             Global.Cooldown();
             //Global.Done();

@@ -53,6 +53,8 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_SubjectPast12MoListPrice", "475000");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_SubjectListPrice", "460000");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_SubjectListDate", "07/03/2015");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_ListingBrokerName", "qa test");
@@ -70,9 +72,13 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectPropertyType_2");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_SubjectLastSalePrice", "350000");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_SubjectLastSalePrice2", "11111");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSaleDate2");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_LegalProjectName", "qa test");
             SeleniumSetMethods.EnterText(ElementType.Id, "SubjectMarketing_LegalProjectUnits", "1");

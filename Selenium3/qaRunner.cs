@@ -121,9 +121,9 @@ namespace Selenium3
 
         public static void FMBFlow1Org1()
         {
-            // FMB BPO Org1
+            //FMB BPO Org1
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CreateNewFMBBPO("acme", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
+            ValPortal.CreateNewFMBBPO("acme", "BPO", "Exterior", "Rush Lily", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign("250922");
             Logout.ValPortal();
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");

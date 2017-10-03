@@ -18,6 +18,7 @@ namespace Selenium3
         public static void ManualProviderAssign(string sourceid)
         {
             // Provider Assign
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumSetMethods.Click(ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumWindowMethods.Sleep(2);
