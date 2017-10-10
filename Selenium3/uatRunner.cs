@@ -46,7 +46,7 @@ namespace Selenium3
             // UAT Org 1 RAFlow1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); ;
             ValPortal.CreateNewRentalAnalysis("Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250418");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -55,7 +55,7 @@ namespace Selenium3
             RentalAnalysis.uatAttachments();
             Logout.Agent(); 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteRAOrder();
+            ValPortal.CompleteRAOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
@@ -65,7 +65,7 @@ namespace Selenium3
             // UAT Org 3 RAFlow1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250418");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -74,7 +74,7 @@ namespace Selenium3
             RentalAnalysis.uatAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteRAOrder();
+            ValPortal.CompleteRAOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
@@ -84,7 +84,7 @@ namespace Selenium3
             // PNMAC BPO Org1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CreateNEWPNMAC("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250922");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -92,7 +92,7 @@ namespace Selenium3
             PNMACBPO.CompleteBPO();
             Logout.Agent();
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder();
+            ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
@@ -102,7 +102,7 @@ namespace Selenium3
             // FMB BPO Org1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CreateNewFMBBPO("ACME Inc", "BPO", "Exterior", "Viola", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250418");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();  
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -111,7 +111,7 @@ namespace Selenium3
             FMBBPO.uatFMBAttachments();
             Logout.Agent();  
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder();
+            ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
@@ -121,7 +121,7 @@ namespace Selenium3
             // UAT Org 1 RAFlow1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); 
             ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250418");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -130,7 +130,7 @@ namespace Selenium3
             Unified53BPO.uatAttachments();
             Logout.Agent();  
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder();
+            ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
@@ -140,14 +140,14 @@ namespace Selenium3
             // Appraisal Org1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CreateNewAppraisal("ACME Inc", "Appraisal", "1004 Interior Residential", "Dublin", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("30005");
+            ValPortal.ManualProviderAssign(Global.OrderID, "30005");
             Logout.ValPortal();
             Login.Vendor(ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");
             Vendor.AcceptScheduleAppointment();
             Vendor.UploadAppraisal();
             Logout.Vendor();
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteAppraisal();
+            ValPortal.CompleteAppraisal(Global.OrderID);
             Logout.ValPortal();
 
         }

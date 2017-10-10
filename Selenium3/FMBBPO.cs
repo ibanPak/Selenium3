@@ -780,9 +780,9 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_AsIsValueComment", "Comment here 2");
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
-            SeleniumSetMethods.AlertWait();
-            SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(5);
+            //SeleniumSetMethods.AlertWait();
+            //SeleniumWindowMethods.Assertion(Alert.Accept);
+            //SeleniumWindowMethods.Sleep(5);
 
         }
 

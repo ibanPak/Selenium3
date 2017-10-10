@@ -51,38 +51,62 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_ListingStatusPast12Mo_1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectDom");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoOriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoLastListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_IsSubjectSoldPast12Mo_0");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectPast12MoSalePrice");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectPast12MoSalePriceDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectSoldPast12MoOriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectSoldPast12MoLastListPrice");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectSoldPast12MoLastListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectPropertyUnits");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSalePrice");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSaleDate");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectOccupancyStatus_1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_OwnershipStatus_0");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_0__PostalCode");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_0__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_1__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_2__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_1__OriginalListPrice");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_0__SaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_1__SaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_2__SaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_0__Dom");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_Subject_IsDistressedSale_1");
@@ -101,11 +125,17 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_Marketing_MarketYearBuilt");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_Marketing_SaleListRatioPast3Mo");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_ListComps_0__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_ListComps_1__OriginalListDate");
             SeleniumSetMethods.Click(ElementType.CssSelector, "span.ui-icon.ui-icon-circle-triangle-w");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "17");
             SeleniumSetMethods.Click(ElementType.LinkText, "17");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_ListComps_2__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "15");
             SeleniumSetMethods.Click(ElementType.LinkText, "15");
             SeleniumSetMethods.Click(ElementType.Id, "ListComps_0__OriginalListPrice");
             SeleniumSetMethods.Click(ElementType.Id, "ListComps_0__Dom");
@@ -508,12 +538,12 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.AlertWait();
             SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(5);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
+            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
 
         }
 
-
     }
-
 
 }

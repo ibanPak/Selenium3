@@ -15,7 +15,7 @@ namespace Selenium3
     class qaRunner
     {
 
-        public static void qaREOFlowOrg1()
+        public static void REOFlowOrg1()
         {
             // REO Flow Org1
             Login.REO(ENV.QA, "Yeshh1", "Yeshh1");
@@ -46,10 +46,12 @@ namespace Selenium3
 
         public static void RAFlow1Org1()
         {
+            // Global.OrderID = "30584";
             // Rental Analysis Org1
+            Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CreateNewRentalAnalysis("Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250922");
+            ValPortal.CreateNewRentalAnalysis("Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", "Tulip", "Irvine", "California", "92620");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250922");
             Logout.ValPortal();
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -58,17 +60,18 @@ namespace Selenium3
             RentalAnalysis.qaAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CompleteRAOrder();
+            ValPortal.CompleteRAOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
 
         public static void RAFlow1Org3()
         {
+            // Global.OrderID = "30584";
             // Rental Analysis Org3
             Login.ValPortal(ENV.QA,"test3", "P@ssw0rd4");
             ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250922");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250922");
             Logout.ValPortal();
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -77,36 +80,40 @@ namespace Selenium3
             RentalAnalysis.qaAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.QA,"test3", "P@ssw0rd4");
-            ValPortal.CompleteRAOrder();
+            ValPortal.CompleteRAOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
 
         public static void Unified53Org1()
         {
+            //Global.OrderID = "30590";
             // QA Org 1 Unified53Org1
+            Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250922");
+            ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Trailwood", "Irvine", "California", "92620");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250922");
             Logout.ValPortal();
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             Unified53BPO.U53Order();
-            Unified53BPO.uatAttachments();
+            Unified53BPO.qaAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CompleteBPOOrder();
+            ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
 
         public static void PNMACFlow1Org1()
         {
-            //PNMAC BPO Org1
+            // Global.OrderID = "30584";
+            // PNMAC BPO Org1
+            Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Meadowood", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250922");
+            ValPortal.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Townsend", "Irvine", "California", "92620");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250922");
             Logout.ValPortal();
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -114,17 +121,19 @@ namespace Selenium3
             PNMACBPO.CompleteBPO();
             Logout.Agent();
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CompleteBPOOrder();
+            ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
 
         public static void FMBFlow1Org1()
         {
-            //FMB BPO Org1
+            // Global.OrderID = "30584";
+            // FMB BPO Org1
+            Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CreateNewFMBBPO("acme", "BPO", "Exterior", "Rush Lily", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("250922");
+            ValPortal.CreateNewFMBBPO("acme", "BPO", "Exterior", "Tulip", "Irvine", "California", "92620");
+            ValPortal.ManualProviderAssign(Global.OrderID, "250922");
             Logout.ValPortal();
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
@@ -133,23 +142,24 @@ namespace Selenium3
             FMBBPO.qaFMBAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CompleteBPOOrder();
+            ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
 
         }
         public static void AppraisalOrg1()
         {
+            // Global.OrderID = "30584";
             // Appraisal Org1
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNewAppraisal("acme", "Appraisal", "2055 Exterior Residential", "Encore", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign("30005");
+            ValPortal.ManualProviderAssign(Global.OrderID, "30005");
             Logout.ValPortal();
             Login.Vendor(ENV.QA, "qaappraisalvendor", "P@ssw0rd1");
             Vendor.AcceptScheduleAppointment();
             Vendor.UploadAppraisal();
             Logout.Vendor();
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
-            ValPortal.CompleteAppraisal();
+            ValPortal.CompleteAppraisal(Global.OrderID);
             Logout.ValPortal();
 
         }
@@ -168,6 +178,7 @@ namespace Selenium3
 
         public static void PCFlow1()
         {
+            // Global.PropteryID = "30584";
             // Property Cure Regresssion Flow 1
             Login.PropertyCure(ENV.QA, "ibenPn", "Green!23");
             PropertyCure.AddNewProperty("Encore", "Irvine", "California", "92620", "CSFB 2");
