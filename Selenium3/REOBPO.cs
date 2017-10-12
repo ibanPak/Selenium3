@@ -195,43 +195,6 @@ namespace Selenium3
 
         }
 
-        public static void BPOPicturesOLD()
-        {
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(9) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(10) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(13) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(14) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(15) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(16) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(17) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(38) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H1.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(39) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H2.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(40) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(42) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H4.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(43) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H5.jpg");
-            SeleniumSetMethods.EnterText(ElementType.CssSelector, "#tabPropInfoPat2 > tbody:nth-child(1) > tr:nth-child(44) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H6.jpg");
-            SeleniumSetMethods.Click(ElementType.Name, "upDoneDate");
-            SeleniumSetMethods.Wait(ElementType.Name, "btnUploadPics");
-            SeleniumSetMethods.Click(ElementType.Name, "btnUploadPics");
-            SeleniumWindowMethods.Sleep(5);
-
-        }
-
         public static void BPOPictures()
         {
             SeleniumWindowMethods.Sleep(3);
@@ -249,7 +212,12 @@ namespace Selenium3
 
                 i = i + 1;
             }
-
+            SeleniumSetMethods.Click(ElementType.Name, "upDoneDate");
+            SeleniumSetMethods.Wait(ElementType.Name, "btnUploadPics");
+            SeleniumSetMethods.Click(ElementType.Name, "btnUploadPics");
+            SeleniumWindowMethods.Sleep(5);
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Return");
         }
 
     }

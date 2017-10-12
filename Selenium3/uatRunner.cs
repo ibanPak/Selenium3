@@ -17,12 +17,15 @@ namespace Selenium3
 
         public static void REOFlowOrg1()
         {
+            // Global.OrderID = "858296";
+            // Global.StreetAddress = "1012 Lawnwood";
             // REO Flow Org1
-            Login.REO(ENV.UAT,"prodkath2", "qatest10");
-            REO.AddNewProperty("Bay Tree");
+            Login.REO(ENV.UAT, "prodkath2", "qatest10");
+            REO.AddNewProperty("Lawnwood", "Irvine", "California", "92620");
             REO.AddAgent();
+            REO.PreMarket();
             Logout.REO();
-            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest25@usres.com", "blue123");
             Agent.OpenREOTasks("Winterization"); REOTasks.Winterization("iben");
             Agent.OpenREOTasks("Occupancy Status Task"); REOTasks.OccupancyStatusTask();
             Agent.OpenREOTasks("Tax Research Task"); REOTasks.TaxResearchTask();
@@ -31,10 +34,11 @@ namespace Selenium3
             Agent.OpenREOTasks("Listing Addendum"); REOTasks.ListingAddendum("iben");
             Logout.Agent();
             Login.REO(ENV.UAT, "prodkath2", "qatest10");
+            IfExists.Id_Refresh("globalPropertySearch");
             REOTasks.AssetMGRTasks();
             Logout.REO();
             Global.ConsoleOut("Run Amp Order Sync");
-            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(ENV.QA, "QATest25@usres.com", "blue123");
             Agent.OpenREOTasks("BPO task"); REOBPO.BPOtask();
             Agent.OpenREOTasks("BPO Pictures"); REOBPO.BPOPictures();
             Logout.Agent();

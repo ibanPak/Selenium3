@@ -15,7 +15,7 @@ namespace Selenium3
     class REO
     {
 
-        public static void AddNewProperty(string StreetName)
+        public static void AddNewProperty(string streetname, string city, string state, string zipcode)
         {
             // Properties - Add New Property
             SeleniumSetMethods.Wait(ElementType.LinkText, "Properties");
@@ -75,14 +75,14 @@ namespace Selenium3
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame("externalSite");
             
-            Global.StreetAddress = (Global.StreetNum + " " + StreetName);
+            Global.StreetAddress = (Global.StreetNum + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Name, "paPropAddr");
             SeleniumSetMethods.EnterText(ElementType.Name, "paPropAddr", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Name, "paPropCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Name, "paPropState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Name, "paPropZip", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropCity", city);
+            SeleniumSetMethods.SelectDropDown(ElementType.Name, "paPropState", state);
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropZip", zipcode);
 
             // Loan Information
             SeleniumSetMethods.EnterText(ElementType.Name, "Loan_Number", Global.LoanNum);
@@ -139,11 +139,13 @@ namespace Selenium3
 
         public static void AddAgent()
         {
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Dashboard");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Dashboard");
             SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
             SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
-            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearchSubmit");
+            SeleniumSetMethods.Click(ElementType.Id, "globalPropertySearchSubmit");
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
 

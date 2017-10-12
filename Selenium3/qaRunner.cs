@@ -17,10 +17,12 @@ namespace Selenium3
 
         public static void REOFlowOrg1()
         {
+
+            // Global.OrderID = "858296";
+            // Global.StreetAddress = "1012 Lawnwood";
             // REO Flow Org1
             Login.REO(ENV.QA, "Yeshh1", "Yeshh1");
-            IfExists.Id_Refresh("globalPropertySearch");
-            REO.AddNewProperty("Irvine");
+            REO.AddNewProperty("Lawnwood", "Irvine", "California", "92620");
             REO.AddAgent();
             REO.PreMarket();
             Logout.REO();
