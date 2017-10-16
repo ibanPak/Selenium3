@@ -17,7 +17,6 @@ namespace Selenium3
 
         public static void REOFlowOrg1()
         {
-
             // Global.OrderID = "858296";
             // Global.StreetAddress = "1012 Lawnwood";
             // REO Flow Org1
@@ -49,6 +48,7 @@ namespace Selenium3
         public static void RAFlow1Org1()
         {
             // Global.OrderID = "30584";
+            // Global.StreetAddress = "1012 Lawnwood";
             // Rental Analysis Org1
             Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
@@ -70,6 +70,7 @@ namespace Selenium3
         public static void RAFlow1Org3()
         {
             // Global.OrderID = "30584";
+            // Global.StreetAddress = "1012 Lawnwood";
             // Rental Analysis Org3
             Login.ValPortal(ENV.QA,"test3", "P@ssw0rd4");
             ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
@@ -90,6 +91,7 @@ namespace Selenium3
         public static void Unified53Org1()
         {
             //Global.OrderID = "30590";
+            // Global.StreetAddress = "1012 Lawnwood";
             // QA Org 1 Unified53Org1
             Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
@@ -111,6 +113,7 @@ namespace Selenium3
         public static void PNMACFlow1Org1()
         {
             // Global.OrderID = "30584";
+            // Global.StreetAddress = "1012 Lawnwood";
             // PNMAC BPO Org1
             Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
@@ -121,6 +124,7 @@ namespace Selenium3
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             PNMACBPO.CompleteBPO();
+            PNMACBPO.qaPNMACAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteBPOOrder(Global.OrderID);
@@ -131,6 +135,7 @@ namespace Selenium3
         public static void FMBFlow1Org1()
         {
             // Global.OrderID = "30584";
+            // Global.StreetAddress = "1012 Lawnwood";
             // FMB BPO Org1
             Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
@@ -146,11 +151,17 @@ namespace Selenium3
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
+            ValPortal.DisputeOrder(Global.OrderID);
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
+            Agent.OpenBPO();
 
         }
+
         public static void AppraisalOrg1()
         {
             // Global.OrderID = "30584";
+            // Global.StreetAddress = "1012 Lawnwood";
             // Appraisal Org1
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             ValPortal.CreateNewAppraisal("acme", "Appraisal", "2055 Exterior Residential", "Encore", "Irvine", "California", "92620");

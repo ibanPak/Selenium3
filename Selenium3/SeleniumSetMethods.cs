@@ -166,14 +166,6 @@ namespace Selenium3
             }
         }
 
-        public static void AlertWait()
-        {
-            WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-            wait.Until(ExpectedConditions.AlertIsPresent());
-
-
-        }
-
         public static void Find(ElementType elementtype, string element)
         {
             if (elementtype == ElementType.Id)

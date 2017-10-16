@@ -772,7 +772,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(ElementType.Id, "BrokenRuleComments_QuickSaleValueComment");
@@ -780,9 +780,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_AsIsValueComment", "Comment here 2");
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
-            //SeleniumSetMethods.AlertWait();
-            //SeleniumWindowMethods.Assertion(Alert.Accept);
-            //SeleniumWindowMethods.Sleep(5);
 
         }
 
@@ -823,7 +820,7 @@ namespace Selenium3
             SeleniumSetMethods.Clear(ElementType.Id, "12_1_fileupload");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(ElementType.Id, "12_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();            
+            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Clear(ElementType.Id, "28_fileupload");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
@@ -835,7 +832,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(ElementType.Id, "BrokenRuleComments_QuickSaleValueComment");
@@ -843,14 +840,9 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_AsIsValueComment", "Comment here 2");
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
-       /*     SeleniumSetMethods.AlertWait();
-            SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(5);  */
 
         }
 
-
     }
-
 
 }

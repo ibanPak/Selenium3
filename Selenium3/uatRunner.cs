@@ -47,9 +47,10 @@ namespace Selenium3
 
         public static void RAFlow1Org1()
         {
+            Global.ThrottleSleep = 3 * (100);
             // UAT Org 1 RAFlow1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); ;
-            ValPortal.CreateNewRentalAnalysis("Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
+            ValPortal.CreateNewRentalAnalysis("Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Trabuco", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
@@ -85,46 +86,66 @@ namespace Selenium3
 
         public static void PNMACFlow1Org1()
         {
+            // Global.OrderID = "8311";
+            // Global.StreetAddress = "1013 Great Lawn";
             // PNMAC BPO Org1
+            Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CreateNEWPNMAC("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Roosevelt", "Irvine", "California", "92620");
+            ValPortal.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Lamplighter", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             PNMACBPO.CompleteBPO();
+            PNMACBPO.uatPNMACAttachments();
             Logout.Agent();
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
-
         }
 
         public static void FMBFlow1Org1()
         {
+            //Global.OrderID = "8343";
+            //Global.StreetAddress = "1016 Encore";
             // FMB BPO Org1
+            Global.ThrottleSleep = 2 * (1000);
+            ////////////////////////////////////
+            //  Comment Below:
+            ////////////////////////////////////
+
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CreateNewFMBBPO("ACME Inc", "BPO", "Exterior", "Viola", "Irvine", "California", "92620");
+            ValPortal.CreateNewFMBBPO("ACME Inc", "BPO", "Exterior", "Rush Lily", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign(Global.OrderID, "250418");
-            Logout.ValPortal();  
+            Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Agent.AcceptScheduleAppointment();
             Agent.OpenBPO();
             FMBBPO.FMB();
             FMBBPO.uatFMBAttachments();
-            Logout.Agent();  
+            Logout.Agent();
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();
-
+            Login.ValPortal(ENV.UAT, "bryan", "qatest10");
+            ValPortal.DisputeOrder(Global.OrderID);
+            ValPortal.ReturnToProvider(Global.OrderID);
+            Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
+            Agent.OpenBPO();
+            Agent.SendToClient();
+            Logout.Agent();
+            Login.ValPortal(ENV.UAT, "bryan", "qatest10");
+            ValPortal.CompleteBPOOrder(Global.OrderID);
         }
 
         public static void Unified53Org1()
         {
+            //Global.OrderID = "30590";
+            Global.ThrottleSleep = 3 * (100);
             // UAT Org 1 RAFlow1
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); 
-            ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Meadowood", "Irvine", "California", "92620");
+            ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Ridge Valley", "Irvine", "California", "92620");
             ValPortal.ManualProviderAssign(Global.OrderID, "250418");
             Logout.ValPortal();
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
@@ -132,7 +153,7 @@ namespace Selenium3
             Agent.OpenBPO();
             Unified53BPO.U53Order();
             Unified53BPO.uatAttachments();
-            Logout.Agent();  
+            Logout.Agent();
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             ValPortal.CompleteBPOOrder(Global.OrderID);
             Logout.ValPortal();

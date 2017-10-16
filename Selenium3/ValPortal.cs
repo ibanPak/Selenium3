@@ -291,7 +291,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
@@ -299,7 +299,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
@@ -328,14 +328,14 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
             SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
             SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
@@ -367,7 +367,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
@@ -384,6 +384,39 @@ namespace Selenium3
         
         }
 
-    }
+        public static void DisputeOrder(string orderid)
+        {
+            GotoOrder(orderid);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "lnkDisputeTab");
+            SeleniumSetMethods.Click(ElementType.Id, "lnkDisputeTab");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Dispute Order");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Dispute Order");
+            SeleniumSetMethods.Wait(ElementType.Id, "comment");
+            SeleniumSetMethods.EnterText(ElementType.Id, "comment", "Correction is required");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "ul.chosen-choices");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "ul.chosen-choices");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#Reason_LookupIds_chosen > div > ul > li:nth-child(4)");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSubmitModal");
+            SeleniumWindowMethods.Sleep(3);
+
+        }
+
+        public static void ReturnToProvider(string orderid)
+        {
+            GotoOrder(orderid);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return to Provider");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Return to Provider");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "selReason", "Incomplete Information");
+            SeleniumSetMethods.EnterText(ElementType.Id, "txaComment", "Testing Return to Provider " + DateTime.Now.ToString());
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumWindowMethods.Sleep(3);
+
+        }
+
+}
 
 }

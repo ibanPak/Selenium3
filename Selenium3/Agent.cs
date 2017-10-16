@@ -178,6 +178,12 @@ namespace Selenium3
 
         }
 
+       public static void SendToClient()
+        {
+            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
+            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
+        }
+
     }
 
 }

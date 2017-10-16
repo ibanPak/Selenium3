@@ -55,7 +55,8 @@ namespace Selenium3
     enum Alert
     {
         Accept,
-        Dismiss
+        Dismiss,
+        Wait
 
     }
 
