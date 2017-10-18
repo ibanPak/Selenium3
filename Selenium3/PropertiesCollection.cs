@@ -70,4 +70,14 @@ namespace Selenium3
         
     }
 
+    // Strongly Typed Variable
+    enum Portals
+    {
+        ValPortal,
+        Agent,
+        Vendor,
+        REO,
+        PropertyCure
+
+    }
 }

@@ -68,11 +68,15 @@ namespace Selenium3
 
             if (alert == Alert.Dismiss)
                 PropertiesCollection.driver2.SwitchTo().Alert().Dismiss();
+            if (alert == Alert.Wait)
+            {
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
+                wait.Until(ExpectedConditions.AlertIsPresent());
+
+            }
 
         }
 
-
     }
-
 
 }

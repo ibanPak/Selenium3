@@ -22,7 +22,7 @@ namespace Selenium3
             PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             SeleniumWindowMethods.Sleep(3);
             PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
-            Logout.PropertyCure();
+            Logout.Portal(Portals.PropertyCure);
         }
 
         public static void PCFlow1()
@@ -40,7 +40,7 @@ namespace Selenium3
             PropertyCure.AddNewPropertyRegistration(Global.PropteryID, "George Washington (DollarBill)");
             PropertyCure.AddNewNote(Global.PropteryID);
             PropertyCure.FileUpload(Global.PropteryID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-            Logout.PropertyCure();
+            Logout.Portal(Portals.PropertyCure);
 
         }
 

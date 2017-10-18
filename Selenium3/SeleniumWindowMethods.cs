@@ -74,6 +74,7 @@ namespace Selenium3
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
                 wait.Until(ExpectedConditions.AlertIsPresent());
+
             }
 
         }

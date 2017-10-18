@@ -393,12 +393,12 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Dispute Order");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Dispute Order");
             SeleniumSetMethods.Wait(ElementType.Id, "comment");
-            SeleniumSetMethods.EnterText(ElementType.Id, "comment", "Correction is required");
+            SeleniumSetMethods.EnterText(ElementType.Id, "comment", "testing");
             SeleniumSetMethods.Wait(ElementType.CssSelector, "ul.chosen-choices");
             SeleniumSetMethods.Click(ElementType.CssSelector, "ul.chosen-choices");
             SeleniumSetMethods.Click(ElementType.CssSelector, "#Reason_LookupIds_chosen > div > ul > li:nth-child(4)");
             SeleniumSetMethods.Click(ElementType.Id, "btnSubmitModal");
-            SeleniumWindowMethods.Sleep(3);
+            SeleniumWindowMethods.Sleep(1);
 
         }
 
@@ -417,6 +417,6 @@ namespace Selenium3
 
         }
 
-}
+    }
 
 }

@@ -540,7 +540,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
-           SeleniumWindowMethods.Assertion(Alert.Wait);
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
@@ -598,7 +598,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
-           SeleniumWindowMethods.Assertion(Alert.Wait);
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");

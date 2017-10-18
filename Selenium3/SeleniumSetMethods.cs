@@ -15,14 +15,12 @@ namespace Selenium3
     class SeleniumSetMethods
     {
 
-
         // Navigate to URL
         public static void Navigate(string URL)
         {
             PropertiesCollection.driver.Navigate().GoToUrl(URL);
 
         }
-
 
         // Enter Text
         public static void EnterText(ElementType elementtype, string element, string value)
@@ -68,7 +66,6 @@ namespace Selenium3
 
         }
 
-
         // Select a drop down control
         public static void SelectDropDown(ElementType elementtype, string element, string value)
         {
@@ -82,7 +79,6 @@ namespace Selenium3
                 new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
 
         }
-
 
         // Webdriver Wait
         public static void Wait(ElementType elementtype, string element)
@@ -123,9 +119,7 @@ namespace Selenium3
                 wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
             }
 
-
         }
-
 
         public static void WaitMinutes(ElementType elementtype, string element, int minutes)
         {
