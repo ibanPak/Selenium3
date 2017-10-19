@@ -31,15 +31,15 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(3);
             Login.PropertyCure(ENV.STG, "ibenPn", "Green!23");
             PropertyCure.AddNewProperty("Encore", "Irvine", "California", "92620", "CSFB 2");
-            PropertyCure.AddNewViolation(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewUtility(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewOTABid(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewSE(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewInspection(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewHazardClaim(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewPropertyRegistration(Global.PropteryID, "George Washington (DollarBill)");
-            PropertyCure.AddNewNote(Global.PropteryID);
-            PropertyCure.FileUpload(Global.PropteryID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            PropertyCure.AddNewViolation(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewUtility(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewOTABid(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewSE(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewInspection(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewHazardClaim(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewPropertyRegistration(Global.PropertyID, "George Washington (DollarBill)");
+            PropertyCure.AddNewNote(Global.PropertyID);
+            PropertyCure.FileUpload(Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             Logout.Portal(Portals.PropertyCure);
 
         }

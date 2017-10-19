@@ -95,14 +95,12 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "FollowUpDate", Global.NextMonth);
             SeleniumSetMethods.Click(ElementType.Id, "IsOccupied_0");
             SeleniumSetMethods.Click(ElementType.Id, "IsBankruptcyActive_0");
-
             SeleniumSetMethods.Click(ElementType.Id, "btnPropAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b");
-            Global.PropteryID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
+            Global.PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
                 "#page > span > b").Replace("Property ID", "").TrimStart();
-            Global.ConsoleOut("Property ID: " + Global.PropteryID + " Successfully Created");
+            Global.ConsoleOut("Property ID: " + Global.PropertyID + " Successfully Created");
 
             // Adding Property Details
             SeleniumWindowMethods.Sleep(2);
@@ -142,8 +140,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "ValuationOrderedDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "CondemnedDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "InitialSecureDate", Global.MMddyyDate);
-
-            SeleniumSetMethods.Click(ElementType.Id, "btnUpdateTabBody" + Global.PropteryID);
+            SeleniumSetMethods.Click(ElementType.Id, "btnUpdateTabBody" + Global.PropertyID);
 
         }
 
@@ -193,9 +190,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "AttorneyZip", "92620");
             SeleniumSetMethods.EnterText(ElementType.Id, "AttorneyEmail", "Attorney@Email.com");
             SeleniumSetMethods.EnterText(ElementType.Id, "AttorneyPhone", "949-111-4321");
-            
             SeleniumSetMethods.EnterText(ElementType.Id, "AttorneyFax", "949-111-4321");
-            
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[8]");
             SeleniumSetMethods.Click(ElementType.LinkText, "Borrower");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "ResponsibilityLkUp", "Borrower");
@@ -203,7 +198,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[7]");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Select All");
             SeleniumSetMethods.Click(ElementType.Id, "FnmaServicingError_0");
-
             SeleniumWindowMethods.Sleep(2);
             
             // Adding Dates
@@ -219,7 +213,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "EscalationFormCompletedDate", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Click(ElementType.Id, "btnViolAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -231,8 +224,8 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.Id, "btnUpdateTabHead");
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdateTabHead");
             SeleniumSetMethods.Wait(ElementType.Id, "ViolationReason");
-            SeleniumSetMethods.EnterText(ElementType.Id, "ViolationReason", Global.PropteryID + " Violation Reason");
-            SeleniumSetMethods.EnterText(ElementType.Id, "WorkOrderNumber", Global.PropteryID + " Work Order Number");
+            SeleniumSetMethods.EnterText(ElementType.Id, "ViolationReason", Global.PropertyID + " Violation Reason");
+            SeleniumSetMethods.EnterText(ElementType.Id, "WorkOrderNumber", Global.PropertyID + " Work Order Number");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "ViolationLevelLkUp", "1");
             SeleniumSetMethods.EnterText(ElementType.Id, "ViolationDays", Global.StreetNum);
             SeleniumSetMethods.EnterText(ElementType.Id, "OriginalViolationDate", Global.MMddyyDate);
@@ -282,7 +275,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "FollowUpDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "GoalDate", Global.MMddyyDate);
             SeleniumSetMethods.Click(ElementType.Id, "btnUtilAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -341,7 +333,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "GoalDate", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Click(ElementType.Id, "btnOtaBidAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -390,7 +381,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "GoalDate", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Click(ElementType.Id, "btnSEAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -470,10 +460,8 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "InspectionCompletedDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "PropertyAbandonedDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "TransfertoVendorDate", Global.MMddyyDate);
-
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Click(ElementType.Id, "btnInspAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -513,7 +501,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "DamageIdentifiedDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "RekeyOrderDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "RekeyedDate", Global.MMddyyDate);
-
             SeleniumSetMethods.Click(ElementType.Id, "btnUpdatePreservation");
 
             // Sale/Rent Info
@@ -587,9 +574,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "FollowUpDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "GoalDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "ProceedsRcvdDate", Global.MMddyyDate);
-
             SeleniumSetMethods.Click(ElementType.Id, "btnHazClaimAdd");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -647,9 +632,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Name, "FollowUpDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "GoalDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(ElementType.Name, "RenewalDate", Global.MMddyyDate);
-
             SeleniumSetMethods.Click(ElementType.Id, "btnAddPropReg");
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
@@ -676,7 +659,6 @@ namespace Selenium3
             SeleniumSetMethods.Wait(ElementType.Id, "taNoteDetail");
             SeleniumSetMethods.EnterText(ElementType.Id, "taNoteDetail", "Adding a Note to the Notes Section");
             SeleniumSetMethods.Click(ElementType.LinkText, "Save");
-
             Global.UniversalID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
                "#page > span > b").TrimStart();
             Global.ConsoleOut("Note for : " + Global.UniversalID + " Successfully Created");
@@ -701,8 +683,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.CssSelector, "div.ui-dialog-buttonset > #btnUpload");
             SeleniumSetMethods.Wait(ElementType.Id, "btnAlertOk");
             SeleniumSetMethods.Click(ElementType.Id, "btnAlertOk");
-
-            Global.PropteryID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
+            Global.PropertyID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector,
               "#page > span > b").TrimStart();
             Global.ConsoleOut("File Upload for : " + Global.UniversalID + " Successfully Created");
 
