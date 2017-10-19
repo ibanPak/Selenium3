@@ -13,7 +13,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class PNMACBPO
+    class Form_PNMACBPO
     {
 
         public static void CompleteBPO()

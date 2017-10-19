@@ -55,25 +55,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agent.cs" />
-    <Compile Include="AutoFill.cs" />
-    <Compile Include="Buyer.cs" />
+    <Compile Include="Portal_Agent.cs" />
+    <Compile Include="Portal_Buyer.cs" />
     <Compile Include="Endurance.cs" />
     <Compile Include="ConsoleWindow.cs" />
-    <Compile Include="FMBBPO.cs" />
+    <Compile Include="Form_FMBBPO.cs" />
     <Compile Include="IfExists.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Logout.cs" />
-    <Compile Include="PNMACBPO.cs" />
+    <Compile Include="Form_PNMACBPO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyCure.cs" />
-    <Compile Include="RentalAnalysis.cs" />
-    <Compile Include="REO.cs" />
-    <Compile Include="REOBPO.cs" />
-    <Compile Include="REOTasks.cs" />
-    <Compile Include="qaRunner.cs" />
+    <Compile Include="Portal_PropertyCure.cs" />
+    <Compile Include="Form_RentalAnalysis.cs" />
+    <Compile Include="Portal_REO.cs" />
+    <Compile Include="Form_REOBPO.cs" />
+    <Compile Include="Form_REOTasks.cs" />
+    <Compile Include="Runner_QA.cs" />
     <Compile Include="SeleniumGetMethods2.cs" />
     <Compile Include="SeleniumGetMethods.cs" />
     <Compile Include="SeleniumSetMethods.cs" />
@@ -81,11 +80,11 @@
     <Compile Include="SeleniumWindowMethods2.cs" />
     <Compile Include="SeleniumWindowMethods.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="stgRunner.cs" />
-    <Compile Include="uatRunner.cs" />
-    <Compile Include="Unified53BPO.cs" />
-    <Compile Include="ValPortal.cs" />
-    <Compile Include="Vendor.cs" />
+    <Compile Include="Runner_STG.cs" />
+    <Compile Include="Runner_UAT.cs" />
+    <Compile Include="Form_Unified53BPO.cs" />
+    <Compile Include="Portal_Val.cs" />
+    <Compile Include="Portal_Vendor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

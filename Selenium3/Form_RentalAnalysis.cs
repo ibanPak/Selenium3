@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Selenium3
 {
-    class RentalAnalysis
+    class Form_RentalAnalysis
     {
 
         public static void CompleteRentalAnalysis()

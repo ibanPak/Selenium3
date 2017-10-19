@@ -12,7 +12,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class REO
+    class Portal_REO
     {
 
         public static void AddNewProperty(string streetname, string city, string state, string zipcode)

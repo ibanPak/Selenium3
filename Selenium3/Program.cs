@@ -20,9 +20,7 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            uatRunner.FMBFlow1Org1();
-
-            //Logout.Portal(Portals.Agent);
+            Runner_UAT.FMBFlow1Org1();
 
             Global.Cooldown();
             //Global.Done();

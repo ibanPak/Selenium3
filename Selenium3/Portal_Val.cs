@@ -12,7 +12,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class ValPortal
+    class Portal_Val
     {
 
         public static void GotoOrder(string OrderId)

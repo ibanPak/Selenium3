@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Selenium3
 {
-    class Vendor
+    class Portal_Vendor
     {
         public static void AcceptScheduleAppointment()
         {

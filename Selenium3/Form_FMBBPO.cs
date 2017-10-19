@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Selenium3
 {
-    class FMBBPO
+    class Form_FMBBPO
     {
         public static void FMB()
         {

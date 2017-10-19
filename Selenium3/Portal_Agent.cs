@@ -12,7 +12,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class Agent
+    class Portal_Agent
     {
         public static void AcceptScheduleAppointment()
         {

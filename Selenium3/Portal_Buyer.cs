@@ -13,7 +13,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class Buyer
+    class Portal_Buyer
     {
 
         public static void Search()

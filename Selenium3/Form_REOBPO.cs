@@ -13,7 +13,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class REOBPO
+    class Form_REOBPO
     {
 
         public static void BPOtask()

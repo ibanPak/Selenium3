@@ -13,7 +13,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class PropertyCure
+    class Portal_PropertyCure
     {
 
         public static void AddNewUser(string FirstName, string LastName, string Username, string Email, string Password)

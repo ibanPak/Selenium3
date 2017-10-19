@@ -12,7 +12,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class uatRunner
+    class Runner_UAT
     {
 
         public static void REOFlowOrg1()
@@ -26,26 +26,26 @@ namespace Selenium3
             /*                                                  */
 
             Login.REO(ENV.UAT, "prodkath2", "qatest10");
-            REO.AddNewProperty("Lawnwood", "Irvine", "California", "92620");
-            REO.AddAgent();
-            REO.PreMarket();
+            Portal_REO.AddNewProperty("Lawnwood", "Irvine", "California", "92620");
+            Portal_REO.AddAgent();
+            Portal_REO.PreMarket();
             Logout.Portal(Portals.REO);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.OpenREOTasks("Winterization"); REOTasks.Winterization("iben");
-            Agent.OpenREOTasks("Occupancy Status Task"); REOTasks.OccupancyStatusTask();
-            Agent.OpenREOTasks("Tax Research Task"); REOTasks.TaxResearchTask();
-            Agent.OpenREOTasks("Referral Agreement"); REOTasks.ReferralFeeAgreement("iben");
-            Agent.OpenREOTasks("HOA information task"); REOTasks.HOAInformation();
-            Agent.OpenREOTasks("Listing Addendum"); REOTasks.ListingAddendum("iben");
+            Portal_Agent.OpenREOTasks("Winterization"); Form_REOTasks.Winterization("iben");
+            Portal_Agent.OpenREOTasks("Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask();
+            Portal_Agent.OpenREOTasks("Tax Research Task"); Form_REOTasks.TaxResearchTask();
+            Portal_Agent.OpenREOTasks("Referral Agreement"); Form_REOTasks.ReferralFeeAgreement("iben");
+            Portal_Agent.OpenREOTasks("HOA information task"); Form_REOTasks.HOAInformation();
+            Portal_Agent.OpenREOTasks("Listing Addendum"); Form_REOTasks.ListingAddendum("iben");
             Logout.Portal(Portals.Agent);
             Login.REO(ENV.UAT, "prodkath2", "qatest10");
             IfExists.Id_Refresh("globalPropertySearch");
-            REOTasks.AssetMGRTasks();
+            Form_REOTasks.AssetMGRTasks();
             Logout.Portal(Portals.REO);
             Global.ConsoleOut("Run Amp Order Sync");
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.OpenREOTasks("BPO task"); REOBPO.BPOtask();
-            Agent.OpenREOTasks("BPO Pictures"); REOBPO.BPOPictures();
+            Portal_Agent.OpenREOTasks("BPO task"); Form_REOBPO.BPOtask();
+            Portal_Agent.OpenREOTasks("BPO Pictures"); Form_REOBPO.BPOPictures();
             Logout.Portal(Portals.Agent);
 
         }
@@ -61,17 +61,17 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); ;
-            ValPortal.CreateNewRentalAnalysis("Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Trabuco", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
+            Portal_Val.CreateNewRentalAnalysis("Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Trabuco", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(Global.OrderID, "250418");
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.AcceptScheduleAppointment();
-            Agent.OpenRentalAnalysis();
-            RentalAnalysis.CompleteRentalAnalysis();
-            RentalAnalysis.uatAttachments();
+            Portal_Agent.AcceptScheduleAppointment();
+            Portal_Agent.OpenRentalAnalysis();
+            Form_RentalAnalysis.CompleteRentalAnalysis();
+            Form_RentalAnalysis.uatAttachments();
             Logout.Portal(Portals.Agent); 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteRAOrder(Global.OrderID);
+            Portal_Val.CompleteRAOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
 
         }
@@ -87,17 +87,17 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
+            Portal_Val.CreateNewRentalAnalysis("Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(Global.OrderID, "250418");
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.AcceptScheduleAppointment();
-            Agent.OpenRentalAnalysis();
-            RentalAnalysis.CompleteRentalAnalysis();
-            RentalAnalysis.uatAttachments();
+            Portal_Agent.AcceptScheduleAppointment();
+            Portal_Agent.OpenRentalAnalysis();
+            Form_RentalAnalysis.CompleteRentalAnalysis();
+            Form_RentalAnalysis.uatAttachments();
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteRAOrder(Global.OrderID);
+            Portal_Val.CompleteRAOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
 
         }
@@ -114,17 +114,17 @@ namespace Selenium3
 
             Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Lamplighter", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
+            Portal_Val.CreateNEWPNMAC("PNMAC", "BPO", "Exterior", "Lamplighter", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(Global.OrderID, "250418");
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.AcceptScheduleAppointment();
-            Agent.OpenBPO();
-            PNMACBPO.CompleteBPO();
-            PNMACBPO.uatPNMACAttachments();
+            Portal_Agent.AcceptScheduleAppointment();
+            Portal_Agent.OpenBPO();
+            Form_PNMACBPO.CompleteBPO();
+            Form_PNMACBPO.uatPNMACAttachments();
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder(Global.OrderID);
+            Portal_Val.CompleteBPOOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
 
         }
@@ -140,30 +140,30 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CreateNewFMBBPO("ACME Inc", "BPO", "Exterior", "Rose Arch", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
+            Portal_Val.CreateNewFMBBPO("ACME Inc", "BPO", "Exterior", "Rose Arch", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(Global.OrderID, "250418");
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.AcceptScheduleAppointment();
-            Agent.OpenBPO();
-            FMBBPO.FMB();
-            FMBBPO.uatFMBAttachments();
+            Portal_Agent.AcceptScheduleAppointment();
+            Portal_Agent.OpenBPO();
+            Form_FMBBPO.FMB();
+            Form_FMBBPO.uatFMBAttachments();
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder(Global.OrderID);
+            Portal_Val.CompleteBPOOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.DisputeOrder(Global.OrderID);
+            Portal_Val.DisputeOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.ReturnToProvider(Global.OrderID);
+            Portal_Val.ReturnToProvider(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.OpenBPO();
-            Agent.SendToClient();
+            Portal_Agent.OpenBPO();
+            Portal_Agent.SendToClient();
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder(Global.OrderID);
+            Portal_Val.CompleteBPOOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
 
         }
@@ -179,17 +179,17 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); 
-            ValPortal.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Ridge Valley", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign(Global.OrderID, "250418");
+            Portal_Val.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Ridge Valley", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(Global.OrderID, "250418");
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
-            Agent.AcceptScheduleAppointment();
-            Agent.OpenBPO();
-            Unified53BPO.U53Order();
-            Unified53BPO.uatAttachments();
+            Portal_Agent.AcceptScheduleAppointment();
+            Portal_Agent.OpenBPO();
+            Form_Unified53BPO.U53Order();
+            Form_Unified53BPO.uatAttachments();
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteBPOOrder(Global.OrderID);
+            Portal_Val.CompleteBPOOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
 
         }
@@ -205,15 +205,15 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CreateNewAppraisal("ACME Inc", "Appraisal", "1004 Interior Residential", "Dublin", "Irvine", "California", "92620");
-            ValPortal.ManualProviderAssign(Global.OrderID, "30005");
+            Portal_Val.CreateNewAppraisal("ACME Inc", "Appraisal", "1004 Interior Residential", "Dublin", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(Global.OrderID, "30005");
             Logout.Portal(Portals.ValPortal);
             Login.Vendor(ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");
-            Vendor.AcceptScheduleAppointment();
-            Vendor.UploadAppraisal();
+            Portal_Vendor.AcceptScheduleAppointment();
+            Portal_Vendor.UploadAppraisal();
             Logout.Portal(Portals.Vendor);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
-            ValPortal.CompleteAppraisal(Global.OrderID);
+            Portal_Val.CompleteAppraisal(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
 
         }
@@ -223,9 +223,9 @@ namespace Selenium3
             // Adding Default Users
             SeleniumWindowMethods.Sleep(3);
             Login.PropertyCure(ENV.UAT, "ditechadmin", "Pwd12345678!");
-            PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
+            Portal_PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             SeleniumWindowMethods.Sleep(3);
-            PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
+            Portal_PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
             Logout.Portal(Portals.PropertyCure);
         }
 
@@ -233,16 +233,16 @@ namespace Selenium3
         {
             // Property Cure Regresssion Flow 1
             Login.PropertyCure(ENV.UAT, "ibenPn", "Green!23");
-            PropertyCure.AddNewProperty("Roosevelt", "Irvine", "California", "92620", "CSFB 2");
-            PropertyCure.AddNewViolation(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewUtility(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewOTABid(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewSE(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewInspection(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewHazardClaim(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewPropertyRegistration(Global.PropertyID, "George Washington (DollarBill)");
-            PropertyCure.AddNewNote(Global.PropertyID);
-            PropertyCure.FileUpload(Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            Portal_PropertyCure.AddNewProperty("Roosevelt", "Irvine", "California", "92620", "CSFB 2");
+            Portal_PropertyCure.AddNewViolation(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewUtility(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewOTABid(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewSE(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewInspection(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewHazardClaim(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewPropertyRegistration(Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewNote(Global.PropertyID);
+            Portal_PropertyCure.FileUpload(Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             Logout.Portal(Portals.PropertyCure);
 
         }
