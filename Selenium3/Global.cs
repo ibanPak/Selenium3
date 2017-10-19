@@ -29,7 +29,6 @@ namespace Selenium3
         public static string Value = "0";
         public static string StreetAddress = "0";
         public static int ThrottleSleep = 2*(1000);
-
         public static DateTime StartDT;
         public static DateTime EndDT;
 

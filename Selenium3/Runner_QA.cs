@@ -69,7 +69,7 @@ namespace Selenium3
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenRentalAnalysis();
             Form_RentalAnalysis.CompleteRentalAnalysis();
-            Form_RentalAnalysis.qaAttachments();
+            Form_RentalAnalysis.Attachments(ENV.QA);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteRAOrder(Global.OrderID);
@@ -95,7 +95,7 @@ namespace Selenium3
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenRentalAnalysis();
             Form_RentalAnalysis.CompleteRentalAnalysis();
-            Form_RentalAnalysis.qaAttachments();
+            Form_RentalAnalysis.Attachments(ENV.QA);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.QA,"test3", "P@ssw0rd4");
             Portal_Val.CompleteRAOrder(Global.OrderID);
@@ -121,8 +121,8 @@ namespace Selenium3
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenBPO();
-            Form_Unified53BPO.U53Order();
-            Form_Unified53BPO.qaAttachments();
+            Form_Unified53BPO.CompleteBPO();
+            Form_Unified53BPO.Attachments(ENV.QA);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteBPOOrder(Global.OrderID);
@@ -149,7 +149,7 @@ namespace Selenium3
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenBPO();
             Form_PNMACBPO.CompleteBPO();
-            Form_PNMACBPO.qaPNMACAttachments();
+            Form_PNMACBPO.Attachments(ENV.QA);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteBPOOrder(Global.OrderID);
@@ -174,17 +174,25 @@ namespace Selenium3
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenBPO();
-            Form_FMBBPO.FMB();
-            Form_FMBBPO.qaFMBAttachments();
+            Form_FMBBPO.CompletBPO();
+            Form_FMBBPO.Attachments(ENV.QA);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteBPOOrder(Global.OrderID);
             Logout.Portal(Portals.ValPortal);
             Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.DisputeOrder(Global.OrderID);
+            Logout.Portal(Portals.ValPortal);
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
+            Portal_Val.ReturnToProvider(Global.OrderID);
+            Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.OpenBPO();
-
+            Portal_Agent.SendToClient();
+            Logout.Portal(Portals.Agent);
+            Login.ValPortal(ENV.QA, "test", "P@ssw0rd1");
+            Portal_Val.CompleteBPOOrder(Global.OrderID);
+            Logout.Portal(Portals.ValPortal);
         }
 
         public static void AppraisalOrg1()

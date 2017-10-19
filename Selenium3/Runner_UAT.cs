@@ -68,7 +68,7 @@ namespace Selenium3
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenRentalAnalysis();
             Form_RentalAnalysis.CompleteRentalAnalysis();
-            Form_RentalAnalysis.uatAttachments();
+            Form_RentalAnalysis.Attachments(ENV.UAT);
             Logout.Portal(Portals.Agent); 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             Portal_Val.CompleteRAOrder(Global.OrderID);
@@ -94,7 +94,7 @@ namespace Selenium3
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenRentalAnalysis();
             Form_RentalAnalysis.CompleteRentalAnalysis();
-            Form_RentalAnalysis.uatAttachments();
+            Form_RentalAnalysis.Attachments(ENV.UAT);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             Portal_Val.CompleteRAOrder(Global.OrderID);
@@ -121,7 +121,7 @@ namespace Selenium3
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenBPO();
             Form_PNMACBPO.CompleteBPO();
-            Form_PNMACBPO.uatPNMACAttachments();
+            Form_PNMACBPO.Attachments(ENV.UAT);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             Portal_Val.CompleteBPOOrder(Global.OrderID);
@@ -146,8 +146,8 @@ namespace Selenium3
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenBPO();
-            Form_FMBBPO.FMB();
-            Form_FMBBPO.uatFMBAttachments();
+            Form_FMBBPO.CompletBPO();
+            Form_FMBBPO.Attachments(ENV.UAT);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             Portal_Val.CompleteBPOOrder(Global.OrderID);
@@ -185,8 +185,8 @@ namespace Selenium3
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment();
             Portal_Agent.OpenBPO();
-            Form_Unified53BPO.U53Order();
-            Form_Unified53BPO.uatAttachments();
+            Form_Unified53BPO.CompleteBPO();
+            Form_Unified53BPO.Attachments(ENV.UAT);
             Logout.Portal(Portals.Agent);
             Login.ValPortal(ENV.UAT, "bryan", "qatest10");
             Portal_Val.CompleteBPOOrder(Global.OrderID);

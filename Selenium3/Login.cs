@@ -16,7 +16,7 @@ namespace Selenium3
     class Login
     {
 
-        public static void REO(ENV portal, string username, string password)
+        public static void REO(ENV environment, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -27,13 +27,13 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.QA)
                         SeleniumSetMethods.Navigate("https://qa-reo2.res.net/");
-                    if (portal == ENV.UAT)
+                    if (environment == ENV.UAT)
                         SeleniumSetMethods.Navigate("https://uat-reo2.res.net/");
-                    if (portal == ENV.STG)
+                    if (environment == ENV.STG)
                         SeleniumSetMethods.Navigate("https://stg-reo2.res.net/");
-                    if (portal == ENV.PROD)
+                    if (environment == ENV.PROD)
                         SeleniumSetMethods.Navigate("https://reo2.res.net/");
 
                     // Login Page

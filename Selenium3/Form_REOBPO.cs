@@ -218,6 +218,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Return");
+
         }
 
     }

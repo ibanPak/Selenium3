@@ -490,53 +490,111 @@ namespace Selenium3
 
         }
 
-        public static void qaPNMACAttachments()
+        public static void Attachments(ENV environment)
         {
-            // Add images
-            SeleniumSetMethods.Clear(ElementType.Id, "190_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "190_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "192_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "192_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "193_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "193_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "197_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "197_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "198_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "198_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "199_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "199_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "200_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "200_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "201_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "201_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "202_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "202_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "16_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "16_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "27_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-            SeleniumWindowMethods.ThrottlingSleep();
+
+            // Add Exterior Attachments to U53 Order
+            Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
+
+            if (environment == ENV.QA)
+            {
+                SeleniumSetMethods.Clear(ElementType.Id, "190_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "190_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "192_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "192_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "193_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "193_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "197_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "197_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "198_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "198_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "199_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "199_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "200_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "200_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "201_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "201_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "202_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "202_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "16_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "16_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "27_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+                
+            }
+
+            else if (environment == ENV.UAT)
+            {
+                SeleniumSetMethods.Clear(ElementType.Id, "175_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "175_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "177_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "177_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "178_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "178_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "182_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "182_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "183_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "183_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "184_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "184_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "185_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "185_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "186_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "186_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "187_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "187_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "28_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(ElementType.Id, "productUpload_117_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(ElementType.Id, "productUpload_117_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+               
+            }
+
+            // Complete Attachment Section
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
@@ -548,63 +606,6 @@ namespace Selenium3
 
         }
 
-        public static void uatPNMACAttachments()
-        {
-            // Add images
-            SeleniumSetMethods.Clear(ElementType.Id, "175_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "175_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "177_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "177_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "178_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "178_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "182_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "182_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "183_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "183_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "184_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "184_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "185_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "185_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "186_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "186_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "187_1_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "187_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "28_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.Clear(ElementType.Id, "productUpload_117_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(ElementType.Id, "productUpload_117_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumWindowMethods.Sleep(30);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
-            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
-            SeleniumWindowMethods.Assertion(Alert.Wait);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
-
-        }
     }
 
 }
