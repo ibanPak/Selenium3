@@ -17,28 +17,38 @@ namespace Selenium3
 
         static void Main(string[] args)
         {
-            // Start your engines !!!
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            Login.qaLossMitt("qaservicer", "P@ssw0rd1");
-            SeleniumSetMethods.Wait(ElementType.Id, "AddressSearchString");
-            SeleniumSetMethods.EnterText(ElementType.Id, "AddressSearchString", "123");
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
+
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.MouseOver(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplPropertySearch");
+            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplSubPropertyListing");
+            SeleniumWindowMethods.Sleep(5);
+            Global.ConsoleOut("Chrome Driver was sucessful");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.EnterText(ElementType.Id, "AddressSearchString", Keys.Enter);
+            SeleniumWindowMethods.WindowActions(ActType.Close);
+            SeleniumWindowMethods.Sleep(2);
 
-            Global.Cooldown();
+            // Test new driver
+            IWebDriver driver = new InternetExplorerDriver();
+            PropertiesCollection.driver = driver;
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
 
-            // Test was completed successfully
-            // Global.Done();
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.MouseOver(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplPropertySearch");
+            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplSubPropertyListing");
+            SeleniumWindowMethods.Sleep(5);
+            Global.ConsoleOut("IE Driver was sucessful");
+            SeleniumWindowMethods.WindowActions(ActType.Close);
+
+            // Test was executed successfully
+            Global.Done();
 
         }
 
-      
-
     }
-
 
 }
 
-    

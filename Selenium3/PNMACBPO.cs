@@ -51,38 +51,62 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_ListingStatusPast12Mo_1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectDom");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoOriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoLastListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_IsSubjectSoldPast12Mo_0");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectPast12MoSalePrice");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectPast12MoSalePriceDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectSoldPast12MoOriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectSoldPast12MoLastListPrice");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SubjectMarketing_SubjectSoldPast12MoLastListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectPropertyUnits");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSalePrice");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSaleDate");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectLastSaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_SubjectOccupancyStatus_1");
             SeleniumSetMethods.Click(ElementType.Id, "SubjectMarketing_OwnershipStatus_0");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_0__PostalCode");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_0__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_1__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_2__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_SaleComps_1__OriginalListPrice");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_0__SaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_1__SaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_2__SaleDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "SaleComps_0__Dom");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_Subject_IsDistressedSale_1");
@@ -101,11 +125,17 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_Marketing_MarketYearBuilt");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_Marketing_SaleListRatioPast3Mo");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_ListComps_0__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.LinkText, "1");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_ListComps_1__OriginalListDate");
             SeleniumSetMethods.Click(ElementType.CssSelector, "span.ui-icon.ui-icon-circle-triangle-w");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "17");
             SeleniumSetMethods.Click(ElementType.LinkText, "17");
             SeleniumSetMethods.Click(ElementType.Id, "PennyMac_ListComps_2__OriginalListDate");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "15");
             SeleniumSetMethods.Click(ElementType.LinkText, "15");
             SeleniumSetMethods.Click(ElementType.Id, "ListComps_0__OriginalListPrice");
             SeleniumSetMethods.Click(ElementType.Id, "ListComps_0__Dom");
@@ -458,6 +488,10 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_SaleCompLotSizeComment", "Testing 123");
             SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_SaleCompSalePriceComment", "Testing 234");
 
+        }
+
+        public static void qaPNMACAttachments()
+        {
             // Add images
             SeleniumSetMethods.Clear(ElementType.Id, "190_1_fileupload");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -506,14 +540,71 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
-            SeleniumWindowMethods.Sleep(5);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
+            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
 
         }
 
+        public static void uatPNMACAttachments()
+        {
+            // Add images
+            SeleniumSetMethods.Clear(ElementType.Id, "175_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "175_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "177_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "177_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "178_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "178_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "182_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "182_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "183_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "183_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "184_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "184_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "185_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "185_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "186_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "186_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "187_1_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "187_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "28_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(ElementType.Id, "productUpload_117_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(ElementType.Id, "productUpload_117_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumWindowMethods.Sleep(30);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSave");
+            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSave");
+            SeleniumWindowMethods.Assertion(Alert.Wait);
+            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
+            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
 
+        }
     }
-
 
 }

@@ -18,6 +18,7 @@ namespace Selenium3
     {
         //Auto-implemented property
         public static IWebDriver driver { get; set; }
+        public static IWebDriver driver2 { get; set; }
 
     }
 
@@ -54,9 +55,29 @@ namespace Selenium3
     enum Alert
     {
         Accept,
-        Dismiss
+        Dismiss,
+        Wait
 
     }
 
+    // Strongly Typed Variable
+    enum ENV
+    {
+        QA,
+        UAT,
+        STG,
+        PROD
+        
+    }
 
+    // Strongly Typed Variable
+    enum Portals
+    {
+        ValPortal,
+        Agent,
+        Vendor,
+        REO,
+        PropertyCure
+
+    }
 }

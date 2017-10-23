@@ -15,7 +15,7 @@ namespace Selenium3
     class REO
     {
 
-        public static void AddNewProperty(string StreetName)
+        public static void AddNewProperty(string streetname, string city, string state, string zipcode)
         {
             // Properties - Add New Property
             SeleniumSetMethods.Wait(ElementType.LinkText, "Properties");
@@ -30,8 +30,10 @@ namespace Selenium3
             Global.ConsoleOut("Open Popup - New Property");
 
             // Client - Popup
+            SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(WinType.Popup);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Name, "csClientId");
             SeleniumSetMethods.EnterText(ElementType.Name, "csClientId", "7224");
             SeleniumSetMethods.Wait(ElementType.Name, "btnRedraw");
@@ -43,6 +45,7 @@ namespace Selenium3
 
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(WinType.Main);
+            SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame("externalSite");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA']");
@@ -55,6 +58,7 @@ namespace Selenium3
 
             // Switch back to main window - File Manager Popup
             SeleniumWindowMethods.WindowType(WinType.Main);
+            SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame("externalSite");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA2']");
@@ -71,13 +75,14 @@ namespace Selenium3
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame("externalSite");
             
-            Global.StreetAddress = (Global.StreetNum + " " + StreetName);
+            Global.StreetAddress = (Global.StreetNum + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Name, "paPropAddr");
             SeleniumSetMethods.EnterText(ElementType.Name, "paPropAddr", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Name, "paPropCity", "Irvine");
-            SeleniumSetMethods.SelectDropDown(ElementType.Name, "paPropState", "California");
-            SeleniumSetMethods.EnterText(ElementType.Name, "paPropZip", "92620");
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropCity", city);
+            SeleniumSetMethods.SelectDropDown(ElementType.Name, "paPropState", state);
+            SeleniumSetMethods.EnterText(ElementType.Name, "paPropZip", zipcode);
 
             // Loan Information
             SeleniumSetMethods.EnterText(ElementType.Name, "Loan_Number", Global.LoanNum);
@@ -116,6 +121,7 @@ namespace Selenium3
             }
             catch
             {
+                SeleniumWindowMethods.Sleep(2);
                 SeleniumSetMethods.Wait(ElementType.Name, "btnAdd");
                 SeleniumSetMethods.Click(ElementType.Name, "btnAdd");
                 SeleniumWindowMethods.Sleep(2);
@@ -125,7 +131,6 @@ namespace Selenium3
 
             }
             
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot("REO New Property");
@@ -134,12 +139,19 @@ namespace Selenium3
 
         public static void AddAgent()
         {
-           
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Dashboard");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Dashboard");
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearchSubmit");
+            SeleniumSetMethods.Click(ElementType.Id, "globalPropertySearchSubmit");
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
 
             // Add Edit this Property iFrame
             SeleniumWindowMethods.iFrame("externalSite");
+            SeleniumSetMethods.Wait(ElementType.Name, "pdUpb");
             SeleniumSetMethods.Clear(ElementType.Name, "pdUpb");
             SeleniumSetMethods.EnterText(ElementType.Name, "pdUpb", "350000");
             SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
@@ -162,25 +174,40 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Name, "btnAssign_250922");
             SeleniumSetMethods.Click(ElementType.Name, "btnAssign_250922");
+            try
+            {
+                SeleniumWindowMethods.Assertion(Alert.Accept);
+                // Alert present; set the flag
+                Global.ConsoleOut("Accepted Confirmation Message");
+            }
+            catch
+            {
+                // Alert not present
+                Global.ConsoleOut("Confirmation Message: Not Present");
+            }
 
+        }
+
+        public static void PreMarket()
+        {
             //Pre Marketing Tab
+            SeleniumSetMethods.Wait(ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(ElementType.Id, "globalPropertySearch", Global.OrderID);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.Id, "qsAddress");
+            SeleniumSetMethods.Click(ElementType.Id, "qsAddress");
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
             SeleniumSetMethods.Click(ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
-
             SeleniumSetMethods.Clear(ElementType.Name, "pmBpoOrdDt");
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-
             SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoOrdDt", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoDueDt", Global.NextMonth);
+            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
+            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoOrdDt", Global.MMddyyDate);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Click(ElementType.Id, "InputForm");
-
+            SeleniumSetMethods.Clear(ElementType.Name, "pmBpoDueDt");
+            SeleniumSetMethods.EnterText(ElementType.Name, "pmBpoDueDt", Global.NextMonth);
+            SeleniumWindowMethods.Sleep(1);            
             SeleniumSetMethods.Click(ElementType.Name, "btnUpdate");
 
         }

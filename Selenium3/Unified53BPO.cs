@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,10 +12,18 @@ namespace Selenium3
         public static void U53Order()
         {
             // Open 5th 3rd BPO Task and Enter Data
-            SeleniumWindowMethods.Sleep(10);
+            SeleniumWindowMethods.Sleep(2);
+            Global.ConsoleOut("Begin input @ " + DateTime.Now);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            
+            // Kill maskMoney
+            Global.ConsoleOut("Kill Money Mask");
+            IJavaScriptExecutor js = PropertiesCollection.driver as IJavaScriptExecutor;
+            string killmoneymask1 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number').val('0')");
+            string killmoneymask2 = (string)js.ExecuteScript("$(':input').maskMoney('destroy')");
+            string killmoneymask3 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number')");
 
             // Clear maskMoney
             SeleniumSetMethods.Clear(ElementType.Id, "SalesLow");
@@ -773,11 +782,22 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Click(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
             Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            SeleniumWindowMethods.Sleep(3);
             SeleniumWindowMethods.WindowType(WinType.Popup);
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[10]");
             SeleniumWindowMethods.WindowType(WinType.Main);
-            SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            SeleniumSetMethods.Wait(ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment");
+            SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment", "Test QC Sales Comment");
+            SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_ListCompLivingAreaComment", "Test QC List Comment");
+            SeleniumSetMethods.Click(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
+            Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            SeleniumWindowMethods.Sleep(10);
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[10]");
+            SeleniumWindowMethods.WindowType(WinType.Main);
 
         }
 
@@ -837,11 +857,22 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Click(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
             Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            SeleniumWindowMethods.Sleep(3);
             SeleniumWindowMethods.WindowType(WinType.Popup);
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[10]");
             SeleniumWindowMethods.WindowType(WinType.Main);
-            SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-expand-all");
+            SeleniumSetMethods.Wait(ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment");
+            SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment", "Test QC Sales Comment");
+            SeleniumSetMethods.EnterText(ElementType.Id, "BrokenRuleComments_ListCompLivingAreaComment", "Test QC List Comment");
+            SeleniumSetMethods.Click(ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
+            Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            SeleniumWindowMethods.Sleep(10);
+            SeleniumWindowMethods.WindowType(WinType.Popup);
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[10]");
+            SeleniumWindowMethods.WindowType(WinType.Main);
 
         }
 

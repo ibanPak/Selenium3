@@ -15,14 +15,12 @@ namespace Selenium3
     class SeleniumSetMethods
     {
 
-
         // Navigate to URL
         public static void Navigate(string URL)
         {
             PropertiesCollection.driver.Navigate().GoToUrl(URL);
 
         }
-
 
         // Enter Text
         public static void EnterText(ElementType elementtype, string element, string value)
@@ -68,7 +66,6 @@ namespace Selenium3
 
         }
 
-
         // Select a drop down control
         public static void SelectDropDown(ElementType elementtype, string element, string value)
         {
@@ -83,6 +80,40 @@ namespace Selenium3
 
         }
 
+        public static void MouseOver(ElementType elementtype, string element)
+        {
+            Actions builder = new Actions(PropertiesCollection.driver);
+            if (elementtype == ElementType.Id)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Id(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.Name)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Name(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.XPath)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.XPath(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.CssSelector)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.LinkText)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.LinkText(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.PartialLinkText)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.PartialLinkText(element))).Build().Perform();
+            }
+
+        }
 
         // Webdriver Wait
         public static void Wait(ElementType elementtype, string element)
@@ -90,7 +121,7 @@ namespace Selenium3
             if (elementtype == ElementType.Id)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-               wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
             }
 
             if (elementtype == ElementType.Name)
@@ -122,7 +153,6 @@ namespace Selenium3
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
                 wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
             }
-
 
         }
 
@@ -164,13 +194,6 @@ namespace Selenium3
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
                 wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
             }
-        }
-
-        public static void AlertWait()
-        {
-            WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-            wait.Until(ExpectedConditions.AlertIsPresent());
-
 
         }
 

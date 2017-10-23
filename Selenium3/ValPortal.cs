@@ -15,9 +15,26 @@ namespace Selenium3
     class ValPortal
     {
 
-        public static void ManualProviderAssign(string sourceid)
+        public static void GotoOrder(string OrderId)
+        {
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Orders");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Orders");
+            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
+            SeleniumSetMethods.EnterText(ElementType.Id, "Filters_OrderId", OrderId);
+            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, OrderId);
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, OrderId);
+
+        }
+
+        public static void ManualProviderAssign(string orderid, string sourceid)
         {
             // Provider Assign
+            GotoOrder(orderid);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumSetMethods.Click(ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumWindowMethods.Sleep(2);
@@ -28,6 +45,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(ElementType.Id, "btnSearchProviderAssignment");
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Click(ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(5);
             SeleniumWindowMethods.Assertion(Alert.Accept);
@@ -137,6 +155,7 @@ namespace Selenium3
             // Add New Order
             SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
             SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
             SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
@@ -260,31 +279,27 @@ namespace Selenium3
 
         }
 
-        public static void CompleteBPOOrder()
+        public static void CompleteBPOOrder(string orderid)
         {
 
             // Order Queue Page
             Random r = new Random();
             int n = 0;
 
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Filters_OrderId", Global.OrderID);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
+            GotoOrder(orderid);
             SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
             SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
+            SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
@@ -301,30 +316,26 @@ namespace Selenium3
 
         }
 
-        public static void CompleteRAOrder()
+        public static void CompleteRAOrder(string orderid)
         {
 
             // Order Queue Page
             Random r = new Random();
             int n = 0;
 
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
+            GotoOrder(orderid);
             SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
             SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
             SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
             SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
@@ -341,18 +352,14 @@ namespace Selenium3
 
         }
 
-        public static void CompleteAppraisal()
+        public static void CompleteAppraisal(string orderid)
         {
 
             // Order Queue Page
             Random r = new Random();
             int n = 0;
 
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, Global.OrderID);
+            GotoOrder(orderid);
             SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Audit");
@@ -360,7 +367,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
             SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.AlertWait();
+            SeleniumWindowMethods.Assertion(Alert.Wait);
             SeleniumWindowMethods.Assertion(Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
@@ -377,8 +384,39 @@ namespace Selenium3
         
         }
 
+        public static void DisputeOrder(string orderid)
+        {
+            GotoOrder(orderid);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "lnkDisputeTab");
+            SeleniumSetMethods.Click(ElementType.Id, "lnkDisputeTab");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Dispute Order");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Dispute Order");
+            SeleniumSetMethods.Wait(ElementType.Id, "comment");
+            SeleniumSetMethods.EnterText(ElementType.Id, "comment", "testing");
+            SeleniumSetMethods.Wait(ElementType.CssSelector, "ul.chosen-choices");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "ul.chosen-choices");
+            SeleniumSetMethods.Click(ElementType.CssSelector, "#Reason_LookupIds_chosen > div > ul > li:nth-child(4)");
+            SeleniumSetMethods.Click(ElementType.Id, "btnSubmitModal");
+            SeleniumWindowMethods.Sleep(1);
+
+        }
+
+        public static void ReturnToProvider(string orderid)
+        {
+            GotoOrder(orderid);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return to Provider");
+            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Return to Provider");
+            SeleniumSetMethods.SelectDropDown(ElementType.Id, "selReason", "Incomplete Information");
+            SeleniumSetMethods.EnterText(ElementType.Id, "txaComment", "Testing Return to Provider " + DateTime.Now.ToString());
+            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumWindowMethods.Sleep(3);
+
+        }
 
     }
-
 
 }

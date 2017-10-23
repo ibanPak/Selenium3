@@ -12,16 +12,16 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class SeleniumWindowMethods
+    class SeleniumWindowMethods2
     {
 
         public static void WindowActions(ActType windowsactions)
         {
             if (windowsactions == ActType.Maximize)
-                PropertiesCollection.driver.Manage().Window.Maximize();
+                PropertiesCollection.driver2.Manage().Window.Maximize();
 
             if (windowsactions == ActType.Close)
-                PropertiesCollection.driver.Close();
+                PropertiesCollection.driver2.Close();
 
         }
 
@@ -29,25 +29,24 @@ namespace Selenium3
         {
 
             if (windowsactions == WinType.Popup)
-                PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.Last());
+                PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver2.WindowHandles.Last());
 
             if (windowsactions == WinType.Main)
-                PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
+                PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver2.WindowHandles.First());
 
         }
 
         public static void iFrame(string Frame)
         {
-            PropertiesCollection.driver.SwitchTo().Frame(Frame);
+            PropertiesCollection.driver2.SwitchTo().Frame(Frame);
 
         }
 
         public static void ScreenShot(string FileName)
         {
             Screenshot ss = ((ITakesScreenshot)PropertiesCollection.driver).GetScreenshot();
-            string filename = "c:/" + FileName + "_" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss") + ".png";
-            ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
-            Global.ConsoleOut("Screen Shoot Captured: " + filename);
+            ss.SaveAsFile("c:/" + FileName + ".png", ScreenshotImageFormat.Png);
+
         }
 
         public static void Sleep(int sec)
@@ -58,18 +57,17 @@ namespace Selenium3
 
         public static void ThrottlingSleep()
         {
-            System.Threading.Thread.Sleep(Global.ThrottleSleep);
+            System.Threading.Thread.Sleep(350);
 
         }
 
         public static void Assertion(Alert alert)
         {
             if (alert == Alert.Accept)
-                PropertiesCollection.driver.SwitchTo().Alert().Accept();
+                PropertiesCollection.driver2.SwitchTo().Alert().Accept();
 
             if (alert == Alert.Dismiss)
-                PropertiesCollection.driver.SwitchTo().Alert().Dismiss();
-
+                PropertiesCollection.driver2.SwitchTo().Alert().Dismiss();
             if (alert == Alert.Wait)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));

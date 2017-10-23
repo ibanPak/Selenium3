@@ -83,6 +83,42 @@ namespace Selenium3
 
         }
 
+        public static void LoadSuccess(string element)
+        {
+            int tries = 0;
+            bool IsElementPresent = false;
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element);
+                    SeleniumWindowMethods.Sleep(1);
+                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.Sleep(2);
+                    Global.ReadySetGo();
+                    
+                }
+
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
+
+        }
     }
 
 }

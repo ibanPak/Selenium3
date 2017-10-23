@@ -12,14 +12,14 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class SeleniumSetMethods
+    class SeleniumSetMethods2
     {
 
 
         // Navigate to URL
         public static void Navigate(string URL)
         {
-            PropertiesCollection.driver.Navigate().GoToUrl(URL);
+            PropertiesCollection.driver2.Navigate().GoToUrl(URL);
 
         }
 
@@ -28,13 +28,13 @@ namespace Selenium3
         public static void EnterText(ElementType elementtype, string element, string value)
         {
             if (elementtype == ElementType.Id)
-                PropertiesCollection.driver.FindElement(By.Id(element)).SendKeys(value);
+                PropertiesCollection.driver2.FindElement(By.Id(element)).SendKeys(value);
             if (elementtype == ElementType.Name)
-                PropertiesCollection.driver.FindElement(By.Name(element)).SendKeys(value);
+                PropertiesCollection.driver2.FindElement(By.Name(element)).SendKeys(value);
             if (elementtype == ElementType.XPath)
-                PropertiesCollection.driver.FindElement(By.XPath(element)).SendKeys(value);
+                PropertiesCollection.driver2.FindElement(By.XPath(element)).SendKeys(value);
             if (elementtype == ElementType.CssSelector)
-                PropertiesCollection.driver.FindElement(By.CssSelector(element)).SendKeys(value);
+                PropertiesCollection.driver2.FindElement(By.CssSelector(element)).SendKeys(value);
 
         }
 
@@ -42,11 +42,11 @@ namespace Selenium3
         public static void Clear(ElementType elementtype, string element)
         {
             if (elementtype == ElementType.Id)
-                PropertiesCollection.driver.FindElement(By.Id(element)).Clear();
+                PropertiesCollection.driver2.FindElement(By.Id(element)).Clear();
             if (elementtype == ElementType.Name)
-                PropertiesCollection.driver.FindElement(By.Name(element)).Clear();
+                PropertiesCollection.driver2.FindElement(By.Name(element)).Clear();
             if (elementtype == ElementType.CssSelector)
-                PropertiesCollection.driver.FindElement(By.CssSelector(element)).Clear();
+                PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Clear();
 
         }
 
@@ -54,17 +54,17 @@ namespace Selenium3
         public static void Click(ElementType elementtype, string element)
         {
             if (elementtype == ElementType.Id)
-                PropertiesCollection.driver.FindElement(By.Id(element)).Click();
+                PropertiesCollection.driver2.FindElement(By.Id(element)).Click();
             if (elementtype == ElementType.Name)
-                PropertiesCollection.driver.FindElement(By.Name(element)).Click();
+                PropertiesCollection.driver2.FindElement(By.Name(element)).Click();
             if (elementtype == ElementType.XPath)
-                PropertiesCollection.driver.FindElement(By.XPath(element)).Click();
+                PropertiesCollection.driver2.FindElement(By.XPath(element)).Click();
             if (elementtype == ElementType.CssSelector)
-                PropertiesCollection.driver.FindElement(By.CssSelector(element)).Click();
+                PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Click();
             if (elementtype == ElementType.LinkText)
-                PropertiesCollection.driver.FindElement(By.LinkText(element)).Click();
+                PropertiesCollection.driver2.FindElement(By.LinkText(element)).Click();
             if (elementtype == ElementType.PartialLinkText)
-                PropertiesCollection.driver.FindElement(By.PartialLinkText(element)).Click();
+                PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)).Click();
 
         }
 
@@ -73,16 +73,50 @@ namespace Selenium3
         public static void SelectDropDown(ElementType elementtype, string element, string value)
         {
             if (elementtype == ElementType.Id)
-                new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).SelectByText(value);
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).SelectByText(value);
             if (elementtype == ElementType.Name)
-                new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).SelectByText(value);
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByText(value);
             if (elementtype == ElementType.CssSelector)
-                new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByText(value);
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByText(value);
             if (elementtype == ElementType.XPath)
-                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByText(value);
 
         }
 
+        public static void MouseOver(ElementType elementtype, string element)
+        {
+            Actions builder = new Actions(PropertiesCollection.driver);
+            if (elementtype == ElementType.Id)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Id(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.Name)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Name(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.XPath)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.XPath(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.CssSelector)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.LinkText)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.LinkText(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.PartialLinkText)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.PartialLinkText(element))).Build().Perform();
+            }
+
+        }
 
         // Webdriver Wait
         public static void Wait(ElementType elementtype, string element)
@@ -177,17 +211,17 @@ namespace Selenium3
         public static void Find(ElementType elementtype, string element)
         {
             if (elementtype == ElementType.Id)
-                PropertiesCollection.driver.FindElement(By.Id(element));
+                PropertiesCollection.driver2.FindElement(By.Id(element));
             if (elementtype == ElementType.Name)
-                PropertiesCollection.driver.FindElement(By.Name(element));
+                PropertiesCollection.driver2.FindElement(By.Name(element));
             if (elementtype == ElementType.XPath)
-                PropertiesCollection.driver.FindElement(By.XPath(element));
+                PropertiesCollection.driver2.FindElement(By.XPath(element));
             if (elementtype == ElementType.CssSelector)
-                PropertiesCollection.driver.FindElement(By.CssSelector(element));
+                PropertiesCollection.driver2.FindElement(By.CssSelector(element));
             if (elementtype == ElementType.LinkText)
-                PropertiesCollection.driver.FindElement(By.LinkText(element));
+                PropertiesCollection.driver2.FindElement(By.LinkText(element));
             if (elementtype == ElementType.PartialLinkText)
-                PropertiesCollection.driver.FindElement(By.PartialLinkText(element));
+                PropertiesCollection.driver2.FindElement(By.PartialLinkText(element));
 
         }
 

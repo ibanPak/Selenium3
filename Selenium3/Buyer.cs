@@ -221,7 +221,7 @@ namespace Selenium3
             String PropertyID = "507635";
             Global.OrderID = PropertyID;
 
-            Login.qaBuyer("qapaidbuyer03", "P@ssw0rd1");
+            Login.Buyer(ENV.QA, "qapaidbuyer03", "P@ssw0rd1");
 
             SeleniumSetMethods.Wait(ElementType.CssSelector, "#propertiesTabLink > span > b");
             SeleniumSetMethods.Click(ElementType.CssSelector, "#propertiesTabLink > span > b");

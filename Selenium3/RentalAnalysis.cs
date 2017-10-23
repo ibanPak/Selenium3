@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,48 @@ namespace Selenium3
 
         public static void CompleteRentalAnalysis()
         {
+            SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Begin input @ " + DateTime.Now);
             SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Click(ElementType.CssSelector, "button.r-button.r-button-expand-all");
             SeleniumWindowMethods.ThrottlingSleep();
+
+            // Kill maskMoney
+            Global.ConsoleOut("Kill Money Mask");
+            IJavaScriptExecutor js = PropertiesCollection.driver as IJavaScriptExecutor;
+            string killmoneymask1 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number').val('0')");
+            string killmoneymask2 = (string)js.ExecuteScript("$(':input').maskMoney('destroy')");
+            string killmoneymask3 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number')");
+
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Clear(ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoOriginalListPrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "PennyMac_SaleComps_0__OriginalListPrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "PennyMac_SaleComps_1__OriginalListPrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "PennyMac_SaleComps_2__OriginalListPrice");
+
+            SeleniumSetMethods.Clear(ElementType.Id, "SubjectMarketing_SubjectListPrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "ListComps_0__ListPrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "ListComps_1__ListPrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "ListComps_2__ListPrice");
+
+            SeleniumSetMethods.Clear(ElementType.Id, "SaleComps_0__SalePrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "SaleComps_1__SalePrice");
+            SeleniumSetMethods.Clear(ElementType.Id, "SaleComps_2__SalePrice");
+
+            SeleniumSetMethods.Clear(ElementType.Id, "ListComps_0__Dom");
+            SeleniumSetMethods.Clear(ElementType.Id, "ListComps_1__Dom");
+            SeleniumSetMethods.Clear(ElementType.Id, "ListComps_2__Dom");
+
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_R1MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_R2MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_R3MonthlyRentalAmt");
+
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_PriceRangeActiveListingsFrom");
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_PriceRangeActiveListingsTo");
+            SeleniumSetMethods.Clear(ElementType.Id, "Rental_EstimatedMarketRent");
+
             SeleniumSetMethods.Click(ElementType.Id, "Unified_InspectedDate");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[8]");
@@ -418,8 +456,6 @@ namespace Selenium3
 
         }
 
-
     }
-
 
 }
