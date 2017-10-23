@@ -20,12 +20,31 @@ namespace Selenium3
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
 
-            uatRunner.FMBFlow1Org1();
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
 
-            //Logout.Portal(Portals.Agent);
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.MouseOver(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplPropertySearch");
+            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplSubPropertyListing");
+            SeleniumWindowMethods.Sleep(5);
+            Global.ConsoleOut("Chrome Driver was sucessful");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumWindowMethods.WindowActions(ActType.Close);
+            SeleniumWindowMethods.Sleep(2);
 
-            Global.Cooldown();
-            //Global.Done();
+            // Test new driver
+            IWebDriver driver = new InternetExplorerDriver();
+            PropertiesCollection.driver = driver;
+            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
+
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.MouseOver(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplPropertySearch");
+            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplSubPropertyListing");
+            SeleniumWindowMethods.Sleep(5);
+            Global.ConsoleOut("IE Driver was sucessful");
+            SeleniumWindowMethods.WindowActions(ActType.Close);
+
+            // Test was executed successfully
+            Global.Done();
 
         }
 
