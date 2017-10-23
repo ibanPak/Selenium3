@@ -179,7 +179,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(ENV.UAT, "bryan", "qatest10"); 
-            Portal_Val.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Ridge Valley", "Irvine", "California", "92620");
+            Portal_Val.CreateNewUnified53("Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Townsend", "Irvine", "California", "92620");
             Portal_Val.ManualProviderAssign(Global.OrderID, "250418");
             Logout.Portal(Portals.ValPortal);
             Login.Agent(ENV.UAT, "QATest25@usres.com", "blue123");

@@ -35,7 +35,7 @@ namespace Selenium3
         public static void ReadySetGo()
         {
             IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
-            // IWebDriver driver2 = new ChromeDriver(); PropertiesCollection.driver2 = driver2;
+            // IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;
             // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
             // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
 

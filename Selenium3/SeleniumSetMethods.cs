@@ -80,6 +80,41 @@ namespace Selenium3
 
         }
 
+        public static void MouseOver(ElementType elementtype, string element)
+        {
+            Actions builder = new Actions(PropertiesCollection.driver);
+            if (elementtype == ElementType.Id)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Id(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.Name)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Name(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.XPath)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.XPath(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.CssSelector)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.LinkText)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.LinkText(element))).Build().Perform();
+            }
+
+            if (elementtype == ElementType.PartialLinkText)
+            {
+                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.PartialLinkText(element))).Build().Perform();
+            }
+
+        }
+
         // Webdriver Wait
         public static void Wait(ElementType elementtype, string element)
         {
