@@ -23,6 +23,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(3);
             Portal_PropertyCure.AddNewUser(driver, "George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
             Logout.Portal(driver, Portals.PropertyCure);
+
         }
 
         public static void PCFlow1(Driver driver)

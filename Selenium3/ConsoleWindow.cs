@@ -18,16 +18,11 @@ namespace Selenium3
     class ConsoleWindow
     {
         const int SWP_NOSIZE = 0x0001;
-
-
         [DllImport("kernel32.dll", ExactSpelling = true)]
         private static extern IntPtr GetConsoleWindow();
-
         private static IntPtr MyConsole = GetConsoleWindow();
-
         [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
         public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
-
         public static void ConsoleAttributes()
          {
             Console.WindowWidth = 99;
@@ -41,8 +36,6 @@ namespace Selenium3
 
         }
 
-
     }
-
 
 }

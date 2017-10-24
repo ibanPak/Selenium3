@@ -23,7 +23,6 @@ namespace Selenium3
                 PropertiesCollection.driver.Manage().Window.Maximize();
 
             }
-
             else if (driver == Driver.driver1 && windowsactions == ActType.Close)
             {
                 PropertiesCollection.driver.Close();
@@ -36,7 +35,6 @@ namespace Selenium3
                 PropertiesCollection.driver2.Manage().Window.Maximize();
 
             }
-
             else if (driver == Driver.driver2 && windowsactions == ActType.Close)
             {
                 PropertiesCollection.driver2.Close();
@@ -53,7 +51,6 @@ namespace Selenium3
                 PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.Last());
 
             }
-
             else if (driver == Driver.driver1 && windowsactions == WinType.Main)
             {
                 PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
@@ -66,7 +63,6 @@ namespace Selenium3
                 PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.Last());
 
             }
-
             else if (driver == Driver.driver2 && windowsactions == WinType.Main)
             {
                 PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
@@ -132,14 +128,12 @@ namespace Selenium3
             {
                 PropertiesCollection.driver.SwitchTo().Alert().Accept();
 
-            }
-               
+            }              
             else if (driver == Driver.driver1 && alert == Alert.Dismiss)
             {
                 PropertiesCollection.driver.SwitchTo().Alert().Dismiss();
 
-            }
-                
+            }              
             else if (driver == Driver.driver1 && alert == Alert.Wait)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
@@ -153,13 +147,11 @@ namespace Selenium3
                 PropertiesCollection.driver2.SwitchTo().Alert().Accept();
 
             }
-
             else if (driver == Driver.driver2 && alert == Alert.Dismiss)
             {
                 PropertiesCollection.driver2.SwitchTo().Alert().Dismiss();
 
             }
-
             else if (driver == Driver.driver2 && alert == Alert.Wait)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));

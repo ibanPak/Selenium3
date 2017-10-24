@@ -544,7 +544,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 
             }
-
             else if (environment == ENV.UAT)
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "175_1_fileupload");

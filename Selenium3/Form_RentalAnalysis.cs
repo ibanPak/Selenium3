@@ -384,7 +384,6 @@ namespace Selenium3
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_159_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
             }
-
             else if (environment == ENV.UAT)
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "15_1_fileupload");

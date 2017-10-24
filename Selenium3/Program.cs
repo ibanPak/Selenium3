@@ -19,8 +19,9 @@ namespace Selenium3
         {
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
-            SeleniumWindowMethods.WindowActions(Driver.driver1, ActType.Maximize);
-            PropertiesCollection.driver2.Close();
+
+            SeleniumWindowMethods.WindowActions(Driver.driver2, ActType.Close);
+            SeleniumWindowMethods.WindowActions(Driver.driver1, ActType.Maximize);            
             Runner_QA.RAFlow1Org1(Driver.driver1);
 
             // Test was executed successfully 

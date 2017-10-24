@@ -23,18 +23,15 @@ namespace Selenium3
                 return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("value");
 
             }
-                
             else if (driver == Driver.driver1 && elementtype == ElementType.Name)
             {
                 return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
 
             }
-                
             else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
             {
                 return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("value");
             }
-               
             else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
             {
                 return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("value");
@@ -47,18 +44,15 @@ namespace Selenium3
                 return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("value");
 
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.Name)
             {
                 return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("value");
 
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
             {
                 return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("value");
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
             {
                 return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("value");
@@ -76,19 +70,16 @@ namespace Selenium3
                 return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent");
 
             }
-
             else if (driver == Driver.driver1 && elementtype == ElementType.Name)
             {
                 return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent");
 
             }
-
             else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
             {
                 return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent");
 
             }
-
             else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
             {
                 return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent");
@@ -101,19 +92,16 @@ namespace Selenium3
                 return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("textContent");
 
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.Name)
             {
                 return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("textContent");
 
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
             {
                 return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("textContent");
 
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
             {
                 return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("textContent");
@@ -131,7 +119,6 @@ namespace Selenium3
                 return new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
 
             }
-
             else if (driver == Driver.driver1 && elementtype == ElementType.Name)
             {
                 return new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
@@ -144,7 +131,6 @@ namespace Selenium3
                 return new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
 
             }
-
             else if (driver == Driver.driver2 && elementtype == ElementType.Name)
             {
                 return new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;

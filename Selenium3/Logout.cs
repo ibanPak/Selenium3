@@ -33,28 +33,24 @@ namespace Selenium3
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
                        
                     }
-
                     else if (portals == Portals.Agent)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
                         SeleniumWindowMethods.Sleep(1);
                         SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
                     }
-
                     else if (portals == Portals.Vendor)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Authentication/Logout']");
                         SeleniumWindowMethods.Sleep(1);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Authentication/Logout']");
                     }
-
                     else if (portals == Portals.REO)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_LOGOUT']");
                         SeleniumWindowMethods.Sleep(1);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_LOGOUT']");
                     }
-
                     else if (portals == Portals.PropertyCure)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "i.fa.fa-caret-down");
@@ -68,13 +64,11 @@ namespace Selenium3
                     break;
 
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Logout WebElement " + portals + " not found, " + tries + " attempted");
                     SeleniumWindowMethods.Sleep(3);
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut("Logout WebElement " + portals + " not found, and " + tries + " maxium tries has been reached");

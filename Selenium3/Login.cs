@@ -103,19 +103,16 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://qa-agent.res.net/");
 
                     }
-
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-agent.res.net/");
 
                     }
-
                     else if(portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-agent.res.net/");
 
-                    }
-                       
+                    } 
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://agent.res.net/");
@@ -140,14 +137,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
 
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -174,26 +169,22 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "http://qa-valuation.res.net/");
 
                     }
-                        
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://uat-valuation.res.net/");
 
                     }
-                        
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://stg-valuation.res.net/");
 
-                    }
-                        
+                    } 
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://valuation.res.net/");
 
                     }
                         
-
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "usernameEmail");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "usernameEmail");
@@ -212,14 +203,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
 
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -246,19 +235,16 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
 
                     }
-
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-propertycure.res.net/");
 
                     }
-                        
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-propertycure.res.net/");
 
                     }
-                        
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://propertycure.res.net/");
@@ -283,14 +269,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                   
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -317,19 +301,16 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
 
                     }
-
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-vendor.res.net/");
 
                     }
-                        
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-vendor.res.net/");
 
                     }
-                        
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://vendor.res.net/");
@@ -354,14 +335,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
 
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -388,19 +367,16 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://qa-shortsale.res.net");
 
                     }
-                        
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-shortsale.res.net");
 
                     }
-
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-shortsale.res.net");
 
                     }
-                        
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://shortsale.res.net");
@@ -425,14 +401,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
 
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -459,25 +433,21 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://qa-buyer.res.net/login");
 
                     }
-
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-buyer.res.net/login");
 
                     }
-
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-buyer.res.net/login");
 
                     }
-
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://buyer.res.net/login");
 
                     }
-                       
 
                     // Login Pages
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "UsernameOrEmail");
@@ -497,14 +467,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
   
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
