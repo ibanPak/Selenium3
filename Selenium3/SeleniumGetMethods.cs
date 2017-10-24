@@ -15,40 +15,141 @@ namespace Selenium3
     class SeleniumGetMethods
     {
 
-        public static string GetTextValue(ElementType elementtype, string element)
+        public static string GetTextValue(Driver driver, ElementType elementtype, string element)
         {
-            if (elementtype == ElementType.Id)
+            // Driver 1
+            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            {
                 return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("value");
-            if (elementtype == ElementType.Name)
+
+            }
+                
+            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            {
                 return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
-            if (elementtype == ElementType.CssSelector)
+
+            }
+                
+            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
+            {
                 return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("value");
-            if (elementtype == ElementType.XPath)
+            }
+               
+            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
+            {
                 return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("value");
+
+            }
+
+            // Driver 2
+            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            {
+                return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("value");
+
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
+            {
+                return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("value");
+
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
+            {
+                return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("value");
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
+            {
+                return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("value");
+
+            }
             else return String.Empty;
 
         }
 
-        public static string GetTextContent(ElementType elementtype, string element)
+        public static string GetTextContent(Driver driver, ElementType elementtype, string element)
         {
-            if (elementtype == ElementType.Id)
+            // Driver 1
+            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            {
                 return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent");
-            if (elementtype == ElementType.Name)
+
+            }
+
+            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            {
                 return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent");
-            if (elementtype == ElementType.CssSelector)
+
+            }
+
+            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
+            {
                 return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent");
-            if (elementtype == ElementType.XPath)
+
+            }
+
+            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
+            {
                 return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent");
+
+            }
+
+            // Driver 2
+            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            {
+                return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("textContent");
+
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
+            {
+                return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("textContent");
+
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
+            {
+                return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("textContent");
+
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
+            {
+                return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("textContent");
+
+            }
             else return String.Empty;
 
         }
 
-        public static string GetFromDDL(ElementType elementtype, string element)
+        public static string GetFromDDL(Driver driver, ElementType elementtype, string element)
         {
-            if (elementtype == ElementType.Id)
+            // Driver 1
+            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            {
                 return new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
-            if (elementtype == ElementType.Name)
+
+            }
+
+            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            {
                 return new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
+
+            }
+
+            // Driver 2
+            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            {
+                return new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
+
+            }
+
+            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
+            {
+                return new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
+
+            }
             else return String.Empty;
 
         }

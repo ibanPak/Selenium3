@@ -14,7 +14,7 @@ namespace Selenium3
 {
     class IfExists
     {
-        public static void Link_Back(string element)
+        public static void Link_Back(Driver driver, string element)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -24,9 +24,9 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.PartialLinkText, element);
-                    SeleniumSetMethods.Find(ElementType.PartialLinkText, element);
-                    SeleniumSetMethods.Click(ElementType.PartialLinkText, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, element);
+                    SeleniumSetMethods.Find(driver, ElementType.PartialLinkText, element);
+                    SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -49,7 +49,7 @@ namespace Selenium3
 
         }
 
-        public static void Id_Refresh(string element)
+        public static void Id_Refresh(Driver driver, string element)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -59,8 +59,8 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -83,7 +83,7 @@ namespace Selenium3
 
         }
 
-        public static void LoadSuccess(string element)
+        public static void LoadSuccess(Driver driver, string element)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -93,8 +93,8 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -104,7 +104,7 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
+                    SeleniumWindowMethods.WindowActions(driver, ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
                     Global.ReadySetGo();
                     

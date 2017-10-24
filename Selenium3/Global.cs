@@ -35,11 +35,10 @@ namespace Selenium3
         public static void ReadySetGo()
         {
             IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
-            // IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;
+            IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;
             // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
             // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
 
-            SeleniumWindowMethods.WindowActions(ActType.Maximize);
             Global.StartDT = DateTime.Now;
             Global.ConsoleOut("Test started @ " + Global.StartDT);
 
@@ -61,7 +60,6 @@ namespace Selenium3
         {
             Global.ConsoleOut("Test was completed successfully");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumWindowMethods.WindowActions(ActType.Close);
 
         }
 

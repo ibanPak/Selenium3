@@ -15,404 +15,404 @@ namespace Selenium3
     class Portal_Val
     {
 
-        public static void GotoOrder(string OrderId)
+        public static void GotoOrder(Driver driver, string OrderId)
         {
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Orders");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Orders");
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Filters_OrderId", OrderId);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, OrderId);
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, OrderId);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Orders");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Orders");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_OrderId", OrderId);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, OrderId);
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, OrderId);
 
         }
 
-        public static void ManualProviderAssign(string orderid, string sourceid)
+        public static void ManualProviderAssign(Driver driver, string orderid, string sourceid)
         {
             // Provider Assign
-            GotoOrder(orderid);
+            GotoOrder(driver, orderid);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "img.lookupPopupIcon");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "img.lookupPopupIcon");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "img.lookupPopupIcon");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.Id, "Filters_Radius");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "Filters_Radius", "50+");
-            SeleniumSetMethods.Click(ElementType.Id, "Filters_ProviderHasLocationZip");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchProviderAssignment");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_Radius");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "Filters_Radius", "50+");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "Filters_ProviderHasLocationZip");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchProviderAssignment");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Click(ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
 
         }
 
-        public static void CreateNewAppraisal(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewAppraisal(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
 
             // Add New Order
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
-            SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ClientId", ClientID);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "Purpose", "New Loan Purchase");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "LoanType", "Conv");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductDetails", ProductDetails);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "Purpose", "New Loan Purchase");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "LoanType", "Conv");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
-            SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectPostalCode", ZipCode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerName", "Hello Kitty");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
+            SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
 
             // Get Order ID from Order Details page
-            string OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
+            string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot("Acme Appraisal");
+            SeleniumWindowMethods.ScreenShot(driver, "Acme Appraisal");
 
         }
 
-        public static void CreateNEWPNMAC(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNEWPNMAC(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
 
             // Add New Order
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
-            SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ClientId", ClientID);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductDetails", ProductDetails);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
-            SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectPostalCode", ZipCode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerName", "Hello Kitty");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
+            SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
 
             // Get Order ID from Order Details page
-            string OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
+            string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot("PNMAC BPO");
+            SeleniumWindowMethods.ScreenShot(driver, "PNMAC BPO");
 
         }
 
-        public static void CreateNewRentalAnalysis(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewRentalAnalysis(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
 
             // Add New Order
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
-            SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ClientId", ClientID);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductDetails", ProductDetails);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
-            SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectPostalCode", ZipCode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerName", "Hello Kitty");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
+            SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
 
             // Get Order ID from Order Details page
-            string OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
+            string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot("Rental Analysis");
+            SeleniumWindowMethods.ScreenShot(driver, "Rental Analysis");
             
         }
 
-        public static void CreateNewUnified53(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewUnified53(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
 
             // Add New Order
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
-            SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ClientId", ClientID);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductDetails", ProductDetails);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
-            SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectPostalCode", ZipCode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerName", "Hello Kitty");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
+            SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
 
             // Get Order ID from Order Details page
-            string OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
+            string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot("U53BPO");
+            SeleniumWindowMethods.ScreenShot(driver, "U53BPO");
 
         }
 
-        public static void CreateNewFMBBPO(string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewFMBBPO(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
         {
             // Order Queue Page
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Clear");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSearchOrders");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
 
             // Add New Order
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Add New Order");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.Id, "ClientId");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ClientId", ClientID);
-            SeleniumSetMethods.EnterText(ElementType.Id, "LoanNumb", Global.LoanNum);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ClientId");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ClientId", ClientID);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanNumb", Global.LoanNum);
             Global.ConsoleOut("Loan Number: " + Global.LoanNum);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductType", ProductType);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductType", ProductType);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "ProductDetails", ProductDetails);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "PropertyType", "Single Family");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "OccupancyStatus", "Unknown");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Portfolio", "Automated");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ProductDetails", ProductDetails);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectAddress", Global.StreetAddress);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectCity", City);
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "SubjectState", FullState);
-            SeleniumSetMethods.EnterText(ElementType.Id, "SubjectPostalCode", ZipCode);
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerName", "Hello Kitty");
-            SeleniumSetMethods.EnterText(ElementType.Id, "BorrowerPhone", "9493335432");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "TenderTypeCode", "Invoice");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderSave");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectPostalCode", ZipCode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerName", "Hello Kitty");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerPhone", "9493335432");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(ElementType.CssName, "img.lookupPopupIcon");
+            SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
 
             // Get Order ID from Order Details page
-            string OrderID = SeleniumGetMethods.GetTextContent(ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
+            string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
 
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot("FMB BPO");
+            SeleniumWindowMethods.ScreenShot(driver, "FMB BPO");
 
         }
 
-        public static void CompleteBPOOrder(string orderid)
+        public static void CompleteBPOOrder(Driver driver, string orderid)
         {
 
             // Order Queue Page
             Random r = new Random();
             int n = 0;
 
-            GotoOrder(orderid);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumWindowMethods.Assertion(Alert.Wait);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
+            GotoOrder(driver, orderid);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Generate PDF");
+            SeleniumWindowMethods.Assertion(driver, Alert.Wait);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "ui-id-4");
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumWindowMethods.Assertion(Alert.Wait);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumWindowMethods.Assertion(driver, Alert.Wait);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
             Global.ConsoleOut("CustomerServiceGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_" + n);
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             n = r.Next(3);
             Global.ConsoleOut("CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
-            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
 
         }
 
-        public static void CompleteRAOrder(string orderid)
+        public static void CompleteRAOrder(Driver driver, string orderid)
         {
 
             // Order Queue Page
             Random r = new Random();
             int n = 0;
 
-            GotoOrder(orderid);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Generate PDF");
-            SeleniumWindowMethods.Assertion(Alert.Wait);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
+            GotoOrder(driver, orderid);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Generate PDF");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Generate PDF");
+            SeleniumWindowMethods.Assertion(driver, Alert.Wait);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumWindowMethods.Assertion(Alert.Wait);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumWindowMethods.Assertion(driver, Alert.Wait);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
             Global.ConsoleOut("CustomerServiceGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_" + n);
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             n = r.Next(3);
             Global.ConsoleOut("CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
-            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
 
         }
 
-        public static void CompleteAppraisal(string orderid)
+        public static void CompleteAppraisal(Driver driver, string orderid)
         {
 
             // Order Queue Page
             Random r = new Random();
             int n = 0;
 
-            GotoOrder(orderid);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Click(ElementType.Id, "btnOrderDetailMainUpdate");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Audit");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Audit");
+            GotoOrder(driver, orderid);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderDetailMainUpdate");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Audit");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Audit");
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumSetMethods.Click(ElementType.Id, "btnTabsAuditSendToClient");
-            SeleniumWindowMethods.Assertion(Alert.Wait);
-            SeleniumWindowMethods.Assertion(Alert.Accept);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnTabsAuditSendToClient");
+            SeleniumWindowMethods.Assertion(driver, Alert.Wait);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
             Global.ConsoleOut("CustomerServiceGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerServiceGradeModal_" + n);
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             n = r.Next(3);
             Global.ConsoleOut("CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.Id, "CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Click(ElementType.Id, "CustomerQualityGradeModal_" + n);
-            SeleniumSetMethods.Wait(ElementType.XPath, "(//button[@type='button'])[4]");
-            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
+            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
         
         }
 
-        public static void DisputeOrder(string orderid)
+        public static void DisputeOrder(Driver driver, string orderid)
         {
-            GotoOrder(orderid);
+            GotoOrder(driver, orderid);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.Id, "lnkDisputeTab");
-            SeleniumSetMethods.Click(ElementType.Id, "lnkDisputeTab");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Dispute Order");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Dispute Order");
-            SeleniumSetMethods.Wait(ElementType.Id, "comment");
-            SeleniumSetMethods.EnterText(ElementType.Id, "comment", "testing");
-            SeleniumSetMethods.Wait(ElementType.CssSelector, "ul.chosen-choices");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "ul.chosen-choices");
-            SeleniumSetMethods.Click(ElementType.CssSelector, "#Reason_LookupIds_chosen > div > ul > li:nth-child(4)");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSubmitModal");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "lnkDisputeTab");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "lnkDisputeTab");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Dispute Order");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Dispute Order");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "comment");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "comment", "testing");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "ul.chosen-choices");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "ul.chosen-choices");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#Reason_LookupIds_chosen > div > ul > li:nth-child(4)");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmitModal");
             SeleniumWindowMethods.Sleep(1);
 
         }
 
-        public static void ReturnToProvider(string orderid)
+        public static void ReturnToProvider(Driver driver, string orderid)
         {
-            GotoOrder(orderid);
+            GotoOrder(driver, orderid);
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(ElementType.Id, "ui-id-4");
-            SeleniumSetMethods.Click(ElementType.Id, "ui-id-4");
-            SeleniumSetMethods.Wait(ElementType.PartialLinkText, "Return to Provider");
-            SeleniumSetMethods.Click(ElementType.PartialLinkText, "Return to Provider");
-            SeleniumSetMethods.SelectDropDown(ElementType.Id, "selReason", "Incomplete Information");
-            SeleniumSetMethods.EnterText(ElementType.Id, "txaComment", "Testing Return to Provider " + DateTime.Now.ToString());
-            SeleniumSetMethods.Click(ElementType.XPath, "(//button[@type='button'])[4]");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "ui-id-4");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return to Provider");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return to Provider");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "selReason", "Incomplete Information");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "txaComment", "Testing Return to Provider " + DateTime.Now.ToString());
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(3);
 
         }

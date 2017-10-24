@@ -14,26 +14,26 @@ namespace Selenium3
 {
     class Portal_Agent
     {
-        public static void AcceptScheduleAppointment()
+        public static void AcceptScheduleAppointment(Driver driver)
         {
             // Accept Schedule Appointment - Datetime Now
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Wait(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Click(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Wait(ElementType.Id, "Address");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Address", Global.StreetAddress);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "Address");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Address", Global.StreetAddress);
             int tries = 0;
             bool IsAppointmentPresent = false;
             while (IsAppointmentPresent == false)
             {
                 try
                 {
-                    SeleniumSetMethods.Click(ElementType.Id, "searchButton1"); // refreshing results
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Click(ElementType.PartialLinkText, "Schedule Appointment");
+                    SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Schedule Appointment");
                     Global.ConsoleOut("Appointment Found");
                     IsAppointmentPresent = true;
                     break;
@@ -45,32 +45,33 @@ namespace Selenium3
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
-                SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
+                SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
             SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Wait(ElementType.Id, "AppointmentDate");
-            SeleniumSetMethods.Click(ElementType.Id, "AppointmentDate");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "AppointmentDate");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "AppointmentDate");
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Click(ElementType.XPath, "//button[@type='button']");
-            SeleniumSetMethods.Wait(ElementType.Id, "btnSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "btnSubmit");
+            SeleniumSetMethods.Wait(driver, ElementType.XPath, "//button[@type='button']");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "//button[@type='button']");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSubmit");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmit");
             SeleniumWindowMethods.Sleep(1);
             Global.ConsoleOut("Accepted Scheduled Appointment @: " + DateTime.Now);
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Manually run Amp Order sync now");
         }
 
-        public static void OpenBPO()
+        public static void OpenBPO(Driver driver)
         {
             // Open BPO Task
             Global.ConsoleOut("Opening BPO :" + Global.OrderID + "  @: " + DateTime.Now);
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Wait(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Click(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Wait(ElementType.Id, "Address");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Address", Global.StreetAddress);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "Address");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Address", Global.StreetAddress);
 
             int tries = 0;
             bool IsOrderPresent = false;
@@ -78,11 +79,11 @@ namespace Selenium3
             {
                 try
                 {
-                    SeleniumSetMethods.Click(ElementType.Id, "searchButton1"); // refreshing results
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find BPO: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Click(ElementType.LinkText, "BPO");
+                    SeleniumSetMethods.Click(driver, ElementType.LinkText, "BPO");
                     Global.ConsoleOut("BPO Found");
                     IsOrderPresent = true;
                     break;
@@ -94,22 +95,22 @@ namespace Selenium3
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
-                SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
+                SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
 
         }
 
-        public static void OpenRentalAnalysis()
+        public static void OpenRentalAnalysis(Driver driver)
         {
             // Open Rental Analysis
             Global.ConsoleOut("Opening Rental Analysis :" + Global.OrderID + "  @: " + DateTime.Now);
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Wait(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Click(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Wait(ElementType.Id, "Address");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Address", Global.StreetAddress);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "Address");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Address", Global.StreetAddress);
 
             int tries = 0;
             bool IsOrderPresent = false;
@@ -117,11 +118,11 @@ namespace Selenium3
             {
                 try
                 {
-                    SeleniumSetMethods.Click(ElementType.Id, "searchButton1"); // refreshing results
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find Rental Analysis: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Click(ElementType.LinkText, "Rental Analysis");
+                    SeleniumSetMethods.Click(driver, ElementType.LinkText, "Rental Analysis");
                     Global.ConsoleOut("Rental Analysis Found");
                     IsOrderPresent = true;
                     break;
@@ -133,22 +134,22 @@ namespace Selenium3
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
-                SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
+                SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
 
         }
 
-        public static void OpenREOTasks(string TaskName)
+        public static void OpenREOTasks(Driver driver, string TaskName)
         {
             // Open Rental Analysis
             Global.ConsoleOut("Opening REO Task for Property Id :" + Global.OrderID + "  @: " + DateTime.Now);
-            SeleniumSetMethods.Wait(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
-            SeleniumSetMethods.Wait(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Click(ElementType.Id, "clearButton");
-            SeleniumSetMethods.Wait(ElementType.Id, "Address");
-            SeleniumSetMethods.EnterText(ElementType.Id, "Address", Global.StreetAddress);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "clearButton");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "Address");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Address", Global.StreetAddress);
 
             int tries = 0;
             bool IsOrderPresent = false;
@@ -156,11 +157,11 @@ namespace Selenium3
             {
                 try
                 {
-                    SeleniumSetMethods.Click(ElementType.Id, "searchButton1"); // refreshing results
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find Task: " + TaskName + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Click(ElementType.LinkText, TaskName);
+                    SeleniumSetMethods.Click(driver, ElementType.LinkText, TaskName);
                     Global.ConsoleOut("REO Task: "+TaskName+ " Found");
                     IsOrderPresent = true;
                     break;
@@ -172,16 +173,16 @@ namespace Selenium3
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
-                SeleniumSetMethods.Click(ElementType.LinkText, "Tasks");
+                SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
 
         }
 
-       public static void SendToClient()
+       public static void SendToClient(Driver driver)
         {
-            SeleniumSetMethods.Wait(ElementType.Id, "btnBpoSubmit");
-            SeleniumSetMethods.Click(ElementType.Id, "btnBpoSubmit");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnBpoSubmit");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnBpoSubmit");
         }
 
     }

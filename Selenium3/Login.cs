@@ -16,7 +16,7 @@ namespace Selenium3
     class Login
     {
 
-        public static void REO(ENV environment, string username, string password)
+        public static void REO(Driver driver, ENV environment, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -28,28 +28,43 @@ namespace Selenium3
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (environment == ENV.QA)
-                        SeleniumSetMethods.Navigate("https://qa-reo2.res.net/");
-                    if (environment == ENV.UAT)
-                        SeleniumSetMethods.Navigate("https://uat-reo2.res.net/");
-                    if (environment == ENV.STG)
-                        SeleniumSetMethods.Navigate("https://stg-reo2.res.net/");
-                    if (environment == ENV.PROD)
-                        SeleniumSetMethods.Navigate("https://reo2.res.net/");
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-reo2.res.net/");
 
+                    }
+                        
+                    else if (environment == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-reo2.res.net/");
+
+                    }
+                        
+                    else if (environment == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-reo2.res.net/");
+
+                    }
+
+                    else if (environment == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
+
+                    }
+                       
                     // Login Page
-                    SeleniumSetMethods.Wait(ElementType.Id, "amLoginId");
-                    SeleniumSetMethods.Clear(ElementType.Id, "amLoginId");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "amLoginId", username);
-                    SeleniumSetMethods.Clear(ElementType.Name, "amIdentity");
-                    SeleniumSetMethods.EnterText(ElementType.Name, "amIdentity", password);
-                    SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "amLoginId");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "amLoginId");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "amLoginId", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "amIdentity");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "amIdentity", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -58,10 +73,7 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
 
                 }
 
@@ -75,40 +87,55 @@ namespace Selenium3
 
         }
 
-        public static void Agent(ENV portal, string username, string password)
+        public static void Agent(Driver driver, ENV portal, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
             string element = "propertySrchTxt";
-            while (IsElementPresent == false)
+          while (IsElementPresent == false)
             {
                 try
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
-                        SeleniumSetMethods.Navigate("https://qa-agent.res.net/");
-                    if (portal == ENV.UAT)
-                        SeleniumSetMethods.Navigate("https://uat-agent.res.net/");
-                    if (portal == ENV.STG)
-                        SeleniumSetMethods.Navigate("https://stg-agent.res.net/");
-                    if (portal == ENV.PROD)
-                        SeleniumSetMethods.Navigate("https://agent.res.net/");
-                    
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-agent.res.net/");
+
+                    }
+
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-agent.res.net/");
+
+                    }
+
+                    else if(portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-agent.res.net/");
+
+                    }
+                       
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://agent.res.net/");
+
+                    }
+                        
                     // Login Page
-                    SeleniumSetMethods.Wait(ElementType.Id, "username");
-                    SeleniumSetMethods.Clear(ElementType.Id, "username");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "username", username);
-                    SeleniumSetMethods.Clear(ElementType.Id, "password");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
-                    SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "username");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "username");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "username", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "password");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "password", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -117,10 +144,7 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
 
                 }
 
@@ -134,7 +158,7 @@ namespace Selenium3
 
         }
 
-        public static void ValPortal(ENV portal, string username, string password)
+        public static void ValPortal(Driver driver, ENV portal, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -146,28 +170,44 @@ namespace Selenium3
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
-                        SeleniumSetMethods.Navigate("http://qa-valuation.res.net/");
-                    if (portal == ENV.UAT)
-                        SeleniumSetMethods.Navigate("http://uat-valuation.res.net/");
-                    if (portal == ENV.STG)
-                        SeleniumSetMethods.Navigate("http://stg-valuation.res.net/");
-                    if (portal == ENV.PROD)
-                        SeleniumSetMethods.Navigate("http://valuation.res.net/");
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://qa-valuation.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://uat-valuation.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://stg-valuation.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://valuation.res.net/");
+
+                    }
+                        
 
                     // Login Page
-                    SeleniumSetMethods.Wait(ElementType.Id, "usernameEmail");
-                    SeleniumSetMethods.Clear(ElementType.Id, "usernameEmail");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "usernameEmail", username);
-                    SeleniumSetMethods.Clear(ElementType.Id, "password");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "password", password);
-                    SeleniumSetMethods.Click(ElementType.Id, "btnSubmitLogin");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "usernameEmail");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "usernameEmail");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "usernameEmail", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "password");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "password", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmitLogin");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -176,10 +216,7 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
 
                 }
 
@@ -193,7 +230,7 @@ namespace Selenium3
 
         }
 
-        public static void PropertyCure(ENV portal, string username, string password)
+        public static void PropertyCure(Driver driver, ENV portal, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -205,28 +242,43 @@ namespace Selenium3
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
-                        SeleniumSetMethods.Navigate("https://qa-vendor.res.net/");
-                    if (portal == ENV.UAT)
-                        SeleniumSetMethods.Navigate("https://uat-propertycure.res.net/");
-                    if (portal == ENV.STG)
-                        SeleniumSetMethods.Navigate("https://stg-propertycure.res.net/");
-                    if (portal == ENV.PROD)
-                        SeleniumSetMethods.Navigate("https://propertycure.res.net/");
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
 
+                    }
+
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-propertycure.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-propertycure.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://propertycure.res.net/");
+
+                    }
+                        
                     // Login Page
-                    SeleniumSetMethods.Wait(ElementType.Id, "Username");
-                    SeleniumSetMethods.Clear(ElementType.Id, "Username");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
-                    SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
-                    SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
-                    SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -235,11 +287,8 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
-
+                  
                 }
 
                 if (tries == 15)
@@ -252,7 +301,7 @@ namespace Selenium3
 
         }
 
-        public static void Vendor(ENV portal, string username, string password)
+        public static void Vendor(Driver driver, ENV portal, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -264,28 +313,43 @@ namespace Selenium3
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
-                        SeleniumSetMethods.Navigate("https://qa-vendor.res.net/");
-                    if (portal == ENV.UAT)
-                        SeleniumSetMethods.Navigate("https://uat-vendor.res.net/");
-                    if (portal == ENV.STG)
-                        SeleniumSetMethods.Navigate("https://stg-vendor.res.net/");
-                    if (portal == ENV.PROD)
-                        SeleniumSetMethods.Navigate("https://vendor.res.net/");
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
 
+                    }
+
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-vendor.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-vendor.res.net/");
+
+                    }
+                        
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://vendor.res.net/");
+
+                    }
+                        
                     // Login Page
-                    SeleniumSetMethods.Wait(ElementType.Id, "Username");
-                    SeleniumSetMethods.Clear(ElementType.Id, "Username");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
-                    SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
-                    SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
-                    SeleniumSetMethods.Click(ElementType.Id, "btnLogin");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -294,10 +358,7 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
 
                 }
 
@@ -311,7 +372,7 @@ namespace Selenium3
 
         }
 
-        public static void LossMit(ENV portal, string username, string password)
+        public static void LossMit(Driver driver, ENV portal, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -323,28 +384,43 @@ namespace Selenium3
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
-                        SeleniumSetMethods.Navigate("https://qa-shortsale.res.net");
-                    if (portal == ENV.UAT)
-                        SeleniumSetMethods.Navigate("https://uat-shortsale.res.net");
-                    if (portal == ENV.STG)
-                        SeleniumSetMethods.Navigate("https://stg-shortsale.res.net");
-                    if (portal == ENV.PROD)
-                        SeleniumSetMethods.Navigate("https://shortsale.res.net");
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-shortsale.res.net");
+
+                    }
+                        
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-shortsale.res.net");
+
+                    }
+
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-shortsale.res.net");
+
+                    }
+                        
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://shortsale.res.net");
+
+                    }
 
                     // Login Page
-                    SeleniumSetMethods.Wait(ElementType.Id, "Username");
-                    SeleniumSetMethods.Clear(ElementType.Id, "Username");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "Username", username);
-                    SeleniumSetMethods.Clear(ElementType.Name, "UserPassword");
-                    SeleniumSetMethods.EnterText(ElementType.Name, "UserPassword", password);
-                    SeleniumSetMethods.Click(ElementType.Name, "btnLogin");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -353,10 +429,7 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
 
                 }
 
@@ -370,7 +443,7 @@ namespace Selenium3
 
         }
 
-        public static void Buyer(ENV portal, string username, string password)
+        public static void Buyer(Driver driver, ENV portal, string username, string password)
         {
             int tries = 0;
             bool IsElementPresent = false;
@@ -382,28 +455,44 @@ namespace Selenium3
                     tries = tries + 1;
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
-                        SeleniumSetMethods.Navigate("https://qa-buyer.res.net/login");
-                    if (portal == ENV.UAT)
-                        SeleniumSetMethods.Navigate("https://uat-buyer.res.net/login");
-                    if (portal == ENV.STG)
-                        SeleniumSetMethods.Navigate("https://stg-buyer.res.net/login");
-                    if (portal == ENV.PROD)
-                        SeleniumSetMethods.Navigate("https://buyer.res.net/login");
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-buyer.res.net/login");
+
+                    }
+
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-buyer.res.net/login");
+
+                    }
+
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-buyer.res.net/login");
+
+                    }
+
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://buyer.res.net/login");
+
+                    }
+                       
 
                     // Login Pages
-                    SeleniumSetMethods.Wait(ElementType.Id, "UsernameOrEmail");
-                    SeleniumSetMethods.Clear(ElementType.Id, "UsernameOrEmail");
-                    SeleniumSetMethods.EnterText(ElementType.Id, "UsernameOrEmail", username);
-                    SeleniumSetMethods.Clear(ElementType.Name, "PasswordLogin");
-                    SeleniumSetMethods.EnterText(ElementType.Name, "PasswordLogin", password);
-                    SeleniumSetMethods.Click(ElementType.Id, "submitForm");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "UsernameOrEmail");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "UsernameOrEmail");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "UsernameOrEmail", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "PasswordLogin");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "PasswordLogin", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "submitForm");
 
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(ElementType.Id, element);
-                    SeleniumSetMethods.Find(ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
@@ -412,11 +501,8 @@ namespace Selenium3
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
-                    SeleniumWindowMethods.Sleep(1);
-                    SeleniumWindowMethods.WindowActions(ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
-
+  
                 }
 
                 if (tries == 15)

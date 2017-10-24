@@ -19,29 +19,9 @@ namespace Selenium3
         {
             ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo();
-
-            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
-
-            SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.MouseOver(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplPropertySearch");     
-            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplSubPropertyListing");
-            SeleniumWindowMethods.Sleep(5);
-            Global.ConsoleOut("Chrome Driver was sucessful");
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumWindowMethods.WindowActions(ActType.Close);
-            SeleniumWindowMethods.Sleep(2);
-            
-            // Test new driver
-            IWebDriver driver = new InternetExplorerDriver();
-            PropertiesCollection.driver = driver;
-            Login.Agent(ENV.QA, "QATest23@usres.com", "blue123");
-
-            SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.MouseOver(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplPropertySearch");
-            SeleniumSetMethods.Click(ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplSubPropertyListing");
-            SeleniumWindowMethods.Sleep(5);
-            Global.ConsoleOut("IE Driver was sucessful");
-            SeleniumWindowMethods.WindowActions(ActType.Close);
+            SeleniumWindowMethods.WindowActions(Driver.driver1, ActType.Maximize);
+            PropertiesCollection.driver2.Close();
+            Runner_QA.RAFlow1Org1(Driver.driver1);
 
             // Test was executed successfully 
             Global.Done();

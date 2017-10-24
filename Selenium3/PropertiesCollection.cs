@@ -16,7 +16,7 @@ namespace Selenium3
 
     class PropertiesCollection
     {
-        //Auto-implemented property
+        //Auto-implemented properdty
         public static IWebDriver driver { get; set; }
         public static IWebDriver driver2 { get; set; }
 
@@ -78,6 +78,14 @@ namespace Selenium3
         Vendor,
         REO,
         PropertyCure
+
+    }
+
+    // Strongly Typed Variable
+    enum Driver
+    {
+        driver1,
+        driver2
 
     }
 }

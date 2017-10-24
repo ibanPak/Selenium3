@@ -14,33 +14,33 @@ namespace Selenium3
 {
     class Runner_STG
     {
-        public static void PCAddDefaultUsers()
+        public static void PCAddDefaultUsers(Driver driver)
         {
             // Adding Default Users
             SeleniumWindowMethods.Sleep(3);
-            Login.PropertyCure(ENV.STG, "ditechadmin", "Pwd12345678!");
-            Portal_PropertyCure.AddNewUser("Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
+            Login.PropertyCure(driver, ENV.STG, "ditechadmin", "Pwd12345678!");
+            Portal_PropertyCure.AddNewUser(driver, "Ivan", "Ngyen-Cuu", "ibenPn", "Ivan.Nguyen-Cuu@usres.com", "Green!23");
             SeleniumWindowMethods.Sleep(3);
-            Portal_PropertyCure.AddNewUser("George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
-            Logout.Portal(Portals.PropertyCure);
+            Portal_PropertyCure.AddNewUser(driver, "George", "Washington", "DollarBill", "QATest121@usres.com", "Green!23");
+            Logout.Portal(driver, Portals.PropertyCure);
         }
 
-        public static void PCFlow1()
+        public static void PCFlow1(Driver driver)
         {
             // Property Cure Regresssion Flow 1
             SeleniumWindowMethods.Sleep(3);
-            Login.PropertyCure(ENV.STG, "ibenPn", "Green!23");
-            Portal_PropertyCure.AddNewProperty("Encore", "Irvine", "California", "92620", "CSFB 2");
-            Portal_PropertyCure.AddNewViolation(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewUtility(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewOTABid(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewSE(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewInspection(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewHazardClaim(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewPropertyRegistration(Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewNote(Global.PropertyID);
-            Portal_PropertyCure.FileUpload(Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-            Logout.Portal(Portals.PropertyCure);
+            Login.PropertyCure(driver, ENV.STG, "ibenPn", "Green!23");
+            Portal_PropertyCure.AddNewProperty(driver, "Encore", "Irvine", "California", "92620", "CSFB 2");
+            Portal_PropertyCure.AddNewViolation(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewUtility(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewOTABid(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewSE(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewInspection(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewHazardClaim(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewPropertyRegistration(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
+            Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            Logout.Portal(driver, Portals.PropertyCure);
 
         }
 
