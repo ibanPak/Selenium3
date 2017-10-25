@@ -31,14 +31,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
                     PropertiesCollection.driver.Navigate().Back();
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -65,14 +63,12 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
                     PropertiesCollection.driver.Navigate().Refresh();
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -99,7 +95,6 @@ namespace Selenium3
                     IsElementPresent = true;
                     break;
                 }
-
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element);
@@ -109,7 +104,6 @@ namespace Selenium3
                     Global.ReadySetGo();
                     
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
