@@ -9,8 +9,80 @@ namespace Selenium3
 {
     class Form_RentalAnalysis
     {
+        public static void ClearRA(Driver driver)
+        {
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "SubjectMarketing_SubjectPropertyUnits");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Marketing_OwnerPercentage");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Marketing_TenantPercentage");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_SchoolDistrict");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_NumActiveListingsInNhood");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_PriceRangeActiveListingsFrom");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_PriceRangeActiveListingsTo");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Unified_NeighDetailsAddnlComments");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__StreetAddress");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__StreetAddress");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__StreetAddress");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__City");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__City");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__City");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__PostalCode");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__PostalCode");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__PostalCode");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoOriginalListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "PennyMac_SaleComps_0__OriginalListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "PennyMac_SaleComps_1__OriginalListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "PennyMac_SaleComps_2__OriginalListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "SubjectMarketing_SubjectListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__ListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__ListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__ListPrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "SaleComps_0__SalePrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "SaleComps_1__SalePrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "SaleComps_2__SalePrice");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "SubjectMarketing_SubjectDom");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__Dom");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__Dom");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__Dom");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_R1MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_R2MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_R3MonthlyRentalAmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_PropertyView");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_R1PropertyView");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_R2PropertyView");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_R3PropertyView");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_Rooms");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__Rooms");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__Rooms");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__Rooms");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_Beds");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__Beds");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__Beds");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__Beds");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_Baths");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__Baths");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__Baths");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__Baths");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_GrossLivingArea");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__GrossLivingArea");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__GrossLivingArea");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__GrossLivingArea");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_Bsmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__Bsmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__Bsmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__Bsmt");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_FunctionalUtility");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_0__FunctionalUtility");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_1__FunctionalUtility");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "ListComps_2__FunctionalUtility");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Unified_CheckListListing1Comments");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Unified_CheckListListing2Comments");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Unified_CheckListListing3Comments");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rental_EstimatedMarketRent");
 
-        public static void CompleteRentalAnalysis(Driver driver)
+        }
+
+            public static void CompleteRA(Driver driver)
         {
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Begin input @ " + DateTime.Now);
