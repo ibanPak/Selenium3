@@ -38,13 +38,15 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img.lookupPopupIcon");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_SourceId");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_Radius");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "Filters_Radius", "50+");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "Filters_ProviderHasLocationZip");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchProviderAssignment");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Select");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Select");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#ProviderAssignmentTGrid > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(1) > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(5);
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
