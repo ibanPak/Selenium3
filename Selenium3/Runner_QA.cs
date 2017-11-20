@@ -68,7 +68,7 @@ namespace Selenium3
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
-            Form_RentalAnalysis.CompleteRentalAnalysis(driver);
+            Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.QA);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
@@ -94,7 +94,7 @@ namespace Selenium3
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
-            Form_RentalAnalysis.CompleteRentalAnalysis(driver);
+            Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.QA);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, ENV.QA,"test3", "P@ssw0rd4");
@@ -160,15 +160,15 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "30810";
+            Global.StreetAddress = "1116 Rush Lily";
             Global.ThrottleSleep = 3 * (1000);
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Tulip", "Irvine", "California", "92620");
+            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -193,6 +193,7 @@ namespace Selenium3
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
+
         }
 
         public static void AppraisalOrg1(Driver driver)

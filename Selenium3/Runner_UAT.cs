@@ -67,7 +67,7 @@ namespace Selenium3
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
-            Form_RentalAnalysis.CompleteRentalAnalysis(driver);
+            Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.UAT);
             Logout.Portal(driver, Portals.Agent); 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
@@ -93,7 +93,7 @@ namespace Selenium3
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
-            Form_RentalAnalysis.CompleteRentalAnalysis(driver);
+            Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.UAT);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");

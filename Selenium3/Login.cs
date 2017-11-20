@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-
 namespace Selenium3
 {
     class Login
@@ -32,19 +31,16 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://qa-reo2.res.net/");
 
                     }
-                        
                     else if (environment == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-reo2.res.net/");
 
                     }
-                        
                     else if (environment == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-reo2.res.net/");
 
                     }
-
                     else if (environment == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
@@ -68,8 +64,8 @@ namespace Selenium3
                     Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
-                }
 
+                }
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
@@ -81,6 +77,7 @@ namespace Selenium3
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -92,7 +89,7 @@ namespace Selenium3
             int tries = 0;
             bool IsElementPresent = false;
             string element = "propertySrchTxt";
-          while (IsElementPresent == false)
+            while (IsElementPresent == false)
             {
                 try
                 {
