@@ -80,6 +80,22 @@ namespace Selenium3
         PropertyCure
 
     }
+    
+    // Strongly Typed Variable
+    enum ProductTypes
+    {
+        Appraisal,
+        BPO,
+        RentalAnalysis
+
+    }
+
+    enum Products
+    {
+        Exterior,
+        Interior
+
+    }
 
     // Strongly Typed Variable
     enum Driver

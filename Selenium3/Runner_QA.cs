@@ -160,19 +160,19 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
-            Global.OrderID = "30810";
-            Global.StreetAddress = "1116 Rush Lily";
+            Global.OrderID = "30821";
+            Global.StreetAddress = "1121 Great Lawn";
             Global.ThrottleSleep = 3 * (1000);
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
-            Logout.Portal(driver, Portals.ValPortal);
+            //Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            //Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Great Lawn", "Irvine", "California", "92620");
+            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            //Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
-            Portal_Agent.AcceptScheduleAppointment(driver);
+            //Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
             Form_FMBBPO.Attachments(driver, ENV.QA);
@@ -217,6 +217,21 @@ namespace Selenium3
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteAppraisal(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
+
+        }
+
+        public static void ValClient(Driver driver)
+        {
+            // Appraisal Org1
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
+            Global.ThrottleSleep = 3 * (1000);
+            /*                                                  */
+            /*              Make changes to above               */
+            /*                                                  */
+
+            Login.ValClient(Driver.driver1, ENV.QA, "testclient", "P@ssw0rd1");
+            Portal_ValClient.CreateNewOrder(Driver.driver1, ProductTypes.BPO, Products.Interior, "Rose Arch", "Irvine", "California", "92614");
 
         }
 

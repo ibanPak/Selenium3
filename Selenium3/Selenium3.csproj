@@ -64,6 +64,7 @@
     <Compile Include="Login.cs" />
     <Compile Include="Logout.cs" />
     <Compile Include="Form_PNMACBPO.cs" />
+    <Compile Include="Portal_ValClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PropertiesCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

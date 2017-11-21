@@ -194,6 +194,55 @@ namespace Selenium3
                
         }
 
+        public static void MultiSelect(Driver driver, ElementType elementtype, string element, string value)
+        {
+
+            // Driver 1
+            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            {
+                new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).SelectByValue(value);
+
+            }
+            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            {
+                new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).SelectByValue(value);
+
+            }
+            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
+            {
+                new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByValue(value);
+
+            }
+            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
+            {
+                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByValue(value);
+
+            }
+            // Driver 2
+            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            {
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).SelectByValue(value);
+
+            }
+            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
+            {
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByValue(value);
+
+            }
+            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
+            {
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByValue(value);
+
+            }
+            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
+            {
+                new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByValue(value);
+
+            }
+
+
+        }
+
         // Select a drop down control
         public static void SelectDropDown(Driver driver, ElementType elementtype, string element, string value)
         {

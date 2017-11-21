@@ -480,6 +480,72 @@ namespace Selenium3
 
         }
 
+        public static void ValClient(Driver driver, ENV portal, string username, string password)
+        {
+            int tries = 0;
+            bool IsElementPresent = false;
+            string element = "Filter_LoanNumber";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://qa-client.usres.com/Authentication/LogOn");
+
+                    }
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://uat-client.usres.com/Authentication/LogOn");
+
+                    }
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://stg-client.usres.com/Authentication/LogOn");
+
+                    }
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://client.usres.com/Authentication/LogOn");
+
+                    }
+
+                    // Login Page
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Password");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Password", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
+
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    Global.ConsoleOut("Element found: " + element);
+                    IsElementPresent = true;
+                    break;
+                }
+                catch
+                {
+                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(2);
+
+                }
+                if (tries == 15)
+                {
+                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+                }
+
+            }
+
+        }
+
     }
 
 }
