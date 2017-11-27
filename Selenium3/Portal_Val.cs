@@ -40,6 +40,8 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_SourceId");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchProviderAssignment");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchProviderAssignment");
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Select");

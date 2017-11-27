@@ -101,7 +101,7 @@ namespace Selenium3
                     SeleniumWindowMethods.Sleep(1);
                     SeleniumWindowMethods.WindowActions(driver, ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo();
+                    Global.ReadySetGo(Global.MultipleBrowser);
                     
                 }
                 if (tries == 15)

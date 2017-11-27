@@ -31,11 +31,21 @@ namespace Selenium3
         public static int ThrottleSleep = 2*(1000);
         public static DateTime StartDT;
         public static DateTime EndDT;
+        public static bool MultipleBrowser = false;
 
-        public static void ReadySetGo()
+
+        public static void ReadySetGo(bool MultipleBrowser)
         {
-            IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
-            IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;
+            if (MultipleBrowser == false)
+            {
+                IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
+            }
+            else if (MultipleBrowser == true)
+            {
+                IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
+                IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;
+            }
+
             // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
             // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
 
