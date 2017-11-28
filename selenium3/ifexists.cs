@@ -27,7 +27,6 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, element);
                     SeleniumSetMethods.Find(driver, ElementType.PartialLinkText, element);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -59,7 +58,6 @@ namespace Selenium3
                     Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -91,7 +89,6 @@ namespace Selenium3
                     Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -101,8 +98,8 @@ namespace Selenium3
                     SeleniumWindowMethods.Sleep(1);
                     SeleniumWindowMethods.WindowActions(driver, ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo(Global.MultipleBrowser);
-                    
+                    Global.ReadySetGo(NumBrowsers.One);
+
                 }
                 if (tries == 15)
                 {
