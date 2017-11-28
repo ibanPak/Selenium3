@@ -61,7 +61,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
 
@@ -130,7 +129,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -196,7 +194,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -262,7 +259,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -328,7 +324,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -394,7 +389,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -460,7 +454,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }
@@ -526,7 +519,6 @@ namespace Selenium3
                     Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Element found: " + element);
                     IsElementPresent = true;
                     break;
                 }

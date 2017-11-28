@@ -104,4 +104,13 @@ namespace Selenium3
         driver2
 
     }
+
+    // Strongly Typed Variable
+    enum NumBrowsers
+    {
+        One,
+        Two
+
+    }
+
 }

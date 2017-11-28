@@ -31,16 +31,16 @@ namespace Selenium3
         public static int ThrottleSleep = 2*(1000);
         public static DateTime StartDT;
         public static DateTime EndDT;
-        public static bool MultipleBrowser = false;
 
 
-        public static void ReadySetGo(bool MultipleBrowser)
+        public static void ReadySetGo(NumBrowsers numbrowsers)
         {
-            if (MultipleBrowser == false)
+            if (numbrowsers == NumBrowsers.One)
             {
                 IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
+                SeleniumWindowMethods.WindowActions(Driver.driver1, ActType.Maximize);
             }
-            else if (MultipleBrowser == true)
+            else if (numbrowsers == NumBrowsers.Two)
             {
                 IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
                 IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;

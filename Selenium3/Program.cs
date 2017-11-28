@@ -18,9 +18,7 @@ namespace Selenium3
         static void Main(string[] args)
         {
             ConsoleWindow.ConsoleAttributes();
-            Global.ReadySetGo(true);
-
-            SeleniumWindowMethods.WindowActions(Driver.driver1, ActType.Maximize);
+            Global.ReadySetGo(NumBrowsers.One);
 
             //////////////////////////////////////////////////////////////////////////
             //                                                                      //
@@ -28,9 +26,8 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            
-            
 
+            
             // Test was executed successfully 
             Global.Done();
 
