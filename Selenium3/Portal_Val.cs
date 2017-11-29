@@ -44,9 +44,9 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchProviderAssignment");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchProviderAssignment");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Select");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "td.actions > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Select");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "td.actions > a:nth-child(1)");
             SeleniumWindowMethods.Sleep(5);
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(3);
