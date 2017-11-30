@@ -461,8 +461,15 @@ namespace Selenium3
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
             {
-                PropertiesCollection.driver.FindElement(By.XPath(element));
-                Global.ConsoleOut("Element found: " + element);
+                try
+                {
+                    PropertiesCollection.driver.FindElement(By.XPath(element));
+                    Global.ConsoleOut("Element found: " + element);
+                }
+                catch (Exception)
+                {
+                    Global.ConsoleOut("Element not found: " + element);
+                }
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
             {
