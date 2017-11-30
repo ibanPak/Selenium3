@@ -14,7 +14,6 @@ namespace Selenium3
 {
     class Form_REOTasks
     {
-
         public static void Winterization(Driver driver, string AgentName)
         {
             SeleniumSetMethods.Wait(driver, ElementType.Name, "wsrWinterize");
@@ -92,27 +91,23 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "hoaHoaCity", "Irvine");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "hoaHoaState", "CA");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "hoaHoaZip", "92618");
-
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
 
         }
 
         public static void AssetMGRTasks(Driver driver)
         {
-
             SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", Global.OrderID);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "qsAddress");
             SeleniumSetMethods.Click(driver, ElementType.Id, "qsAddress");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "SCRA Referral (Custom)");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[3]"); 
-
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Sivad Custom task (Custom)");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
@@ -123,7 +118,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Agent Listing Contract");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "122314 Custom Task (Custom)");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
@@ -131,42 +125,35 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "073113ListingCheckboxListCustom_test");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnUpdateAsDone");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateAsDone");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Sivad Custom task (Custom)");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Test1", "Enter Comment");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateAsDone");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Home Owners Assoc Information Request");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Tax Research Request");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Listing Acknowledgement");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Referral Agreement");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Winterization Requirements Request");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
             IfExists.Link_Back(driver, "Occupancy Status Request");
             IfExists.Id_Refresh(driver, "globalPropertySearch");
@@ -177,24 +164,12 @@ namespace Selenium3
 
         public static void PropertyInspection(Driver driver)
         {
-
-            /*   SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
-                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", Global.OrderID);
-                 SeleniumWindowMethods.Sleep(1);
-                 SeleniumSetMethods.Wait(driver, ElementType.Id, "qsAddress");
-                 SeleniumSetMethods.Click(driver, ElementType.Id, "qsAddress");
-                 SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-                 SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-                 SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Property Inspection");
-                 SeleniumSetMethods.Click(driver, ElementType.LinkText, "Property Inspection");  */
             SeleniumSetMethods.Wait(driver, ElementType.Name, "inspDate_visit");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "inspDate_visit", Global.LastMonth);
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspStatus_vacant");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspStatus_Personal_No");
             SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#form-questions > table > tbody > tr > td:nth-child(1) > ul > li:nth-child(1) > div > ul > li:nth-child(1) > input[type=\"file\"]"
                 , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
-
-            //    SeleniumSetMethods.EnterText(driver, ElementType.Name, "insp_23446296_5", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspRe_keyed_No");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspLockBox_Yes");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "inspLockBox_Code", "12345");

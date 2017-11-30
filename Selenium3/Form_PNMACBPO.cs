@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-
 namespace Selenium3
 {
     class Form_PNMACBPO
     {
-
         public static void ClearBPO(Driver driver)
         {
             SeleniumSetMethods.Clear(driver, ElementType.Id, "PennyMac_Subject_OwnerName");
@@ -288,7 +286,8 @@ namespace Selenium3
             SeleniumSetMethods.Clear(driver, ElementType.Id, "ProviderComments");
 
         }
-            public static void CompleteBPO(Driver driver)
+
+        public static void CompleteBPO(Driver driver)
         {
             SeleniumSetMethods.Click(driver, ElementType.Id, "Subject_InspectionDate");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[2]");
@@ -430,7 +429,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "QuickSaleListPrice");
             SeleniumSetMethods.Click(driver, ElementType.Id, "PennyMac_AsIsDays");
             SeleniumSetMethods.Click(driver, ElementType.Id, "ProviderComments");
-
             // Enter Text
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Subject_OwnerName", "Owner");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_VendorOrderId", "123-66");
@@ -764,7 +762,6 @@ namespace Selenium3
 
         public static void Attachments(Driver driver, ENV environment)
         {
-
             // Add Exterior Attachments to U53 Order
             Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
 
@@ -814,7 +811,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
-                
             }
             else if (environment == ENV.UAT)
             {
@@ -862,7 +858,7 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_117_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
-               
+
             }
 
             // Complete Attachment Section

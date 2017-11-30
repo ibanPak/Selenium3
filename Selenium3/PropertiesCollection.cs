@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-
 namespace Selenium3
 {
-
     class PropertiesCollection
     {
         //Auto-implemented properdty

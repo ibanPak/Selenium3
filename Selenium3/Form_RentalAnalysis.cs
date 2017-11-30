@@ -82,7 +82,7 @@ namespace Selenium3
 
         }
 
-            public static void CompleteRA(Driver driver)
+        public static void CompleteRA(Driver driver)
         {
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Begin input @ " + DateTime.Now);
@@ -496,7 +496,7 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "1544_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
-                
+
             }
 
             // Complete Attachment Section

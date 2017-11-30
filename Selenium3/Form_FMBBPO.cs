@@ -8,7 +8,6 @@ namespace Selenium3
 {
     class Form_FMBBPO
     {
-
         public static void ClearBPO(Driver driver)
         {
             SeleniumSetMethods.Clear(driver, ElementType.Id, "Subject_ParcelNumber");
@@ -787,7 +786,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
-                
             }
             else if (environment == ENV.UAT)
             {
@@ -835,9 +833,8 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_124_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
-               
-            }
 
+            }
             // Complete Attachment Section
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnBpoSave");

@@ -18,7 +18,6 @@ namespace Selenium3
 
         public static void Search(Driver driver)
         {
-
             // Navigate to web page
             SeleniumSetMethods.Navigate(Driver.driver1,  "https://qa-buyer.res.net");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "propertiesTabLink");

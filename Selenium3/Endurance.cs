@@ -14,13 +14,10 @@ namespace Selenium3
 {
     class Endurance
     {
-
         public static void PropertyCure(Driver driver)
         {
-            
             int cycles = 0;
             int failcount = 0;
-
             while (cycles < 1000000)
             {
                 try
@@ -107,14 +104,13 @@ namespace Selenium3
                     SeleniumWindowMethods.ThrottlingSleep();
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchFilters");
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchFilters");
-
+                    // Adding Timestaping information 
                     Global.EndDT = DateTime.Now;
                     var seconds = (Global.EndDT - Global.StartDT).TotalSeconds;
                     TimeSpan timespan = TimeSpan.FromSeconds(seconds);
                     int hour = timespan.Hours;
                     int min = timespan.Minutes;
                     int sec = timespan.Seconds;
-
                     Global.ConsoleOut("Running Time " + hour + " Hours, " + min + " minutes, " + sec + " seconds, since testing has begun");
                     Global.ConsoleOut("Time Stamp: " + DateTime.Now);
                 }
@@ -133,7 +129,7 @@ namespace Selenium3
                 }
 
             }
-            
+
         }
 
     }

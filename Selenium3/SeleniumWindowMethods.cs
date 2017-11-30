@@ -14,31 +14,25 @@ namespace Selenium3
 {
     class SeleniumWindowMethods
     {
-
         public static void WindowActions(Driver driver, ActType windowsactions)
         {
             // Driver 1
             if (driver == Driver.driver1 && windowsactions == ActType.Maximize)
             {
                 PropertiesCollection.driver.Manage().Window.Maximize();
-
             }
             else if (driver == Driver.driver1 && windowsactions == ActType.Close)
             {
                 PropertiesCollection.driver.Close();
-   
             }
-
             // Driver 2
             else if (driver == Driver.driver2 && windowsactions == ActType.Maximize)
             {
                 PropertiesCollection.driver2.Manage().Window.Maximize();
-
             }
             else if (driver == Driver.driver2 && windowsactions == ActType.Close)
             {
                 PropertiesCollection.driver2.Close();
-
             }
 
         }
@@ -49,24 +43,20 @@ namespace Selenium3
             if (driver == Driver.driver1 && windowsactions == WinType.Popup)
             {
                 PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.Last());
-
             }
             else if (driver == Driver.driver1 && windowsactions == WinType.Main)
             {
                 PropertiesCollection.driver.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
-
             }
 
             // Driver 2
             else if (driver == Driver.driver2 && windowsactions == WinType.Popup)
             {
                 PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.Last());
-
             }
             else if (driver == Driver.driver2 && windowsactions == WinType.Main)
             {
                 PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
-
             }
 
         }
@@ -78,7 +68,6 @@ namespace Selenium3
             {
                 PropertiesCollection.driver.SwitchTo().Frame(Frame);
             }
-
             // Driver 2
             else if (driver == Driver.driver2)
             {
@@ -97,7 +86,6 @@ namespace Selenium3
                 ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
                 Global.ConsoleOut("Screen Shoot Captured: " + filename);
             }
-            
             // Driver 2
             else if (driver == Driver.driver2)
             {
@@ -112,7 +100,7 @@ namespace Selenium3
         public static void Sleep(int sec)
         {
             System.Threading.Thread.Sleep(sec * (1000));
-   
+
         }
 
         public static void ThrottlingSleep()
@@ -127,30 +115,24 @@ namespace Selenium3
             if (driver == Driver.driver1 && alert == Alert.Accept)
             {
                 PropertiesCollection.driver.SwitchTo().Alert().Accept();
-
-            }              
+            }
             else if (driver == Driver.driver1 && alert == Alert.Dismiss)
             {
                 PropertiesCollection.driver.SwitchTo().Alert().Dismiss();
-
-            }              
+            }
             else if (driver == Driver.driver1 && alert == Alert.Wait)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
                 wait.Until(ExpectedConditions.AlertIsPresent());
-
             }
-
             // Driver 2
             else if (driver == Driver.driver2 && alert == Alert.Accept)
             {
                 PropertiesCollection.driver2.SwitchTo().Alert().Accept();
-
             }
             else if (driver == Driver.driver2 && alert == Alert.Dismiss)
             {
                 PropertiesCollection.driver2.SwitchTo().Alert().Dismiss();
-
             }
             else if (driver == Driver.driver2 && alert == Alert.Wait)
             {

@@ -14,7 +14,6 @@ namespace Selenium3
 {
     class Login
     {
-
         public static void REO(Driver driver, ENV environment, string username, string password)
         {
             int tries = 0;
@@ -29,24 +28,19 @@ namespace Selenium3
                     if (environment == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://qa-reo2.res.net/");
-
                     }
                     else if (environment == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-reo2.res.net/");
-
                     }
                     else if (environment == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-reo2.res.net/");
-
                     }
                     else if (environment == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
-
                     }
-                       
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "amLoginId");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "amLoginId");
@@ -54,7 +48,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Name, "amIdentity");
                     SeleniumSetMethods.EnterText(driver, ElementType.Name, "amIdentity", password);
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -63,15 +56,12 @@ namespace Selenium3
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
                     break;
-
                 }
                 catch
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-
                 }
-
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
@@ -97,24 +87,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://qa-agent.res.net/");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-agent.res.net/");
-
                     }
-                    else if(portal == ENV.STG)
+                    else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-agent.res.net/");
-
-                    } 
+                    }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://agent.res.net/");
-
                     }
-                        
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "username");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "username");
@@ -122,7 +107,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "password");
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "password", password);
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -136,12 +120,12 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -162,24 +146,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://qa-valuation.res.net/");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://uat-valuation.res.net/");
-
                     }
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://stg-valuation.res.net/");
-
-                    } 
+                    }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://valuation.res.net/");
-
                     }
-                        
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "usernameEmail");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "usernameEmail");
@@ -187,7 +166,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "password");
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "password", password);
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmitLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -201,12 +179,12 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -227,24 +205,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-propertycure.res.net/");
-
                     }
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-propertycure.res.net/");
-
                     }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://propertycure.res.net/");
-
                     }
-                        
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
@@ -252,7 +225,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
                     SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -266,12 +238,13 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-                  
+
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -292,24 +265,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-vendor.res.net/");
-
                     }
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-vendor.res.net/");
-
                     }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://vendor.res.net/");
-
                     }
-                        
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
@@ -317,7 +285,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
                     SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -331,12 +298,12 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -357,24 +324,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://qa-shortsale.res.net");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-shortsale.res.net");
-
                     }
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-shortsale.res.net");
-
                     }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://shortsale.res.net");
-
                     }
-
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
@@ -382,7 +344,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
                     SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -396,12 +357,12 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -422,24 +383,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://qa-buyer.res.net/login");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://uat-buyer.res.net/login");
-
                     }
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://stg-buyer.res.net/login");
-
                     }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "https://buyer.res.net/login");
-
                     }
-
                     // Login Pages
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "UsernameOrEmail");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "UsernameOrEmail");
@@ -447,7 +403,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Name, "PasswordLogin");
                     SeleniumSetMethods.EnterText(driver, ElementType.Name, "PasswordLogin", password);
                     SeleniumSetMethods.Click(driver, ElementType.Id, "submitForm");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -461,12 +416,12 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-  
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }
@@ -487,24 +442,19 @@ namespace Selenium3
                     if (portal == ENV.QA)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://qa-client.usres.com/Authentication/LogOn");
-
                     }
                     else if (portal == ENV.UAT)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://uat-client.usres.com/Authentication/LogOn");
-
                     }
                     else if (portal == ENV.STG)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://stg-client.usres.com/Authentication/LogOn");
-
                     }
                     else if (portal == ENV.PROD)
                     {
                         SeleniumSetMethods.Navigate(driver, "http://client.usres.com/Authentication/LogOn");
-
                     }
-
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
@@ -512,7 +462,6 @@ namespace Selenium3
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Password");
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "Password", password);
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
-
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
@@ -526,12 +475,12 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
-
                 }
                 if (tries == 15)
                 {
                     Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
+
                 }
 
             }

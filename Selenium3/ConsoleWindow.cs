@@ -13,8 +13,6 @@ using System.Runtime.InteropServices;
 
 namespace Selenium3
 {
-    
-
     class ConsoleWindow
     {
         const int SWP_NOSIZE = 0x0001;
@@ -24,12 +22,11 @@ namespace Selenium3
         [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
         public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
         public static void ConsoleAttributes()
-         {
+        {
             Console.WindowWidth = 99;
             Console.WindowHeight = 75;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Cyan;
-
             int xpos = 2000;
             int ypos = 100;
             SetWindowPos(MyConsole, 0, xpos, ypos, 0, 0, SWP_NOSIZE);

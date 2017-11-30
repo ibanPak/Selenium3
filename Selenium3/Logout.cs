@@ -14,7 +14,6 @@ namespace Selenium3
 {
     class Logout
     {
-        
         public static void Portal(Driver driver, Portals portals)
         {
             int tries = 0;
@@ -23,15 +22,13 @@ namespace Selenium3
             {
                 try
                 {
-                    tries = tries + 1;
                     // Check to see if Logout WebElement is Present
-                 
+                    tries = tries + 1;
                     if (portals == Portals.ValPortal)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
                         SeleniumWindowMethods.Sleep(1);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
-                       
                     }
                     else if (portals == Portals.Agent)
                     {
@@ -58,11 +55,8 @@ namespace Selenium3
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "i.fa.fa-caret-down");
                         SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogout");
                     }
-                    
                     IsElementPresent = true;
                     Global.ConsoleOut("Logout WebElement " + portals + " found");
-                    break;
-
                 }
                 catch
                 {
@@ -72,7 +66,6 @@ namespace Selenium3
                 if (tries == 15)
                 {
                     Global.ConsoleOut("Logout WebElement " + portals + " not found, and " + tries + " maxium tries has been reached");
-
                     break; // handle error and break/return
                 }
 

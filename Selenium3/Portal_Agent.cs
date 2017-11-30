@@ -23,6 +23,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "clearButton");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Address");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Address", Global.StreetAddress);
+
             int tries = 0;
             bool IsAppointmentPresent = false;
             while (IsAppointmentPresent == false)
@@ -60,6 +61,7 @@ namespace Selenium3
             Global.ConsoleOut("Accepted Scheduled Appointment @: " + DateTime.Now);
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Manually run Amp Order sync now");
+
         }
 
         public static void OpenBPO(Driver driver)
@@ -162,14 +164,14 @@ namespace Selenium3
                     Global.ConsoleOut("Attempting to find Task: " + TaskName + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.LinkText, TaskName);
-                    Global.ConsoleOut("REO Task: "+TaskName+ " Found");
+                    Global.ConsoleOut("REO Task: " + TaskName + " Found");
                     IsOrderPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(TaskName +" not found");
+                    Global.ConsoleOut(TaskName + " not found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
@@ -179,7 +181,7 @@ namespace Selenium3
 
         }
 
-       public static void SendToClient(Driver driver)
+        public static void SendToClient(Driver driver)
         {
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnBpoSubmit");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnBpoSubmit");

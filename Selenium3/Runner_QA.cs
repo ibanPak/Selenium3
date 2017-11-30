@@ -14,7 +14,6 @@ namespace Selenium3
 {
     class Runner_QA
     {
-
         public static void REOFlowOrg1(Driver driver)
         {
             // REO Flow Org1
@@ -87,7 +86,7 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA,"test3", "P@ssw0rd4");
+            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd4");
             Portal_Val.CreateNewRentalAnalysis(driver, "Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
@@ -97,7 +96,7 @@ namespace Selenium3
             Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.QA);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA,"test3", "P@ssw0rd4");
+            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd4");
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -167,12 +166,12 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            //Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            //Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Rush Lily", "Irvine", "California", "92620");
-            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
-            //Logout.Portal(driver, Portals.ValPortal);
+            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Rush Lily", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
-            //Portal_Agent.AcceptScheduleAppointment(driver);
+            Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
             Form_FMBBPO.Attachments(driver, ENV.QA);
@@ -258,8 +257,8 @@ namespace Selenium3
             Portal_PropertyCure.AddNewOTABid(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewSE(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewInspection(driver, Global.PropertyID, "George Washington (DollarBill)");
-            Portal_PropertyCure.AddNewHazardClaim(driver, Global.PropertyID, "George Washington (DollarBill)"); 
-            Portal_PropertyCure.AddNewPropertyRegistration(driver, Global.PropertyID, "George Washington (DollarBill)"); 
+            Portal_PropertyCure.AddNewHazardClaim(driver, Global.PropertyID, "George Washington (DollarBill)");
+            Portal_PropertyCure.AddNewPropertyRegistration(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
             Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);

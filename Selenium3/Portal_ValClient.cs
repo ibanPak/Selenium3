@@ -14,7 +14,6 @@ namespace Selenium3
 {
     class Portal_ValClient
     {
-
         public static void GotoOrder(Driver driver, string OrderId)
         {
             SeleniumWindowMethods.Sleep(2);

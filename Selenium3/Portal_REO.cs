@@ -14,7 +14,6 @@ namespace Selenium3
 {
     class Portal_REO
     {
-
         public static void AddNewProperty(Driver driver, string streetname, string city, string state, string zipcode)
         {
             // Properties - Add New Property
@@ -23,12 +22,10 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
-
             // Add New Property iFrame
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_CLIENTPA']");
             Global.ConsoleOut("Open Popup - New Property");
-
             // Client - Popup
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
@@ -42,7 +39,6 @@ namespace Selenium3
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img");
             Global.ConsoleOut("Popup closing");
-
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(2);
@@ -55,7 +51,6 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnRedraw");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnRedraw");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img");
-
             // Switch back to main window - File Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(2);
@@ -69,12 +64,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnRedraw");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'Jon1']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'Jon1']");
-
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
-            
             Global.StreetAddress = (Global.StreetNum + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumWindowMethods.Sleep(2);
@@ -83,13 +76,11 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "paPropCity", city);
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "paPropState", state);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "paPropZip", zipcode);
-
             // Loan Information
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Loan_Number", Global.LoanNum);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Borrower_First", "FirstName");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Borrower_Last", "LastName");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "paPropType", "SFR");
-
             // Add Attorney - Popup
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_FCATTNYPA']");
             Global.ConsoleOut("Open Popup - Attorney");
@@ -97,7 +88,6 @@ namespace Selenium3
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'Just']");
-
             // Switch back to main window 
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
@@ -110,12 +100,11 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "txtpaNote");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnAdd");
             SeleniumWindowMethods.Sleep(3);
-
             // Get Property ID from Property Details page
-
             try
             {
-                string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+                string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector
+                        , "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
                 Global.OrderID = PropertyID;
                 Global.ConsoleOut("Property ID: " + PropertyID); ;
             }
@@ -125,12 +114,12 @@ namespace Selenium3
                 SeleniumSetMethods.Wait(driver, ElementType.Name, "btnAdd");
                 SeleniumSetMethods.Click(driver, ElementType.Name, "btnAdd");
                 SeleniumWindowMethods.Sleep(2);
-                string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+                string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector
+                        , "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
                 Global.OrderID = PropertyID;
                 Global.ConsoleOut("Property ID: " + PropertyID); ;
 
             }
-            
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "REO New Property");
@@ -148,14 +137,12 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "globalPropertySearchSubmit");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPEDIT']");
-
             // Add Edit this Property iFrame
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "pdUpb");
             SeleniumSetMethods.Clear(driver, ElementType.Name, "pdUpb");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "pdUpb", "350000");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnUpdate");
-
             // Focus Main page
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
@@ -165,7 +152,6 @@ namespace Selenium3
                    + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "piFcBal"));
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#column2 > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > a:nth-child(1)");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#column2 > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > a:nth-child(1)");
-
             // Assign Agent
             SeleniumWindowMethods.iFrame(driver, "imsb-iframe");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "apsFirst");
@@ -207,7 +193,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Clear(driver, ElementType.Name, "pmBpoDueDt");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "pmBpoDueDt", Global.NextMonth);
-            SeleniumWindowMethods.Sleep(1);            
+            SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnUpdate");
 
         }

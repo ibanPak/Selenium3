@@ -87,12 +87,10 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
-
             // Get Order ID from Order Details page
             string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "Acme Appraisal");
@@ -107,7 +105,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
-
             // Add New Order
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
@@ -132,12 +129,10 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
-
             // Get Order ID from Order Details page
             string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "PNMAC BPO");
@@ -151,7 +146,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
-
             // Add New Order
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
@@ -177,16 +171,14 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
-
             // Get Order ID from Order Details page
             string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "Rental Analysis");
-            
+
         }
 
         public static void CreateNewUnified53(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
@@ -196,7 +188,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
-
             // Add New Order
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
@@ -221,12 +212,10 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "TenderTypeCode", "Invoice");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
-
             // Get Order ID from Order Details page
             string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "U53BPO");
@@ -240,7 +229,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchOrders");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchOrders");
-
             // Add New Order
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Add New Order");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Add New Order");
@@ -267,12 +255,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.Wait(driver, ElementType.CssName, "img.lookupPopupIcon");
-
             // Get Order ID from Order Details page
             string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
-
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "FMB BPO");
@@ -281,11 +267,9 @@ namespace Selenium3
 
         public static void CompleteBPOOrder(Driver driver, string orderid)
         {
-
             // Order Queue Page
             Random r = new Random();
             int n = 0;
-
             GotoOrder(driver, orderid);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderDetailMainUpdate");
@@ -318,11 +302,9 @@ namespace Selenium3
 
         public static void CompleteRAOrder(Driver driver, string orderid)
         {
-
             // Order Queue Page
             Random r = new Random();
             int n = 0;
-
             GotoOrder(driver, orderid);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderDetailMainUpdate");
@@ -354,11 +336,9 @@ namespace Selenium3
 
         public static void CompleteAppraisal(Driver driver, string orderid)
         {
-
             // Order Queue Page
             Random r = new Random();
             int n = 0;
-
             GotoOrder(driver, orderid);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnOrderDetailMainUpdate");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderDetailMainUpdate");
@@ -381,7 +361,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[4]");
             SeleniumWindowMethods.Sleep(15);
-        
+
         }
 
         public static void DisputeOrder(Driver driver, string orderid)

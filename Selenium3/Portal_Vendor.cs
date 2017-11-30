@@ -19,6 +19,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "cbScheduleAppointment(Appraiser)");
             SeleniumSetMethods.Click(driver, ElementType.Id, "cbScheduleAppointment(Appraiser)");
+
             int tries = 0;
             bool IsAppointmentPresent = false;
             while (IsAppointmentPresent == false)
@@ -44,6 +45,7 @@ namespace Selenium3
                 SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
+            // Complete Accpet Schedule
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "AppointmentDate");
             SeleniumSetMethods.Click(driver, ElementType.Id, "AppointmentDate");
@@ -68,6 +70,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "cbUploadAppraisal");
             SeleniumSetMethods.Click(driver, ElementType.Id, "cbUploadAppraisal");
+
             int tries = 0;
             bool IsAppointmentPresent = false;
             while (IsAppointmentPresent == false)
@@ -93,6 +96,7 @@ namespace Selenium3
                 SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
             }
+            // Complete Upload Appraisal
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Attachment_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\QA Automation\\Documents\\1025_01.pdf");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PropertyValue", "500000");
@@ -101,7 +105,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[2]");
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmit"); 
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmit");
 
         }
 

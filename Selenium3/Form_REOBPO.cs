@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-
 namespace Selenium3
 {
     class Form_REOBPO
     {
-
         public static void BPOtask(Driver driver)
         {
             SeleniumSetMethods.Wait(driver, ElementType.Name, "abNdList");
@@ -197,21 +195,19 @@ namespace Selenium3
 
         public static void BPOPictures(Driver driver)
         {
+            // Loop through attaching 36 pictures
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
-
             int SleepTime = 2;
             int i = 1;
-
             while (i < 37)
             {
                 SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "input.dz-hidden-input:nth-of-type(1)"
-                //SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "input.dz-hidden-input:nth-child(65)"
                     , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\Numbers\\" + i + ".jpg");
                 SeleniumWindowMethods.Sleep(SleepTime);
-
                 i = i + 1;
             }
+            // Complete BPO Pictures Section
             SeleniumSetMethods.Click(driver, ElementType.Name, "upDoneDate");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnUploadPics");

@@ -99,7 +99,7 @@ namespace Selenium3
                     SeleniumWindowMethods.WindowActions(driver, ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
                     Global.ReadySetGo(NumBrowsers.One);
-                    
+
                 }
                 if (tries == 15)
                 {

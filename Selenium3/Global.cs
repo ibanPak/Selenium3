@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 
-
-
 namespace Selenium3
 {
     class Global
@@ -28,13 +26,15 @@ namespace Selenium3
         public static string UniversalID = "0";
         public static string Value = "0";
         public static string StreetAddress = "0";
-        public static int ThrottleSleep = 2*(1000);
+        public static int ThrottleSleep = 2 * (1000);
         public static DateTime StartDT;
         public static DateTime EndDT;
 
-
         public static void ReadySetGo(NumBrowsers numbrowsers)
         {
+            // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
+            // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
+
             if (numbrowsers == NumBrowsers.One)
             {
                 IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
@@ -43,12 +43,12 @@ namespace Selenium3
             else if (numbrowsers == NumBrowsers.Two)
             {
                 IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
-                IWebDriver driver2 = new InternetExplorerDriver(); PropertiesCollection.driver2 = driver2;
+                var options = new InternetExplorerOptions();
+                options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+                IWebDriver driver2 = new InternetExplorerDriver(options);
+                PropertiesCollection.driver2 = driver2;
             }
-
-            // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
-            // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
-
+           
             Global.StartDT = DateTime.Now;
             Global.ConsoleOut("Test started @ " + Global.StartDT);
 
@@ -80,9 +80,7 @@ namespace Selenium3
 
         }
 
-
     }
-
 
 }
 

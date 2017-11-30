@@ -15,7 +15,6 @@ namespace Selenium3
 {
     class Portal_PropertyCure
     {
-
         public static void AddNewUser(Driver driver, string FirstName, string LastName, string Username, string Email, string Password)
         {
             // Add new User using variables
@@ -101,7 +100,6 @@ namespace Selenium3
             Global.PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b").Replace("Property ID", "").TrimStart();
             Global.ConsoleOut("Property ID: " + Global.PropertyID + " Successfully Created");
-
             // Adding Property Details
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "MostRecentValue");
@@ -198,8 +196,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[7]");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Select All");
             SeleniumSetMethods.Click(driver, ElementType.Id, "FnmaServicingError_0");
-            SeleniumWindowMethods.Sleep(2);
-            
+            SeleniumWindowMethods.Sleep(2);            
             // Adding Dates
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "ServiceReceivedViolationDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "ViolationPostedDate", Global.MMddyyDate);
@@ -218,7 +215,6 @@ namespace Selenium3
             Global.OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
               "#page > span > b:nth-child(5)").Replace("Violation ID:", "").TrimStart();
             Global.ConsoleOut("Violation ID: " + Global.OrderID + " Successfully Created");
-
             // Add Violation Detail
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnUpdateTabHead");
@@ -280,7 +276,6 @@ namespace Selenium3
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
-
             // Add Utility Detail
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnUpdateTabHead");
@@ -338,7 +333,6 @@ namespace Selenium3
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
-
             // Add OTA Bid Notes
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnAddNote ");
@@ -386,7 +380,6 @@ namespace Selenium3
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
-
             // SE Bid Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "VendorCost");
@@ -467,7 +460,6 @@ namespace Selenium3
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
-
             // Inspection Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "IsVacant_0");
@@ -485,7 +477,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "VendorComments", "No new damages. Bids has been rejected to address mold. Bids are pending to address roof leak and yard maintenance.");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Instructions", "VACANT is, as vacant does");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateTabBody");
-
             // Preservation/Construction Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Inspection/Preservation/']");
@@ -502,7 +493,6 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "RekeyOrderDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "RekeyedDate", Global.MMddyyDate);
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdatePreservation");
-
             // Sale/Rent Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Inspection/Sale/']");
@@ -515,7 +505,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "IsPropertyForSale_1");
             SeleniumSetMethods.Click(driver, ElementType.Id, "IsForRent_0");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateSale");
-
             // Corrected Property Address
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Inspection/Property/']");
@@ -529,18 +518,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "CorrectedStateLkUp", "California");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "CorrectedZIP", "92620");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateProperty");
-
-            /*
-            // Inspections Notes
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Note/Notes?']");
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Note/Notes?']");
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnAddNote ");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "btnAddNote ");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "taNoteDetail", "test note");
-            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Save");
-            */
+           
         }
 
         public static void AddNewHazardClaim(Driver driver, string PropId, string RepresentativeId)
@@ -580,7 +558,6 @@ namespace Selenium3
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
             Global.ConsoleOut(Global.UniversalID + " Successfully Created");
-
             // Add Hazard Claim Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "ClaimInfo");

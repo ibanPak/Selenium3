@@ -69,7 +69,7 @@ namespace Selenium3
             Portal_Agent.OpenRentalAnalysis(driver);
             Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.UAT);
-            Logout.Portal(driver, Portals.Agent); 
+            Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
@@ -178,7 +178,7 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10"); 
+            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
             Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Townsend", "Irvine", "California", "92620");
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);

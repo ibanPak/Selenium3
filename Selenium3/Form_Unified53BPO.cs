@@ -178,7 +178,7 @@ namespace Selenium3
 
         }
 
-            public static void CompleteBPO(Driver driver)
+        public static void CompleteBPO(Driver driver)
         {
             // Open 5th 3rd BPO Task and Enter Data
             SeleniumWindowMethods.Sleep(2);
@@ -186,14 +186,12 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
-            
             // Kill maskMoney
             Global.ConsoleOut("Kill Money Mask");
             IJavaScriptExecutor js = PropertiesCollection.driver as IJavaScriptExecutor;
             string killmoneymask1 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number').val('0')");
             string killmoneymask2 = (string)js.ExecuteScript("$(':input').maskMoney('destroy')");
             string killmoneymask3 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number')");
-
             // Clear maskMoney
             SeleniumSetMethods.Clear(driver, ElementType.Id, "SalesLow");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -245,7 +243,6 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Clear(driver, ElementType.Id, "RepairedListPrice");
             SeleniumWindowMethods.ThrottlingSleep();
-
             // Entering input
             SeleniumSetMethods.Click(driver, ElementType.Id, "InspectedDate");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -895,7 +892,6 @@ namespace Selenium3
         {
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
-
             // Add Exterior Attachments to U53 Order
             Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
             if (environment == ENV.QA)
@@ -950,7 +946,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.WaitMinutes(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
                 SeleniumWindowMethods.ThrottlingSleep();
-               
             }
             else if (environment == ENV.UAT)
             {
@@ -1000,7 +995,7 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.WaitMinutes(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
                 SeleniumWindowMethods.ThrottlingSleep();
-               
+
             }
 
             // Complete Attachment Section
