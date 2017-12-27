@@ -14,6 +14,30 @@ namespace Selenium3
 {
     class Runner_STG
     {
+        public static void AppraisalOrg1(Driver driver)
+        {
+            // Appraisal Org1
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
+            Global.ThrottleSleep = 3 * (1000);
+            /*                                                  */
+            /*              Make changes to above               */
+            /*                                                  */
+
+            Login.ValPortal(driver, ENV.STG, "bryan", "Pr0dPa$$121917");
+            Portal_Val.CreateNewAppraisal(driver, "ACME II QA Inc", "Appraisal", "Uniform Residential Appraisal (FNMA 1004)", "Dublin", "Irvine", "California", "92620");
+            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, "30005");
+            //Logout.Portal(driver, Portals.ValPortal);
+            //Login.Vendor(driver, ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");
+            //Portal_Vendor.AcceptScheduleAppointment(driver);
+            //Portal_Vendor.UploadAppraisal(driver);
+            //Logout.Portal(driver, Portals.Vendor);
+            //Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            //Portal_Val.CompleteAppraisal(driver, Global.OrderID);
+            //Logout.Portal(driver, Portals.ValPortal);
+
+        }
+
         public static void PCAddDefaultUsers(Driver driver)
         {
             // Adding Default Users
@@ -42,6 +66,33 @@ namespace Selenium3
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
             Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);
+
+        }
+
+        public static void Unified53Org1(Driver driver)
+        {
+            // QA Org 1 Unified53Org1
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
+            Global.ThrottleSleep = 3 * (100);
+            /*                                                  */
+            /*              Make changes to above               */
+            /*                                                  */
+
+            Global.ThrottleSleep = 3 * (100);
+            Login.ValPortal(driver, ENV.STG, "test", "P@ssw0rd1");
+            Portal_Val.CreateNewUnified53(driver, "ACME II QA Inc", "BPO", "Broker Price Opinion Exterior Inspection", "Random", "Arborwood", "Irvine", "California", "92620");
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Logout.Portal(driver, Portals.ValPortal);
+            Login.Agent(driver, ENV.STG, "QATest23@usres.com", "blue123");
+            Portal_Agent.AcceptScheduleAppointment(driver);
+            Portal_Agent.OpenBPO(driver);
+            Form_Unified53BPO.CompleteBPO(driver);
+            Form_Unified53BPO.Attachments(driver, ENV.STG);
+            Logout.Portal(driver, Portals.Agent);
+            Login.ValPortal(driver, ENV.STG, "test", "P@ssw0rd1");
+            Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
+            Logout.Portal(driver, Portals.ValPortal);
 
         }
 

@@ -33,23 +33,51 @@ namespace Selenium3
         public static void ManualProviderAssign(Driver driver, string orderid, string sourceid)
         {
             // Provider Assign
-            GotoOrder(driver, orderid);
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "img.lookupPopupIcon");
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img.lookupPopupIcon");
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_SourceId");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchProviderAssignment");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchProviderAssignment");
-            SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "td.actions > a:nth-child(1)");
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "td.actions > a:nth-child(1)");
-            SeleniumWindowMethods.Sleep(5);
-            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
-            SeleniumWindowMethods.Sleep(3);
+            int tries = 0;
+            bool IsSuccessful = false;
+            while (IsSuccessful == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    GotoOrder(driver, orderid);
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "img.lookupPopupIcon");
+                    SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img.lookupPopupIcon");
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_SourceId");
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "Filters_ProviderHasLocationZip");
+                    SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "Filters_PayableStatus", "All");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Filters_Radius");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_Radius", "5000");
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchProviderAssignment");
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "btnSearchProviderAssignment");
+                    SeleniumWindowMethods.Sleep(5);
+                    SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "td.actions > a:nth-child(1)");
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Click(driver, ElementType.CssSelector, "td.actions > a:nth-child(1)");
+                    SeleniumWindowMethods.Sleep(5);
+                    SeleniumWindowMethods.Assertion(driver, Alert.Accept);
+                    SeleniumWindowMethods.Sleep(3);
+                    IsSuccessful = true;
+                    break;
+                }
+                catch
+                {
+                    Global.ConsoleOut("Manual Assignment is not successful: " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(2);
+                }
+                if (tries == 5)
+                {
+                    Global.ConsoleOut("Manual Assignment was not successful, " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+
+                }
+            }
 
         }
 
@@ -76,7 +104,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "LoanType", "Conv");
-            Global.StreetAddress = (Global.StreetNum + " " + StreetName);
+            Global.StreetAddress = (/*Global.StreetNum + */"10409" + StreetName);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
@@ -97,8 +125,17 @@ namespace Selenium3
 
         }
 
-        public static void CreateNEWPNMAC(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNEWPNMAC(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetNumber, string StreetName, string City, string FullState, string ZipCode)
         {
+            if (StreetNumber == "Random")
+            {
+                StreetNumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = StreetNumber;
+            }
+
             // Order Queue Page
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
@@ -139,8 +176,25 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewRentalAnalysis(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewRentalAnalysis(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetNumber, string StreetName, string City, string FullState, string ZipCode)
         {
+            if (StreetNumber == "Random")
+            {
+                StreetNumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = StreetNumber;
+            }
+            if (StreetNumber == "Random")
+            {
+                StreetNumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = StreetNumber;
+            }
+
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
@@ -181,8 +235,17 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewUnified53(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewUnified53(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetNumber, string StreetName, string City, string FullState, string ZipCode)
         {
+            if (StreetNumber == "Random")
+            {
+                StreetNumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = StreetNumber;
+            }
+
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
@@ -202,7 +265,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
-            Global.ConsoleOut("Street Address: " + Global.StreetAddress);
+            Global.ConsoleOut(Global.StreetNum + " " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);
@@ -222,8 +285,17 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewFMBBPO(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewFMBBPO(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetNumber, string StreetName, string City, string FullState, string ZipCode)
         {
+            if (StreetNumber == "Random")
+            {
+                StreetNumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = StreetNumber;
+            }
+
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");

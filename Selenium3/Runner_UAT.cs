@@ -114,7 +114,7 @@ namespace Selenium3
 
             Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", "Lamplighter", "Irvine", "California", "92620");
+            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", "Tulip", "Irvine", "California", "92620");
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -132,15 +132,15 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "8616";
+            Global.StreetAddress = "1219 Encore";
             Global.ThrottleSleep = 3 * (1000);
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewFMBBPO(driver, "ACME Inc", "BPO", "Exterior", "Rose Arch", "Irvine", "California", "92620");
+            Portal_Val.CreateNewFMBBPO(driver, "ACME Inc", "BPO", "Exterior", "Regal", "Irvine", "California", "92620");
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -170,16 +170,23 @@ namespace Selenium3
 
         public static void Unified53Org1(Driver driver)
         {
-            // UAT Org 1 RAFlow1
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            // QA Org 1 Unified53Org1
+            Global.OrderID = "8653";
+            Global.StreetAddress = "392 LITCHFIELD";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "392";
+            string subjectstreetname = "LITCHFIELD LN";
+            string subjectcity = "HOUSTON";
+            string subjectstate = "Texas";
+            string subjectzip = "77024";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Townsend", "Irvine", "California", "92620");
+            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");

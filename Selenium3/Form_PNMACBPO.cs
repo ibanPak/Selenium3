@@ -289,6 +289,36 @@ namespace Selenium3
 
         public static void CompleteBPO(Driver driver)
         {
+            string sc1street = "219 LITCHFIELD LANE";
+            string sc1city = "HOUSTON";
+            string sc1zipcode = "77024";
+            string sc1state = "Texas";
+
+            string sc2street = "51 LITCHFIELD LANE";
+            string sc2city = "HOUSTON";
+            string sc2zipcode = "77024";
+            string sc2state = "Texas";
+
+            string sc3street = "123 LITCHFIELD LANE UNIT#250";
+            string sc3city = "HOUSTON";
+            string sc3zipcode = "77024";
+            string sc3state = "Texas";
+
+            string lc1street = "218 LITCHFIELD";
+            string lc1city = "Blacklick";
+            string lc1zipcode = "77024";
+            string lc1state = "Texas";
+
+            string lc2street = "123 LITCHFIELD LANE UNIT#37";
+            string lc2city = "HOUSTON";
+            string lc2zipcode = "77024";
+            string lc2state = "Texas";
+
+            string lc3street = "306 LITCHFIELD LANE";
+            string lc3city = "HOUSTON";
+            string lc3zipcode = "77024";
+            string lc3state = "Texas";
+
             SeleniumSetMethods.Click(driver, ElementType.Id, "Subject_InspectionDate");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[2]");
             SeleniumSetMethods.Click(driver, ElementType.Id, "PennyMac_Subject_IsPropertySecure_0");
@@ -470,18 +500,18 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectMarketing_SubjectPropertyUnits", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectMarketing_SubjectLastSalePrice", "576000");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectMarketing_HoaFee", "250.33");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__StreetAddress", "1");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__StreetAddress", "2");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__StreetAddress", "3");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__City", "Irvine");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__City", "Irvine");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__City", "Irvine");
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_0__State", "California");
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_1__State", "California");
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_2__State", "California");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__PostalCode", "92620");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__PostalCode", "92620");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__StreetAddress", sc1street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__StreetAddress", sc2street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__StreetAddress", sc3street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__City", sc1city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__City", sc2city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__City", sc3city);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_0__State", sc1state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_1__State", sc2state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_2__State", sc3state);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__PostalCode", sc1zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__PostalCode", sc2zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__PostalCode", sc3zipcode);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__ProximityDistance", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__ProximityDistance", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__ProximityDistance", "1");
@@ -630,20 +660,19 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PennyMac_Marketing_MarketPropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PennyMac_Marketing_ComparableAge", "Last 6 Months");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Marketing_SaleListRatioPast3Mo", "25");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Marketing_SaleListRatioPast6Mo", "16");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", "3");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", "4");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", "5");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", "6");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__City", "Irvine");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__City", "Irvine");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__City", "irvine");
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_0__State", "California");
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_1__State", "California");
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_2__State", "California");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__PostalCode", "92620");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__PostalCode", "92620");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Marketing_SaleListRatioPast6Mo", "16");           
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", lc1street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", lc2street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", lc3street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__City", lc1city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__City", lc2city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__City", lc3city);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_0__State", lc1state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_1__State", lc2state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_2__State", lc3state);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__PostalCode", lc1zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__PostalCode", lc2zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__PostalCode", lc3zipcode);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__ProximityDistance", "0.4");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__ProximityDistance", "0.6");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__ProximityDistance", "0.8");

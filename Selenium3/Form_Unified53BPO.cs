@@ -180,6 +180,37 @@ namespace Selenium3
 
         public static void CompleteBPO(Driver driver)
         {
+            string sc1street = "219 LITCHFIELD LANE";
+            string sc1city = "HOUSTON";
+            string sc1zipcode = "77024";
+            string sc1state = "Texas";
+
+            string sc2street = "51 LITCHFIELD LANE";
+            string sc2city = "HOUSTON";
+            string sc2zipcode = "77024";
+            string sc2state = "Texas";
+
+            string sc3street = "123 LITCHFIELD LANE UNIT#250";
+            string sc3city = "HOUSTON";
+            string sc3zipcode = "77024";
+            string sc3state = "Texas";
+
+            string lc1street = "218 LITCHFIELD";
+            string lc1city = "Blacklick";
+            string lc1zipcode = "77024";
+            string lc1state = "Texas";
+
+            string lc2street = "123 LITCHFIELD LANE UNIT#37";
+            string lc2city = "HOUSTON";
+            string lc2zipcode = "77024";
+            string lc2state = "Texas";
+
+            string lc3street = "306 LITCHFIELD LANE";
+            string lc3city = "HOUSTON";
+            string lc3zipcode = "77024";
+            string lc3state = "Texas";
+
+
             // Open 5th 3rd BPO Task and Enter Data
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Begin input @ " + DateTime.Now);
@@ -362,29 +393,29 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ReviewersComment", "Turn Key, Move in Ready");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__StreetAddress", "101 Rose Arch");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__StreetAddress", sc1street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__StreetAddress", "102 Rose Arch");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__StreetAddress", sc2street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__StreetAddress", "103 Rose Arch");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__StreetAddress", sc3street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__City", "Irvine");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__City", sc1city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__City", "Irvine");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__City", sc2city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__City", "Irvine");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__City", sc3city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_0__State", "California");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_0__State", sc1state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_1__State", "California");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_1__State", sc2state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_2__State", "California");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_2__State", sc3state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__PostalCode", sc1zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__PostalCode", sc2zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__PostalCode", sc3zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__ProximityDistance", "1");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -613,29 +644,29 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "CheckListSales3Comments", "Testing 101112");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__StreetAddress", "101 Rush Lily");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__StreetAddress", lc1street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__StreetAddress", "102 Rush Lily");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__StreetAddress", lc2street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__StreetAddress", "103 Rush Lily");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__StreetAddress", lc3street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__City", "Irvine");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__City", lc1city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__City", "Irvine");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__City", lc2city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__City", "Irvine");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__City", lc3city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_0__State", "California");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_0__State", lc1state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_1__State", "California");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_1__State", lc2state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_2__State", "California");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_2__State", lc3state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__PostalCode", lc1zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__PostalCode", lc2zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__PostalCode", "92620");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__PostalCode", lc3zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__ProximityDistance", "1");
             SeleniumWindowMethods.ThrottlingSleep();

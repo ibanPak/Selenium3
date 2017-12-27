@@ -55,13 +55,20 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewRentalAnalysis(driver, "Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", "Tulip", "Irvine", "California", "92620");
+            Portal_Val.CreateNewRentalAnalysis(driver, "Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -82,12 +89,19 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd4");
-            Portal_Val.CreateNewRentalAnalysis(driver, "Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
+            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd1");
+            Portal_Val.CreateNewRentalAnalysis(driver, "Bonnie Org 3", "Rental Analysis", "Rental Analysis Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -96,7 +110,7 @@ namespace Selenium3
             Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.QA);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd4");
+            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd1");
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -108,13 +122,20 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", "Trailwood", "Irvine", "California", "92620");
+            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -132,16 +153,22 @@ namespace Selenium3
         public static void PNMACFlow1Org1(Driver driver)
         {
             // PNMAC BPO Org1
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "30853";
+            Global.StreetAddress = "1211 Rush Lily";
             Global.ThrottleSleep = 3 * (1000);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", "Townsend", "Irvine", "California", "92620");
+            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -159,15 +186,22 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
-            Global.OrderID = "30828";
-            Global.StreetAddress = "1128 Rush Lily";
+            Global.OrderID = "30876";
+            Global.StreetAddress = "1219 Spring Meadow";
             Global.ThrottleSleep = 3 * (1000);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", "Rush Lily", "Irvine", "California", "92620");
+            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -225,6 +259,7 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
