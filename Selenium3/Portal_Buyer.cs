@@ -19,13 +19,13 @@ namespace Selenium3
         public static void Search(Driver driver)
         {
             // Navigate to web page
-            SeleniumSetMethods.Navigate(Driver.driver1,  "https://qa-buyer.res.net");
+            SeleniumSetMethods.Navigate(Driver.driver1, "https://qa-buyer.res.net");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Click(driver, ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "location");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "location", "34747");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#propertiesSubmit > img");
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector,"#propertiesSubmit > img");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#propertiesSubmit > img");
             SeleniumWindowMethods.ScreenShot(driver, "SoPurdy");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "clearPropertiesSearch");
             SeleniumSetMethods.Click(driver, ElementType.Id, "clearPropertiesSearch");
@@ -210,7 +210,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "yearBuilt", "1960");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#propertySearchOptionContainer > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(9) > div:nth-child(2) > a:nth-child(1)");
-            
+
         }
 
     }

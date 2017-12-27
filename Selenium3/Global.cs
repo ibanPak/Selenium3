@@ -48,7 +48,7 @@ namespace Selenium3
                 IWebDriver driver2 = new InternetExplorerDriver(options);
                 PropertiesCollection.driver2 = driver2;
             }
-           
+
             Global.StartDT = DateTime.Now;
             Global.ConsoleOut("Test started @ " + Global.StartDT);
 
@@ -62,7 +62,6 @@ namespace Selenium3
             int hour = timespan.Hours;
             int min = timespan.Minutes;
             int sec = timespan.Seconds;
-
             Global.ConsoleOut("Test took " + hour + " Hours, " + min + " minutes, " + sec + " seconds to run");
         }
 

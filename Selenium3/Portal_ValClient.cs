@@ -64,7 +64,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Comments", "Testing Comments");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnPlaceOrder");
-            
+
         }
 
     }

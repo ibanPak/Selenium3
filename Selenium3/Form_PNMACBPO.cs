@@ -660,7 +660,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PennyMac_Marketing_MarketPropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PennyMac_Marketing_ComparableAge", "Last 6 Months");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Marketing_SaleListRatioPast3Mo", "25");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Marketing_SaleListRatioPast6Mo", "16");           
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PennyMac_Marketing_SaleListRatioPast6Mo", "16");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", lc1street);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", lc2street);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", lc3street);

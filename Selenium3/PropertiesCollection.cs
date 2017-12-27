@@ -65,7 +65,7 @@ namespace Selenium3
         UAT,
         STG,
         PROD
-        
+
     }
 
     // Strongly Typed Variable
@@ -78,7 +78,7 @@ namespace Selenium3
         PropertyCure
 
     }
-    
+
     // Strongly Typed Variable
     enum ProductTypes
     {

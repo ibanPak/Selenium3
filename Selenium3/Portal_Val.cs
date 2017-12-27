@@ -77,6 +77,7 @@ namespace Selenium3
                     break; // handle error and break/return
 
                 }
+
             }
 
         }
