@@ -81,8 +81,17 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewAppraisal(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewAppraisal(Driver driver, string ClientID, string ProductType, string ProductDetails, string StreetNumber, string StreetName, string City, string FullState, string ZipCode)
         {
+            if (StreetNumber == "Random")
+            {
+                StreetNumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = StreetNumber;
+            }
+
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");

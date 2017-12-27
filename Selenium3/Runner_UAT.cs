@@ -56,12 +56,19 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "392";
+            string subjectstreetname = "LITCHFIELD LN";
+            string subjectcity = "HOUSTON";
+            string subjectstate = "Texas";
+            string subjectzip = "77024";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10"); ;
-            Portal_Val.CreateNewRentalAnalysis(driver, "Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", "Trabuco", "Irvine", "California", "92620");
+            Portal_Val.CreateNewRentalAnalysis(driver, "Anita Rental Survey Co.", "Rental Analysis", "Rental Analysis Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -82,12 +89,19 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "392";
+            string subjectstreetname = "LITCHFIELD LN";
+            string subjectcity = "HOUSTON";
+            string subjectstate = "Texas";
+            string subjectzip = "77024";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewRentalAnalysis(driver, "Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", "Great Lawn", "Irvine", "California", "92620");
+            Portal_Val.CreateNewRentalAnalysis(driver, "Rental Analysis Co.", "Rental Analysis", "Rental Analysis Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -108,13 +122,20 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+
+            string subjectstreetnumber = "392";
+            string subjectstreetname = "LITCHFIELD LN";
+            string subjectcity = "HOUSTON";
+            string subjectstate = "Texas";
+            string subjectzip = "77024";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Global.ThrottleSleep = 2 * (1000);
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", "Tulip", "Irvine", "California", "92620");
+            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -135,12 +156,19 @@ namespace Selenium3
             Global.OrderID = "8616";
             Global.StreetAddress = "1219 Encore";
             Global.ThrottleSleep = 3 * (1000);
+
+            string subjectstreetnumber = "392";
+            string subjectstreetname = "LITCHFIELD LN";
+            string subjectcity = "HOUSTON";
+            string subjectstate = "Texas";
+            string subjectzip = "77024";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewFMBBPO(driver, "ACME Inc", "BPO", "Exterior", "Regal", "Irvine", "California", "92620");
+            Portal_Val.CreateNewFMBBPO(driver, "ACME Inc", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -207,12 +235,19 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewAppraisal(driver, "ACME Inc", "Appraisal", "1004 Interior Residential", "Dublin", "Irvine", "California", "92620");
+            Portal_Val.CreateNewAppraisal(driver, "ACME Inc", "Appraisal", "1004 Interior Residential", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "30005");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Vendor(driver, ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");

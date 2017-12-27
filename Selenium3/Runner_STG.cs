@@ -20,21 +20,28 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+
+            string subjectstreetnumber = "10950";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, ENV.STG, "bryan", "Pr0dPa$$121917");
-            Portal_Val.CreateNewAppraisal(driver, "ACME II QA Inc", "Appraisal", "Uniform Residential Appraisal (FNMA 1004)", "Dublin", "Irvine", "California", "92620");
-            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, "30005");
-            //Logout.Portal(driver, Portals.ValPortal);
-            //Login.Vendor(driver, ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");
-            //Portal_Vendor.AcceptScheduleAppointment(driver);
-            //Portal_Vendor.UploadAppraisal(driver);
-            //Logout.Portal(driver, Portals.Vendor);
-            //Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            //Portal_Val.CompleteAppraisal(driver, Global.OrderID);
-            //Logout.Portal(driver, Portals.ValPortal);
+            Portal_Val.CreateNewAppraisal(driver, "ACME II QA Inc", "Appraisal", "Uniform Residential Appraisal (FNMA 1004)", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "30005");
+            Logout.Portal(driver, Portals.ValPortal);
+            Login.Vendor(driver, ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");
+            Portal_Vendor.AcceptScheduleAppointment(driver);
+            Portal_Vendor.UploadAppraisal(driver);
+            Logout.Portal(driver, Portals.Vendor);
+            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Portal_Val.CompleteAppraisal(driver, Global.OrderID);
+            Logout.Portal(driver, Portals.ValPortal);
 
         }
 
