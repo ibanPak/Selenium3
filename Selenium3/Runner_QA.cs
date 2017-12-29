@@ -20,6 +20,7 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
@@ -57,7 +58,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (100);
 
             string subjectstreetnumber = "10950";
-            string subjectstreetname = "MODENA DR";
+            string subjectstreetname = "MODENA DR";     // "Random";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -91,7 +92,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (100);
 
             string subjectstreetnumber = "10950";
-            string subjectstreetname = "MODENA DR";
+            string subjectstreetname = "MODENA DR";     // "Random";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -123,19 +124,18 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "10950";
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
+            string subjectstreetnumber = "6797";       //  "Random";
+            string subjectstreetname = "Daniels Rd";
+            string subjectcity = "NAPLES";
+            Global.State = "Florida";
+            string subjectzip = "34109";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, Global.State, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -154,7 +154,7 @@ namespace Selenium3
         {
             // PNMAC BPO Org1
             Global.OrderID = "30853";
-            Global.StreetAddress = "1211 Rush Lily";
+            Global.StreetAddress = "1211 Rush Lily";     // "Random";
             Global.ThrottleSleep = 3 * (1000);
 
             string subjectstreetnumber = "10950";
@@ -186,11 +186,11 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
-            Global.OrderID = "30876";
-            Global.StreetAddress = "1219 Spring Meadow";
+            Global.OrderID = "30913";
+            Global.StreetAddress = "1228 MODENA DR";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "10950";
+            string subjectstreetnumber = "Random";      //  "Random"; 
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
@@ -237,7 +237,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (1000);
 
             string subjectstreetnumber = "10950";
-            string subjectstreetname = "MODENA DR";
+            string subjectstreetname = "MODENA DR";     // "Random";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -304,6 +304,13 @@ namespace Selenium3
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
             Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);
+
+        }
+
+        public static void ProAgentSearchAllListing(Driver driver)
+        {
+            Login.Agent(driver, ENV.QA, "qa12270935@usres.com", "testing");
+            Portal_Agent.ProAgent(driver);
 
         }
 

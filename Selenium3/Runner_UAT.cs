@@ -21,6 +21,7 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
@@ -157,11 +158,11 @@ namespace Selenium3
             Global.StreetAddress = "1219 Encore";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "392";
-            string subjectstreetname = "LITCHFIELD LN";
-            string subjectcity = "HOUSTON";
-            string subjectstate = "Texas";
-            string subjectzip = "77024";
+            string subjectstreetnumber = "Random";
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
 
             /*                                                  */
             /*              Make changes to above               */
@@ -203,7 +204,7 @@ namespace Selenium3
             Global.StreetAddress = "392 LITCHFIELD";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "392";
+            string subjectstreetnumber = "392";     // "Random"
             string subjectstreetname = "LITCHFIELD LN";
             string subjectcity = "HOUSTON";
             string subjectstate = "Texas";

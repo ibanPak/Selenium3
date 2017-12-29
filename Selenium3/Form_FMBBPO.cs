@@ -317,35 +317,35 @@ namespace Selenium3
 
         public static void CompletBPO(Driver driver)
         {
-            string sc1street = "219 LITCHFIELD LANE";
-            string sc1city = "HOUSTON";
-            string sc1zipcode = "77024";
-            string sc1state = "Texas";
+            string sc1street = "3100 Byberry Rd";
+            string sc1city = "PHILADELPHIA";
+            string sc1zipcode = "19154";
+            string sc1state = "Pennsylvania";
 
             string sc2street = "51 LITCHFIELD LANE";
-            string sc2city = "HOUSTON";
-            string sc2zipcode = "77024";
-            string sc2state = "Texas";
+            string sc2city = "PHILADELPHIA";
+            string sc2zipcode = "19154";
+            string sc2state = "Pennsylvania";
 
             string sc3street = "123 LITCHFIELD LANE UNIT#250";
-            string sc3city = "HOUSTON";
-            string sc3zipcode = "77024";
-            string sc3state = "Texas";
+            string sc3city = "PHILADELPHIA";
+            string sc3zipcode = "19154";
+            string sc3state = "Pennsylvania";
 
             string lc1street = "218 LITCHFIELD";
-            string lc1city = "Blacklick";
-            string lc1zipcode = "77024";
-            string lc1state = "Texas";
+            string lc1city = "PHILADELPHIA";
+            string lc1zipcode = "19154";
+            string lc1state = "Pennsylvania";
 
             string lc2street = "123 LITCHFIELD LANE UNIT#37";
-            string lc2city = "HOUSTON";
-            string lc2zipcode = "77024";
-            string lc2state = "Texas";
+            string lc2city = "PHILADELPHIA";
+            string lc2zipcode = "19154";
+            string lc2state = "Pennsylvania";
 
             string lc3street = "306 LITCHFIELD LANE";
-            string lc3city = "HOUSTON";
-            string lc3zipcode = "77024";
-            string lc3state = "Texas";
+            string lc3city = "PHILADELPHIA";
+            string lc3zipcode = "19154";
+            string lc3state = "Pennsylvania";
 
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Subject_InspectionDate");

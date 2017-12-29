@@ -22,7 +22,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (1000);
 
             string subjectstreetnumber = "10950";
-            string subjectstreetname = "MODENA DR";
+            string subjectstreetname = "MODENA DR";     // "Random";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -82,13 +82,19 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "Random";      //  "Random"; 
+            string subjectstreetname = "MODENA DR";
+            string subjectcity = "PHILADELPHIA";
+            string subjectstate = "Pennsylvania";
+            string subjectzip = "19154";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Global.ThrottleSleep = 3 * (100);
             Login.ValPortal(driver, ENV.STG, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewUnified53(driver, "ACME II QA Inc", "BPO", "Broker Price Opinion Exterior Inspection", "Random", "Arborwood", "Irvine", "California", "92620");
+            Portal_Val.CreateNewUnified53(driver, "ACME II QA Inc", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.STG, "QATest23@usres.com", "blue123");

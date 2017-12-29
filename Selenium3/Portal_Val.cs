@@ -70,6 +70,7 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Manual Assignment is not successful: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
+                    PropertiesCollection.driver.Navigate().Refresh();
                 }
                 if (tries == 5)
                 {

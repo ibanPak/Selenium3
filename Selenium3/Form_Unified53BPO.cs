@@ -180,36 +180,35 @@ namespace Selenium3
 
         public static void CompleteBPO(Driver driver)
         {
-            string sc1street = "219 LITCHFIELD LANE";
-            string sc1city = "HOUSTON";
-            string sc1zipcode = "77024";
-            string sc1state = "Texas";
+            string sc1street = "6913 IL REGALO";
+            string sc1city = "NAPLES";
+            string sc1zipcode = "34109";
+            string sc1state = "Florida";
 
-            string sc2street = "51 LITCHFIELD LANE";
-            string sc2city = "HOUSTON";
-            string sc2zipcode = "77024";
-            string sc2state = "Texas";
+            string sc2street = "8123 WILSHIRE LAKES BLVD";
+            string sc2city = "NAPLES";
+            string sc2zipcode = "34109";
+            string sc2state = "Florida";
 
-            string sc3street = "123 LITCHFIELD LANE UNIT#250";
-            string sc3city = "HOUSTON";
-            string sc3zipcode = "77024";
-            string sc3state = "Texas";
+            string sc3street = "4005 REFLECTION CT";
+            string sc3city = "NAPLES";
+            string sc3zipcode = "34109";
+            string sc3state = "Florida";
 
-            string lc1street = "218 LITCHFIELD";
-            string lc1city = "Blacklick";
-            string lc1zipcode = "77024";
-            string lc1state = "Texas";
+            string lc1street = "13528 MANDARIN CIR";
+            string lc1city = "NAPLES";
+            string lc1zipcode = "34109";
+            string lc1state = "Florida";
 
-            string lc2street = "123 LITCHFIELD LANE UNIT#37";
-            string lc2city = "HOUSTON";
-            string lc2zipcode = "77024";
-            string lc2state = "Texas";
+            string lc2street = "7112 SUGAR MAGNOLIA CIR";
+            string lc2city = "NAPLES";
+            string lc2zipcode = "34109";
+            string lc2state = "Florida";
 
-            string lc3street = "306 LITCHFIELD LANE";
-            string lc3city = "HOUSTON";
-            string lc3zipcode = "77024";
-            string lc3state = "Texas";
-
+            string lc3street = "6821 IL REGALO";
+            string lc3city = "NAPLES";
+            string lc3zipcode = "34109";
+            string lc3state = "Florida";
 
             // Open 5th 3rd BPO Task and Enter Data
             SeleniumWindowMethods.Sleep(2);
@@ -550,6 +549,8 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_2__Condition", "Good");
             SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Rooms");
+            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Rooms", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__Rooms", "3");
@@ -557,6 +558,8 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__Rooms", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__Rooms", "3");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Beds");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Beds", "3");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -566,6 +569,8 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__Beds", "3");
             SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Baths");
+            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Baths", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__Baths", "3");
@@ -574,6 +579,8 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__Baths", "3");
             SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "GrossLivingArea");
+            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "GrossLivingArea", "2000");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__GrossLivingArea", "2000");
@@ -581,6 +588,8 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__GrossLivingArea", "2000");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__GrossLivingArea", "2000");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Bsmt");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Bsmt", "0");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -608,6 +617,8 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComparableData_2__GarageType", "Attached");
             SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "GarageCount");
+            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "GarageCount", "2");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__GarageCount", "2");
@@ -616,6 +627,8 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__GarageCount", "2");
             SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "PoolSpa");
+            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PoolSpa", "1");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_0__PoolSpa", "1");
@@ -623,6 +636,8 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_1__PoolSpa", "1");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComparableData_2__PoolSpa", "1");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "FunctionalUtility");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "FunctionalUtility", "1");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -730,8 +745,6 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_2__PropertyType", "Single Family");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.XPath, "(//select[@id='Style'])[2]", "2 Story");
-            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_0__Style", "2 Story");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_1__Style", "2 Story");
@@ -743,17 +756,13 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_1__LocationType", "Suburban");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_2__LocationType", "Suburban");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.XPath, "(//select[@id='LotSizeUnitType'])[2]", "Sq. Ft.");
-            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumWindowMethods.ThrottlingSleep();           
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__LotSize", "4000");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__LotSize", "4250");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__LotSize", "4000");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='SubjectPropertyUnits'])[2]", "1");
-            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumWindowMethods.ThrottlingSleep();            
             SeleniumSetMethods.Click(driver, ElementType.Id, "ListComparableData_0__Units");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__Units", "1");
@@ -765,8 +774,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "ListComparableData_2__Units");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__Units", "1");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='YearBuilt'])[2]", "2014");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Click(driver, ElementType.Id, "ListComparableData_0__YearBuilt");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -786,15 +793,11 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_2__Condition", "Good");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='Rooms'])[2]", "3");
-            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__Rooms", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__Rooms", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__Rooms", "3");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='Beds'])[2]", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__Beds", "3");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -802,23 +805,17 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__Beds", "3");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='Baths'])[2]", "3");
-            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__Baths", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__Baths", "3");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__Baths", "3");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='GrossLivingArea'])[2]", "1999");
-            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__GrossLivingArea", "2000");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__GrossLivingArea", "2000");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__GrossLivingArea", "2000");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='Bsmt'])[2]", "0");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__Bsmt", "0");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -842,23 +839,17 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComparableData_2__GarageType", "Attached");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='GarageCount'])[2]", "2");
-            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__GarageCount", "2");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__GarageCount", "2");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__GarageCount", "2");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='PoolSpa'])[2]", "1");
-            SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__PoolSpa", "1");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_1__PoolSpa", "1");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_2__PoolSpa", "1");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.XPath, "(//input[@id='FunctionalUtility'])[2]", "1");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComparableData_0__FunctionalUtility", "1");
             SeleniumWindowMethods.ThrottlingSleep();
@@ -963,20 +954,25 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "75_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C9.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "16_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "27_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_230_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_230_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.WaitMinutes(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
-                SeleniumWindowMethods.ThrottlingSleep();
+                if (Global.State == "California")
+                {
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
+                    SeleniumWindowMethods.ThrottlingSleep();
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "16_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                    SeleniumWindowMethods.ThrottlingSleep();
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "27_fileupload");
+                    SeleniumWindowMethods.ThrottlingSleep();
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                    SeleniumWindowMethods.ThrottlingSleep();
+                }
+                else if (Global.State == "Florida")
+                {
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "244_fileupload");
+                    SeleniumWindowMethods.ThrottlingSleep();
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "244_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                    SeleniumWindowMethods.ThrottlingSleep();
+                }
+                    
             }
             else if (environment == ENV.UAT)
             {
@@ -1028,8 +1024,11 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
 
             }
-
             // Complete Attachment Section
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_230_fileupload");
+            SeleniumWindowMethods.ThrottlingSleep();
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_230_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            SeleniumWindowMethods.ThrottlingSleep();
             Global.ConsoleOut("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
@@ -1038,19 +1037,22 @@ namespace Selenium3
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[10]");
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment", "Test QC Sales Comment");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompLivingAreaComment", "Test QC List Comment");
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
-            Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
-            SeleniumWindowMethods.Sleep(10);
-            SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[10]");
-            SeleniumWindowMethods.WindowType(driver, WinType.Main);
-
+            if (Global.State == "California")
+            {
+                SeleniumWindowMethods.Sleep(1);
+                SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
+                SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
+                SeleniumSetMethods.Wait(driver, ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment");
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment", "Test QC Sales Comment");
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompLivingAreaComment", "Test QC List Comment");
+                SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
+                Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+                SeleniumWindowMethods.Sleep(10);
+                SeleniumWindowMethods.WindowType(driver, WinType.Popup);
+                SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[10]");
+                SeleniumWindowMethods.WindowType(driver, WinType.Main);
+            }
+        
         }
 
     }

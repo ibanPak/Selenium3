@@ -24,7 +24,7 @@ namespace Selenium3
             else if (driver == Driver.driver1 && windowsactions == ActType.Close)
             {
                 PropertiesCollection.driver.Close();
-            }
+            } 
             // Driver 2
             else if (driver == Driver.driver2 && windowsactions == ActType.Maximize)
             {
@@ -52,11 +52,11 @@ namespace Selenium3
             // Driver 2
             else if (driver == Driver.driver2 && windowsactions == WinType.Popup)
             {
-                PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.Last());
+                PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver2.WindowHandles.Last());
             }
             else if (driver == Driver.driver2 && windowsactions == WinType.Main)
             {
-                PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver.WindowHandles.First());
+                PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver2.WindowHandles.First());
             }
 
         }
