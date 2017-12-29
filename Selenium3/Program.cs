@@ -18,7 +18,7 @@ namespace Selenium3
         static void Main(string[] args)
         {
             ConsoleWindow.ConsoleAttributes();
-            Global.ReadySetGo(NumBrowsers.Two);
+            Global.ReadySetGo(NumBrowsers.One);
 
             //////////////////////////////////////////////////////////////////////////
             //                                                                      //
@@ -26,7 +26,9 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-      
+            Runner_QA.ProAgentSearchAllListing(Driver.driver1);
+
+   /*   
             Login.ValPortal(Driver.driver1, ENV.QA, "test", "P@ssw0rd1");
             Login.Agent(Driver.driver2, ENV.QA, "QATest23@usres.com", "blue123");
  
@@ -39,7 +41,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(Driver.driver2, ElementType.Id, "propertySrchTxt");
             SeleniumSetMethods.EnterText(Driver.driver2, ElementType.Id, "propertySrchTxt", "100");
 
-   
+   */
 
             // Test was executed successfully 
             Global.Done();
