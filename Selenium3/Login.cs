@@ -195,7 +195,7 @@ namespace Selenium3
         {
             int tries = 0;
             bool IsElementPresent = false;
-            string element = "globalPropertySearch";
+            string element = "searchBar";
             while (IsElementPresent == false)
             {
                 try
@@ -204,7 +204,7 @@ namespace Selenium3
                     // Navigate to the correct environment
                     if (portal == ENV.QA)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "https://qa-propertycure.res.net/");
                     }
                     else if (portal == ENV.UAT)
                     {
@@ -219,11 +219,11 @@ namespace Selenium3
                         SeleniumSetMethods.Navigate(driver, "https://propertycure.res.net/");
                     }
                     // Login Page
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
-                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
-                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
-                    SeleniumSetMethods.Clear(driver, ElementType.Name, "UserPassword");
-                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "UserPassword", password);
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "User");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "User");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "User", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "Pass");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "Pass", password);
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);

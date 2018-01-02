@@ -278,6 +278,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "allProps");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "ListingTypehead");
             SeleniumSetMethods.Click(driver, ElementType.Id, "ListingTypehead");
+            SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "ListingNone");
             SeleniumSetMethods.Click(driver, ElementType.Id, "ListingNone");
             SeleniumWindowMethods.Sleep(3);
