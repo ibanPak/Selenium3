@@ -480,6 +480,49 @@ namespace Selenium3
 
         }
 
+        public static void ViewAssignmentHistory(Driver driver, string orderid)
+        {
+            GotoOrder(driver, orderid);
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#Content > form > h2");
+            string a = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#Content > form > h2");
+            int dash = a.IndexOf('-');
+            string b = a;
+            if (dash != -1)
+            {
+                b = a.Substring(0, dash).Trim();
+            }
+            Global.ConsoleOut("Order Type: " + b);
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#tabsAssignment > div.panel-footer > div > a");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#tabsAssignment > div.panel-footer > div > a");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSubmitModal");
+            if (b == "Appraisal")
+            {
+                try
+                {
+                    string displayme = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr > td:nth-child(9) > a");
+                    Global.ConsoleOut("Engagement Letter: " + displayme);
+                }
+                catch (NoSuchElementException)
+                {
+                    Global.ConsoleOut("Engagement is NOT Present");
+                }
+
+            }
+            try
+            {
+                string assigneddate = SeleniumGetMethods.GetTextContent(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a");
+                Global.ConsoleOut("Assigned Date: " + assigneddate);
+                SeleniumSetMethods.Click(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a");
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOut("Assignment date is NOT Present");
+            }
+           
+        }
+
     }
 
 }
