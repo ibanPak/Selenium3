@@ -26,9 +26,11 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-
             Login.ValPortal(Driver.driver1, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.ViewAssignmentHistory(Driver.driver1, "30870");
+            Portal_Val.ViewAssignmentHistory(Driver.driver1, "30927");
+
+            // Cool Down
+            Global.Cooldown();
 
             // Test was executed successfully 
             Global.Done();

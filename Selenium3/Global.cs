@@ -26,7 +26,8 @@ namespace Selenium3
         public static string UniversalID = "0";
         public static string Value = "0";
         public static string StreetAddress = "0";
-        public static string State = "0";
+        public static string State;
+        public static string Display;
         public static int ThrottleSleep = 2 * (1000);
         public static DateTime StartDT;
         public static DateTime EndDT;
@@ -75,8 +76,25 @@ namespace Selenium3
 
         public static void ConsoleOut(string displaytext)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ");
             Console.WriteLine(displaytext);
+
+        }
+
+        public static void ConsoleOutTab(string displaytext)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(" ");
+            Console.WriteLine("     "+ displaytext);
+
+        }
+
+        public static void ConsoleOutAlert(string displaytext)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(" ");
+            Console.WriteLine("     " + displaytext);
 
         }
 

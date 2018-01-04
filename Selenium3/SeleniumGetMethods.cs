@@ -118,6 +118,36 @@ namespace Selenium3
 
         }
 
+        public static void DisplayTextContent(Driver driver, ElementType elementtype, string element, string text)
+        {
+
+            Global.Display = SeleniumGetMethods.GetTextContent(Driver.driver1, elementtype, element);
+            if (Global.Display.Trim().Length >= 1)
+            {
+                Global.ConsoleOutTab(text + ": " + Global.Display);
+            }
+            else
+            {
+                Global.ConsoleOutAlert(text + ": Not Present");
+            }
+            
+        }
+
+        public static void DisplayTextValue(Driver driver, ElementType elementtype, string element, string text)
+        {
+
+            Global.Display = SeleniumGetMethods.GetTextValue(Driver.driver1, elementtype, element);
+            if (Global.Display.Trim().Length >= 1)
+            {
+                Global.ConsoleOutTab(text + ": " + Global.Display);
+            }
+            else
+            {
+                Global.ConsoleOutAlert(text + ": Not Present");
+            }
+
+        }
+
     }
 
 }

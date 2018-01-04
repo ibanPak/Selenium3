@@ -497,6 +497,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#tabsAssignment > div.panel-footer > div > a");
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSubmitModal");
+            SeleniumWindowMethods.Sleep(1);
             if (b == "Appraisal")
             {
                 try
@@ -506,21 +507,43 @@ namespace Selenium3
                 }
                 catch (NoSuchElementException)
                 {
-                    Global.ConsoleOut("Engagement is NOT Present");
+                    Global.ConsoleOutTab("Engagement is NOT Present");
                 }
-
             }
             try
             {
-                string assigneddate = SeleniumGetMethods.GetTextContent(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a");
-                Global.ConsoleOut("Assigned Date: " + assigneddate);
+                // Assignment History Page
+                Global.ConsoleOut("Verifying Assignment History Page");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a", "Assiged Date");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr > td:nth-child(3)", "Provider Id");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr > td:nth-child(4)", "Provider Name");
                 SeleniumSetMethods.Click(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a");
+                // Order Snapshot History Page
+                Global.ConsoleOut("Verifying Order Snapshot History Page");
+                SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#OrderSnapshot > h4 > small");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#OrderSnapshot > h4 > small", "Snapshot Assigned Date");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#OrderSnapshot > table > tbody > tr:nth-child(2) > td:nth-child(1)", "Order Id");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#OrderSnapshot > table > tbody > tr:nth-child(2) > td:nth-child(2)", "Address");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderDetail > div > table > tbody > tr:nth-child(2) > td:nth-child(1)", "Provider Id");
+                SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderDetail > div > table > tbody > tr:nth-child(2) > td:nth-child(2)", "Provider Name");
+                // Providers Considers
+                try
+                {
+                    Global.ConsoleOut("Verifying Order Snapshot History Page (Providers Considered)");
+                    SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr:nth-child(1) > td:nth-child(2)", "Provider Id");
+                    SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr:nth-child(1) > td:nth-child(3)", "Invite Date");
+                    SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr:nth-child(1) > td:nth-child(4)", "Provider Name");
+                }
+                catch (NoSuchElementException)
+                {
+                    Global.ConsoleOutTab("No Providers Considered");
+                }
             }
             catch (NoSuchElementException)
             {
-                Global.ConsoleOut("Assignment date is NOT Present");
+                Global.ConsoleOutTab("Assignment date is NOT Present");
             }
-           
+
         }
 
     }
