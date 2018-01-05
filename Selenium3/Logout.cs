@@ -16,6 +16,7 @@ namespace Selenium3
     {
         public static void Portal(Driver driver, Portals portals)
         {
+            Global.ConsoleOut("Logging out " + portals + " Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             while (IsElementPresent == false)
@@ -56,16 +57,16 @@ namespace Selenium3
                         SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogout");
                     }
                     IsElementPresent = true;
-                    Global.ConsoleOut("Logout WebElement " + portals + " found");
+                    Global.ConsoleOutTab("Logout was successful: " + portals);
                 }
                 catch
                 {
-                    Global.ConsoleOut("Logout WebElement " + portals + " not found, " + tries + " attempted");
+                    Global.ConsoleOutAlert("Logout was NOT successful: " + portals + " not found, " + tries + " attempted");
                     SeleniumWindowMethods.Sleep(3);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut("Logout WebElement " + portals + " not found, and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert("Logout was NOT successful: " + portals + " not found, and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
                 }
 

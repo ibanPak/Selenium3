@@ -99,7 +99,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b");
             Global.PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b").Replace("Property ID", "").TrimStart();
-            Global.ConsoleOut("Property ID: " + Global.PropertyID + " Successfully Created");
+            Global.ConsoleOutTab("Property ID: " + Global.PropertyID + " Successfully Created");
             // Adding Property Details
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "MostRecentValue");
@@ -214,7 +214,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
               "#page > span > b:nth-child(5)").Replace("Violation ID:", "").TrimStart();
-            Global.ConsoleOut("Violation ID: " + Global.OrderID + " Successfully Created");
+            Global.ConsoleOutTab("Violation ID: " + Global.OrderID + " Successfully Created");
             // Add Violation Detail
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnUpdateTabHead");
@@ -275,7 +275,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
-            Global.ConsoleOut(Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab(Global.UniversalID + " Successfully Created");
             // Add Utility Detail
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnUpdateTabHead");
@@ -332,7 +332,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
-            Global.ConsoleOut(Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab(Global.UniversalID + " Successfully Created");
             // Add OTA Bid Notes
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnAddNote ");
@@ -379,7 +379,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
-            Global.ConsoleOut(Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab(Global.UniversalID + " Successfully Created");
             // SE Bid Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "VendorCost");
@@ -459,7 +459,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
-            Global.ConsoleOut(Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab(Global.UniversalID + " Successfully Created");
             // Inspection Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "IsVacant_0");
@@ -557,7 +557,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
-            Global.ConsoleOut(Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab(Global.UniversalID + " Successfully Created");
             // Add Hazard Claim Info
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "ClaimInfo");
@@ -614,7 +614,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#page > span > b:nth-child(5)");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                 "#page > span > b:nth-child(5)").TrimStart();
-            Global.ConsoleOut(Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab(Global.UniversalID + " Successfully Created");
 
         }
 
@@ -638,7 +638,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Save");
             Global.UniversalID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
                "#page > span > b").TrimStart();
-            Global.ConsoleOut("Note for : " + Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab("Note for : " + Global.UniversalID + " Successfully Created");
 
         }
 
@@ -662,7 +662,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnAlertOk");
             Global.PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector,
               "#page > span > b").TrimStart();
-            Global.ConsoleOut("File Upload for : " + Global.UniversalID + " Successfully Created");
+            Global.ConsoleOutTab("File Upload for : " + Global.UniversalID + " Successfully Created");
 
         }
 

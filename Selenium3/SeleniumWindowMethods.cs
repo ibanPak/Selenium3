@@ -84,7 +84,7 @@ namespace Selenium3
                 Screenshot ss = ((ITakesScreenshot)PropertiesCollection.driver).GetScreenshot();
                 string filename = "c:/" + FileName + "_" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss") + ".png";
                 ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
-                Global.ConsoleOut("Screen Shoot Captured: " + filename);
+                Global.ConsoleOutTab("Screen Shoot Captured: " + filename);
             }
             // Driver 2
             else if (driver == Driver.driver2)
@@ -92,7 +92,7 @@ namespace Selenium3
                 Screenshot ss = ((ITakesScreenshot)PropertiesCollection.driver2).GetScreenshot();
                 string filename = "c:/" + FileName + "_" + DateTime.Now.ToString("yyyy-MM-dd_HHmmss") + ".png";
                 ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
-                Global.ConsoleOut("Screen Shoot Captured: " + filename);
+                Global.ConsoleOutTab("Screen Shoot Captured: " + filename);
             }
 
         }

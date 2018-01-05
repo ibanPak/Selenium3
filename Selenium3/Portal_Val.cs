@@ -370,11 +370,11 @@ namespace Selenium3
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
-            Global.ConsoleOut("CustomerServiceGradeModal_" + n);
+            Global.ConsoleOutTab("CustomerServiceGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             n = r.Next(3);
-            Global.ConsoleOut("CustomerQualityGradeModal_" + n);
+            Global.ConsoleOutTab("CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
@@ -404,11 +404,11 @@ namespace Selenium3
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
-            Global.ConsoleOut("CustomerServiceGradeModal_" + n);
+            Global.ConsoleOutTab("CustomerServiceGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             n = r.Next(3);
-            Global.ConsoleOut("CustomerQualityGradeModal_" + n);
+            Global.ConsoleOutTab("CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
@@ -434,11 +434,11 @@ namespace Selenium3
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumWindowMethods.Sleep(1);
             n = r.Next(3);
-            Global.ConsoleOut("CustomerServiceGradeModal_" + n);
+            Global.ConsoleOutTab("CustomerServiceGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerServiceGradeModal_" + n);
             n = r.Next(3);
-            Global.ConsoleOut("CustomerQualityGradeModal_" + n);
+            Global.ConsoleOutTab("CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Click(driver, ElementType.Id, "CustomerQualityGradeModal_" + n);
             SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//button[@type='button'])[4]");
@@ -503,23 +503,23 @@ namespace Selenium3
                 try
                 {
                     string displayme = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr > td:nth-child(9) > a");
-                    Global.ConsoleOut("Engagement Letter: " + displayme);
+                    Global.ConsoleOutTab("Engagement Letter: " + displayme);
                 }
                 catch (NoSuchElementException)
                 {
-                    Global.ConsoleOutTab("Engagement is NOT Present");
+                    Global.ConsoleOutAlert("Engagement is NOT Present");
                 }
             }
             try
             {
                 // Assignment History Page
-                Global.ConsoleOut("Verifying Assignment History Page");
+                Global.ConsoleOutTab("Verifying Assignment History Page");
                 SeleniumGetMethods.DisplayTextContent(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a", "Assiged Date");
                 SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr > td:nth-child(3)", "Provider Id");
                 SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr > td:nth-child(4)", "Provider Name");
                 SeleniumSetMethods.Click(driver, ElementType.XPath, "//*[@id=\"ProviderAssignmentHistoryGrid\"]/table/tbody/tr/td[2]/a");
                 // Order Snapshot History Page
-                Global.ConsoleOut("Verifying Order Snapshot History Page");
+                Global.ConsoleOutTab("Verifying Order Snapshot History Page");
                 SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#OrderSnapshot > h4 > small");
                 SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#OrderSnapshot > h4 > small", "Snapshot Assigned Date");
                 SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#OrderSnapshot > table > tbody > tr:nth-child(2) > td:nth-child(1)", "Order Id");
@@ -529,19 +529,19 @@ namespace Selenium3
                 // Providers Considers
                 try
                 {
-                    Global.ConsoleOut("Verifying Order Snapshot History Page (Providers Considered)");
+                    Global.ConsoleOutTab("Verifying Order Snapshot History Page (Providers Considered)");
                     SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr:nth-child(1) > td:nth-child(2)", "Provider Id");
                     SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr:nth-child(1) > td:nth-child(3)", "Invite Date");
                     SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ProviderAssignmentHistoryGrid > table > tbody > tr:nth-child(1) > td:nth-child(4)", "Provider Name");
                 }
                 catch (NoSuchElementException)
                 {
-                    Global.ConsoleOutTab("No Providers Considered");
+                    Global.ConsoleOutAlert("No Providers Considered");
                 }
             }
             catch (NoSuchElementException)
             {
-                Global.ConsoleOutTab("Assignment date is NOT Present");
+                Global.ConsoleOutAlert("Assignment date is NOT Present");
             }
 
         }

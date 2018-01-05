@@ -212,12 +212,12 @@ namespace Selenium3
 
             // Open 5th 3rd BPO Task and Enter Data
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Begin input @ " + DateTime.Now);
+            Global.ConsoleOutTab("Begin input @ " + DateTime.Now);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
             // Kill maskMoney
-            Global.ConsoleOut("Kill Money Mask");
+            Global.ConsoleOutTab("Kill Money Mask");
             IJavaScriptExecutor js = PropertiesCollection.driver as IJavaScriptExecutor;
             string killmoneymask1 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number').val('0')");
             string killmoneymask2 = (string)js.ExecuteScript("$(':input').maskMoney('destroy')");
@@ -915,7 +915,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
             // Add Exterior Attachments to U53 Order
-            Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
+            Global.ConsoleOutTab("Begin adding Attachments at " + DateTime.Now);
             if (environment == ENV.QA)
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "63_1_fileupload");
@@ -1029,10 +1029,10 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_230_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             SeleniumWindowMethods.ThrottlingSleep();
-            Global.ConsoleOut("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
+            Global.ConsoleOutTab("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
-            Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            Global.ConsoleOutTab("Submit button Clicked " + DateTime.Now);
             SeleniumWindowMethods.Sleep(3);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[10]");
@@ -1046,7 +1046,7 @@ namespace Selenium3
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_SaleCompLivingAreaComment", "Test QC Sales Comment");
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompLivingAreaComment", "Test QC List Comment");
                 SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
-                Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+                Global.ConsoleOutTab("Submit button Clicked " + DateTime.Now);
                 SeleniumWindowMethods.Sleep(10);
                 SeleniumWindowMethods.WindowType(driver, WinType.Popup);
                 SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[10]");

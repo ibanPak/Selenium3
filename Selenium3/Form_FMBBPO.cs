@@ -317,35 +317,35 @@ namespace Selenium3
 
         public static void CompletBPO(Driver driver)
         {
-            string sc1street = "3100 Byberry Rd";
-            string sc1city = "PHILADELPHIA";
-            string sc1zipcode = "19154";
-            string sc1state = "Pennsylvania";
+            string sc1street = "200 Rush Lily";
+            string sc1city = "Irvine";
+            string sc1zipcode = "92620";
+            string sc1state = "California";
 
-            string sc2street = "51 LITCHFIELD LANE";
-            string sc2city = "PHILADELPHIA";
-            string sc2zipcode = "19154";
-            string sc2state = "Pennsylvania";
+            string sc2street = "350 Rose Arch";
+            string sc2city = "Irvine";
+            string sc2zipcode = "92620";
+            string sc2state = "California";
 
-            string sc3street = "123 LITCHFIELD LANE UNIT#250";
-            string sc3city = "PHILADELPHIA";
-            string sc3zipcode = "19154";
-            string sc3state = "Pennsylvania";
+            string sc3street = "200 Greatlawn";
+            string sc3city = "Irvine";
+            string sc3zipcode = "92620";
+            string sc3state = "California";
 
-            string lc1street = "218 LITCHFIELD";
-            string lc1city = "PHILADELPHIA";
-            string lc1zipcode = "19154";
-            string lc1state = "Pennsylvania";
+            string lc1street = "100 Townsend";
+            string lc1city = "Irvine";
+            string lc1zipcode = "92620";
+            string lc1state = "California";
 
-            string lc2street = "123 LITCHFIELD LANE UNIT#37";
-            string lc2city = "PHILADELPHIA";
-            string lc2zipcode = "19154";
-            string lc2state = "Pennsylvania";
+            string lc2street = "151 Roosevelt";
+            string lc2city = "Irvine";
+            string lc2zipcode = "92620";
+            string lc2state = "California";
 
-            string lc3street = "306 LITCHFIELD LANE";
-            string lc3city = "PHILADELPHIA";
-            string lc3zipcode = "19154";
-            string lc3state = "Pennsylvania";
+            string lc3street = "100 Scented Violet";
+            string lc3city = "Irvine";
+            string lc3zipcode = "92620";
+            string lc3state = "California";
 
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Subject_InspectionDate");
@@ -771,7 +771,7 @@ namespace Selenium3
 
         public static void Attachments(Driver driver, ENV environment)
         {
-            Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
+            Global.ConsoleOutTab("Begin adding Attachments at " + DateTime.Now);
             if (environment == ENV.QA)
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "1_1_fileupload");

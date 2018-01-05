@@ -23,7 +23,7 @@ namespace Selenium3
                 try
                 {
                     cycles = cycles + 1;
-                    Global.ConsoleOut("Number of cycles: " + cycles);
+                    Global.ConsoleOutTab("Number of cycles: " + cycles);
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Properties");
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Properties");
@@ -112,19 +112,19 @@ namespace Selenium3
                     int min = timespan.Minutes;
                     int sec = timespan.Seconds;
                     Global.ConsoleOut("Running Time " + hour + " Hours, " + min + " minutes, " + sec + " seconds, since testing has begun");
-                    Global.ConsoleOut("Time Stamp: " + DateTime.Now);
+                    Global.ConsoleOutTab("Time Stamp: " + DateTime.Now);
                 }
                 catch (Exception ex)
                 {
-                    Global.ConsoleOut("Error: " + ex.ToString());
+                    Global.ConsoleOutAlert("Error: " + ex.ToString());
                     failcount = failcount + 1;
-                    Global.ConsoleOut("failcount: " + failcount);
+                    Global.ConsoleOutAlert("failcount: " + failcount);
                     SeleniumWindowMethods.ScreenShot(driver, "Error");
-                    Global.ConsoleOut("Error Time Stamp: " + DateTime.Now);
+                    Global.ConsoleOutAlert("Error Time Stamp: " + DateTime.Now);
                 }
                 if (failcount == 15)
                 {
-                    Global.ConsoleOut("Max Failed Count: " + cycles + " test has aborted");
+                    Global.ConsoleOutAlert("Max Failed Count: " + cycles + " test has aborted");
                     break; // handle error and break/return
                 }
 

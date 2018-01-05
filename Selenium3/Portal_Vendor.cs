@@ -11,6 +11,7 @@ namespace Selenium3
         public static void AcceptScheduleAppointment(Driver driver)
         {
             // Accept Schedule Appointment - Datetime Now
+            Global.ConsoleOut("Accepting Schedule Appointment: " + DateTime.Now.ToString());
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Tasks");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Tasks");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
@@ -28,17 +29,17 @@ namespace Selenium3
                 {
                     SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton"); // refreshing results
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Schedule Appointment");
-                    Global.ConsoleOut("Appointment Found");
+                    Global.ConsoleOutTab("Appointment Found");
                     IsAppointmentPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 10)
                 {
-                    Global.ConsoleOut("Appointment Not Found");
+                    Global.ConsoleOutAlert("Appointment Not Found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
@@ -54,14 +55,14 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSubmit");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmit");
             SeleniumWindowMethods.Sleep(1);
-            Global.ConsoleOut("Accepted Scheduled Appointment @: " + DateTime.Now);
-            SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Manually run Amp Order sync now");
+            Global.ConsoleOutTab("Accepted Scheduled Appointment @: " + DateTime.Now);
+
         }
 
         public static void UploadAppraisal(Driver driver)
         {
-            // Accept Schedule Appointment - Datetime Now
+            // Upload Appraisal
+            Global.ConsoleOut("Upload Appraisal: " + DateTime.Now.ToString());
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Tasks");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Tasks");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
@@ -79,17 +80,17 @@ namespace Selenium3
                 {
                     SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton"); // refreshing results
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Upload Appraisal");
-                    Global.ConsoleOut("Appraisal Found");
+                    Global.ConsoleOutTab("Appraisal Found");
                     IsAppointmentPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 10)
                 {
-                    Global.ConsoleOut("Appraisal Not Found");
+                    Global.ConsoleOutAlert("Appraisal Not Found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);

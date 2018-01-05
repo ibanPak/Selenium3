@@ -43,7 +43,6 @@ namespace Selenium3
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             Form_REOTasks.AssetMGRTasks(driver);
             Logout.Portal(driver, Portals.REO);
-            Global.ConsoleOut("Run Amp Order Sync");
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
             Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver);

@@ -44,7 +44,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ClientFileNumber", "File-" + Global.UniqueNum);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "LockboxCode", Global.UniqueNum);
             Global.StreetAddress = (Global.StreetNum + " " + StreetName);
-            Global.ConsoleOut("Street Address: " + Global.StreetAddress);
+            Global.ConsoleOutTab("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", FullState);

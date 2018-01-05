@@ -100,14 +100,14 @@ namespace Selenium3
             string lc3state = "Texas";
 
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Begin input @ " + DateTime.Now);
+            Global.ConsoleOutTab("Begin input @ " + DateTime.Now);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
             SeleniumWindowMethods.ThrottlingSleep();
 
             // Kill maskMoney
-            Global.ConsoleOut("Kill Money Mask");
+            Global.ConsoleOutTab("Kill Money Mask");
             IJavaScriptExecutor js = PropertiesCollection.driver as IJavaScriptExecutor;
             string killmoneymask1 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number').val('0')");
             string killmoneymask2 = (string)js.ExecuteScript("$(':input').maskMoney('destroy')");
@@ -427,7 +427,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
 
             // Add Exterior Attachments to RA Order
-            Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
+            Global.ConsoleOutTab("Begin adding Attachments at " + DateTime.Now);
             if (environment == ENV.QA)
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "37_1_fileupload");
@@ -515,10 +515,10 @@ namespace Selenium3
             }
 
             // Complete Attachment Section
-            Global.ConsoleOut("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
+            Global.ConsoleOutTab("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
-            Global.ConsoleOut("Submit button Clicked " + DateTime.Now);
+            Global.ConsoleOutTab("Submit button Clicked " + DateTime.Now);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[9]");
             SeleniumWindowMethods.WindowType(driver, WinType.Main);

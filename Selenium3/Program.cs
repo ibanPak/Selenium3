@@ -26,8 +26,9 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            Login.ValPortal(Driver.driver1, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.ViewAssignmentHistory(Driver.driver1, "30927");
+            Global.ApplicationPause("Upload document on Flash page");
+
+            Runner_QA.FMBFlow1Org1(Driver.driver1);
 
             // Cool Down
             Global.Cooldown();

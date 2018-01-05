@@ -23,7 +23,7 @@ namespace Selenium3
                 try
                 {
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, element);
                     SeleniumSetMethods.Find(driver, ElementType.PartialLinkText, element);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, element);
@@ -32,13 +32,13 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element);
+                    Global.ConsoleOutAlert("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
                     PropertiesCollection.driver.Navigate().Back();
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
                 }
 
@@ -55,7 +55,7 @@ namespace Selenium3
                 try
                 {
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -63,13 +63,13 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element);
+                    Global.ConsoleOutAlert("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
                     PropertiesCollection.driver.Navigate().Refresh();
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
                 }
 
@@ -86,7 +86,7 @@ namespace Selenium3
                 try
                 {
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to find Element: " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -94,7 +94,7 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element);
+                    Global.ConsoleOutAlert("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
                     SeleniumWindowMethods.WindowActions(driver, ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
@@ -102,7 +102,7 @@ namespace Selenium3
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
                 }
 

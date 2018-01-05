@@ -21,28 +21,28 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Properties");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             // Add New Property iFrame
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_CLIENTPA']");
-            Global.ConsoleOut("Open Popup - New Property");
+            Global.ConsoleOutTab("Open Popup - New Property");
             // Client - Popup
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "csClientId");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "csClientId", "7224");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnRedraw");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnRedraw");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img");
-            Global.ConsoleOut("Popup closing");
+            Global.ConsoleOutTab("Popup closing");
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA']");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
@@ -54,7 +54,7 @@ namespace Selenium3
             // Switch back to main window - File Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA2']");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
@@ -66,10 +66,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'Jon1']");
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             Global.StreetAddress = (Global.StreetNum + " " + streetname);
-            Global.ConsoleOut("Street Address: " + Global.StreetAddress);
+            Global.ConsoleOutTab("Street Address: " + Global.StreetAddress);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "paPropAddr");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "paPropAddr", Global.StreetAddress);
@@ -83,14 +83,14 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "paPropType", "SFR");
             // Add Attorney - Popup
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_FCATTNYPA']");
-            Global.ConsoleOut("Open Popup - Attorney");
+            Global.ConsoleOutTab("Open Popup - Attorney");
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'Just']");
             // Switch back to main window 
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Fc_Saledt", Global.LastMonth);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Unpd_Bal", "250000");
@@ -106,7 +106,7 @@ namespace Selenium3
                 string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector
                         , "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
                 Global.OrderID = PropertyID;
-                Global.ConsoleOut("Property ID: " + PropertyID); ;
+                Global.ConsoleOutTab("Property ID: " + PropertyID); ;
             }
             catch
             {
@@ -117,7 +117,7 @@ namespace Selenium3
                 string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector
                         , "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
                 Global.OrderID = PropertyID;
-                Global.ConsoleOut("Property ID: " + PropertyID); ;
+                Global.ConsoleOutTab("Property ID: " + PropertyID); ;
 
             }
             // Screen Capture
@@ -145,11 +145,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnUpdate");
             // Focus Main page
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPINS']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPINS']");
-            Global.ConsoleOut("The value for this field should be ($350,000): "
-                   + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "piFcBal"));
+            SeleniumGetMethods.DisplayTextValue(driver, ElementType.Name, "piFcBal", "The value for this field should be ($350,000)");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#column2 > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > a:nth-child(1)");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#column2 > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > a:nth-child(1)");
             // Assign Agent
@@ -164,12 +163,12 @@ namespace Selenium3
             {
                 SeleniumWindowMethods.Assertion(driver, Alert.Accept);
                 // Alert present; set the flag
-                Global.ConsoleOut("Accepted Confirmation Message");
+                Global.ConsoleOutTab("Accepted Confirmation Message");
             }
             catch
             {
                 // Alert not present
-                Global.ConsoleOut("Confirmation Message: Not Present");
+                Global.ConsoleOutTab("Confirmation Message: Not Present");
             }
 
         }

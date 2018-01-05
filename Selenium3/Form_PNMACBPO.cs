@@ -792,7 +792,7 @@ namespace Selenium3
         public static void Attachments(Driver driver, ENV environment)
         {
             // Add Exterior Attachments to U53 Order
-            Global.ConsoleOut("Begin adding Attachments at " + DateTime.Now);
+            Global.ConsoleOutTab("Begin adding Attachments at " + DateTime.Now);
 
             if (environment == ENV.QA)
             {
@@ -889,7 +889,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
 
             }
-
             // Complete Attachment Section
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnBpoSave");

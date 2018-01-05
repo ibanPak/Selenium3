@@ -16,6 +16,7 @@ namespace Selenium3
     {
         public static void REO(Driver driver, ENV environment, string username, string password)
         {
+            Global.ConsoleOut("Logging into REO Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "globalPropertySearch";
@@ -51,7 +52,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -59,12 +60,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -75,6 +76,7 @@ namespace Selenium3
 
         public static void Agent(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into Agent Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "propertySrchTxt";
@@ -110,7 +112,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -118,12 +120,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -134,6 +136,7 @@ namespace Selenium3
 
         public static void ValPortal(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into Val Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "searchBar";
@@ -169,7 +172,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -177,12 +180,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -193,6 +196,7 @@ namespace Selenium3
 
         public static void PropertyCure(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into PropertyCure Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "searchBar";
@@ -228,7 +232,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -236,13 +240,13 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
 
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -253,6 +257,7 @@ namespace Selenium3
 
         public static void Vendor(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into Vendor Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "globalPropertySearch";
@@ -288,7 +293,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -296,12 +301,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -312,6 +317,7 @@ namespace Selenium3
 
         public static void LossMit(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into LossMit Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "globalPropertySearch";
@@ -347,7 +353,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -355,12 +361,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -371,6 +377,7 @@ namespace Selenium3
 
         public static void Buyer(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into Buyer Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "logoBP";
@@ -406,7 +413,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -414,12 +421,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
@@ -430,6 +437,7 @@ namespace Selenium3
 
         public static void ValClient(Driver driver, ENV portal, string username, string password)
         {
+            Global.ConsoleOut("Logging into Val Client Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             string element = "Filter_LoanNumber";
@@ -465,7 +473,7 @@ namespace Selenium3
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOut("Searching for : " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.Id, element);
                     SeleniumSetMethods.Find(driver, ElementType.Id, element);
                     IsElementPresent = true;
@@ -473,12 +481,12 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Element not present: " + element + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                 }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(element + " not found and " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }

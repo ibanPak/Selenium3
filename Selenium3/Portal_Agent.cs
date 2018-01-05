@@ -17,6 +17,7 @@ namespace Selenium3
         public static void AcceptScheduleAppointment(Driver driver)
         {
             // Accept Schedule Appointment - Datetime Now
+            Global.ConsoleOut("Accepting Appointment:" + Global.OrderID + "  @: " + DateTime.Now);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Tasks");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "clearButton");
@@ -32,17 +33,17 @@ namespace Selenium3
                 {
                     SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to Schedule Appointment: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Schedule Appointment");
-                    Global.ConsoleOut("Appointment Found");
+                    Global.ConsoleOutTab("Appointment Found");
                     IsAppointmentPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 10)
                 {
-                    Global.ConsoleOut("Appointment Not Found");
+                    Global.ConsoleOutAlert("Appointment Not Found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
@@ -58,9 +59,8 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSubmit");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmit");
             SeleniumWindowMethods.Sleep(1);
-            Global.ConsoleOut("Accepted Scheduled Appointment @: " + DateTime.Now);
+            Global.ConsoleOutTab("Accepted Scheduled Appointment @: " + DateTime.Now);
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Manually run Amp Order sync now");
 
         }
 
@@ -83,17 +83,17 @@ namespace Selenium3
                 {
                     SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to find BPO: " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to find BPO: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.LinkText, "BPO");
-                    Global.ConsoleOut("BPO Found");
+                    Global.ConsoleOutTab("BPO Found");
                     IsOrderPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut("BPO not found");
+                    Global.ConsoleOutAlert("BPO not found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
@@ -122,17 +122,17 @@ namespace Selenium3
                 {
                     SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to find Rental Analysis: " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to find Rental Analysis: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.LinkText, "Rental Analysis");
-                    Global.ConsoleOut("Rental Analysis Found");
+                    Global.ConsoleOutTab("Rental Analysis Found");
                     IsOrderPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut("Rental Analysis not found");
+                    Global.ConsoleOutAlert("Rental Analysis not found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
@@ -161,17 +161,17 @@ namespace Selenium3
                 {
                     SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1"); // refreshing results
                     tries = tries + 1;
-                    Global.ConsoleOut("Attempting to find Task: " + TaskName + " " + tries + " Attempt(s)");
+                    Global.ConsoleOutTab("Attempting to find Task: " + TaskName + " " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Click(driver, ElementType.LinkText, TaskName);
-                    Global.ConsoleOut("REO Task: " + TaskName + " Found");
+                    Global.ConsoleOutTab("REO Task: " + TaskName + " Found");
                     IsOrderPresent = true;
                     break;
                 }
                 catch (Exception) { }
                 if (tries == 15)
                 {
-                    Global.ConsoleOut(TaskName + " not found");
+                    Global.ConsoleOutAlert(TaskName + " not found");
                     break; // handle error and break/return
                 }
                 SeleniumWindowMethods.Sleep(25);
@@ -199,8 +199,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "txtSearch", "Springfield");
             SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_contentPlaceHolder_SearchForm1_btnSubmit");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "txtSearch");
-            string addressv = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#ctl00_contentPlaceHolder_repeaterResults_ctl00_hyperLinkGeneral");
-            Global.ConsoleOut("Springfield Address validation: " + addressv);
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#ctl00_contentPlaceHolder_repeaterResults_ctl00_hyperLinkGeneral", "Springfield Address validation");
             SeleniumSetMethods.Clear(driver, ElementType.Id, "txtSearch");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "txtSearch", "34747");
             SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_contentPlaceHolder_SearchForm1_btnSubmit");

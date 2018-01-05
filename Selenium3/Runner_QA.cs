@@ -42,7 +42,6 @@ namespace Selenium3
             IfExists.Id_Refresh(driver, "globalPropertySearch");
             Form_REOTasks.AssetMGRTasks(driver);
             Logout.Portal(driver, Portals.REO);
-            Global.ConsoleOut("Run Amp Order Sync");
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
             Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver);
@@ -186,15 +185,15 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
-            Global.OrderID = "30913";
-            Global.StreetAddress = "1228 MODENA DR";
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "Random";      //  "Random"; 
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
+            string subjectstreetnumber = "115";      //  "Random"; 
+            string subjectstreetname = "Longmeadow";
+            string subjectcity = "Irvine";
+            string subjectstate = "California";
+            string subjectzip = "92620";
 
             /*                                                  */
             /*              Make changes to above               */
@@ -225,6 +224,9 @@ namespace Selenium3
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
+            Logout.Portal(driver, Portals.ValPortal);
+            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Portal_Val.ViewAssignmentHistory(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
         }

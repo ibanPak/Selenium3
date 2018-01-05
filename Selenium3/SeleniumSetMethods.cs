@@ -440,11 +440,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver.FindElement(By.Id(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.Name)
@@ -452,11 +452,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver.FindElement(By.Name(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
@@ -464,11 +464,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver.FindElement(By.XPath(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
@@ -476,11 +476,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver.FindElement(By.CssSelector(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.LinkText)
@@ -488,11 +488,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver.FindElement(By.LinkText(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.PartialLinkText)
@@ -500,11 +500,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver.FindElement(By.PartialLinkText(element));
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             //Driver 2
@@ -513,11 +513,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver2.FindElement(By.Id(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver2 && elementtype == ElementType.Name)
@@ -525,11 +525,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver2.FindElement(By.Name(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
@@ -537,11 +537,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver2.FindElement(By.XPath(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
@@ -549,11 +549,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver2.FindElement(By.CssSelector(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver2 && elementtype == ElementType.LinkText)
@@ -561,11 +561,11 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver2.FindElement(By.LinkText(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
                 }
             }
             else if (driver == Driver.driver2 && elementtype == ElementType.PartialLinkText)
@@ -573,12 +573,12 @@ namespace Selenium3
                 try
                 {
                     PropertiesCollection.driver2.FindElement(By.PartialLinkText(element));
-                    Global.ConsoleOut("Element found: " + element);
+                    Global.ConsoleOutTab("Element found: " + element);
 
                 }
                 catch (Exception)
                 {
-                    Global.ConsoleOut("Element not found: " + element);
+                    Global.ConsoleOutAlert("Element not found: " + element);
 
                 }
 

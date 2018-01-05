@@ -50,7 +50,7 @@ namespace Selenium3
                 IWebDriver driver2 = new InternetExplorerDriver(options);
                 PropertiesCollection.driver2 = driver2;
             }
-
+            // Start Time Stamp
             Global.StartDT = DateTime.Now;
             Global.ConsoleOut("Test started @ " + Global.StartDT);
 
@@ -95,6 +95,20 @@ namespace Selenium3
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" ");
             Console.WriteLine("     " + displaytext);
+
+        }
+
+        public static void ApplicationPause(string displaytext)
+        {
+            Global.ConsoleOut(displaytext + ": " +  DateTime.Now.ToString());
+            Global.ConsoleOutTab("Press ESC to proceed");
+            do
+            {
+                while (!Console.KeyAvailable)
+                {
+                    // Do something
+                }
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
         }
 
