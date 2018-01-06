@@ -26,9 +26,7 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            Global.ApplicationPause("Upload document on Flash page");
-
-            Runner_QA.FMBFlow1Org1(Driver.driver1);
+            Runner_QA.REOFlowOrg2(Driver.driver1);
 
             // Cool Down
             Global.Cooldown();

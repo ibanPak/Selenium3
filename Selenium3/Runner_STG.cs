@@ -21,8 +21,8 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "10950";
-            string subjectstreetname = "MODENA DR";     // "Random";
+            string subjectstreetnumber = "10950";       // "Random";
+            string subjectstreetname = "MODENA DR";     
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";

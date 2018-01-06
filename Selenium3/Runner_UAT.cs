@@ -22,13 +22,19 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
+            string subjectstreetnumber = "9429";        // "Random";
+            string subjectstreetname = "Gardenia";
+            string subjectcity = "Irvine";
+            string subjectstate = "California";
+            string subjectzip = "92620";
+
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.REO(Driver.driver2, ENV.UAT, "prodkath2", "qatest10");
-            Portal_REO.AddNewProperty(driver, "Lawnwood", "Irvine", "California", "92620");
-            Portal_REO.AddAgent(driver);
+            Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_REO.AddAgent(driver, "250597");
             Portal_REO.PreMarket(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
@@ -57,8 +63,8 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "392";
-            string subjectstreetname = "LITCHFIELD LN";
+            string subjectstreetnumber = "392";     // "Random";
+            string subjectstreetname = "LITCHFIELD LN";     
             string subjectcity = "HOUSTON";
             string subjectstate = "Texas";
             string subjectzip = "77024";
@@ -90,7 +96,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "392";
+            string subjectstreetnumber = "392";     // "Random";
             string subjectstreetname = "LITCHFIELD LN";
             string subjectcity = "HOUSTON";
             string subjectstate = "Texas";
@@ -123,7 +129,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "392";
+            string subjectstreetnumber = "392";     // "Random";
             string subjectstreetname = "LITCHFIELD LN";
             string subjectcity = "HOUSTON";
             string subjectstate = "Texas";
@@ -157,7 +163,7 @@ namespace Selenium3
             Global.StreetAddress = "1219 Encore";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "Random";
+            string subjectstreetnumber = "Random";      // "Random";
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
@@ -236,7 +242,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "10950";
+            string subjectstreetnumber = "10950";       // "Random";
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";

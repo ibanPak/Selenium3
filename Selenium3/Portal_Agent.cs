@@ -426,6 +426,165 @@ namespace Selenium3
 
         }
 
+        public static void Agentsearch(Driver driver, string PropID)
+        {
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Tasks");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "PropertyID");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "PropertyID");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PropertyID", PropID);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton1");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, ".TaskQueueGrid > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(3) > div:nth-child(1) > a:nth-child(1)");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".TaskQueueGrid > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(3) > div:nth-child(1) > a:nth-child(1)");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericTaskTab_ctl00_ctrGeneralComments_txtComment");
+            Global.ConsoleOut("Property details page opened for " + PropID);
+
+        }
+
+        public static void OccupancyStatusTask(Driver driver)
+        {
+            string OccChkDate = DateTime.Today.AddDays(-3).ToString("MM-dd-yy");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Occupancy Status Task");
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "osCurChkDt");
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "osCurChkDt", OccChkDate);
+            Global.ConsoleOut(" Occupancy Check Date: " + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "osCurChkDt"));
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "osVacant");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "osVacant", "Yes");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "osPropType", "SFR");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "osList", "Yes");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "txtosAgentNote");
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "txtosAgentNote", "Agent comments - Occupancy status report ");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
+            SeleniumWindowMethods.Sleep(1);
+            Global.ConsoleOut("Active Window: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Agent submitted OccupancyStatusTask");
+
+        }
+
+        public static void PublishProperty(Driver driver, string PropertyID)
+        {
+            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver.Title);
+            // Need to Complete the steps
+
+        }
+
+        public static void ListAgentOffer(Driver driver)
+        {
+            // Listing Agent placing the offer to REO property
+            string OfrDate = DateTime.Now.ToString("MM/dd/yy");
+
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "td.tabCenter:nth-child(6) > a:nth-child(1)");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "td.tabCenter:nth-child(6) > a:nth-child(1)");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericOfferTab_ctl00_ctrOffersLog_hplAddNewOffer");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericOfferTab_ctl00_ctrOffersLog_hplAddNewOffer");
+
+            // Agent Offer Worksheet
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "omOfrDt");
+            SeleniumSetMethods.Click(driver, ElementType.Name, "omOfrDt");
+            SeleniumSetMethods.Clear(driver, ElementType.Name, "omOfrDt");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omOfrDt", OfrDate);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omBuyer", "TestBuyer1");   //"TestBuyer1"
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omOfrPrice", "490000");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "omLoanType", "Conv");
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omLoanAmt", "450000");
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omDaysToClose", "30");
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omCloseDt", DateTime.Today.AddDays(30).ToString("MM/dd/yy"));
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "omClosingCosts", "2500");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "omBt", "Owner");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Click(driver, ElementType.Name, "btnSubmit");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumWindowMethods.Assertion(driver, Alert.Accept);
+            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Back To Previous Page");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Back To Previous Page");
+
+        }
+
+        // NEED TO CREATE THE TESTCASES - check the offer is accepted in Agent portal
+
+        public static void UploadSignedContract(Driver driver, string PropertyID)
+        {
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "td.tabCenter:nth-child(6) > a:nth-child(1)");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "td.tabCenter:nth-child(6) > a:nth-child(1)");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericOfferTab_ctl00_ctrOffersLog_hplAddNewOffer");
+            SeleniumWindowMethods.ScreenShot(driver, "Agent Offer tab_" + PropertyID);
+            SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericOfferTab_ctl00_ctrOffersLog_hplAddNewOffer");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Click here to View or Upload Signed Contracts");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Click here to View or Upload Signed Contracts");
+            SeleniumWindowMethods.WindowType(driver, WinType.Popup);
+            Global.ConsoleOut("Pop Up Window:" + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "pcu_Buyer");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "pcu_Buyer", "TestBuyer1");  //TestBuyer1  , sree buyer       
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "txtpcu_Note", "Agent uploaded signed contracts.");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "pcu_" + PropertyID + "_0", "\\\\hqfs1\\Public\\IT\\QA\\QA Automation\\Platinum\\TestDoc.pdf");
+            SeleniumSetMethods.Click(driver, ElementType.Name, "btnAdd");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumWindowMethods.ScreenShot(driver, "Contract upload_" + PropertyID);
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img");
+            SeleniumWindowMethods.WindowType(driver, WinType.Main);
+            SeleniumWindowMethods.Sleep(1);
+            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Back To Previous Page");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Back To Previous Page");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericOfferTab_ctl00_ctrOffersLog_hplAddNewOffer");
+
+        }
+
+
+        public static void CancelAgentTask(Driver driver, string TaskName)
+        {
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplTasks");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_ctl00_ctrHeader_MainMenu_hplTasks");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "searchButton1");
+
+        }
+
+        public static void OpenAgentTask(Driver driver, string TaskName)
+        {
+            SeleniumWindowMethods.Sleep(1);
+            PropertiesCollection.driver.Navigate().Refresh();
+            SeleniumWindowMethods.Sleep(1);
+
+            int tries = 0;
+            bool IsTaskPresent = false;
+            while (IsTaskPresent == false)
+            {
+                try
+                {
+                    SeleniumWindowMethods.Sleep(2);
+                    tries = tries + 1;
+                    Global.ConsoleOut("Attempting to find " + TaskName + " task. Number of attempts is  " + tries);
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, TaskName);
+                    Global.ConsoleOut("Task: " + TaskName + " found");
+                    IsTaskPresent = true;
+                    break;
+
+                }
+
+                catch (Exception)
+                {
+                    Global.ConsoleOut(TaskName + " not found");
+                    PropertiesCollection.driver.Navigate().Refresh();
+                }
+                if (tries == 3)
+                {
+                    Global.ConsoleOut(TaskName + " not found. " + tries + " maxmium attempts has been reached.");
+                    break;
+                }
+
+            }
+
+        }
+
     }
 
 }

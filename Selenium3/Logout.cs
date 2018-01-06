@@ -16,7 +16,7 @@ namespace Selenium3
     {
         public static void Portal(Driver driver, Portals portals)
         {
-            Global.ConsoleOut("Logging out " + portals + " Portal: " + DateTime.Now.ToString());
+            Global.ConsoleOut("Logging out " + portals + ": " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
             while (IsElementPresent == false)
