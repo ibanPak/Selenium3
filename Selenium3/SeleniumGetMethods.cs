@@ -130,7 +130,7 @@ namespace Selenium3
             {
                 Global.ConsoleOutAlert(text + ": Not Present");
             }
-            
+
         }
 
         public static void DisplayTextValue(Driver driver, ElementType elementtype, string element, string text)
@@ -144,6 +144,24 @@ namespace Selenium3
             else
             {
                 Global.ConsoleOutAlert(text + ": Not Present");
+            }
+
+        }
+
+        public static bool IsPresent(Driver driver, ElementType elementtype, string element)
+        {
+
+            try
+            {
+                PropertiesCollection.driver.FindElement(By.Id(element));
+                Global.IsPresent = true;
+                return true;
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("Element not present: " + element);
+
+                return false;
             }
 
         }

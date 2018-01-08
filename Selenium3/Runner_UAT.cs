@@ -34,7 +34,7 @@ namespace Selenium3
 
             Login.REO(Driver.driver2, ENV.UAT, "prodkath2", "qatest10");
             Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_REO.AddAgent(driver, "250597");
+            Portal_REO.AddAgent(driver, Global.PropertyID, "250597");
             Portal_REO.PreMarket(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");

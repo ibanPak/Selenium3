@@ -17,7 +17,7 @@ namespace Selenium3
         public static void REOFlowOrg1(Driver driver)
         {
             // REO Flow Org1
-            Global.OrderID = "0";
+            Global.PropertyID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
@@ -33,7 +33,7 @@ namespace Selenium3
 
             Login.REO(driver, ENV.QA, "Yeshh1", "Yeshh1");
             Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_REO.AddAgent(driver, "250597");
+            Portal_REO.AddAgent(driver, Global.PropertyID, "250597");
             Portal_REO.PreMarket(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -58,12 +58,12 @@ namespace Selenium3
         public static void REOFlowOrg2(Driver driver)
         {
             // REO Flow Org1
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.PropertyID = "858337";
+            Global.StreetAddress = "9500 Gardenia";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "9429";        // "Random";
-            string subjectstreetname = "Gardenia";     
+            string subjectstreetnumber = "9500";        // "Random";
+            string subjectstreetname = "Gardenia";
             string subjectcity = "Irvine";
             string subjectstate = "California";
             string subjectzip = "92620";
@@ -72,16 +72,16 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            // Log into the REO portal, add property and assign agent.
-            Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2"); 
+            //Log into the REO portal, add property and assign agent.
+            Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");
             Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_REO.AddAgent(driver, "250597");
+            Portal_REO.AddAgent(driver, Global.PropertyID, "250922");
             Logout.Portal(driver, Portals.REO);
             SeleniumWindowMethods.Sleep(2);
 
             //  Log into the agent portal and complete the Occupancy task. 
 
-            Login.Agent(driver, ENV.QA, "sdqaagent15", "P@ssw0rd1");
+            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.Agentsearch(driver, Global.PropertyID);
             Portal_Agent.OccupancyStatusTask(driver);
             SeleniumWindowMethods.Sleep(1);
@@ -98,7 +98,7 @@ namespace Selenium3
             Logout.Portal(driver, Portals.REO);
 
             // Listing Agent places the order 
-            Login.Agent(driver, ENV.QA, "sdqaagent15", "P@ssw0rd1");     // QA Login 
+            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");     // QA Login 
             Portal_Agent.Agentsearch(driver, Global.PropertyID);
             Portal_Agent.ListAgentOffer(driver);
             Logout.Portal(driver, Portals.Agent);
@@ -112,7 +112,7 @@ namespace Selenium3
             Logout.Portal(driver, Portals.REO);
 
             // Listing Agent uploads the signed contact 
-            Login.Agent(driver, ENV.QA, "sdqaagent15", "P@ssw0rd1");
+            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.Agentsearch(driver, Global.PropertyID);
             Portal_Agent.UploadSignedContract(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.Agent);
@@ -127,7 +127,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (100);
 
             string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";     
+            string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -161,7 +161,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (100);
 
             string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";     
+            string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -223,7 +223,7 @@ namespace Selenium3
         {
             // PNMAC BPO Org1
             Global.OrderID = "30853";
-            Global.StreetAddress = "1211 Rush Lily";     
+            Global.StreetAddress = "1211 Rush Lily";
             Global.ThrottleSleep = 3 * (1000);
 
             string subjectstreetnumber = "10950";       // "Random";
@@ -309,7 +309,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (1000);
 
             string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";     
+            string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";

@@ -33,9 +33,9 @@ namespace Selenium3
                     }
                     else if (portals == Portals.Agent)
                     {
-                        SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
+                        SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_ctrHeader_LoginState1_hlLogout");
                         SeleniumWindowMethods.Sleep(1);
-                        SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_ctl00_ctrHeader_LoginState1_hlLogout");
+                        SeleniumSetMethods.Click(driver, ElementType.Id, "ctl00_ctrHeader_LoginState1_hlLogout");
                     }
                     else if (portals == Portals.Vendor)
                     {

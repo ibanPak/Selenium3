@@ -17,6 +17,16 @@ namespace Selenium3
         public static string PropSaveFilterName = "0";
         public static string PropResults = "0";
 
+        public static void GotoPropertyId(Driver driver, string propertyid)
+        {
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", propertyid);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "link0");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "link0");
+
+        }
+
         public static void AddNewProperty(Driver driver, string streetnumber, string streetname, string city, string state, string zipcode)
         {
             if (streetnumber == "Random")
@@ -33,8 +43,8 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Properties");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             // Add New Property iFrame
+            SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_POP_CLIENTPA']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_CLIENTPA']");
@@ -116,44 +126,35 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnAdd");
             SeleniumWindowMethods.Sleep(3);
             // Get Property ID from Property Details page
-            try
+            SeleniumGetMethods.IsPresent(Driver.driver1, ElementType.Id, "#InputForm > table > tbody > tr > td > table > tbody > tr:nth-child(3) > td");
+            if (Global.IsPresent == true)
             {
-                string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector
-                        , "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
-                Global.OrderID = PropertyID;
-                Global.ConsoleOutTab("Property ID: " + PropertyID); ;
-            }
-            catch
-            {
-                SeleniumWindowMethods.Sleep(2);
                 SeleniumSetMethods.Wait(driver, ElementType.Name, "btnAdd");
                 SeleniumSetMethods.Click(driver, ElementType.Name, "btnAdd");
-                SeleniumWindowMethods.Sleep(2);
-                string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector
-                        , "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
-                Global.OrderID = PropertyID;
-                Global.ConsoleOutTab("Property ID: " + PropertyID); ;
-
             }
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)");
+            string PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+            Global.PropertyID = PropertyID;
+            Global.ConsoleOut("Property ID: " + PropertyID); ;
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.ScreenShot(driver, "REO New Property");
 
         }
 
-        public static void AddAgent(Driver driver, string agentid)
+        public static void AddAgent(Driver driver, string propertyid, string agentid)
         {
-            SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            GotoPropertyId(driver, propertyid);
             Global.ConsoleOutTab("Adding Agent");
-            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AGENTNB1']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AGENTNB1']");
             SeleniumWindowMethods.iFrame(driver, "imsb-iframe");
-            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "apsAgentId");
             SeleniumSetMethods.Clear(driver, ElementType.Name, "apsAgentId");
-            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "apsAgentId", agentid);
             SeleniumSetMethods.Clear(driver, ElementType.Name, "apsZip");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".btnGreen");
@@ -261,8 +262,12 @@ namespace Selenium3
             Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Occupancy Status Request");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "osCurChkDt");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
             SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Eviction");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Eviction");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "VacantDate");
             Global.ConsoleOut("Vacant date updated in Eviction tab :" + SeleniumGetMethods.GetTextValue(driver, ElementType.Id, "VacantDate"));
@@ -280,6 +285,7 @@ namespace Selenium3
             // To update list price for property without approval engine
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Listing");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Listing");
+            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "pmNewLP");
             string Listprice = "500000";
             int i = 0;

@@ -28,6 +28,7 @@ namespace Selenium3
         public static string StreetAddress = "0";
         public static string State;
         public static string Display;
+        public static bool IsPresent = false;
         public static int ThrottleSleep = 2 * (1000);
         public static DateTime StartDT;
         public static DateTime EndDT;
