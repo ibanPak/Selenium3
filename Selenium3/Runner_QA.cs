@@ -21,6 +21,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
+            string clientid = "7225";
             string subjectstreetnumber = "9429";        // "Random";
             string subjectstreetname = "Gardenia";
             string subjectcity = "Irvine";
@@ -32,7 +33,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.REO(driver, ENV.QA, "Yeshh1", "Yeshh1");
-            Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_REO.AddAgent(driver, Global.PropertyID, "250597");
             Portal_REO.PreMarket(driver);
             Logout.Portal(driver, Portals.REO);
@@ -58,11 +59,12 @@ namespace Selenium3
         public static void REOFlowOrg2(Driver driver)
         {
             // REO Flow Org1
-            Global.PropertyID = "858337";
-            Global.StreetAddress = "9500 Gardenia";
+            Global.PropertyID = "858338";
+            Global.StreetAddress = "9555 Gardenia";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "9500";        // "Random";
+            string clientid = "7225";
+            string subjectstreetnumber = "9555";        // "Random";
             string subjectstreetname = "Gardenia";
             string subjectcity = "Irvine";
             string subjectstate = "California";
@@ -72,14 +74,14 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            //Log into the REO portal, add property and assign agent.
+            // Log into the REO portal, add property and assign agent.
             Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");
-            Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_REO.AddAgent(driver, Global.PropertyID, "250922");
             Logout.Portal(driver, Portals.REO);
             SeleniumWindowMethods.Sleep(2);
 
-            //  Log into the agent portal and complete the Occupancy task. 
+            // Log into the agent portal and complete the Occupancy task. 
 
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.Agentsearch(driver, Global.PropertyID);
@@ -88,7 +90,7 @@ namespace Selenium3
             Logout.Portal(driver, Portals.Agent);
 
 
-            // Log back to REO portal. complete occupancy task.
+            // Log back to REO portal.complete occupancy task.
             // List the Property
             SeleniumWindowMethods.Sleep(2);
             Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");  // QA login 

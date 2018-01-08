@@ -22,6 +22,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
+            string clientid = "7225";
             string subjectstreetnumber = "9429";        // "Random";
             string subjectstreetname = "Gardenia";
             string subjectcity = "Irvine";
@@ -33,7 +34,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.REO(Driver.driver2, ENV.UAT, "prodkath2", "qatest10");
-            Portal_REO.AddNewProperty(driver, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_REO.AddAgent(driver, Global.PropertyID, "250597");
             Portal_REO.PreMarket(driver);
             Logout.Portal(driver, Portals.REO);

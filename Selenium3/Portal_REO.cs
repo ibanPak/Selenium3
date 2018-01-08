@@ -27,7 +27,7 @@ namespace Selenium3
 
         }
 
-        public static void AddNewProperty(Driver driver, string streetnumber, string streetname, string city, string state, string zipcode)
+        public static void AddNewProperty(Driver driver, string clientid, string streetnumber, string streetname, string city, string state, string zipcode)
         {
             if (streetnumber == "Random")
             {
@@ -55,7 +55,7 @@ namespace Selenium3
             Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "csClientId");
-            SeleniumSetMethods.EnterText(driver, ElementType.Name, "csClientId", "7224");
+            SeleniumSetMethods.EnterText(driver, ElementType.Name, "csClientId", clientid);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnRedraw");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnRedraw");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
@@ -263,17 +263,14 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Occupancy Status Request");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "osCurChkDt");
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "//input[@name='btnUpdate' and @value='Update as Done']");
             SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
-            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return");
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Eviction");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Eviction");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "VacantDate");
-            Global.ConsoleOut("Vacant date updated in Eviction tab :" + SeleniumGetMethods.GetTextValue(driver, ElementType.Id, "VacantDate"));
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Eviction");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "VacantDate");
-            Global.ConsoleOut("Vacant date updated in Eviction tab :" + SeleniumGetMethods.GetTextValue(driver, ElementType.Id, "VacantDate"));
+            SeleniumGetMethods.DisplayTextValue(driver, ElementType.Id, "VacantDate", "Vacant date updated in Eviction tab");
             String Propstatus = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "#selectedProperty > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(2)");
             Global.ConsoleOut("Property status is : " + Propstatus);
 
@@ -289,9 +286,9 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Name, "pmNewLP");
             string Listprice = "500000";
             int i = 0;
-            while (i != 2)
+            while (i > 2)
             {
-
+                i = i + 1;
                 SeleniumSetMethods.EnterText(driver, ElementType.Name, "pmNewLP", Listprice);
                 SeleniumSetMethods.Click(driver, ElementType.CssName, "div.status-panel:nth-child(2) > input:nth-child(2)");
                 SeleniumWindowMethods.Sleep(1);
@@ -305,7 +302,7 @@ namespace Selenium3
                 Global.ConsoleOut("Expire Date:" + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "plExpDt"));
                 Global.ConsoleOut("Reduced Date:" + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "plLpRedDt"));
 
-                i = i + 1;
+                
                 Listprice = "495000";
 
             }
