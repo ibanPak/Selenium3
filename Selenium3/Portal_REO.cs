@@ -19,11 +19,29 @@ namespace Selenium3
 
         public static void GotoPropertyId(Driver driver, string propertyid)
         {
-            SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", propertyid);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "link0");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "link0");
+            try
+            {
+                SeleniumWindowMethods.Sleep(2);
+                SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", propertyid);
+                SeleniumWindowMethods.Sleep(5);
+                SeleniumSetMethods.Click(driver, ElementType.Id, "link0");
+            }
+            catch(NoSuchElementException)
+            {
+                SeleniumWindowMethods.Sleep(5);
+                SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Properties");
+                SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Properties");
+                SeleniumWindowMethods.Sleep(2);
+                SeleniumSetMethods.Wait(driver, ElementType.Name, "btnResetFilters");
+                SeleniumSetMethods.Click(driver, ElementType.Name, "btnResetFilters");
+                SeleniumSetMethods.EnterText(driver, ElementType.Name, "pfPropID", propertyid);
+                SeleniumSetMethods.Click(driver, ElementType.Name, "btnSearchProp");
+                SeleniumWindowMethods.Sleep(2);
+                SeleniumSetMethods.Wait(driver, ElementType.XPath, "//*[@id=\"resultsHere\"]/span/table/tbody[1]/tr/td[1]/a");
+                SeleniumSetMethods.Click(driver, ElementType.XPath, "//*[@id=\"resultsHere\"]/span/table/tbody[1]/tr/td[1]/a");
+
+            }
 
         }
 
@@ -150,8 +168,8 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AGENTNB1']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AGENTNB1']");
+            SeleniumWindowMethods.Sleep(3);
             SeleniumWindowMethods.iFrame(driver, "imsb-iframe");
-            SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "apsAgentId");
             SeleniumSetMethods.Clear(driver, ElementType.Name, "apsAgentId");
             SeleniumWindowMethods.Sleep(2);
@@ -237,6 +255,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             PropResults = SeleniumGetMethods.GetTextContent(driver, ElementType.Id, "results");
             Global.ConsoleOut("Property search results: " + SeleniumGetMethods.GetTextContent(driver, ElementType.Id, "results"));
+
         }
 
         // Open Save search 
@@ -244,7 +263,6 @@ namespace Selenium3
         {
             // works for property tab and task tab 
             // Search button in approvael is filter properties; filter in offer - need to figure out how to generalized the query
-
             SeleniumSetMethods.Click(driver, ElementType.LinkText, tabname);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, filtername);
@@ -302,7 +320,6 @@ namespace Selenium3
                 Global.ConsoleOut("Expire Date:" + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "plExpDt"));
                 Global.ConsoleOut("Reduced Date:" + SeleniumGetMethods.GetTextValue(driver, ElementType.Name, "plLpRedDt"));
 
-                
                 Listprice = "495000";
 
             }
@@ -310,6 +327,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, ".form > li:nth-child(4) > div:nth-child(1)");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".form > li:nth-child(4) > div:nth-child(1)");
             SeleniumWindowMethods.ScreenShot(driver, "Approval History_" + Global.PropertyID);
+
         }
 
         public static void AMAcceptOffer2(Driver driver, int OfferNum)
@@ -376,6 +394,7 @@ namespace Selenium3
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Offers Tab");
             SeleniumWindowMethods.Sleep(1);
+
         }
 
         public static void AMAcceptOffer_Done(Driver driver, int OfferNum)
@@ -406,7 +425,6 @@ namespace Selenium3
         public static void CancelReoTask(Driver driver, string TaskName)
         {
             // Cancelling the REo task (update as Canceled)
-
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/AM_PROPTASKS:']");
 
@@ -437,14 +455,14 @@ namespace Selenium3
                     Global.ConsoleOut(TaskName + " not found and " + tries + " maxmium tries has been reached");
                     break; // handle error and break/return
                 }
-            }
 
+            }
 
         }
 
-        public static void OpenTaskReo(Driver driver, string TaskName)
+        public static void OpenTaskReo(Driver driver, string propertyid, string TaskName)
         {
-            //  Global.ConsoleOut("Opening REO Task for Property Id :" + Global.PropertyID+ "  @: " + DateTime.Now);
+            GotoPropertyId(driver, propertyid);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Tasks");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/AM_PROPTASKS:']");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "note_id");

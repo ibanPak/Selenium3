@@ -52,7 +52,7 @@ namespace Selenium3
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
-            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver);
+            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver, 36);
             Logout.Portal(driver, Portals.Agent);
 
         }

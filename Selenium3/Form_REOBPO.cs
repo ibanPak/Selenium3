@@ -193,14 +193,14 @@ namespace Selenium3
 
         }
 
-        public static void BPOPictures(Driver driver)
+        public static void BPOPictures(Driver driver, int numberphoto)
         {
             // Loop through attaching 36 pictures
             SeleniumWindowMethods.Sleep(3);
-            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
             int SleepTime = 2;
             int i = 1;
-            while (i < 37)
+            while (i <= numberphoto)
             {
                 SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "input.dz-hidden-input:nth-of-type(1)"
                     , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\Numbers\\" + i + ".jpg");
@@ -212,8 +212,8 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnUploadPics");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
-            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Wait(driver, ElementType.XPath, "//input[@name='btnUpdate' and @value='Update as Done']");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "//input[@name='btnUpdate' and @value='Update as Done']");
 
         }
 

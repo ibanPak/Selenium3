@@ -51,7 +51,7 @@ namespace Selenium3
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
-            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver);
+            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver, 36);
             Logout.Portal(driver, Portals.Agent);
 
         }
@@ -59,13 +59,13 @@ namespace Selenium3
         public static void REOFlowOrg2(Driver driver)
         {
             // REO Flow Org1
-            Global.PropertyID = "858338";
-            Global.StreetAddress = "9555 Gardenia";
+            Global.PropertyID = "858340";
+            Global.StreetAddress = "500 Townsend";
             Global.ThrottleSleep = 3 * (100);
 
             string clientid = "7225";
-            string subjectstreetnumber = "9555";        // "Random";
-            string subjectstreetname = "Gardenia";
+            string subjectstreetnumber = "500";        // "Random";
+            string subjectstreetname = "Townsend";
             string subjectcity = "Irvine";
             string subjectstate = "California";
             string subjectzip = "92620";
@@ -76,7 +76,7 @@ namespace Selenium3
 
             // Log into the REO portal, add property and assign agent.
             Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");
-            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            //Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_REO.AddAgent(driver, Global.PropertyID, "250922");
             Logout.Portal(driver, Portals.REO);
             SeleniumWindowMethods.Sleep(2);
@@ -118,6 +118,11 @@ namespace Selenium3
             Portal_Agent.Agentsearch(driver, Global.PropertyID);
             Portal_Agent.UploadSignedContract(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.Agent);
+
+            // Adding REO BPO Pictures
+            Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");   // QA login
+            Portal_REO.OpenTaskReo(Driver.driver1, Global.PropertyID, "BPO Pictures"); Form_REOBPO.BPOPictures(Driver.driver1, 24);
+            Logout.Portal(driver, Portals.REO);
 
         }
 
