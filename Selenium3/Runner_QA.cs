@@ -393,6 +393,19 @@ namespace Selenium3
 
         }
 
+        public static void HomeownerDILFlow(Driver driver)
+        {
+            Login.Homeowner(driver, ENV.QA, "AutoHome", "testing");
+            Portal_Homeowner.CreateDILProperty(driver);
+            Login.LossMit(Driver.driver1, ENV.QA, "qaservicer", "P@ssw0rd1");
+            Portal_LossMit.HODILShortSalePartI(Driver.driver1);
+            Portal_Homeowner.HODILHomeownerPartII(driver);
+            Portal_LossMit.HODILShortSalePartII(Driver.driver1);
+            Login.Vendor(driver, ENV.QA, "qatitlevendor", "P@ssw0rd1");
+            Portal_Vendor.HODILVendorPartI(driver);
+
+        }
+
     }
 
 }

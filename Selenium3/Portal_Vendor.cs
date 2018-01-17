@@ -110,6 +110,53 @@ namespace Selenium3
 
         }
 
+        public static void HODILVendorPartI(Driver driver)
+        {
+            // Homeowner DIL Flow Vendor Part I
+            /* Find Title Request */
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#mainNav > ul > li:nth-child(3) > a");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#mainNav > ul > li:nth-child(3) > a");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "cbAcceptTitleRequest");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "cbAcceptTitleRequest");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "searchButton");
+            SeleniumWindowMethods.Sleep(3);
+            /* Accept Title Request */
+            SeleniumSetMethods.Wait(driver, ElementType.XPath, "//*[@id='tasks']/tbody/tr[1]/td[2]/a");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "//*[@id='tasks']/tbody/tr[1]/td[2]/a");
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Accept Title Request");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Accept Title Request");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#taskDetailsBodyRight > div.buttons > a.submit_button.btn.green.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only > span");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#taskDetailsBodyRight > div.buttons > a.submit_button.btn.green.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only > span");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "body > div:nth-child(17) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.primary > span");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "body > div:nth-child(17) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only.primary > span");
+            SeleniumWindowMethods.Sleep(3);
+
+            /* Preliminarty Title Request */
+            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Preliminary Title Request");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Preliminary Title Request");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CustomFields_CustomField_EstimatedClearDate");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "CustomFields_CustomField_EstimatedClearDate");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#ui-datepicker-div > div.ui-datepicker-buttonpane.ui-widget-content > button.ui-datepicker-current.ui-state-default.ui-priority-secondary.ui-corner-all.secondary");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#ui-datepicker-div > div.ui-datepicker-buttonpane.ui-widget-content > button.ui-datepicker-current.ui-state-default.ui-priority-secondary.ui-corner-all.secondary");
+            SeleniumSetMethods.Click(driver, ElementType.LinkText, "5");
+            SeleniumWindowMethods.Sleep(3);
+
+            /* Stuck On Add File */
+            /*
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "SWFUpload_0");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SWFUpload_0", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H5.jpg");
+            */
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#container > div:nth-child(1) > input[type='file']");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#container > div:nth-child(1) > input[type='file']", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H5.jpg");
+
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "body > div:nth-child(17) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "body > div:nth-child(17) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#taskDetailsFooterContent > div.buttons > a.btn.green.btn-primary.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only > span");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#taskDetailsFooterContent > div.buttons > a.btn.green.btn-primary.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only > span");
+            // Test Ended Close Window
+
+        }
+
     }
 
 }

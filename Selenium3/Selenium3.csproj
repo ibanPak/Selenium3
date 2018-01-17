@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Portal_Agent.cs" />
+    <Compile Include="Portal_LossMit.cs" />
+    <Compile Include="Portal_Homeowner.cs" />
     <Compile Include="Portal_Buyer.cs" />
     <Compile Include="Endurance.cs" />
     <Compile Include="ConsoleWindow.cs" />
