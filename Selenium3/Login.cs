@@ -19,6 +19,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into REO Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "globalPropertySearch";
             while (IsElementPresent == false)
             {
@@ -51,10 +52,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -79,6 +80,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into Agent Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "propertySrchTxt";
             while (IsElementPresent == false)
             {
@@ -111,10 +113,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -139,6 +141,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into Val Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "searchBar";
             while (IsElementPresent == false)
             {
@@ -171,10 +174,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmitLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -199,6 +202,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into PropertyCure Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "searchBar";
             while (IsElementPresent == false)
             {
@@ -231,10 +235,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -260,6 +264,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into Vendor Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "globalPropertySearch";
             while (IsElementPresent == false)
             {
@@ -292,10 +297,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -320,6 +325,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into LossMit Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "globalPropertySearch";
             while (IsElementPresent == false)
             {
@@ -352,10 +358,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -380,6 +386,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into Buyer Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "logoBP";
             while (IsElementPresent == false)
             {
@@ -412,10 +419,10 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Id, "submitForm");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }
@@ -440,6 +447,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into Val Client Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            ElementType elementtype = ElementType.Id;
             string element = "Filter_LoanNumber";
             while (IsElementPresent == false)
             {
@@ -472,10 +480,71 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Name, "btnLogin");
                     // Check for successful page load
                     SeleniumWindowMethods.Sleep(2);
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    Global.ConsoleOutTab("Searching for : " + element + " " + tries + " Attempt(s)");
-                    SeleniumSetMethods.Wait(driver, ElementType.Id, element);
-                    SeleniumSetMethods.Find(driver, ElementType.Id, element);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    IsElementPresent = true;
+                    break;
+                }
+                catch
+                {
+                    Global.ConsoleOutAlert("Element not present: " + element + " " + tries + " Attempt(s)");
+                    SeleniumWindowMethods.Sleep(2);
+                }
+                if (tries == 15)
+                {
+                    Global.ConsoleOutAlert(element + " not found and " + tries + " maxium tries has been reached");
+                    break; // handle error and break/return
+
+                }
+
+            }
+
+        }
+
+        public static void Homeowner(Driver driver, ENV portal, string username, string password)
+        {
+            Global.ConsoleOut("Logging into Buyer Portal: " + DateTime.Now.ToString());
+            int tries = 0;
+            bool IsElementPresent = false;
+            ElementType elementtype = ElementType.CssSelector;
+            string element = "a[href *= '/Property/Index/']";
+            while (IsElementPresent == false)
+            {
+                try
+                {
+                    tries = tries + 1;
+                    // Navigate to the correct environment
+                    if (portal == ENV.QA)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://qa-homeowner.res.net/Authentication/LogOn");
+                    }
+                    else if (portal == ENV.UAT)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://uat-homeowner.res.net/Authentication/LogOn");
+                    }
+                    else if (portal == ENV.STG)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://stg-homeowner.res.net/Authentication/LogOn");
+                    }
+                    else if (portal == ENV.PROD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://homeowner.res.net/Authentication/LogOn");
+                    }
+                    // Login Pages
+                    SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
+                    SeleniumSetMethods.Clear(driver, ElementType.Name, "Password");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Name, "Password", password);
+                    SeleniumSetMethods.Click(driver, ElementType.Id, "submitLogon");
+                    // Check for successful page load
+                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
+                    SeleniumSetMethods.Wait(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element);
                     IsElementPresent = true;
                     break;
                 }

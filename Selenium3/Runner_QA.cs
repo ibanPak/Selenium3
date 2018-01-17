@@ -76,7 +76,7 @@ namespace Selenium3
 
             // Log into the REO portal, add property and assign agent.
             Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");
-            //Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_REO.AddAgent(driver, Global.PropertyID, "250922");
             Logout.Portal(driver, Portals.REO);
             SeleniumWindowMethods.Sleep(2);
