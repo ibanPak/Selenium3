@@ -652,8 +652,9 @@ namespace Selenium3
 
         public static void PrelistNonMember(Driver driver)
         {
-            // Login with Basic User Needs to Run First
             // Pre-List Get Complete Address - View Now
+            // Navigate to web page
+            SeleniumSetMethods.Navigate(driver, "https://qa-buyer.res.net/");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Click(driver, ElementType.Id, "propertiesTabLink");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "location");
