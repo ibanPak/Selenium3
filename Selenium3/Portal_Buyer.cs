@@ -227,6 +227,21 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "logoBP");
             SeleniumSetMethods.Click(driver, ElementType.Id, "logoBP");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#comm100-button-138 > a > img");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#comm100-button-138 > a > img");
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumWindowMethods.WindowType(driver, WinType.Popup);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.iFrame(driver, "chat_window_container");
+            
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "div.box-field:nth-child(1) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "div.box-field:nth-child(1) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)", "Name");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "div.box-field:nth-child(2) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)", "Company");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "div.box-field:nth-child(3) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)", "Phone");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "div.box-field:nth-child(4) > div:nth-child(2) > div:nth-child(1) > input:nth-child(1)", "email@email.com");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.CssSelector, ".select", "Homeowner Portal");
+
             /* Live Chat - Need to figure out how to click 
             
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#comm100-button-138img");
@@ -236,6 +251,11 @@ namespace Selenium3
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             */
             // Find a Home Slider
+
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumWindowMethods.WindowActions(driver, ActType.Close);
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#propertiesSubmit > b");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "div.mosaic-block:nth-child(1) > div:nth-child(1) > img:nth-child(3)");
             SeleniumWindowMethods.Sleep(3);

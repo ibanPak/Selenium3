@@ -71,7 +71,6 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a.btn:nth-child(2) > span:nth-child(1) > b:nth-child(1)");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a.btn:nth-child(2) > span:nth-child(1) > b:nth-child(1)");
             SeleniumWindowMethods.Sleep(3);
-
             // Submit Homeowner Financials
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Homeowner Financials");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Homeowner Financials");

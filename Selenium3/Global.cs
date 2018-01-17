@@ -101,7 +101,7 @@ namespace Selenium3
 
         public static void ApplicationPause(string displaytext)
         {
-            Global.ConsoleOut(displaytext + ": " +  DateTime.Now.ToString());
+            Global.ConsoleOutTab(displaytext + ": " +  DateTime.Now.ToString());
             Global.ConsoleOutTab("Press ESC to proceed");
             do
             {
