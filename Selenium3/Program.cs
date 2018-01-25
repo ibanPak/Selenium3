@@ -26,22 +26,10 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            Runner_QA.REOFlowOrg2(Driver.driver1);
-
+            Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
+            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.Visa);
          
-
-
-
             Global.ApplicationPause("Wait here");
-
-            Login.ValPortal(Driver.driver1, ENV.QA, "test3", "P@ssw0rd1");
-            SeleniumSetMethods.Wait(Driver.driver1, ElementType.Id, "searchBar");
-            SeleniumGetMethods.IsPresent(Driver.driver1, ElementType.Id, "searchBar");
-            if (Global.IsPresent == true)
-            {
-                Global.ConsoleOutTab("I'm here");
-
-            }
 
             // Cool Down
             Global.Cooldown();

@@ -111,4 +111,12 @@ namespace Selenium3
 
     }
 
+    enum CreditCardTypeType
+    {
+        Visa,
+        MasterCard,
+        Discover,
+        Amex,
+    }
+
 }
