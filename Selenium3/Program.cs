@@ -26,9 +26,10 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
-            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.Visa);
-         
+            Runner_QA.CreditCard(Driver.driver1);
+
+          
+
             Global.ApplicationPause("Wait here");
 
             // Cool Down

@@ -16,81 +16,95 @@ namespace Selenium3
     {
         public static string GetTextValue(Driver driver, ElementType elementtype, string element)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            try
             {
-                return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("value");
+                // Driver 1
+                if (driver == Driver.driver1 && elementtype == ElementType.Id)
+                {
+                    return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("value");
+                }
+                else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+                {
+                    return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
+                }
+                else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
+                {
+                    return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("value");
+                }
+                else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
+                {
+                    return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("value");
+                }
+                // Driver 2
+                else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("value");
+                }
+                else if (driver == Driver.driver2 && elementtype == ElementType.Name)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("value");
+                }
+                else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("value");
+                }
+                else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("value");
+                }
+                else return String.Empty;
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            catch (NoSuchElementException)
             {
-                return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
+                return String.Empty;
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("value");
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("value");
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("value");
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("value");
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("value");
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("value");
-            }
-            else return String.Empty;
 
         }
 
         public static string GetTextContent(Driver driver, ElementType elementtype, string element)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            try
             {
-                return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent");
+                // Driver 1
+                if (driver == Driver.driver1 && elementtype == ElementType.Id)
+                {
+                    return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent");
+                }
+                else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+                {
+                    return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent");
+                }
+                else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
+                {
+                    return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent");
+                }
+                else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
+                {
+                    return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent");
+                }
+                // Driver 2
+                else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("textContent");
+                }
+                else if (driver == Driver.driver2 && elementtype == ElementType.Name)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("textContent");
+                }
+                else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("textContent");
+                }
+                else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
+                {
+                    return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("textContent");
+                }
+                else return String.Empty;
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            catch (NoSuchElementException)
             {
-                return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent");
+                return String.Empty;
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent");
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent");
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("textContent");
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("textContent");
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("textContent");
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("textContent");
-            }
-            else return String.Empty;
 
         }
 

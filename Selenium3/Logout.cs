@@ -56,6 +56,15 @@ namespace Selenium3
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "i.fa.fa-caret-down");
                         SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogout");
                     }
+                    else if (portals == Portals.Buyer)
+                    {
+                        SeleniumSetMethods.Wait(driver, ElementType.Id, "lnkLogout");
+                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumSetMethods.Click(driver, ElementType.Id, "lnkLogout");
+                        SeleniumSetMethods.Wait(driver, ElementType.XPath, "/html/body/div[8]/div[3]/div/button[1]");
+                        SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/div[8]/div[3]/div/button[1]");
+                        
+                    }
                     IsElementPresent = true;
                     Global.ConsoleOutTab("Logout was successful: " + portals);
                 }

@@ -195,7 +195,7 @@ namespace Selenium3
 
         public static void BPOPictures(Driver driver, int numberphoto)
         {
-            // Loop through attaching 36 pictures
+            // Loop through attachments
             SeleniumWindowMethods.Sleep(3);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
             int SleepTime = 2;

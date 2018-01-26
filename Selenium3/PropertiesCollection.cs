@@ -75,7 +75,8 @@ namespace Selenium3
         Agent,
         Vendor,
         REO,
-        PropertyCure
+        PropertyCure,
+        Buyer
 
     }
 
@@ -114,7 +115,8 @@ namespace Selenium3
     enum CreditCardTypeType
     {
         Visa,
-        MasterCard,
+        MasterCard1,
+        MasterCard2,
         Discover,
         Amex,
     }
