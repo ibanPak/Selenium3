@@ -15,19 +15,19 @@ namespace Selenium3
     class TestCreditCard
     {
 
-        public static string GetCardTestNumber(CreditCardTypeType cardType)
+        public static string GetCardTestNumber(CreditCardType cardType)
         {
             switch (cardType)
             {
-                case CreditCardTypeType.Amex:
+                case CreditCardType.Amex:
                     return "378282246310005";
-                case CreditCardTypeType.Discover:
+                case CreditCardType.Discover:
                     return "6011111111111117";
-                case CreditCardTypeType.MasterCard1:
+                case CreditCardType.MasterCard1:
                     return "2223000048400011";
-                case CreditCardTypeType.MasterCard2:
+                case CreditCardType.MasterCard2:
                     return "5105105105105100";
-                case CreditCardTypeType.Visa:
+                case CreditCardType.Visa:
                     return "4111111111111111";
                 default:
                     return null;
@@ -35,8 +35,9 @@ namespace Selenium3
 
         }
 
-        public static void BuyerProfile(Driver driver, CreditCardTypeType cardType)
+        public static void BuyerProfile(Driver driver, CreditCardType cardType)
         {
+            Global.ConsoleOut("Test Credit Card: Buyer Profile: " + DateTime.Now.ToString());
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Account']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Account']");
@@ -45,23 +46,23 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Id, "BillingInfo_CreditCardType_CodeId");
             Global.ConsoleOutTab(cardType + ": " + GetCardTestNumber(cardType));
             string cctype = "Drop Down Selection";
-            if (cardType == CreditCardTypeType.Visa)
+            if (cardType == CreditCardType.Visa)
             {
                 cctype = "Visa";
             }
-            else if (cardType == CreditCardTypeType.Amex)
+            else if (cardType == CreditCardType.Amex)
             {
                 cctype = "American Express";
             }
-            else if (cardType == CreditCardTypeType.MasterCard1)
+            else if (cardType == CreditCardType.MasterCard1)
             {
                 cctype = "Master Card";
             }
-            else if (cardType == CreditCardTypeType.MasterCard2)
+            else if (cardType == CreditCardType.MasterCard2)
             {
                 cctype = "Master Card";
             }
-            else if (cardType == CreditCardTypeType.Discover)
+            else if (cardType == CreditCardType.Discover)
             {
                 cctype = "Discover";
             }
@@ -85,8 +86,9 @@ namespace Selenium3
             
         }
 
-        public static void AgentProfile(Driver driver, CreditCardTypeType cardType)
+        public static void AgentProfile(Driver driver, CreditCardType cardType)
         {
+            Global.ConsoleOut("Test Credit Card: Agent Profile: " + DateTime.Now.ToString());
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "propertySrchTxt");
             SeleniumWindowMethods.Sleep(1);
@@ -98,23 +100,23 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Profile_LicenseExpDate", Global.NextYear);
             Global.ConsoleOutTab(cardType + ": " + GetCardTestNumber(cardType));
             string cctype = "Drop Down Selection";
-            if (cardType == CreditCardTypeType.Visa)
+            if (cardType == CreditCardType.Visa)
             {
                 cctype = "Visa";
             }
-            else if (cardType == CreditCardTypeType.Amex)
+            else if (cardType == CreditCardType.Amex)
             {
                 cctype = "American Express";
             }
-            else if (cardType == CreditCardTypeType.MasterCard1)
+            else if (cardType == CreditCardType.MasterCard1)
             {
                 cctype = "Mastercard";
             }
-            else if (cardType == CreditCardTypeType.MasterCard2)
+            else if (cardType == CreditCardType.MasterCard2)
             {
                 cctype = "Mastercard";
             }
-            else if (cardType == CreditCardTypeType.Discover)
+            else if (cardType == CreditCardType.Discover)
             {
                 cctype = "Discover";
             }

@@ -408,21 +408,26 @@ namespace Selenium3
 
         public static void CreditCard(Driver driver)
         {
-            
             Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
-            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.Visa);
-            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.Amex);
-            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.MasterCard1);
-            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.MasterCard2);
-            TestCreditCard.BuyerProfile(Driver.driver1, CreditCardTypeType.Discover);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.Visa);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.Amex);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.Discover);
             Logout.Portal(driver, Portals.Buyer);        
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
-            TestCreditCard.AgentProfile(Driver.driver1, CreditCardTypeType.Visa);
-            TestCreditCard.AgentProfile(Driver.driver1, CreditCardTypeType.Amex);
-            TestCreditCard.AgentProfile(Driver.driver1, CreditCardTypeType.MasterCard1);
-            TestCreditCard.AgentProfile(Driver.driver1, CreditCardTypeType.MasterCard2);
-            TestCreditCard.AgentProfile(Driver.driver1, CreditCardTypeType.Discover);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Visa);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Amex);
+            TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Discover);
             Logout.Portal(driver, Portals.Agent);
+
+        }
+
+        public static void NewUser(Driver driver)
+        {
+            AddNewUser.ProPlusAgent(driver, CreditCardType.MasterCard1);
 
         }
 

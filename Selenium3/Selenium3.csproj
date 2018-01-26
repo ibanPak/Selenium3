@@ -85,6 +85,7 @@
     <Compile Include="Form_Unified53BPO.cs" />
     <Compile Include="Portal_Val.cs" />
     <Compile Include="Portal_Vendor.cs" />
+    <Compile Include="AddNewUser.cs" />
     <Compile Include="TestCreditCard.cs" />
   </ItemGroup>
   <ItemGroup>

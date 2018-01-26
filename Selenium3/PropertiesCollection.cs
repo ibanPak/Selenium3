@@ -112,7 +112,7 @@ namespace Selenium3
 
     }
 
-    enum CreditCardTypeType
+    enum CreditCardType
     {
         Visa,
         MasterCard1,

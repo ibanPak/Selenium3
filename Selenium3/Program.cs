@@ -26,9 +26,9 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            Runner_QA.CreditCard(Driver.driver1);
+            //Runner_QA.CreditCard(Driver.driver1);
 
-          
+            Runner_QA.NewUser(Driver.driver1);
 
             Global.ApplicationPause("Wait here");
 
