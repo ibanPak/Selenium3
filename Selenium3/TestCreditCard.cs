@@ -83,7 +83,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSaveBilling");
             SeleniumWindowMethods.Sleep(2);
             SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#billingForm > div > div > div:nth-child(6) > span", "CC Error Message");
-            
+
         }
 
         public static void AgentProfile(Driver driver, CreditCardType cardType)
@@ -137,7 +137,63 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "saveButton");
             SeleniumWindowMethods.Sleep(2);
             SeleniumGetMethods.DisplayTextContent(driver, ElementType.XPath, "//*[@id=\"BillingInfoDiv\"]/div[3]/div[1]/div", "CC Error Message");
-         
+
+        }
+
+        public static void VendorProfile(Driver driver, CreditCardType cardType)
+        {
+            Global.ConsoleOut("Test Credit Card: Vendor Profile: " + DateTime.Now.ToString());
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
+            SeleniumWindowMethods.Sleep(1);
+            SeleniumSetMethods.MouseOver(driver, ElementType.PartialLinkText, "Administration");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Account/Profile']");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Account/Profile']");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#vendorProfile > div:nth-child(15) > div:nth-child(2) > div.span4.text-align-right > input");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#vendorProfile > div:nth-child(15) > div:nth-child(2) > div.span4.text-align-right > input");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CreditCardType_CodeId");
+            Global.ConsoleOutTab(cardType + ": " + GetCardTestNumber(cardType));
+            string cctype = "Drop Down Selection";
+            if (cardType == CreditCardType.Visa)
+            {
+                cctype = "Visa";
+            }
+            else if (cardType == CreditCardType.Amex)
+            {
+                cctype = "American Express";
+            }
+            else if (cardType == CreditCardType.MasterCard1)
+            {
+                cctype = "Master Card";
+            }
+            else if (cardType == CreditCardType.MasterCard2)
+            {
+                cctype = "Master Card";
+            }
+            else if (cardType == CreditCardType.Discover)
+            {
+                cctype = "Discover";
+            }
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "CreditCardType_CodeId", cctype);
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "Cvv");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Cvv", "111");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "CreditCardNumber");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "CreditCardNumber", GetCardTestNumber(cardType));
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ExpirationMonth", "01");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ExpirationYear", DateTime.Today.AddYears(2).ToString("yyyy"));
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "NameOnCard");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "NameOnCard", "Credit Card User");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "BillingAddress");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BillingAddress", "100 Main St.");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "BillingCity");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BillingCity", "Irvine");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SelectedBillingState", "California");
+            SeleniumSetMethods.Clear(driver, ElementType.Id, "BillingZip");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BillingZip", "92620");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmitBilling");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.XPath, "//*[@id=\"BillingInfoDiv\"]/div[3]/div[1]/div", "CC Error Message");
+
         }
 
     }

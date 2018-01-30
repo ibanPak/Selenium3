@@ -408,7 +408,7 @@ namespace Selenium3
 
         public static void CreditCard(Driver driver)
         {
-            Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
+        /*    Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
             TestCreditCard.BuyerProfile(driver, CreditCardType.Visa);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Amex);
             TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard1);
@@ -421,7 +421,14 @@ namespace Selenium3
             TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard1);
             TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard2);
             TestCreditCard.AgentProfile(driver, CreditCardType.Discover);
-            Logout.Portal(driver, Portals.Agent);
+            Logout.Portal(driver, Portals.Agent);   */
+            Login.Vendor(driver, ENV.QA, "qaevictionvendor", "P@ssw0rd1");
+            TestCreditCard.VendorProfile(driver, CreditCardType.Visa);
+            TestCreditCard.VendorProfile(driver, CreditCardType.Amex);
+            TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.VendorProfile(driver, CreditCardType.Discover);
+            Logout.Portal(driver, Portals.Vendor);
 
         }
 
