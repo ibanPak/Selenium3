@@ -33,6 +33,8 @@ namespace Selenium3
         public static int ThrottleSleep = 2 * (1000);
         public static DateTime StartDT;
         public static DateTime EndDT;
+        public static string Username;
+        public static string Password;
 
         public static void ReadySetGo(NumBrowsers numbrowsers)
         {
