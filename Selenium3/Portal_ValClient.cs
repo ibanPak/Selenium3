@@ -29,15 +29,26 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewOrder(Driver driver, ProductTypes producttypes, Products products,
-            string StreetName, string City, string FullState, string ZipCode)
+        public static void CreateNewOrder(Driver driver, ProductTypes producttypes, string products,
+            string streetnumber, string StreetName, string City, string FullState, string ZipCode, CreditCardType cardType)
         {
+            if (streetnumber == "Random")
+            {
+                streetnumber = Global.StreetNum;
+            }
+            else
+            {
+                Global.StreetNum = streetnumber;
+            }
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/CreateOrder/Step1']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/CreateOrder/Step1']");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "ValuationTypeId");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ValuationTypeId", producttypes.ToString());
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ValuationSubTypeId", products.ToString());
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ValuationPurposeId", "New Loan Purchase ");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "LoanTypeId", "Conv");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "PurchaseContractNA");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanNumber", Global.LoanNum);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "LoanAmount", "500000.00");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
@@ -63,7 +74,40 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#moveRight");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Comments", "Testing Comments");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnOrderSave");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "btnPlaceOrder");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "OrderInfo_TenderType");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OrderInfo_TenderType", "Credit Card");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "CreditCardInfo_FirstName");
+            Global.ConsoleOutTab(cardType + ": " + TestCreditCard.GetCardTestNumber(cardType));
+            string cctype = "Drop Down Selection";
+            if (cardType == CreditCardType.Visa)
+            {
+                cctype = "Visa";
+            }
+            else if (cardType == CreditCardType.Amex)
+            {
+                cctype = "American Express";
+            }
+            else if (cardType == CreditCardType.MasterCard1)
+            {
+                cctype = "Mastercard";
+            }
+            else if (cardType == CreditCardType.MasterCard2)
+            {
+                cctype = "Mastercard";
+            }
+            else if (cardType == CreditCardType.Discover)
+            {
+                cctype = "Discover";
+            }
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "CreditCardInfo_FirstName", cctype);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "CreditCardInfo_LastName", "Test");
+            //SeleniumSetMethods.EnterText(driver, ElementType.Name, "OrderInfo.PaymentLinkEmail]", "Test");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "CreditCardInfo_CardType", cctype);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "CreditCardInfo_CardNumber", TestCreditCard.GetCardTestNumber(cardType));
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "CreditCardInfo_CvvCode", "111");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "CreditCardInfo_ExpiredMonth", "01");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "CreditCardInfo_ExpiredYear", DateTime.Today.AddYears(2).ToString("yyyy"));
+            //  SeleniumSetMethods.Click(driver, ElementType.Id, "btnPlaceOrder");
 
         }
 

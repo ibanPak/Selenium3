@@ -350,8 +350,9 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValClient(Driver.driver1, ENV.QA, "testclient", "P@ssw0rd1");
-            Portal_ValClient.CreateNewOrder(Driver.driver1, ProductTypes.BPO, Products.Interior, "Rose Arch", "Irvine", "California", "92614");
+            Login.ValClient(driver, ENV.QA, "testclient", "P@ssw0rd1");
+            Portal_ValClient.CreateNewOrder(driver, ProductTypes.Appraisal, "1004 Interior Residential", "Random", "Rose Arch", "Irvine", "California", "92614", CreditCardType.MasterCard1);
+
 
         }
 
