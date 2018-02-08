@@ -24,7 +24,7 @@ namespace Selenium3
         public static void ConsoleAttributes()
         {
             Console.WindowWidth = 99;
-            Console.WindowHeight = 75;
+            Console.WindowHeight = 70;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Gray;
             int xpos = 2000;

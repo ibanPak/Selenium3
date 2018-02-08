@@ -26,7 +26,9 @@ namespace Selenium3
             //                                                                      //
             //////////////////////////////////////////////////////////////////////////
 
-            Runner_QA.CreditCard(Driver.driver1);
+            Driver driver = Driver.driver1;
+
+            Runner_UAT.FMBFlow1Org3(driver);
 
             Global.ApplicationPause("Wait here");
 

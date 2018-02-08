@@ -305,7 +305,7 @@ namespace Selenium3
             string sc3state = "Texas";
 
             string lc1street = "218 LITCHFIELD";
-            string lc1city = "Blacklick";
+            string lc1city = "HOUSTON";
             string lc1zipcode = "77024";
             string lc1state = "Texas";
 
@@ -879,6 +879,7 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "187_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
+                //  Add State Check
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "28_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
