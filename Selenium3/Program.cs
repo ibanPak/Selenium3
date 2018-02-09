@@ -28,8 +28,8 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_UAT.FMBFlow1Org3(driver);
-
+            Runner_UAT.CreditCard(driver);
+       
             Global.ApplicationPause("Wait here");
 
             // Cool Down

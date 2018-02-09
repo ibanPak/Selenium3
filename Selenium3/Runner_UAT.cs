@@ -163,11 +163,11 @@ namespace Selenium3
             Global.StreetAddress = "1219 Encore";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "Random";      // "Random";
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
+            string subjectstreetnumber = "266";      // "Random";
+            string subjectstreetname = "Irvine";
+            string subjectcity = "Irvine";
+            string subjectstate = "California";
+            string subjectzip = "92620";
 
             /*                                                  */
             /*              Make changes to above               */
@@ -281,6 +281,39 @@ namespace Selenium3
 
         }
 
+        public static void Unified53Org3(Driver driver)
+        {
+            // QA Org 1 Unified53Org1
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
+            Global.ThrottleSleep = 3 * (100);
+
+            string subjectstreetnumber = "699";     // "Random"
+            string subjectstreetname = "Bougainvillea Rd";
+            string subjectcity = "Naples";
+            string subjectstate = "Florida";
+            string subjectzip = "34102";
+
+            /*                                                  */
+            /*              Make changes to above               */
+            /*                                                  */
+
+            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
+            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
+            Logout.Portal(driver, Portals.ValPortal);
+            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Portal_Agent.AcceptScheduleAppointment(driver);
+            Portal_Agent.OpenBPO(driver);
+            Form_Unified53BPO.CompleteBPO(driver);
+            Form_Unified53BPO.Attachments(driver, ENV.UAT);
+            Logout.Portal(driver, Portals.Agent);
+            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
+            Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
+            Logout.Portal(driver, Portals.ValPortal);
+
+        }
+
         public static void AppraisalOrg1(Driver driver)
         {
             // Appraisal Org1
@@ -338,6 +371,32 @@ namespace Selenium3
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
             Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);
+
+        }
+
+        public static void CreditCard(Driver driver)
+        {
+            Login.Buyer(Driver.driver1, ENV.UAT, "AutoMated", "green123");
+            TestCreditCard.BuyerProfile(driver, CreditCardType.Visa);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.Amex);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.BuyerProfile(driver, CreditCardType.Discover);
+            Logout.Portal(driver, Portals.Buyer);
+            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            TestCreditCard.AgentProfile(driver, CreditCardType.Visa);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Amex);
+            TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Discover);
+            Logout.Portal(driver, Portals.Agent);
+            Login.Vendor(driver, ENV.UAT, "UATVendor", "green123");
+            TestCreditCard.VendorProfile(driver, CreditCardType.Visa);
+            TestCreditCard.VendorProfile(driver, CreditCardType.Amex);
+            TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.VendorProfile(driver, CreditCardType.Discover);
+            Logout.Portal(driver, Portals.Vendor);
 
         }
 
