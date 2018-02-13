@@ -193,7 +193,16 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmitBilling");
             SeleniumWindowMethods.Sleep(2);
             SeleniumGetMethods.DisplayTextContent(driver, ElementType.XPath, "//*[@id=\"BillingInfoDiv\"]/div[3]/div[1]/div", "CC Error Message");
-
+            try
+            {
+                SeleniumWindowMethods.Sleep(3);
+                SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/div[9]/div[3]/div/button[2]/span");
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("Element Not Present");
+            }
+        
         }
 
     }
