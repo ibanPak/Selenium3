@@ -22,7 +22,7 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (1000);
 
             string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";     
+            string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
             string subjectzip = "19154";
@@ -79,34 +79,39 @@ namespace Selenium3
         public static void Unified53Org1(Driver driver)
         {
             // QA Org 1 Unified53Org1
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "86039";
+            Global.StreetAddress = "705 Bougainvillea Rd";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "Random";      //  "Random"; 
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
+            string subjectstreetnumber = "703";     // "Random"
+            string subjectstreetname = "Bougainvillea Rd";
+            string subjectcity = "Naples";
+            string subjectstate = "Florida";
+            string subjectzip = "34102";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.STG, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewUnified53(driver, "ACME II QA Inc", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Login.ValPortal(driver, ENV.STG, "Bryan", "P@ssw0rd1");
+            Portal_Val.CreateNewUnified53(driver, "5th 3rd Bank", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "318923");
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.STG, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, ENV.STG, "Automated214@email.com", "blue123");
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_Unified53BPO.CompleteBPO(driver);
             Form_Unified53BPO.Attachments(driver, ENV.STG);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.STG, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, ENV.STG, "Bryan", "P@ssw0rd1");
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
+        }
+
+        public static void AddNewAgent(Driver driver)
+        {
+            AddNewUser.ProPlusAgent(driver, ENV.STG, CreditCardType.MasterCard1);
         }
 
     }

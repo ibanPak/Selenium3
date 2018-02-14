@@ -15,11 +15,26 @@ namespace Selenium3
     class AddNewUser
     {
 
-        public static void ProPlusAgent(Driver driver, CreditCardType cardType)
+        public static void ProPlusAgent(Driver driver, ENV environment, CreditCardType cardType)
         {
             Global.ConsoleOut("Add New User: Agent Portal (Pro+ Agent): " + DateTime.Now.ToString());
             SeleniumWindowMethods.Sleep(2);
-            SeleniumSetMethods.Navigate(driver, "https://qa-agent.res.net/");
+            if (environment == ENV.QA)
+            {
+                SeleniumSetMethods.Navigate(driver, "https://qa-agent.res.net/");
+            }
+            else if (environment == ENV.UAT)
+            {
+                SeleniumSetMethods.Navigate(driver, "https://uat-agent.res.net/");
+            }
+            else if (environment == ENV.STG)
+            {
+                SeleniumSetMethods.Navigate(driver, "https://stg-agent.res.net/");
+            }
+            else if (environment == ENV.PROD)
+            {
+                SeleniumSetMethods.Navigate(driver, "https://agent.res.net/");
+            }
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/registration/AccountStep']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/registration/AccountStep']");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "FirstName");

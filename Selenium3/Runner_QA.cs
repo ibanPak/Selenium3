@@ -435,7 +435,7 @@ namespace Selenium3
 
         public static void NewUser(Driver driver)
         {
-            AddNewUser.ProPlusAgent(driver, CreditCardType.MasterCard1);
+            AddNewUser.ProPlusAgent(driver, ENV.QA, CreditCardType.MasterCard1);
 
         }
 

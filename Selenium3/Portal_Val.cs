@@ -273,7 +273,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             Global.StreetAddress = (Global.StreetNum + " " + streetname);
-            Global.ConsoleOut(Global.StreetNum + " " + Global.StreetAddress);
+            Global.ConsoleOut(Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SubjectState", fullstate);
