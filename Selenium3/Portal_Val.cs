@@ -52,7 +52,7 @@ namespace Selenium3
                     SeleniumSetMethods.Click(driver, ElementType.Id, "Filters_ProviderHasLocationZip");
                     SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "Filters_PayableStatus", "All");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Filters_Radius");
-                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_Radius", "5000");
+                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_Radius", "50000");
                     SeleniumWindowMethods.Sleep(2);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSearchProviderAssignment");
                     SeleniumWindowMethods.Sleep(2);

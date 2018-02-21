@@ -94,7 +94,6 @@ namespace Selenium3
 
         public static void RegisterAppraiser(Driver driver, string Env1)
         {
-
             String appnum = DateTime.Today.Date.ToString("MMddyy");
             String appext = Env1 + "APP_" + appnum;
 
@@ -183,7 +182,6 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "input.btn");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "input.btn");
 
-
             // Review Fees -- Regristration Step 2
             SeleniumSetMethods.Wait(driver, ElementType.Id, "navReviewTerms");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Terms of Use");
@@ -199,8 +197,6 @@ namespace Selenium3
             Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
-
-
 
             // Vendor Profile 
             SeleniumSetMethods.Wait(driver, ElementType.Id, "sameAddressPayment");
@@ -369,8 +365,6 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
 
-
-
             //  SeleniumSetMethods.Navigate("https://qa-vendor.res.net/Account/Profile");
 
             // Check  Cancel Button 
@@ -380,6 +374,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
             Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+
         }
 
     }

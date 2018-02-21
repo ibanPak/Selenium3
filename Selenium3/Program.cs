@@ -28,7 +28,6 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_STG.Unified53Org1(driver);
        
             Global.ApplicationPause("Wait here");
 

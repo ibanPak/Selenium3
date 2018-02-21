@@ -79,8 +79,8 @@ namespace Selenium3
         public static void Unified53Org1(Driver driver)
         {
             // QA Org 1 Unified53Org1
-            Global.OrderID = "86039";
-            Global.StreetAddress = "705 Bougainvillea Rd";
+            Global.OrderID = "86040";
+            Global.StreetAddress = "703 Bougainvillea Rd";
             Global.ThrottleSleep = 3 * (100);
 
             string subjectstreetnumber = "703";     // "Random"
@@ -112,6 +112,32 @@ namespace Selenium3
         public static void AddNewAgent(Driver driver)
         {
             AddNewUser.ProPlusAgent(driver, ENV.STG, CreditCardType.MasterCard1);
+        }
+
+        public static void CreditCard(Driver driver)
+        {
+            //Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
+            //TestCreditCard.BuyerProfile(driver, CreditCardType.Visa);
+            //TestCreditCard.BuyerProfile(driver, CreditCardType.Amex);
+            //TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard1);
+            //TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard2);
+            //TestCreditCard.BuyerProfile(driver, CreditCardType.Discover);
+            //Logout.Portal(driver, Portals.Buyer);
+            Login.Agent(driver, ENV.STG, "Automated214@email.com", "blue123");
+            TestCreditCard.AgentProfile(driver, CreditCardType.Visa);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Amex);
+            TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard1);
+            TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard2);
+            TestCreditCard.AgentProfile(driver, CreditCardType.Discover);
+            Logout.Portal(driver, Portals.Agent);
+            //Login.Vendor(driver, ENV.QA, "qaevictionvendor", "P@ssw0rd1");
+            //TestCreditCard.VendorProfile(driver, CreditCardType.Visa);
+            //TestCreditCard.VendorProfile(driver, CreditCardType.Amex);
+            //TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard1);
+            //TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard2);
+            //TestCreditCard.VendorProfile(driver, CreditCardType.Discover);
+            //Logout.Portal(driver, Portals.Vendor);
+
         }
 
     }
