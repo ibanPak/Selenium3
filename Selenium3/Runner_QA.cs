@@ -14,6 +14,7 @@ namespace Selenium3
 {
     class Runner_QA
     {
+
         public static void REOFlowOrg1(Driver driver)
         {
             // REO Flow Org1
@@ -196,11 +197,25 @@ namespace Selenium3
         public static void Unified53Org1(Driver driver)
         {
             // QA Org 1 Unified53Org1
+            ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (100);
+            Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "6805";       //  "Random";
+            // Logins
+            string valportalusername = "test";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "QATest23@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250922";
+
+            // Client, ProductType, Product Details 
+            string client = "Unified 53";
+            string producttype = "BPO";
+            string productdetails = "Broker Price Opinion Exterior Inspection";
+
+            // New Address
+            string subjectstreetnumber = "6811";       //  "Random";
             string subjectstreetname = "Daniels Rd";
             string subjectcity = "NAPLES";
             Global.State = "Florida";
@@ -210,17 +225,17 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, Global.State, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, Global.State, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_Unified53BPO.CompleteBPO(driver);
-            Form_Unified53BPO.Attachments(driver, ENV.QA);
+            Form_Unified53BPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -229,10 +244,24 @@ namespace Selenium3
         public static void PNMACFlow1Org1(Driver driver)
         {
             // PNMAC BPO Org1
-            Global.OrderID = "30853";
-            Global.StreetAddress = "1211 Rush Lily";
+            ENV environment = ENV.QA;
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+            
+            // Logins
+            string valportalusername = "test";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "QATest23@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250922";
 
+            // Client, ProductType, Product Details 
+            string client = "PNMAC";
+            string producttype = "BPO";
+            string productdetails = "Exterior";
+
+            // New Address
             string subjectstreetnumber = "10950";       // "Random";
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
@@ -243,17 +272,17 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_PNMACBPO.CompleteBPO(driver);
-            Form_PNMACBPO.Attachments(driver, ENV.QA);
+            Form_PNMACBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -262,12 +291,26 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
+            ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "115";      //  "Random"; 
-            string subjectstreetname = "Longmeadow";
+            // Logins
+            string valportalusername = "test";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "QATest23@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250922";
+
+            // Client, ProductType, Product Details 
+            string client = "acme";
+            string producttype = "BPO";
+            string productdetails = "Exterior";
+
+            // New Address
+            string subjectstreetnumber = "231";      // "Random";
+            string subjectstreetname = "GreatLawn";
             string subjectcity = "Irvine";
             string subjectstate = "California";
             string subjectzip = "92620";
@@ -276,34 +319,31 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
-            Form_FMBBPO.Attachments(driver, ENV.QA);
+            Form_FMBBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.DisputeOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.ReturnToProvider(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenBPO(driver);
             Portal_Agent.SendToClient(driver);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
-            Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.ViewAssignmentHistory(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
         }
@@ -311,10 +351,24 @@ namespace Selenium3
         public static void AppraisalOrg1(Driver driver)
         {
             // Appraisal Org1
+            ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
+            // Logins
+            string valportalusername = "test";
+            string valportalpassword = "P@ssw0rd1";
+            string vendorportalusername = "QATest23@usres.com";
+            string vendorportalpassword = "blue123";
+            string providersourceid = "250922";
+
+            // Client, ProductType, Product Details 
+            string client = "acme";
+            string producttype = "Appraisal";
+            string productdetails = "2055 Exterior Residential";
+
+            // New Address
             string subjectstreetnumber = "10950";       // "Random";
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
@@ -325,15 +379,15 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewAppraisal(driver, "acme", "Appraisal", "2055 Exterior Residential", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "30005");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Vendor(driver, ENV.QA, "qaappraisalvendor", "P@ssw0rd1");
+            Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);
             Portal_Vendor.AcceptScheduleAppointment(driver);
             Portal_Vendor.UploadAppraisal(driver);
             Logout.Portal(driver, Portals.Vendor);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteAppraisal(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -353,7 +407,6 @@ namespace Selenium3
             Login.ValClient(driver, ENV.QA, "testclient", "P@ssw0rd1");
             Portal_ValClient.CreateNewOrder(driver, ProductTypes.Appraisal, "1004 Interior Residential", "Random", "Rose Arch", "Irvine", "California", "92614", CreditCardType.MasterCard1);
 
-
         }
 
         public static void PCAddDefaultUsers(Driver driver)
@@ -370,7 +423,6 @@ namespace Selenium3
 
         public static void PCFlow1(Driver driver)
         {
-            // Global.PropertyID = "30584";
             // Property Cure Regresssion Flow 1
             Login.PropertyCure(driver, ENV.QA, "ibenPn", "Green!23");
             Portal_PropertyCure.AddNewProperty(driver, "Encore", "Irvine", "California", "92620", "CSFB 2");

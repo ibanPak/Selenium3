@@ -133,8 +133,8 @@ namespace Selenium3
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
             // Screen Capture
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot(driver, "Acme Appraisal");
+            // SeleniumWindowMethods.Sleep(1);
+            // SeleniumWindowMethods.ScreenShot(driver, "Acme Appraisal");
 
         }
 
@@ -185,8 +185,8 @@ namespace Selenium3
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
             // Screen Capture
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot(driver, "PNMAC BPO");
+            // SeleniumWindowMethods.Sleep(1);
+            // SeleniumWindowMethods.ScreenShot(driver, "PNMAC BPO");
 
         }
 
@@ -237,8 +237,8 @@ namespace Selenium3
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
             // Screen Capture
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot(driver, "Rental Analysis");
+            // SeleniumWindowMethods.Sleep(1);
+            // SeleniumWindowMethods.ScreenShot(driver, "Rental Analysis");
 
         }
 
@@ -288,8 +288,8 @@ namespace Selenium3
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
             // Screen Capture
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot(driver, "U53BPO");
+            // SeleniumWindowMethods.Sleep(1);
+            // SeleniumWindowMethods.ScreenShot(driver, "U53BPO");
 
         }
 
@@ -341,8 +341,8 @@ namespace Selenium3
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
             // Screen Capture
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot(driver, "FMB BPO");
+            // SeleniumWindowMethods.Sleep(1);
+            // SeleniumWindowMethods.ScreenShot(driver, "FMB BPO");
 
         }
 

@@ -180,7 +180,7 @@ namespace Selenium3
 
         public static void CompleteBPO(Driver driver)
         {
-            string sc1street = "6913 IL REGALO";
+            string sc1street = "6913 II REGALO";
             string sc1city = "NAPLES";
             string sc1zipcode = "34109";
             string sc1state = "Florida";
@@ -205,7 +205,7 @@ namespace Selenium3
             string lc2zipcode = "34109";
             string lc2state = "Florida";
 
-            string lc3street = "6821 IL REGALO";
+            string lc3street = "6821 II REGALO";
             string lc3city = "NAPLES";
             string lc3zipcode = "34109";
             string lc3state = "Florida";

@@ -17,7 +17,7 @@ namespace Selenium3
 
         static void Main(string[] args)
         {
-            ConsoleWindow.ConsoleAttributes();
+            // ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo(NumBrowsers.One);
 
             //////////////////////////////////////////////////////////////////////////
@@ -28,6 +28,7 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
+            Runner_QA.FMBFlow1Org1(driver);
        
             Global.ApplicationPause("Wait here");
 
