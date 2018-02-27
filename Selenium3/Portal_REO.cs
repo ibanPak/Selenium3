@@ -422,7 +422,7 @@ namespace Selenium3
 
         }
 
-        public static void CancelReoTask(Driver driver, string TaskName)
+        public static void CancelReoTask(Driver driver, string TaskName, string displayname)
         {
             // Cancelling the REo task (update as Canceled)
             SeleniumWindowMethods.Sleep(2);
@@ -437,7 +437,7 @@ namespace Selenium3
                     tries = tries + 1;
                     Global.ConsoleOut("Attempting to find Element: " + TaskName + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, TaskName);
-                    SeleniumSetMethods.Find(driver, ElementType.PartialLinkText, TaskName);
+                    SeleniumSetMethods.Find(driver, ElementType.PartialLinkText, TaskName, displayname);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, TaskName);
                     Global.ConsoleOut("Task found: " + TaskName);
                     SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[3]");

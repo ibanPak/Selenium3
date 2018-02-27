@@ -46,8 +46,7 @@ namespace Selenium3
             Portal_Agent.OpenREOTasks(driver, "HOA information task"); Form_REOTasks.HOAInformation(driver);
             Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
             Logout.Portal(driver, Portals.Agent);
-            Login.REO(Driver.driver2, ENV.UAT, "prodkath2", "qatest10");
-            IfExists.Id_Refresh(driver, "globalPropertySearch");
+            Login.REO(Driver.driver2, ENV.UAT, "prodkath2", "qatest10");            
             Form_REOTasks.AssetMGRTasks(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");

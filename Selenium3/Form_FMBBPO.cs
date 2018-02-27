@@ -318,36 +318,36 @@ namespace Selenium3
         public static void CompletBPO(Driver driver)
         {
             
-            string sc1street = "200 Rush Lily";
-            string sc1city = "e";
-            string sc1zipcode = "0";
+            string sc1street = "100 Test Land";
+            string sc1city = "Irvine";
+            string sc1zipcode = "92620";
             string sc1state = "California";
 
-            string sc2street = "350 Rose Arch";
-            string sc2city = "e";
-            string sc2zipcode = "0";
+            string sc2street = "100 Test Land";
+            string sc2city = "Irvine";
+            string sc2zipcode = "92620";
             string sc2state = "California";
 
-            string sc3street = "200 Greatlawn";
-            string sc3city = "e";
-            string sc3zipcode = "0";
+            string sc3street = "100 Test Land";
+            string sc3city = "Irvine";
+            string sc3zipcode = "92620";
             string sc3state = "California";
 
-            string lc1street = "100 Townsend";
-            string lc1city = "e";
-            string lc1zipcode = "0";
+            string lc1street = "100 Test Land";
+            string lc1city = "Irvine";
+            string lc1zipcode = "92620";
             string lc1state = "California";
 
-            string lc2street = "151 Roosevelt";
-            string lc2city = "e";
-            string lc2zipcode = "0";
+            string lc2street = "100 Test Land";
+            string lc2city = "Irvine";
+            string lc2zipcode = "92620";
             string lc2state = "California";
 
-            string lc3street = "100 Scented Violet";
-            string lc3city = "e";
-            string lc3zipcode = "0";
+            string lc3street = "100 Test Land";
+            string lc3city = "Irvine";
+            string lc3zipcode = "92620";
             string lc3state = "California";
-            
+
             /*
             string sc1street = "3594 Northpointe";
             string sc1city = "Melvindale";
@@ -379,7 +379,7 @@ namespace Selenium3
             string lc3zipcode = "48126";
             string lc3state = "Michigan";
             */
-
+            Global.ConsoleOut("Completing FMB BPO Form: " + DateTime.Now.ToString());
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Subject_InspectionDate");
             SeleniumSetMethods.Click(driver, ElementType.Id, "Subject_InspectionDate");
@@ -490,9 +490,9 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__ProximityDistance", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__ProximityDistance", "1");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".sale-title-1 i.fa.fa-lg.fa-check");
-            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".sale-title-2 i.fa.fa-lg.fa-check");
-            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".sale-title-3 i.fa.fa-lg.fa-check");
+            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".sale-title-1 i.fa.fa-lg.fa-check", "Geo-code chech mark");
+            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".sale-title-2 i.fa.fa-lg.fa-check", "Geo-code chech mark");
+            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".sale-title-3 i.fa.fa-lg.fa-check", "Geo-code chech mark");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__SalePrice", "415000");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__SalePrice", "420000");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__SalePrice", "425000");
@@ -672,9 +672,9 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__ProximityDistance", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__ProximityDistance", "1");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".list-title-1 i.fa.fa-lg.fa-check");
-            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".list-title-2 i.fa.fa-lg.fa-check");
-            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".list-title-3 i.fa.fa-lg.fa-check");
+            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".list-title-1 i.fa.fa-lg.fa-check", "Geo-code chech mark");
+            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".list-title-2 i.fa.fa-lg.fa-check", "Geo-code chech mark");
+            SeleniumSetMethods.Find(driver, ElementType.CssSelector, ".list-title-3 i.fa.fa-lg.fa-check", "Geo-code chech mark");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__ListPrice", "420000");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__ListPrice", "422000");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__ListPrice", "419000");

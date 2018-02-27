@@ -17,7 +17,7 @@ namespace Selenium3
 
         static void Main(string[] args)
         {
-            // ConsoleWindow.ConsoleAttributes();
+            ConsoleWindow.ConsoleAttributes();
             Global.ReadySetGo(NumBrowsers.One);
 
             //////////////////////////////////////////////////////////////////////////

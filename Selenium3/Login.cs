@@ -55,7 +55,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -116,7 +116,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -177,7 +177,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -238,7 +238,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -300,7 +300,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -361,7 +361,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -422,7 +422,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -483,7 +483,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }
@@ -544,7 +544,7 @@ namespace Selenium3
                     SeleniumSetMethods.Wait(driver, elementtype, element);
                     Global.ConsoleOutTab("Searching for : " + elementtype + " " + tries + " Attempt(s)");
                     SeleniumSetMethods.Wait(driver, elementtype, element);
-                    SeleniumSetMethods.Find(driver, elementtype, element);
+                    SeleniumSetMethods.Find(driver, elementtype, element, "Login Successful");
                     IsElementPresent = true;
                     break;
                 }

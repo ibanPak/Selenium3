@@ -82,7 +82,7 @@ namespace Selenium3
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ");
-            Console.WriteLine(displaytext);
+            Console.WriteLine(" " + displaytext);
 
         }
 

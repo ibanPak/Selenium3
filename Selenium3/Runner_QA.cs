@@ -47,7 +47,7 @@ namespace Selenium3
             Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
             Logout.Portal(driver, Portals.Agent);
             Login.REO(driver, ENV.QA, "Yeshh1", "Yeshh1");
-            IfExists.Id_Refresh(driver, "globalPropertySearch");
+            IfExists.Id_Refresh(driver, "globalPropertySearch", "TEXT!!!");
             Form_REOTasks.AssetMGRTasks(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
@@ -292,8 +292,8 @@ namespace Selenium3
         {
             // FMB BPO Org1
             ENV environment = ENV.QA;
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "30968";
+            Global.StreetAddress = "233 GreatLawn";
             Global.ThrottleSleep = 3 * (1000);
 
             // Logins
@@ -309,7 +309,7 @@ namespace Selenium3
             string productdetails = "Exterior";
 
             // New Address
-            string subjectstreetnumber = "231";      // "Random";
+            string subjectstreetnumber = "233";      // "Random";
             string subjectstreetname = "GreatLawn";
             string subjectcity = "Irvine";
             string subjectstate = "California";
@@ -319,12 +319,12 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
-            Logout.Portal(driver, Portals.ValPortal);
+            //Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            //Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
+            //Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            Portal_Agent.AcceptScheduleAppointment(driver);
+            //Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
             Form_FMBBPO.Attachments(driver, environment);
@@ -461,21 +461,31 @@ namespace Selenium3
 
         public static void CreditCard(Driver driver)
         {
-            Login.Buyer(Driver.driver1, ENV.QA, "ibanPn", "yellow123");
+            ENV environment = ENV.QA;
+
+            // Logins
+            string buyerportalusername = "ibanPn";
+            string buyerportalpassword = "yellow123";
+            string agentportalusername = "qaevictionvendor";
+            string agentportalpassword = "P@ssw0rd1";
+            string vendorportalusername = "qaevictionvendor";
+            string vendorportalpassword = "P@ssw0rd1";
+        
+            Login.Buyer(driver, environment, buyerportalusername, buyerportalpassword);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Visa);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Amex);
             TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard1);
             TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard2);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Discover);
             Logout.Portal(driver, Portals.Buyer);        
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             TestCreditCard.AgentProfile(driver, CreditCardType.Visa);
             TestCreditCard.AgentProfile(driver, CreditCardType.Amex);
             TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard1);
             TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard2);
             TestCreditCard.AgentProfile(driver, CreditCardType.Discover);
             Logout.Portal(driver, Portals.Agent);  
-            Login.Vendor(driver, ENV.QA, "qaevictionvendor", "P@ssw0rd1");
+            Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);
             TestCreditCard.VendorProfile(driver, CreditCardType.Visa);
             TestCreditCard.VendorProfile(driver, CreditCardType.Amex);
             TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard1);
