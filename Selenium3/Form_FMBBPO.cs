@@ -317,68 +317,100 @@ namespace Selenium3
 
         public static void CompletBPO(Driver driver)
         {
-            
-            string sc1street = "100 Test Land";
+            /* 
+             string sc1street = "100 TestLand";
+             string sc1city = "Medesto";
+             string sc1zipcode = "95356";
+             string sc1state = "California";
+
+             string sc2street = "100 TestLand";
+             string sc2city = "Medesto";
+             string sc2zipcode = "95356";
+             string sc2state = "California";
+
+             string sc3street = "100 TestLand";
+             string sc3city = "Medesto";
+             string sc3zipcode = "95356";
+             string sc3state = "California";
+
+             string lc1street = "100 TestLand";
+             string lc1city = "Medesto";
+             string lc1zipcode = "95356";
+             string lc1state = "California";
+
+             string lc2street = "100 TestLand";
+             string lc2city = "Medesto";
+             string lc2zipcode = "95356";
+             string lc2state = "California";
+
+             string lc3street = "100 TestLand";
+             string lc3city = "Medesto";
+             string lc3zipcode = "95356";
+             string lc3state = "California";
+
+             //
+             string sc1street = "3594 Northpointe";
+             string sc1city = "Melvindale";
+             string sc1zipcode = "48122";
+             string sc1state = "Michigan";
+
+             string sc2street = "3277 Northpointe";
+             string sc2city = "Melvindale";
+             string sc2zipcode = "48122";
+             string sc2state = "Michigan";
+
+             string sc3street = "3551 Northpointe";
+             string sc3city = "Melvindale";
+             string sc3zipcode = "48122";
+             string sc3state = "Michigan";
+
+             string lc1street = "3607 Whittaker";
+             string lc1city = "Melvindale";
+             string lc1zipcode = "48122";
+             string lc1state = "Michigan";
+
+             string lc2street = "3292 Wilkerson";
+             string lc2city = "Melvindale";
+             string lc2zipcode = "48122";
+             string lc2state = "Michigan";
+
+             string lc3street = "4326 Schaefer";
+             string lc3city = "Dearborn";
+             string lc3zipcode = "48126";
+             string lc3state = "Michigan";
+             */
+
+            string sc1street = "100 Rush Lily";
             string sc1city = "Irvine";
             string sc1zipcode = "92620";
             string sc1state = "California";
 
-            string sc2street = "100 Test Land";
+            string sc2street = "255 Roosevelt";
             string sc2city = "Irvine";
             string sc2zipcode = "92620";
             string sc2state = "California";
 
-            string sc3street = "100 Test Land";
+            string sc3street = "100 Townsend";
             string sc3city = "Irvine";
             string sc3zipcode = "92620";
             string sc3state = "California";
 
-            string lc1street = "100 Test Land";
+            string lc1street = "211 Tulip";
             string lc1city = "Irvine";
             string lc1zipcode = "92620";
             string lc1state = "California";
 
-            string lc2street = "100 Test Land";
+            string lc2street = "100 Scented Violet";
             string lc2city = "Irvine";
             string lc2zipcode = "92620";
             string lc2state = "California";
 
-            string lc3street = "100 Test Land";
+            string lc3street = "255 Encore";
             string lc3city = "Irvine";
             string lc3zipcode = "92620";
             string lc3state = "California";
 
-            /*
-            string sc1street = "3594 Northpointe";
-            string sc1city = "Melvindale";
-            string sc1zipcode = "48122";
-            string sc1state = "Michigan";
 
-            string sc2street = "3277 Northpointe";
-            string sc2city = "Melvindale";
-            string sc2zipcode = "48122";
-            string sc2state = "Michigan";
-
-            string sc3street = "3551 Northpointe";
-            string sc3city = "Melvindale";
-            string sc3zipcode = "48122";
-            string sc3state = "Michigan";
-
-            string lc1street = "3607 Whittaker";
-            string lc1city = "Melvindale";
-            string lc1zipcode = "48122";
-            string lc1state = "Michigan";
-
-            string lc2street = "3292 Wilkerson";
-            string lc2city = "Melvindale";
-            string lc2zipcode = "48122";
-            string lc2state = "Michigan";
-
-            string lc3street = "4326 Schaefer";
-            string lc3city = "Dearborn";
-            string lc3zipcode = "48126";
-            string lc3state = "Michigan";
-            */
             Global.ConsoleOut("Completing FMB BPO Form: " + DateTime.Now.ToString());
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Subject_InspectionDate");

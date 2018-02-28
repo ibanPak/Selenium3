@@ -125,11 +125,24 @@ namespace Selenium3
         public static void PNMACFlow1Org1(Driver driver)
         {
             // PNMAC BPO Org1
-            Global.OrderID = "8691";
-            Global.StreetAddress = "401 LITCHFIELD LN";
-            Global.ThrottleSleep = 2 * (1000);
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
+            Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "401";     // "Random";
+            // Logins
+            string valportalusername = "bryan";
+            string valportalpassword = "qatest10";
+            string agentportalusername = "QATest25@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250418";
+
+            // Client, ProductType, Product Details 
+            string client = "PNMAC";
+            string producttype = "BPO";
+            string productdetails = "Exterior";
+
+            // New Address
+            string subjectstreetnumber = "403";     // "Random";
             string subjectstreetname = "LITCHFIELD LN";
             string subjectcity = "HOUSTON";
             string subjectstate = "Texas";
@@ -139,17 +152,17 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNEWPNMAC(driver, "PNMAC", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
+            Login.ValPortal(driver, ENV.UAT, valportalusername, valportalpassword);
+            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(driver, ENV.UAT, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_PNMACBPO.CompleteBPO(driver);
             Form_PNMACBPO.Attachments(driver, ENV.UAT);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Login.ValPortal(driver, ENV.UAT, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -158,12 +171,26 @@ namespace Selenium3
         public static void FMBFlow1Org1(Driver driver)
         {
             // FMB BPO Org1
+            ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "220";      // "Random";
-            string subjectstreetname = "GreatLawn";
+            // Logins
+            string valportalusername = "bryan";
+            string valportalpassword = "qatest10";
+            string agentportalusername = "QATest25@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250418";
+
+            // Client, ProductType, Product Details 
+            string client = "ACME Inc";
+            string producttype = "BPO";
+            string productdetails = "Exterior";
+
+            // New Address
+            string subjectstreetnumber = "237";      // "Random";
+            string subjectstreetname = "Rose Arch";
             string subjectcity = "Irvine";
             string subjectstate = "California";
             string subjectzip = "92620";
@@ -172,42 +199,56 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewFMBBPO(driver, "ACME Inc", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
-            Form_FMBBPO.Attachments(driver, ENV.UAT);
+            Form_FMBBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.DisputeOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.ReturnToProvider(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenBPO(driver);
             Portal_Agent.SendToClient(driver);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
         }
-
+       
         public static void FMBFlow1Org3(Driver driver)
         {
-            // FMB BPO Org1
+            // FMB BPO Org3
+            ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
+            // Logins
+            string valportalusername = "test3";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "QATest25@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250418";
+
+            // Client, ProductType, Product Details 
+            string client = "acme";
+            string producttype = "BPO";
+            string productdetails = "Broker Price Opinion Exterior Inspection";
+
+            // New Address
             string subjectstreetnumber = "432";      // "Random";
             string subjectstreetname = "Irvine";
             string subjectcity = "Irvine";
@@ -218,30 +259,30 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
-            Portal_Val.CreateNewFMBBPO(driver, "acme", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
-            Form_FMBBPO.Attachments(driver, ENV.UAT);
+            Form_FMBBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.DisputeOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.ReturnToProvider(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenBPO(driver);
             Portal_Agent.SendToClient(driver);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.UAT, "test3", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -250,11 +291,25 @@ namespace Selenium3
         public static void Unified53Org1(Driver driver)
         {
             // QA Org 1 Unified53Org1
-            Global.OrderID = "8653";
-            Global.StreetAddress = "392 LITCHFIELD";
+            ENV environment = ENV.UAT;
+            Global.OrderID = "8709";
+            Global.StreetAddress = "707 Bougainvillea Rd";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "705";     // "Random"
+            // Logins
+            string valportalusername = "bryan";
+            string valportalpassword = "qatest10";
+            string agentportalusername = "QATest25@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250418";
+
+            // Client, ProductType, Product Details 
+            string client = "Unified 53";
+            string producttype = "BPO";
+            string productdetails = "Broker Price Opinion Exterior Inspection";
+
+            // New Address
+            string subjectstreetnumber = "707";     // "Random"
             string subjectstreetname = "Bougainvillea Rd";
             string subjectcity = "Naples";
             string subjectstate = "Florida";
@@ -263,17 +318,17 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
-            Portal_Val.CreateNewUnified53(driver, "Unified 53", "BPO", "Broker Price Opinion Exterior Inspection", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250418");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.UAT, "QATest25@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_Unified53BPO.CompleteBPO(driver);
-            Form_Unified53BPO.Attachments(driver, ENV.UAT);
+            Form_Unified53BPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.UAT, "bryan", "qatest10");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 

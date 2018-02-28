@@ -69,13 +69,13 @@ namespace Selenium3
                 }
                 catch
                 {
-                    Global.ConsoleOut("Manual Assignment is not successful: " + tries + " Attempt(s)");
+                    Global.ConsoleOutAlert("Manual Assignment is not successful: " + tries + " Attempt(s)");
                     SeleniumWindowMethods.Sleep(2);
                     PropertiesCollection.driver.Navigate().Refresh();
                 }
                 if (tries == 5)
                 {
-                    Global.ConsoleOut("Manual Assignment was not successful, " + tries + " maxium tries has been reached");
+                    Global.ConsoleOutAlert("Manual Assignment was not successful, " + tries + " maxium tries has been reached");
                     break; // handle error and break/return
 
                 }
