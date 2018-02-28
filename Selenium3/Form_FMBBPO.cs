@@ -317,100 +317,6 @@ namespace Selenium3
 
         public static void CompletBPO(Driver driver)
         {
-            /* 
-             string sc1street = "100 TestLand";
-             string sc1city = "Medesto";
-             string sc1zipcode = "95356";
-             string sc1state = "California";
-
-             string sc2street = "100 TestLand";
-             string sc2city = "Medesto";
-             string sc2zipcode = "95356";
-             string sc2state = "California";
-
-             string sc3street = "100 TestLand";
-             string sc3city = "Medesto";
-             string sc3zipcode = "95356";
-             string sc3state = "California";
-
-             string lc1street = "100 TestLand";
-             string lc1city = "Medesto";
-             string lc1zipcode = "95356";
-             string lc1state = "California";
-
-             string lc2street = "100 TestLand";
-             string lc2city = "Medesto";
-             string lc2zipcode = "95356";
-             string lc2state = "California";
-
-             string lc3street = "100 TestLand";
-             string lc3city = "Medesto";
-             string lc3zipcode = "95356";
-             string lc3state = "California";
-
-             //
-             string sc1street = "3594 Northpointe";
-             string sc1city = "Melvindale";
-             string sc1zipcode = "48122";
-             string sc1state = "Michigan";
-
-             string sc2street = "3277 Northpointe";
-             string sc2city = "Melvindale";
-             string sc2zipcode = "48122";
-             string sc2state = "Michigan";
-
-             string sc3street = "3551 Northpointe";
-             string sc3city = "Melvindale";
-             string sc3zipcode = "48122";
-             string sc3state = "Michigan";
-
-             string lc1street = "3607 Whittaker";
-             string lc1city = "Melvindale";
-             string lc1zipcode = "48122";
-             string lc1state = "Michigan";
-
-             string lc2street = "3292 Wilkerson";
-             string lc2city = "Melvindale";
-             string lc2zipcode = "48122";
-             string lc2state = "Michigan";
-
-             string lc3street = "4326 Schaefer";
-             string lc3city = "Dearborn";
-             string lc3zipcode = "48126";
-             string lc3state = "Michigan";
-             */
-
-            string sc1street = "100 Rush Lily";
-            string sc1city = "Irvine";
-            string sc1zipcode = "92620";
-            string sc1state = "California";
-
-            string sc2street = "255 Roosevelt";
-            string sc2city = "Irvine";
-            string sc2zipcode = "92620";
-            string sc2state = "California";
-
-            string sc3street = "100 Townsend";
-            string sc3city = "Irvine";
-            string sc3zipcode = "92620";
-            string sc3state = "California";
-
-            string lc1street = "211 Tulip";
-            string lc1city = "Irvine";
-            string lc1zipcode = "92620";
-            string lc1state = "California";
-
-            string lc2street = "100 Scented Violet";
-            string lc2city = "Irvine";
-            string lc2zipcode = "92620";
-            string lc2state = "California";
-
-            string lc3street = "255 Encore";
-            string lc3city = "Irvine";
-            string lc3zipcode = "92620";
-            string lc3state = "California";
-
-
             Global.ConsoleOut("Completing FMB BPO Form: " + DateTime.Now.ToString());
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "Subject_InspectionDate");
@@ -503,20 +409,20 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectMarketing_HoaPhone", "1234567891");
             SeleniumSetMethods.Click(driver, ElementType.Id, "SubjectMarketing_SubjectOccupancyStatus_0");
             SeleniumSetMethods.Click(driver, ElementType.Id, "SubjectMarketing_OwnershipStatus_0");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__StreetAddress", sc1street);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__StreetAddress", sc2street);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__StreetAddress", sc3street);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__City", sc1city);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__City", sc2city);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__City", sc3city);
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_0__State", sc1state);
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_1__State", sc2state);
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_2__State", sc3state);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__PostalCode", sc1zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__StreetAddress", Global.sc1street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__StreetAddress", Global.sc2street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__StreetAddress", Global.sc3street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__City", Global.sc1city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__City", Global.sc2city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__City", Global.sc3city);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_0__State", Global.sc1state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_1__State", Global.sc2state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "SaleComps_2__State", Global.sc3state);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__PostalCode", Global.sc1zipcode);
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__PostalCode", sc2zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__PostalCode", Global.sc2zipcode);
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__PostalCode", sc3zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__PostalCode", Global.sc3zipcode);
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_0__ProximityDistance", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_1__ProximityDistance", "1");
@@ -685,20 +591,20 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__Extras", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SaleComps_2__ExtrasAdj", "0");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectMarketing_EstimatedRent", "12345");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", lc1street);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", lc2street);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", lc3street);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__City", lc1city);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__City", lc2city);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__City", lc3city);
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_0__State", lc1state);
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_1__State", lc2state);
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_2__State", lc3state);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__PostalCode", lc1zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", Global.lc1street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", Global.lc2street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", Global.lc3street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__City", Global.lc1city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__City", Global.lc2city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__City", Global.lc3city);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_0__State", Global.lc1state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_1__State", Global.lc2state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_2__State", Global.lc3state);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__PostalCode", Global.lc1zipcode);
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__PostalCode", lc2zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__PostalCode", Global.lc2zipcode);
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__PostalCode", lc3zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__PostalCode", Global.lc3zipcode);
             SeleniumWindowMethods.Sleep(5);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__ProximityDistance", "1");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__ProximityDistance", "1");

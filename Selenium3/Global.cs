@@ -36,6 +36,43 @@ namespace Selenium3
         public static string Username;
         public static string Password;
 
+        // Address
+        public static string subjectstreetnumber;
+        public static string subjectstreetname;
+        public static string subjectcity;
+        public static string subjectzipcode;
+        public static string subjectstate;
+
+        public static string sc1street;
+        public static string sc1city;
+        public static string sc1zipcode;
+        public static string sc1state;
+
+        public static string sc2street;
+        public static string sc2city;
+        public static string sc2zipcode;
+        public static string sc2state;
+
+        public static string sc3street;
+        public static string sc3city;
+        public static string sc3zipcode;
+        public static string sc3state;
+
+        public static string lc1street;
+        public static string lc1city;
+        public static string lc1zipcode;
+        public static string lc1state;
+
+        public static string lc2street;
+        public static string lc2city;
+        public static string lc2zipcode;
+        public static string lc2state;
+
+        public static string lc3street;
+        public static string lc3city;
+        public static string lc3zipcode;
+        public static string lc3state;
+
         public static void ReadySetGo(NumBrowsers numbrowsers)
         {
             // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;

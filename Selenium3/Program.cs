@@ -28,7 +28,7 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_UAT.PNMACFlow1Org1(driver);
+            Runner_QA.FMBFlow1Org1(driver, City.IrvineGCFail);
        
             Global.ApplicationPause("Wait here");
 

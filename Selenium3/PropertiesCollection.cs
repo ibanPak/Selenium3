@@ -118,7 +118,15 @@ namespace Selenium3
         MasterCard1,
         MasterCard2,
         Discover,
-        Amex,
+        Amex
+
+    }
+
+    enum City
+    {
+        Irvine,
+        IrvineGCFail
+
     }
 
 }
