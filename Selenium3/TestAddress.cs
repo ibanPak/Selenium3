@@ -20,18 +20,18 @@ namespace Selenium3
             if (city == City.Irvine)
             {
                 // New Address
-                Global.subjectstreetnumber = "235";      // "Random";
+                Global.subjectstreetnumber = "239";      // "Random";
                 Global.subjectstreetname = "GreatLawn";
                 Global.subjectcity = "Irvine";
-                Global.subjectstate = "California";
                 Global.subjectzipcode = "92620";
+                Global.subjectstate = "California";
 
                 Global.sc1street = "100 Rush Lily";
                 Global.sc1city = "Irvine";
                 Global.sc1zipcode = "92620";
                 Global.sc1state = "California";
 
-                Global.sc2street = "255 Roosevelt";
+                Global.sc2street = "255 Rinaldi";
                 Global.sc2city = "Irvine";
                 Global.sc2zipcode = "92620";
                 Global.sc2state = "California";
@@ -62,8 +62,8 @@ namespace Selenium3
                 Global.subjectstreetnumber = "237";      // "Random";
                 Global.subjectstreetname = "GreatLawn";
                 Global.subjectcity = "Irvine";
-                Global.subjectstate = "California";
                 Global.subjectzipcode = "92620";
+                Global.subjectstate = "California";
 
                 Global.sc1street = "100 Testland";
                 Global.sc1city = "Irvine";
@@ -95,43 +95,86 @@ namespace Selenium3
                 Global.lc3zipcode = "92620";
                 Global.lc3state = "California";
             }
+            else if (city == City.Melvindale)
+            {
+                Global.subjectstreetnumber = "17759";      // "Random";
+                Global.subjectstreetname = "Hanna St";
+                Global.subjectcity = "Melvindale";
+                Global.subjectzipcode = "48122";
+                Global.subjectstate = "Michigan";
+
+                Global.sc1street = "17711 Henry St";
+                Global.sc1city = "Melvindale";
+                Global.sc1zipcode = "48122";
+                Global.sc1state = "Michigan";
+
+                Global.sc2street = "2580 David St";
+                Global.sc2city = "Melvindale";
+                Global.sc2zipcode = "48122";
+                Global.sc2state = "Michigan";
+
+                Global.sc3street = "3551 Northpointe";
+                Global.sc3city = "Melvindale";
+                Global.sc3zipcode = "48122";
+                Global.sc3state = "Michigan";
+
+                Global.lc1street = "3607 Whittaker";
+                Global.lc1city = "Melvindale";
+                Global.lc1zipcode = "48122";
+                Global.lc1state = "Michigan";
+
+                Global.lc2street = "3292 Wilkerson";
+                Global.lc2city = "Melvindale";
+                Global.lc2zipcode = "48122";
+                Global.lc2state = "Michigan";
+
+                Global.lc3street = "4326 Schaefer";
+                Global.lc3city = "Dearborn";
+                Global.lc3zipcode = "48126";
+                Global.lc3state = "Michigan";
+            }
+            else if (city == City.Naples)
+            {
+                Global.subjectstreetnumber = "7535";      // "Random";
+                Global.subjectstreetname = "Mill Pond Cir";
+                Global.subjectcity = "NAPLES";
+                Global.subjectzipcode = "34109";
+                Global.subjectstate = "Florida";
+
+                Global.sc1street = "6913 II REGALO";
+                Global.sc1city = "NAPLES";
+                Global.sc1zipcode = "34109";
+                Global.sc1state = "Florida";
+
+                Global.sc2street = "8123 WILSHIRE LAKES BLVD";
+                Global.sc2city = "NAPLES";
+                Global.sc2zipcode = "34109";
+                Global.sc2state = "Florida";
+
+                Global.sc3street = "4005 REFLECTION CT";
+                Global.sc3city = "NAPLES";
+                Global.sc3zipcode = "34109";
+                Global.sc3state = "Florida";
+
+                Global.lc1street = "13528 MANDARIN CIR";
+                Global.lc1city = "NAPLES";
+                Global.lc1zipcode = "34109";
+                Global.lc1state = "Florida";
+
+                Global.lc2street = "7112 SUGAR MAGNOLIA CIR";
+                Global.lc2city = "NAPLES";
+                Global.lc2zipcode = "34109";
+                Global.lc2state = "Florida";
+
+                Global.lc3street = "6821 II REGALO";
+                Global.lc3city = "NAPLES";
+                Global.lc3zipcode = "34109";
+                Global.lc3state = "Florida";
+
+            }
 
         }
 
-        /* 
-       
-
-        //
-        string sc1street = "3594 Northpointe";
-        string sc1city = "Melvindale";
-        string sc1zipcode = "48122";
-        string sc1state = "Michigan";
-
-        string sc2street = "3277 Northpointe";
-        string sc2city = "Melvindale";
-        string sc2zipcode = "48122";
-        string sc2state = "Michigan";
-
-        string sc3street = "3551 Northpointe";
-        string sc3city = "Melvindale";
-        string sc3zipcode = "48122";
-        string sc3state = "Michigan";
-
-        string lc1street = "3607 Whittaker";
-        string lc1city = "Melvindale";
-        string lc1zipcode = "48122";
-        string lc1state = "Michigan";
-
-        string lc2street = "3292 Wilkerson";
-        string lc2city = "Melvindale";
-        string lc2zipcode = "48122";
-        string lc2state = "Michigan";
-
-        string lc3street = "4326 Schaefer";
-        string lc3city = "Dearborn";
-        string lc3zipcode = "48126";
-        string lc3state = "Michigan";
-        */
     }
 
 }

@@ -28,38 +28,38 @@ namespace Selenium3
                     if (portals == Portals.ValPortal)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
-                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumWindowMethods.Sleep(3);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#Header > header > div.right > nav > div:nth-child(7) > a");
                     }
                     else if (portals == Portals.Agent)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Logout");
-                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumWindowMethods.Sleep(3);
                         SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Logout");
                     }
                     else if (portals == Portals.Vendor)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Authentication/Logout']");
-                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumWindowMethods.Sleep(3);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Authentication/Logout']");
                     }
                     else if (portals == Portals.REO)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_LOGOUT']");
-                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumWindowMethods.Sleep(3);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_LOGOUT']");
                     }
                     else if (portals == Portals.PropertyCure)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "i.fa.fa-caret-down");
-                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumWindowMethods.Sleep(3);
                         SeleniumSetMethods.Click(driver, ElementType.CssSelector, "i.fa.fa-caret-down");
                         SeleniumSetMethods.Click(driver, ElementType.Id, "btnLogout");
                     }
                     else if (portals == Portals.Buyer)
                     {
                         SeleniumSetMethods.Wait(driver, ElementType.Id, "lnkLogout");
-                        SeleniumWindowMethods.Sleep(1);
+                        SeleniumWindowMethods.Sleep(3);
                         SeleniumSetMethods.Click(driver, ElementType.Id, "lnkLogout");
                         SeleniumSetMethods.Wait(driver, ElementType.XPath, "/html/body/div[8]/div[3]/div/button[1]");
                         SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/div[8]/div[3]/div/button[1]");

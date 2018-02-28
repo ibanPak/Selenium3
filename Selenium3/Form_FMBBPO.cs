@@ -781,14 +781,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "12_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "16_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "27_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
             }
             else if (environment == ENV.UAT)
             {
@@ -838,8 +830,27 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
 
             }
+            if (Global.subjectstate == "California")
+            {
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "16_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "27_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+            }
+            else if (Global.subjectstate == "Michigan")
+            {
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompCityComment", "List Comp 3 City QC");
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompPostalCodeComment", "List Comp 3 Postal QC");
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_QuickSaleValueComment", "30 Day QC");
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_AsIsValueComment", "As IS QC");
+            }
             // Complete Attachment Section
-            SeleniumWindowMethods.Sleep(30);
+            Global.ConsoleOutTab("15 Second Sleep for images to upload");
+            SeleniumWindowMethods.Sleep(15);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnBpoSave");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnBpoSave");
             SeleniumWindowMethods.Assertion(driver, Alert.Wait);

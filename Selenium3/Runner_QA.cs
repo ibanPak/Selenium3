@@ -194,13 +194,14 @@ namespace Selenium3
 
         }
 
-        public static void Unified53Org1(Driver driver)
+        public static void Unified53Org1(Driver driver, City city)
         {
             // QA Org 1 Unified53Org1
             ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
+            Global.ThrottleSleep = 3 * (100);
+            TestAddress.Address(city);
 
             // Logins
             string valportalusername = "test";
@@ -214,19 +215,12 @@ namespace Selenium3
             string producttype = "BPO";
             string productdetails = "Broker Price Opinion Exterior Inspection";
 
-            // New Address
-            string subjectstreetnumber = "6811";       //  "Random";
-            string subjectstreetname = "Daniels Rd";
-            string subjectcity = "NAPLES";
-            Global.State = "Florida";
-            string subjectzip = "34109";
-
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, Global.State, subjectzip);
+            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);

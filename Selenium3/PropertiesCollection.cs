@@ -93,7 +93,7 @@ namespace Selenium3
     {
         Exterior,
         Interior
-      
+
     }
 
     // Strongly Typed Variable
@@ -114,18 +114,20 @@ namespace Selenium3
 
     enum CreditCardType
     {
-        Visa,
+        Amex,
+        Discover,
         MasterCard1,
         MasterCard2,
-        Discover,
-        Amex
+        Visa
 
     }
 
     enum City
     {
         Irvine,
-        IrvineGCFail
+        IrvineGCFail,
+        Melvindale,
+        Naples
 
     }
 
