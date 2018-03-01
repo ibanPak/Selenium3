@@ -15,30 +15,33 @@ namespace Selenium3
     class Runner_QA
     {
 
-        public static void REOFlowOrg1(Driver driver)
+        public static void REOFlowOrg1(Driver driver, City city)
         {
             // REO Flow Org1
+            ENV environment = ENV.QA;
             Global.PropertyID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
+            Global.ThrottleSleep = 3 * (100);
+            TestAddress.Address(city);
 
+            // Logins
+            string reoportalusername = "Yeshh1";
+            string reoportalpassword = "Yeshh1";
+            string agentportalusername = "QATest23@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250922";
             string clientid = "7225";
-            string subjectstreetnumber = "9429";        // "Random";
-            string subjectstreetname = "Gardenia";
-            string subjectcity = "Irvine";
-            string subjectstate = "California";
-            string subjectzip = "92620";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.REO(driver, ENV.QA, "Yeshh1", "Yeshh1");
-            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_REO.AddAgent(driver, Global.PropertyID, "250597");
+            Login.REO(driver, environment, reoportalusername, reoportalpassword);
+            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
             Portal_REO.PreMarket(driver);
             Logout.Portal(driver, Portals.REO);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
             Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
             Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask(driver);
             Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_REOTasks.TaxResearchTask(driver);
@@ -46,11 +49,11 @@ namespace Selenium3
             Portal_Agent.OpenREOTasks(driver, "HOA information task"); Form_REOTasks.HOAInformation(driver);
             Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
             Logout.Portal(driver, Portals.Agent);
-            Login.REO(driver, ENV.QA, "Yeshh1", "Yeshh1");
+            Login.REO(driver, environment, reoportalusername, reoportalpassword);
             IfExists.Id_Refresh(driver, "globalPropertySearch", "TEXT!!!");
             Form_REOTasks.AssetMGRTasks(driver);
             Logout.Portal(driver, Portals.REO);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
             Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver, 36);
             Logout.Portal(driver, Portals.Agent);
@@ -127,68 +130,83 @@ namespace Selenium3
 
         }
 
-        public static void RAFlow1Org1(Driver driver)
+        public static void RAFlow1Org1(Driver driver, City city)
         {
             // Rental Analysis Org1
+            ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+            TestAddress.Address(city);
 
-            string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
+            // Logins
+            string valportalusername = "test";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "QATest23@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250922";
+
+            // Client, ProductType, Product Details 
+            string client = "Beatrice Rental Survey Co";
+            string producttype = "Rental Analysis";
+            string productdetails = "Rental Analysis Exterior";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Global.ThrottleSleep = 3 * (100);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
-            Portal_Val.CreateNewRentalAnalysis(driver, "Beatrice Rental Survey Co", "Rental Analysis", "Rental Analysis Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
             Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.QA);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
         }
 
-        public static void RAFlow1Org3(Driver driver)
+        public static void RAFlow1Org3(Driver driver, City city)
         {
             // Rental Analysis Org3
+            ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+            TestAddress.Address(city);
 
-            string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
+            // Logins
+            string valportalusername = "test3";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "QATest23@usres.com";
+            string agentportalpassword = "blue123";
+            string providersourceid = "250922";
+
+            // Client, ProductType, Product Details 
+            string client = "Bonnie Org 3";
+            string producttype = "Rental Analysis";
+            string productdetails = "Rental Analysis Exterior";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd1");
-            Portal_Val.CreateNewRentalAnalysis(driver, "Bonnie Org 3", "Rental Analysis", "Rental Analysis Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, "250922");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
-            Login.Agent(driver, ENV.QA, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
             Form_RentalAnalysis.CompleteRA(driver);
             Form_RentalAnalysis.Attachments(driver, ENV.QA);
             Logout.Portal(driver, Portals.Agent);
-            Login.ValPortal(driver, ENV.QA, "test3", "P@ssw0rd1");
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
 
@@ -235,14 +253,15 @@ namespace Selenium3
 
         }
 
-        public static void PNMACFlow1Org1(Driver driver)
+        public static void PNMACFlow1Org1(Driver driver, City city)
         {
             // PNMAC BPO Org1
             ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
-            
+            TestAddress.Address(city);
+
             // Logins
             string valportalusername = "test";
             string valportalpassword = "P@ssw0rd1";
@@ -255,19 +274,12 @@ namespace Selenium3
             string producttype = "BPO";
             string productdetails = "Exterior";
 
-            // New Address
-            string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
-
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -336,39 +348,33 @@ namespace Selenium3
 
         }
 
-        public static void AppraisalOrg1(Driver driver)
+        public static void AppraisalOrg1(Driver driver, City city)
         {
             // Appraisal Org1
             ENV environment = ENV.QA;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+            TestAddress.Address(city);
 
             // Logins
             string valportalusername = "test";
             string valportalpassword = "P@ssw0rd1";
             string vendorportalusername = "QATest23@usres.com";
             string vendorportalpassword = "blue123";
-            string providersourceid = "250922";
+            string providersourceid = "30005";
 
             // Client, ProductType, Product Details 
             string client = "acme";
             string producttype = "Appraisal";
             string productdetails = "2055 Exterior Residential";
 
-            // New Address
-            string subjectstreetnumber = "10950";       // "Random";
-            string subjectstreetname = "MODENA DR";
-            string subjectcity = "PHILADELPHIA";
-            string subjectstate = "Pennsylvania";
-            string subjectzip = "19154";
-
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);
@@ -381,19 +387,28 @@ namespace Selenium3
 
         }
 
-        public static void ValClient(Driver driver)
+        public static void ValClient(Driver driver, City city)
         {
-            // Appraisal Org1
+            // ValClient
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
+            TestAddress.Address(city);
+
+            // Logins
+            string valclientusername = "testclient";
+            string valclientpassword = "P@ssw0rd1";
+
+            // ProductType, Product Details 
+            ProductTypes producttype = ProductTypes.Appraisal;
+            string productdetails = "2055 Exterior Residential";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValClient(driver, ENV.QA, "testclient", "P@ssw0rd1");
-            Portal_ValClient.CreateNewOrder(driver, ProductTypes.Appraisal, "1004 Interior Residential", "Random", "Rose Arch", "Irvine", "California", "92614", CreditCardType.MasterCard1);
+            Login.ValClient(driver, ENV.QA, valclientusername, valclientpassword);
+            Portal_ValClient.CreateNewOrder(driver, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode, CreditCardType.MasterCard1);
 
         }
 
@@ -458,21 +473,21 @@ namespace Selenium3
             string agentportalpassword = "P@ssw0rd1";
             string vendorportalusername = "qaevictionvendor";
             string vendorportalpassword = "P@ssw0rd1";
-        
+
             Login.Buyer(driver, environment, buyerportalusername, buyerportalpassword);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Visa);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Amex);
             TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard1);
             TestCreditCard.BuyerProfile(driver, CreditCardType.MasterCard2);
             TestCreditCard.BuyerProfile(driver, CreditCardType.Discover);
-            Logout.Portal(driver, Portals.Buyer);        
+            Logout.Portal(driver, Portals.Buyer);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             TestCreditCard.AgentProfile(driver, CreditCardType.Visa);
             TestCreditCard.AgentProfile(driver, CreditCardType.Amex);
             TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard1);
             TestCreditCard.AgentProfile(driver, CreditCardType.MasterCard2);
             TestCreditCard.AgentProfile(driver, CreditCardType.Discover);
-            Logout.Portal(driver, Portals.Agent);  
+            Logout.Portal(driver, Portals.Agent);
             Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);
             TestCreditCard.VendorProfile(driver, CreditCardType.Visa);
             TestCreditCard.VendorProfile(driver, CreditCardType.Amex);
