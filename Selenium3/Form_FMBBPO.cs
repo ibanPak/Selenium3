@@ -830,7 +830,55 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
 
             }
-            if (Global.subjectstate == "California")
+            else if (environment == ENV.STG)
+            {
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "1_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "1_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C1.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "2_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "2_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C2.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "3_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "3_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C3.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "6_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "6_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C4.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "7_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "7_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C5.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "8_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "8_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\C6.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "10_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "10_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "11_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "11_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "12_1_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "12_1_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B3.jpg");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "28_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "28_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_124_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_124_fileupload", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+
+            }
+            if (Global.subjectstate == "California" && environment != ENV.STG)
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();

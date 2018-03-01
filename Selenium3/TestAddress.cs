@@ -59,7 +59,7 @@ namespace Selenium3
             }
             else if (city == City.IrvineGCFail)
             {
-                Global.subjectstreetnumber = "237";      // "Random";
+                Global.subjectstreetnumber = "240";      // "Random";
                 Global.subjectstreetname = "GreatLawn";
                 Global.subjectcity = "Irvine";
                 Global.subjectzipcode = "92620";
@@ -132,6 +132,44 @@ namespace Selenium3
                 Global.lc3city = "Dearborn";
                 Global.lc3zipcode = "48126";
                 Global.lc3state = "Michigan";
+            }
+            else if (city == City.ModestoGCFail)
+            {
+                Global.subjectstreetnumber = "225";      // "Random";
+                Global.subjectstreetname = "Rose Arch";
+                Global.subjectcity = "Irvine";
+                Global.subjectzipcode = "92620";
+                Global.subjectstate = "California";
+
+                Global.sc1street = "100 Testland";
+                Global.sc1city = "Modesto";
+                Global.sc1zipcode = "95350";
+                Global.sc1state = "California";
+
+                Global.sc2street = "100 Testland";
+                Global.sc2city = "Modesto";
+                Global.sc2zipcode = "95350";
+                Global.sc2state = "California";
+
+                Global.sc3street = "100 Testland";
+                Global.sc3city = "Modesto";
+                Global.sc3zipcode = "95350";
+                Global.sc3state = "California";
+
+                Global.lc1street = "100 Testland";
+                Global.lc1city = "Modesto";
+                Global.lc1zipcode = "95350";
+                Global.lc1state = "California";
+
+                Global.lc2street = "100 Testland";
+                Global.lc2city = "Modesto";
+                Global.lc2zipcode = "95350";
+                Global.lc2state = "California";
+
+                Global.lc3street = "100 Testland";
+                Global.lc3city = "Modesto";
+                Global.lc3zipcode = "95350";
+                Global.lc3state = "California";
             }
             else if (city == City.Naples)
             {

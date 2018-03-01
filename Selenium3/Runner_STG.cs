@@ -297,17 +297,17 @@ namespace Selenium3
         {
             // FMB BPO Org1
             ENV environment = ENV.STG;
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "86043";
+            Global.StreetAddress = "225 Rose Arch";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
 
             // Logins
             string valportalusername = "bryan";
-            string valportalpassword = "qatest10";
-            string agentportalusername = "QATest25@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250418";
+            string valportalpassword = "P@ssw0rd1";
+            string agentportalusername = "qatestproplus3";
+            string agentportalpassword = "Pr0dPa$$02316";
+            string providersourceid = "78832";
 
             // Client, ProductType, Product Details 
             string client = "ACME Inc";
@@ -318,12 +318,12 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
-            Logout.Portal(driver, Portals.ValPortal);
+            //Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            //Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
+            //Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            Portal_Agent.AcceptScheduleAppointment(driver);
+            //Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
             Form_FMBBPO.Attachments(driver, environment);
