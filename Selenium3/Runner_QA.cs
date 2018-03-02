@@ -23,6 +23,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string reoportalusername = "Yeshh1";
@@ -138,6 +139,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test";
@@ -179,6 +181,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test3";
@@ -220,6 +223,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test";
@@ -261,6 +265,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test";
@@ -302,6 +307,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test";
@@ -356,6 +362,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test";
@@ -394,6 +401,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valclientusername = "testclient";

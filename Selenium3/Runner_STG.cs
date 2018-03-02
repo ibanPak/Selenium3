@@ -23,6 +23,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string reoportalusername = "Yeshh1";
@@ -137,6 +138,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "Bryan";
@@ -178,6 +180,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test3";
@@ -219,6 +222,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test";
@@ -260,6 +264,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "bryan";
@@ -301,6 +306,7 @@ namespace Selenium3
             Global.StreetAddress = "225 Rose Arch";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "bryan";
@@ -318,12 +324,12 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            //Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            //Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
-            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
-            //Logout.Portal(driver, Portals.ValPortal);
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
+            Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            //Portal_Agent.AcceptScheduleAppointment(driver);
+            Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
             Form_FMBBPO.Attachments(driver, environment);
@@ -355,6 +361,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test3";
@@ -409,6 +416,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "bryan";
@@ -448,6 +456,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
+            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valclientusername = "testclient";
