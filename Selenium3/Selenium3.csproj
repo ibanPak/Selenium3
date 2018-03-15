@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_REOAssetMgrTasks.cs" />
     <Compile Include="Portal_Agent.cs" />
     <Compile Include="Portal_LossMit.cs" />
     <Compile Include="Portal_Homeowner.cs" />

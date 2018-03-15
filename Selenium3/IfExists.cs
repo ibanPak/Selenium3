@@ -28,6 +28,7 @@ namespace Selenium3
                     SeleniumSetMethods.Find(driver, ElementType.PartialLinkText, element, displaytext);
                     SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, element);
                     IsElementPresent = true;
+                    Global.ConsoleOut("Element present: " + element);
                     break;
                 }
                 catch

@@ -19,11 +19,11 @@ namespace Selenium3
         {
             // REO Flow Org1
             ENV environment = ENV.QA;
-            Global.PropertyID = "0";
-            Global.StreetAddress = "0";
+            Global.PropertyID = "858367";
+            Global.StreetAddress = "444 Greatlawn";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
+            Global.subjectstreetnumber = "444";
 
             // Logins
             string reoportalusername = "Yeshh1";
@@ -31,28 +31,28 @@ namespace Selenium3
             string agentportalusername = "QATest23@usres.com";
             string agentportalpassword = "blue123";
             string providersourceid = "250922";
-            string clientid = "7225";
+            string clientid = "7224";
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
+            //Login.REO(driver, environment, reoportalusername, reoportalpassword);
+            //Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            //Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
+            //Portal_REO.PreMarket(driver, Global.PropertyID);
+            //Logout.Portal(driver, Portals.REO);
+            //Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
+            //Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
+            //Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask(driver);
+            //Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_REOTasks.TaxResearchTask(driver);
+            //Portal_Agent.OpenREOTasks(driver, "Referral Agreement"); Form_REOTasks.ReferralFeeAgreement(driver, "iben");
+            //Portal_Agent.OpenREOTasks(driver, "HOA information task"); Form_REOTasks.HOAInformation(driver);
+            //Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
+            //Logout.Portal(driver, Portals.Agent);
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
-            Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
-            Portal_REO.PreMarket(driver);
-            Logout.Portal(driver, Portals.REO);
-            Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
-            Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
-            Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask(driver);
-            Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_REOTasks.TaxResearchTask(driver);
-            Portal_Agent.OpenREOTasks(driver, "Referral Agreement"); Form_REOTasks.ReferralFeeAgreement(driver, "iben");
-            Portal_Agent.OpenREOTasks(driver, "HOA information task"); Form_REOTasks.HOAInformation(driver);
-            Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
-            Logout.Portal(driver, Portals.Agent);
-            Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "TEXT!!!");
-            Form_REOTasks.AssetMGRTasks(driver);
+            Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)");
+            FormREOAssetMgrTasks.CustomTask(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);

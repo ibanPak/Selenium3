@@ -212,8 +212,8 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnUploadPics");
             SeleniumWindowMethods.Sleep(5);
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "//input[@name='btnUpdate' and @value='Update as Done']");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "//input[@name='btnUpdate' and @value='Update as Done']");
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return");
 
         }
 

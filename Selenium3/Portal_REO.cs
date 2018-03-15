@@ -157,7 +157,7 @@ namespace Selenium3
             Global.ConsoleOut("Property ID: " + PropertyID); ;
             // Screen Capture
             SeleniumWindowMethods.Sleep(1);
-            SeleniumWindowMethods.ScreenShot(driver, "REO New Property");
+            // SeleniumWindowMethods.ScreenShot(driver, "REO New Property");
 
         }
 
@@ -194,15 +194,10 @@ namespace Selenium3
 
         }
 
-        public static void PreMarket(Driver driver)
+        public static void PreMarket(Driver driver, string propertyid)
         {
             //Pre Marketing Tab
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", Global.OrderID);
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "qsAddress");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "qsAddress");
-            SeleniumWindowMethods.Sleep(3);
+            GotoPropertyId(driver, propertyid);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPPREMKT']");
             SeleniumSetMethods.Clear(driver, ElementType.Name, "pmBpoOrdDt");

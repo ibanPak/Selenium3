@@ -40,7 +40,7 @@ namespace Selenium3
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
             Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
-            Portal_REO.PreMarket(driver);
+            Portal_REO.PreMarket(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
             Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
@@ -51,8 +51,7 @@ namespace Selenium3
             Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
             Logout.Portal(driver, Portals.Agent);
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "TEXT!!!");
-            Form_REOTasks.AssetMGRTasks(driver);
+            Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)");
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);

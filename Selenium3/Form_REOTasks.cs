@@ -95,71 +95,48 @@ namespace Selenium3
 
         }
 
-        public static void AssetMGRTasks(Driver driver)
+        public static void AssetMGRTasks(Driver driver, string propertyid, string TaskName)
         {
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", Global.OrderID);
-            SeleniumWindowMethods.Sleep(1);
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "qsAddress");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "qsAddress");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "SCRA Referral (Custom)", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Page Load");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[3]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Sivad Custom task (Custom)", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Page Load");
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "Test1");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Test1", "yellow");
-            SeleniumSetMethods.Click(driver, ElementType.Name, "btnUpdate");
-            SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Agent Listing Contract");
-            SeleniumSetMethods.Click(driver, ElementType.LinkText, "Agent Listing Contract");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "122314 Custom Task (Custom)", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "073113ListingCheckboxListCustom_test");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "073113ListingCheckboxListCustom_test");
-            SeleniumSetMethods.Wait(driver, ElementType.Id, "btnUpdateAsDone");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateAsDone");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Sivad Custom task (Custom)", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Test1", "Enter Comment");
-            SeleniumSetMethods.Click(driver, ElementType.Id, "btnUpdateAsDone");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Home Owners Assoc Information Request", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Tax Research Request", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Listing Acknowledgement", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Referral Agreement", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Winterization Requirements Request", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
-            IfExists.Link_Back(driver, "Occupancy Status Request", "Custom Task");
-            IfExists.Id_Refresh(driver, "globalPropertySearch", "Custom Task");
-            SeleniumSetMethods.Wait(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
-            SeleniumSetMethods.Click(driver, ElementType.XPath, "(//input[@name='btnUpdate'])[2]");
+            {
+                // Open Rental Analysis
+                Global.ConsoleOut("Asset Manager Task for Property Id :" + Global.OrderID + "  @: " + DateTime.Now);
+                Portal_REO.GotoPropertyId(driver, propertyid);
+                SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+                SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPTASKS']");
+                int tries = 0;
+                bool IsOrderPresent = false;
+                while (IsOrderPresent == false)
+                {
+                    try
+                    {
+                        tries = tries + 1;
+                        Global.ConsoleOutTab("Attempting to find Task: " + TaskName + " " + tries + " Attempt(s)");
+                        SeleniumWindowMethods.Sleep(2);
+                        SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, TaskName);
+                        Global.ConsoleOutTab("Asset Manager Task: " + TaskName + " Found");
+                        IsOrderPresent = true;
+                        break;
+                    }
+                    catch (Exception) { }
+                    if (tries == 15)
+                    {
+                        Global.ConsoleOutAlert(TaskName + " not found");
+                        break; // handle error and break/return
+                    }
+                    SeleniumWindowMethods.Sleep(2);
+                    if (driver == Driver.driver1)
+                    {
+                        PropertiesCollection.driver.Navigate().Refresh();
+                    }
+                    else if (driver == Driver.driver2)
+                    {
+                        PropertiesCollection.driver2.Navigate().Refresh();
+                    }
+                    SeleniumWindowMethods.Sleep(2);
+                }
 
+            }
+            
         }
 
         public static void PropertyInspection(Driver driver)
