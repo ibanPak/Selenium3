@@ -180,6 +180,34 @@ namespace Selenium3
 
         }
 
+        public static void VerifyTextContent(Driver driver, ElementType elementtype, string element, string text)
+        {
+            Global.Display = SeleniumGetMethods.GetTextContent(Driver.driver1, elementtype, element);
+            if (Global.Display == text)
+            {
+                Global.ConsoleOutTab(text + " Matched: " + Global.Display);
+            }
+            else
+            {
+                Global.ConsoleOutAlert(text + " DID NOT Match: " + Global.Display);
+            }
+
+        }
+
+        public static void VerifyTextValue(Driver driver, ElementType elementtype, string element, string text)
+        {
+            Global.Display = SeleniumGetMethods.GetTextValue(Driver.driver1, elementtype, element);
+            if (Global.Display == text)
+            {
+                Global.ConsoleOutTab(text + " Matched: " + Global.Display);
+            }
+            else
+            {
+                Global.ConsoleOutAlert(text + " VALUE DID NOT MATCH: " + Global.Display);
+            }
+
+        }
+
     }
 
 }
