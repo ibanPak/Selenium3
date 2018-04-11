@@ -22,6 +22,8 @@ namespace Selenium3
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
+        public static float passcount = 0;
+        public static float failcount = 0;
         public static string OrderID = "0";
         public static string PropertyID = "0";
         public static string UniversalID = "0";
@@ -91,8 +93,8 @@ namespace Selenium3
                 PropertiesCollection.driver2 = driver2;
             }
             // Start Time Stamp
-            Global.StartDT = DateTime.Now;
-            Global.ConsoleOut("Test started @ " + Global.StartDT);
+            StartDT = DateTime.Now;
+            ConsoleOut("Test started @ " + Global.StartDT);
 
         }
 
@@ -104,12 +106,12 @@ namespace Selenium3
             int hour = timespan.Hours;
             int min = timespan.Minutes;
             int sec = timespan.Seconds;
-            Global.ConsoleOut("Test took " + hour + " Hours, " + min + " minutes, " + sec + " seconds to run");
+            ConsoleOut("Test took " + hour + " Hours, " + min + " minutes, " + sec + " seconds to run");
         }
 
         public static void Done()
         {
-            Global.ConsoleOut("Test was completed successfully");
+            ConsoleOut("Test was completed successfully");
             SeleniumWindowMethods.Sleep(5);
 
         }
@@ -126,7 +128,7 @@ namespace Selenium3
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" ");
-            Console.WriteLine("     "+ displaytext);
+            Console.WriteLine("     " + displaytext);
 
         }
 
@@ -140,8 +142,8 @@ namespace Selenium3
 
         public static void ApplicationPause(string displaytext)
         {
-            Global.ConsoleOutTab(displaytext + ": " +  DateTime.Now.ToString());
-            Global.ConsoleOutTab("Press ESC to proceed");
+            ConsoleOutTab(displaytext + ": " + DateTime.Now.ToString());
+            ConsoleOutTab("Press ESC to proceed");
             do
             {
                 while (!Console.KeyAvailable)
@@ -150,6 +152,13 @@ namespace Selenium3
                 }
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
+        }
+
+        public static void PassFailCalc()
+        {
+            double per = passcount / (passcount + failcount);
+
+            ConsoleOutTab("Passed %: " + per.ToString(".00").Replace(".", "") + "%");
         }
 
     }

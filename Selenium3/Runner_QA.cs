@@ -23,7 +23,7 @@ namespace Selenium3
             Global.StreetAddress = "444 Greatlawn";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            //Global.subjectstreetnumber = "444";
+            Global.subjectstreetnumber = "344";
 
             // Logins
             string reoportalusername = "Yeshh1";
@@ -55,8 +55,8 @@ namespace Selenium3
             Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Sivad Custom task (Custom)"); FormREOAssetMgrTasks.CustomTask2(driver);
             Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Home Owners Assoc Information Request"); FormREOAssetMgrTasks.UpdateAsDone(driver);
             Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Tax Research Request"); FormREOAssetMgrTasks.UpdateAsDone(driver);
-            Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)"); FormREOAssetMgrTasks.UpdateAsDone(driver);
-            Global.ApplicationPause("Wait here");
+            Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Listing Acknowledgemen"); FormREOAssetMgrTasks.UpdateAsDone(driver);
+            Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Referral Agreement"); FormREOAssetMgrTasks.UpdateAsDone(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);

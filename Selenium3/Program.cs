@@ -28,9 +28,25 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_QA.REOFlowOrg1(driver, City.Irvine);
-       
-            // Global.ApplicationPause("Wait here");
+            Global.ConsoleOutTab("Passed Count: " + Global.passcount.ToString());
+
+            Global.passcount++;
+
+            Global.ConsoleOutTab("Passed Count: " + Global.passcount.ToString());
+
+            Global.passcount++;
+
+            Global.ConsoleOutTab("Passed Count: " + Global.passcount.ToString());
+
+            Global.failcount++;
+
+            Global.ConsoleOutAlert("Failed Count: " + Global.failcount.ToString());
+
+            Global.PassFailCalc();
+
+            Global.ApplicationPause("Wait here");
+
+            // Runner_QA.REOFlowOrg1(driver, City.Irvine);       
 
             // Cool Down
             Global.Cooldown();
