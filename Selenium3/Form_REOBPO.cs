@@ -203,7 +203,7 @@ namespace Selenium3
             while (i <= numberphoto)
             {
                 SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "input.dz-hidden-input:nth-of-type(1)"
-                    , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\Numbers\\" + i + ".jpg");
+                    , Global.folderpath + "Numbers\\" + i + ".jpg");
                 SeleniumWindowMethods.Sleep(SleepTime);
                 i = i + 1;
             }

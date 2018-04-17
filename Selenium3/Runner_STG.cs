@@ -499,7 +499,7 @@ namespace Selenium3
             Portal_PropertyCure.AddNewHazardClaim(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewPropertyRegistration(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
-            Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            Portal_PropertyCure.FileUpload(driver, Global.PropertyID, Global.folderpath + "AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);
 
         }

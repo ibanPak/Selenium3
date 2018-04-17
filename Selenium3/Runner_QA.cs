@@ -23,7 +23,7 @@ namespace Selenium3
             Global.StreetAddress = "444 Greatlawn";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            Global.subjectstreetnumber = "344";
+            //Global.subjectstreetnumber = "344";
 
             // Logins
             string reoportalusername = "Yeshh1";
@@ -449,7 +449,7 @@ namespace Selenium3
             Portal_PropertyCure.AddNewHazardClaim(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewPropertyRegistration(driver, Global.PropertyID, "George Washington (DollarBill)");
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
-            Portal_PropertyCure.FileUpload(driver, Global.PropertyID, "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            Portal_PropertyCure.FileUpload(driver, Global.PropertyID, Global.folderpath + "AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);
 
         }

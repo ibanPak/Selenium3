@@ -21,9 +21,9 @@ namespace Selenium3
             //SeleniumWindowMethods.Sleep(1);
             //SeleniumWindowMethods.iFrame(driver, "iframe");
             //SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#upload #input #inpFile"
-            // , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\Numbers\\1.jpg");
+            // , Global.folderpath + "Numbers\\1.jpg");
             //SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#DODSearch_Label #upload #input #inpFile"
-            // , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\Numbers\\2.jpg");
+            // , Global.folderpath + "Numbers\\2.jpg");
 
         }
 

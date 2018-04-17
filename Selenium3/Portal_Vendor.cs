@@ -144,10 +144,10 @@ namespace Selenium3
             /* Stuck On Add File */
             /*
             SeleniumSetMethods.Wait(driver, ElementType.Id, "SWFUpload_0");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SWFUpload_0", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H5.jpg");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "SWFUpload_0", Global.folderpath + "H5.jpg");
             */
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#container > div:nth-child(1) > input[type='file']");
-            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#container > div:nth-child(1) > input[type='file']", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\H5.jpg");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#container > div:nth-child(1) > input[type='file']", Global.folderpath + "H5.jpg");
 
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "body > div:nth-child(17) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "body > div:nth-child(17) > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > div > button:nth-child(2) > span");

@@ -36,7 +36,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "osLegal", "1");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "osLegal1", "Vacant Secure");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "txtosAgentNote", "It's good to go");
-            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#tabStandards > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)", "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\AUpload.pdf");
+            SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#tabStandards > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > input:nth-child(3)", Global.folderpath + "AUpload.pdf");
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
 
@@ -146,7 +146,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspStatus_vacant");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspStatus_Personal_No");
             SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#form-questions > table > tbody > tr > td:nth-child(1) > ul > li:nth-child(1) > div > ul > li:nth-child(1) > input[type=\"file\"]"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B1.jpg");
+                , Global.folderpath + "B1.jpg");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspRe_keyed_No");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspLockBox_Yes");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "inspLockBox_Code", "12345");
@@ -170,7 +170,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspSafety_Hazards_No");
             SeleniumSetMethods.Click(driver, ElementType.Name, "inspEvid_Damage_No");
             SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "#form-questions > table > tbody > tr > td:nth-child(2) > ul > li:nth-child(7) > div > ul > li:nth-child(1) > input[type=\"file\"]"
-                , "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\B2.jpg");
+                , Global.folderpath + "B2.jpg");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "inspsignature_name", "iben");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
             SeleniumSetMethods.Click(driver, ElementType.XPath, "xpath=(//input[@name='btnUpdate'])[2]");
