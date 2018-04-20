@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium;
+﻿using System.Configuration;
+using System.Collections.Specialized;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Firefox;
@@ -22,7 +24,8 @@ namespace Selenium3
         public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-        public static string folderpath = "\\\\hqfs1\\Public\\IT\\QA\\Pictures\\";
+        public static string folderpath = ConfigurationManager.AppSettings.Get("PublicFolder");
+        public static string buildenv = ConfigurationManager.AppSettings.Get("BuildENV");
         public static float passcount = 0;
         public static float failcount = 0;
         public static string OrderID = "0";

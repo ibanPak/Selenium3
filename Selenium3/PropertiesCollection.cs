@@ -64,7 +64,8 @@ namespace Selenium3
         QA,
         UAT,
         STG,
-        PROD
+        PROD,
+        BUILD
 
     }
 

@@ -43,6 +43,10 @@ namespace Selenium3
                     {
                         SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
                     }
+                    else if (environment == ENV.BUILD)
+                    {
+                        SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
+                    }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "amLoginId");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "amLoginId");

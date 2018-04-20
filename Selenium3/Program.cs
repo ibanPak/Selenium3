@@ -1,4 +1,6 @@
-﻿using OpenQA.Selenium.Chrome;
+﻿using System.Configuration;
+using System.Collections.Specialized;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Firefox;
 using System;
@@ -14,6 +16,7 @@ namespace Selenium3
 {
     class Program
     {
+  
 
         static void Main(string[] args)
         {
@@ -28,21 +31,10 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Global.ConsoleOutTab("Passed Count: " + Global.passcount.ToString());
+            //String sValue = ConfigurationManager.AppSettings.Get("Username");
 
-            Global.passcount++;
+            Global.ConsoleOutTab("Please work: " + Global.buildenv);
 
-            Global.ConsoleOutTab("Passed Count: " + Global.passcount.ToString());
-
-            Global.passcount++;
-
-            Global.ConsoleOutTab("Passed Count: " + Global.passcount.ToString());
-
-            Global.failcount++;
-
-            Global.ConsoleOutAlert("Failed Count: " + Global.failcount.ToString());
-
-            Global.PassFailCalc();
 
             Global.ApplicationPause("Wait here");
 
