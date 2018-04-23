@@ -19,6 +19,7 @@ namespace Selenium3
             Global.ConsoleOut("Logging into REO Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.reoportal;
             ElementType elementtype = ElementType.Id;
             string element = "globalPropertySearch";
             while (IsElementPresent == false)
@@ -27,25 +28,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (environment == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-reo2.res.net/");
-                    }
-                    else if (environment == ENV.UAT)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-reo2.res.net/");
-                    }
-                    else if (environment == ENV.STG)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-reo2.res.net/");
-                    }
-                    else if (environment == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
                     else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://reo2.res.net/");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
+                    }
+                    else
+                    {
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "amLoginId");
@@ -79,11 +72,12 @@ namespace Selenium3
 
         }
 
-        public static void Agent(Driver driver, ENV portal, string username, string password)
+        public static void Agent(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into Agent Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.agentportal;
             ElementType elementtype = ElementType.Id;
             string element = "propertySrchTxt";
             while (IsElementPresent == false)
@@ -92,21 +86,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-agent.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-agent.res.net/");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-agent.res.net/");
-                    }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://agent.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "username");
@@ -140,11 +130,12 @@ namespace Selenium3
 
         }
 
-        public static void ValPortal(Driver driver, ENV portal, string username, string password)
+        public static void ValPortal(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into Val Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url =  Global.valportal;
             ElementType elementtype = ElementType.Id;
             string element = "searchBar";
             while (IsElementPresent == false)
@@ -153,21 +144,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "http://qa-valuation.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "http://uat-valuation.res.net/");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else 
                     {
-                        SeleniumSetMethods.Navigate(driver, "http://stg-valuation.res.net/");
-                    }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "http://valuation.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "usernameEmail");
@@ -201,11 +188,12 @@ namespace Selenium3
 
         }
 
-        public static void PropertyCure(Driver driver, ENV portal, string username, string password)
+        public static void PropertyCure(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into PropertyCure Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.propertycure;
             ElementType elementtype = ElementType.Id;
             string element = "searchBar";
             while (IsElementPresent == false)
@@ -214,21 +202,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-propertycure.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-propertycure.res.net/");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-propertycure.res.net/");
-                    }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://propertycure.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "User");
@@ -263,11 +247,12 @@ namespace Selenium3
 
         }
 
-        public static void Vendor(Driver driver, ENV portal, string username, string password)
+        public static void Vendor(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into Vendor Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.vendorportal;
             ElementType elementtype = ElementType.Id;
             string element = "globalPropertySearch";
             while (IsElementPresent == false)
@@ -276,21 +261,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-vendor.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-vendor.res.net/");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-vendor.res.net/");
-                    }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://vendor.res.net/");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
@@ -324,11 +305,12 @@ namespace Selenium3
 
         }
 
-        public static void LossMit(Driver driver, ENV portal, string username, string password)
+        public static void LossMit(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into LossMit Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.lossmitportal;
             ElementType elementtype = ElementType.Id;
             string element = "globalPropertySearch";
             while (IsElementPresent == false)
@@ -337,21 +319,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-shortsale.res.net");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-shortsale.res.net");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-shortsale.res.net");
-                    }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://shortsale.res.net");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
@@ -385,11 +363,12 @@ namespace Selenium3
 
         }
 
-        public static void Buyer(Driver driver, ENV portal, string username, string password)
+        public static void Buyer(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into Buyer Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.buyerportal;
             ElementType elementtype = ElementType.Id;
             string element = "logoBP";
             while (IsElementPresent == false)
@@ -398,23 +377,19 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-buyer.res.net/login");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-buyer.res.net/login");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-buyer.res.net/login");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://buyer.res.net/login");
-                    }
-                    // Login Pages
+                    // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "UsernameOrEmail");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "UsernameOrEmail");
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "UsernameOrEmail", username);
@@ -446,11 +421,12 @@ namespace Selenium3
 
         }
 
-        public static void ValClient(Driver driver, ENV portal, string username, string password)
+        public static void ValClient(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into Val Client Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.valclientportal;
             ElementType elementtype = ElementType.Id;
             string element = "Filter_LoanNumber";
             while (IsElementPresent == false)
@@ -459,21 +435,17 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "http://qa-client.usres.com/Authentication/LogOn");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "http://uat-client.usres.com/Authentication/LogOn");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "http://stg-client.usres.com/Authentication/LogOn");
-                    }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "http://client.usres.com/Authentication/LogOn");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
                     // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
@@ -507,11 +479,12 @@ namespace Selenium3
 
         }
 
-        public static void Homeowner(Driver driver, ENV portal, string username, string password)
+        public static void Homeowner(Driver driver, ENV environment, string username, string password)
         {
             Global.ConsoleOut("Logging into Buyer Portal: " + DateTime.Now.ToString());
             int tries = 0;
             bool IsElementPresent = false;
+            string url = Global.homeownerportal;
             ElementType elementtype = ElementType.CssSelector;
             string element = "a[href *= '/Property/Index/']";
             while (IsElementPresent == false)
@@ -520,23 +493,19 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     // Navigate to the correct environment
-                    if (portal == ENV.QA)
+                    if (environment == ENV.PROD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://qa-homeowner.res.net/Authentication/LogOn");
+                        SeleniumSetMethods.Navigate(driver, "https://" + url);
                     }
-                    else if (portal == ENV.UAT)
+                    else if (environment == ENV.BUILD)
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://uat-homeowner.res.net/Authentication/LogOn");
+                        SeleniumSetMethods.Navigate(driver, Global.buildenv);
                     }
-                    else if (portal == ENV.STG)
+                    else
                     {
-                        SeleniumSetMethods.Navigate(driver, "https://stg-homeowner.res.net/Authentication/LogOn");
+                        SeleniumSetMethods.Navigate(driver, "http://" + environment.ToString() + "-" + url);
                     }
-                    else if (portal == ENV.PROD)
-                    {
-                        SeleniumSetMethods.Navigate(driver, "https://homeowner.res.net/Authentication/LogOn");
-                    }
-                    // Login Pages
+                    // Login Page
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Username");
                     SeleniumSetMethods.Clear(driver, ElementType.Id, "Username");
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "Username", username);
