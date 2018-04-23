@@ -52,6 +52,12 @@ namespace Selenium3
         public static string buyerportal = ConfigurationManager.AppSettings.Get("BuyerPortal");
         public static string homeownerportal = ConfigurationManager.AppSettings.Get("HomeOwnerPortal");
 
+        public static string qavalportaluser = ConfigurationManager.AppSettings.Get("QAValPortalUser");
+        public static string qavalportalpassword = ConfigurationManager.AppSettings.Get("QAValPortalPassword");
+        public static string qaagentportaluser = ConfigurationManager.AppSettings.Get("QAAgentPortalUser");
+        public static string qaagentportalpassword = ConfigurationManager.AppSettings.Get("QAAgentPortalPassword");
+        public static string qaprovidersourceid = ConfigurationManager.AppSettings.Get("QAProviderSourceId");
+
         // Test Address
         public static string subjectstreetnumber;
         public static string subjectstreetname;

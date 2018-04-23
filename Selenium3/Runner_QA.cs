@@ -223,18 +223,18 @@ namespace Selenium3
         {
             // QA Org 1 Unified53Org1
             ENV environment = ENV.QA;
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "31002";
+            Global.StreetAddress = "423 GreatLawn";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
+            Global.subjectstreetnumber = "351";
 
             // Logins
-            string valportalusername = "test";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
+            string valportalusername = Global.qavalportaluser;
+            string valportalpassword = Global.qavalportalpassword;
+            string agentportalusername = Global.qaagentportaluser;
+            string agentportalpassword = Global.qaagentportalpassword;
+            string providersourceid = Global.qaprovidersourceid;
 
             // Client, ProductType, Product Details 
             string client = "Unified 53";
@@ -384,7 +384,7 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Login.ValPortal(driver, environment, Global.qavalportaluser, Global.qavalportalpassword);
             Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);

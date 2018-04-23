@@ -941,8 +941,7 @@ namespace Selenium3
                     SeleniumWindowMethods.ThrottlingSleep();
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "244_fileupload", Global.folderpath + "AUpload.pdf");
                     SeleniumWindowMethods.ThrottlingSleep();
-                }
-                    
+                }       
             }
             else if (environment == ENV.UAT)
             {
@@ -992,7 +991,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.WaitMinutes(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
                 SeleniumWindowMethods.ThrottlingSleep();
-
             }
             else if (environment == ENV.STG)
             {
@@ -1033,18 +1031,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "73_1_fileupload", Global.folderpath + "C8.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
-                /*
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "28_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "28_fileupload", Global.folderpath + "AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_1554_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_1554_fileupload", Global.folderpath + "AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.WaitMinutes(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
-                SeleniumWindowMethods.ThrottlingSleep();
-                */
             }
             // Complete Attachment Section
             SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_230_fileupload");
