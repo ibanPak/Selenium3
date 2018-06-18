@@ -34,11 +34,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/CreateOrder/Step1']");
@@ -54,7 +54,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ClientFileNumber", "File-" + Global.UniqueNum);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "LockboxCode", Global.UniqueNum);
-            Global.StreetAddress = (Global.StreetNum + " " + StreetName);
+            Global.StreetAddress = (Global.streetnumber + " " + StreetName);
             Global.ConsoleOutTab("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", City);

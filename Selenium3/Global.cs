@@ -21,7 +21,7 @@ namespace Selenium3
         public static string NextMonth = DateTime.Today.AddMonths(1).ToString("MM/dd/yyyy");
         public static string NextYear = DateTime.Today.AddYears(1).ToString("MM/dd/yyyy");
         public static string MMddyyDate = DateTime.Today.ToString("MM/dd/yyyy");
-        public static string StreetNum = DateTime.Today.Date.ToString("MMdd").TrimStart('0');
+
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
         public static float passcount = 0;
@@ -40,6 +40,7 @@ namespace Selenium3
         public static string Password;
 
         // App Config
+        public static string streetnumber = ConfigurationManager.AppSettings.Get("StreetNumber");
         public static string folderpath = ConfigurationManager.AppSettings.Get("PublicFolder");
         public static string buildenv = ConfigurationManager.AppSettings.Get("BuildENV");
         public static string valportal = ConfigurationManager.AppSettings.Get("ValPortal");

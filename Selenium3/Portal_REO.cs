@@ -49,11 +49,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
 
             // Properties - Add New Property
@@ -109,11 +109,11 @@ namespace Selenium3
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOutTab("Street Address: " + Global.StreetAddress);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "paPropAddr");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "paPropAddr", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "paPropCity", city);

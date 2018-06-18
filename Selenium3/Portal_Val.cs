@@ -88,11 +88,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
 
             // Order Queue Page
@@ -117,7 +117,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "LoanType", "Conv");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
@@ -142,11 +142,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
 
             // Order Queue Page
@@ -169,7 +169,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
@@ -194,11 +194,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
            
             // Order Queue Page
@@ -221,7 +221,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
@@ -246,11 +246,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
 
             // Order Queue Page
@@ -272,7 +272,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOut(Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
@@ -297,11 +297,11 @@ namespace Selenium3
         {
             if (streetnumber == "Random")
             {
-                streetnumber = Global.StreetNum;
+                streetnumber = Global.streetnumber;
             }
             else
             {
-                Global.StreetNum = streetnumber;
+                Global.streetnumber = streetnumber;
             }
 
             // Order Queue Page
@@ -324,7 +324,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
-            Global.StreetAddress = (Global.StreetNum + " " + streetname);
+            Global.StreetAddress = (Global.streetnumber + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);

@@ -42,7 +42,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "LastName", "Mated");
             SeleniumSetMethods.Click(driver, ElementType.Id, "Phone");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Phone", "9491234567");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Email", "Automated" + Global.StreetNum + "@email.com");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Email", "Automated" + Global.streetnumber + "@email.com");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Password", "blue123");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ConfirmPassword", "blue123");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSubmit");

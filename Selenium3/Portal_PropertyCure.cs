@@ -63,7 +63,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Add New Property");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Add New Property");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PropertyStreet1", Global.StreetNum + " " + PropSTName);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PropertyStreet1", Global.streetnumber + " " + PropSTName);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "PropertyStreet2", "#150");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "locality", PropCity);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "//button[@type='button']");
@@ -223,7 +223,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ViolationReason", Global.PropertyID + " Violation Reason");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "WorkOrderNumber", Global.PropertyID + " Work Order Number");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ViolationLevelLkUp", "1");
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ViolationDays", Global.StreetNum);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ViolationDays", Global.streetnumber);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "OriginalViolationDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "CompliantDate", Global.MMddyyDate);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "ViolationItemCompleteDate", Global.MMddyyDate);
