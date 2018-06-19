@@ -21,7 +21,6 @@ namespace Selenium3
         public static string NextMonth = DateTime.Today.AddMonths(1).ToString("MM/dd/yyyy");
         public static string NextYear = DateTime.Today.AddYears(1).ToString("MM/dd/yyyy");
         public static string MMddyyDate = DateTime.Today.ToString("MM/dd/yyyy");
-
         public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
         public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
         public static float passcount = 0;
@@ -40,6 +39,7 @@ namespace Selenium3
         public static string Password;
 
         // App Config
+        public static string isstreetnumbergenerated = ConfigurationManager.AppSettings.Get("IsStreetNumberGenerated");
         public static string streetnumber = ConfigurationManager.AppSettings.Get("StreetNumber");
         public static string folderpath = ConfigurationManager.AppSettings.Get("PublicFolder");
         public static string buildenv = ConfigurationManager.AppSettings.Get("BuildENV");
@@ -53,11 +53,25 @@ namespace Selenium3
         public static string buyerportal = ConfigurationManager.AppSettings.Get("BuyerPortal");
         public static string homeownerportal = ConfigurationManager.AppSettings.Get("HomeOwnerPortal");
 
-        public static string qavalportaluser = ConfigurationManager.AppSettings.Get("QAValPortalUser");
+        // QA Credentials
+        public static string qareoportalusername = ConfigurationManager.AppSettings.Get("QAREOPortalUsername");
+        public static string qareoportalpassword = ConfigurationManager.AppSettings.Get("QAREOPortalpassword");
+        public static string qareoclientid = ConfigurationManager.AppSettings.Get("QAREOClientId");
+        public static string qavalportalusername = ConfigurationManager.AppSettings.Get("QAValPortalUsername");
         public static string qavalportalpassword = ConfigurationManager.AppSettings.Get("QAValPortalPassword");
-        public static string qaagentportaluser = ConfigurationManager.AppSettings.Get("QAAgentPortalUser");
+        public static string qaagentportalusername = ConfigurationManager.AppSettings.Get("QAAgentPortalUsername");
         public static string qaagentportalpassword = ConfigurationManager.AppSettings.Get("QAAgentPortalPassword");
-        public static string qaprovidersourceid = ConfigurationManager.AppSettings.Get("QAProviderSourceId");
+        public static string qaagentsourceid = ConfigurationManager.AppSettings.Get("QAAgentSourceId");
+        public static string qavendorportalusername = ConfigurationManager.AppSettings.Get("QAVendorPortalUsername");
+        public static string qavendorportalpassword = ConfigurationManager.AppSettings.Get("QAVendorPortalPassword");
+        public static string qavendorsourceid = ConfigurationManager.AppSettings.Get("QAVendorSourceId");
+
+        // UAT Credentials
+        public static string uatvalportalusername = ConfigurationManager.AppSettings.Get("UATValPortalUsername");
+        public static string uatvalportalpassword = ConfigurationManager.AppSettings.Get("UATValPortalPassword");
+        public static string uatagentportalusername = ConfigurationManager.AppSettings.Get("UATAgentPortalUsername");
+        public static string uatagentportalpassword = ConfigurationManager.AppSettings.Get("UATAgentPortalPassword");
+        public static string uatagentsourceid = ConfigurationManager.AppSettings.Get("UATAgentSourceId");
 
         // Test Address
         public static string subjectstreetnumber;
@@ -100,7 +114,6 @@ namespace Selenium3
         {
             // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
             // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
-
             if (numbrowsers == NumBrowsers.One)
             {
                 IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
@@ -117,7 +130,6 @@ namespace Selenium3
             // Start Time Stamp
             StartDT = DateTime.Now;
             ConsoleOut("Test started @ " + Global.StartDT);
-
         }
 
         public static void Cooldown()
@@ -135,7 +147,6 @@ namespace Selenium3
         {
             ConsoleOut("Test was completed successfully");
             SeleniumWindowMethods.Sleep(5);
-
         }
 
         public static void ConsoleOut(string displaytext)
@@ -143,7 +154,6 @@ namespace Selenium3
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(" ");
             Console.WriteLine(" " + displaytext);
-
         }
 
         public static void ConsoleOutTab(string displaytext)
@@ -151,7 +161,6 @@ namespace Selenium3
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(" ");
             Console.WriteLine("     " + displaytext);
-
         }
 
         public static void ConsoleOutAlert(string displaytext)
@@ -159,7 +168,6 @@ namespace Selenium3
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(" ");
             Console.WriteLine("     " + displaytext);
-
         }
 
         public static void ApplicationPause(string displaytext)
@@ -173,7 +181,6 @@ namespace Selenium3
                     // Do something
                 }
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
-
         }
 
         public static void PassFailCalc()
@@ -182,9 +189,7 @@ namespace Selenium3
 
             ConsoleOutTab("Passed %: " + per.ToString(".00").Replace(".", "") + "%");
         }
-
     }
-
 }
 
 

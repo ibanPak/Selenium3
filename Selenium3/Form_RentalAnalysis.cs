@@ -84,21 +84,6 @@ namespace Selenium3
 
         public static void CompleteRA(Driver driver)
         {
-            string lc1street = "218 LITCHFIELD";
-            string lc1city = "Blacklick";
-            string lc1zipcode = "77024";
-            string lc1state = "Texas";
-
-            string lc2street = "123 LITCHFIELD LANE UNIT#37";
-            string lc2city = "HOUSTON";
-            string lc2zipcode = "77024";
-            string lc2state = "Texas";
-
-            string lc3street = "306 LITCHFIELD LANE";
-            string lc3city = "HOUSTON";
-            string lc3zipcode = "77024";
-            string lc3state = "Texas";
-
             SeleniumWindowMethods.Sleep(2);
             Global.ConsoleOutTab("Begin input @ " + DateTime.Now);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
@@ -172,29 +157,29 @@ namespace Selenium3
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Unified_NeighDetailsAddnlComments", "Really good schools 10/10");
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", lc1street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__StreetAddress", Global.lc1street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", lc2street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__StreetAddress", Global.lc2street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", lc3street);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__StreetAddress", Global.lc3street);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__City", lc1city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__City", Global.lc1city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__City", lc2city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__City", Global.lc2city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__City", lc3city);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__City", Global.lc3city);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_0__State", lc1state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_0__State", Global.lc1state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_1__State", lc2state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_1__State", Global.lc2state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_2__State", lc3state);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "ListComps_2__State", Global.lc3state);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__PostalCode", lc1zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_0__PostalCode", Global.lc1zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__PostalCode", lc2zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_1__PostalCode", Global.lc2zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__PostalCode", lc3zipcode);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "ListComps_2__PostalCode", Global.lc3zipcode);
             SeleniumWindowMethods.ThrottlingSleep();
             SeleniumSetMethods.Click(driver, ElementType.Id, "PennyMac_SubjectMarketing_SubjectListPast12MoOriginalListDate");
             SeleniumWindowMethods.ThrottlingSleep();

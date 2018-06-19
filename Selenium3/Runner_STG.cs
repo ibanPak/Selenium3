@@ -38,7 +38,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
             Portal_REO.PreMarket(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.REO);
@@ -68,7 +68,6 @@ namespace Selenium3
             Global.ThrottleSleep = 3 * (100);
 
             string clientid = "7225";
-            string subjectstreetnumber = "500";        // "Random";
             string subjectstreetname = "Townsend";
             string subjectcity = "Irvine";
             string subjectstate = "California";
@@ -80,7 +79,7 @@ namespace Selenium3
 
             // Log into the REO portal, add property and assign agent.
             Login.REO(driver, ENV.STG, "sdqaam15", "P@ssw0rd2");
-            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_REO.AddNewProperty(driver, clientid, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_REO.AddAgent(driver, Global.PropertyID, "250922");
             Logout.Portal(driver, Portals.REO);
             SeleniumWindowMethods.Sleep(2);
@@ -240,7 +239,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -282,7 +281,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -324,7 +323,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -379,7 +378,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);

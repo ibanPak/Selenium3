@@ -19,30 +19,29 @@ namespace Selenium3
         {
             // REO Flow Org1
             ENV environment = ENV.QA;
-            Global.PropertyID = "858367";
-            Global.StreetAddress = "444 Greatlawn";
+            Global.PropertyID = "0";
+            Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            //Global.subjectstreetnumber = "344";
 
             // Logins
-            string reoportalusername = "Yeshh1";
-            string reoportalpassword = "Yeshh1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
-            string clientid = "7224";
+            string reoportalusername = Global.qareoportalusername;
+            string reoportalpassword = Global.qareoportalpassword;
+            string agentportalusername = Global.qaagentportalusername;
+            string agentportalpassword = Global.qaagentportalpassword;
+            string providersourceid = Global.qaagentsourceid;
+            string clientid = Global.qareoclientid;
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
             Portal_REO.PreMarket(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.REO);
-            Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
             Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask(driver);
             Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_REOTasks.TaxResearchTask(driver);
@@ -62,31 +61,33 @@ namespace Selenium3
             Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
             Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver, 36);
             Logout.Portal(driver, Portals.Agent);
-
         }
 
-        public static void REOFlowOrg2(Driver driver)
+        public static void REOFlowOrg2(Driver driver, City city)
         {
-            // REO Flow Org1
-            Global.PropertyID = "858340";
-            Global.StreetAddress = "500 Townsend";
+            // REO Flow Org2
+            ENV environment = ENV.QA;
+            Global.PropertyID = "0";
+            Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
+            TestAddress.Address(city);
 
-            string clientid = "7225";
-            string subjectstreetnumber = "500";        // "Random";
-            string subjectstreetname = "Townsend";
-            string subjectcity = "Irvine";
-            string subjectstate = "California";
-            string subjectzip = "92620";
+            // Logins
+            string reoportalusername = Global.qareoportalusername;
+            string reoportalpassword = Global.qareoportalpassword;
+            string agentportalusername = Global.qaagentportalusername;
+            string agentportalpassword = Global.qaagentportalpassword;
+            string providersourceid = Global.qaagentsourceid;
+            string clientid = Global.qareoclientid;
 
             /*                                                  */
             /*              Make changes to above               */
             /*                                                  */
 
             // Log into the REO portal, add property and assign agent.
-            Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");
-            Portal_REO.AddNewProperty(driver, clientid, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
-            Portal_REO.AddAgent(driver, Global.PropertyID, "250922");
+            Login.REO(driver, environment, reoportalusername, reoportalpassword);
+            Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
             Logout.Portal(driver, Portals.REO);
             SeleniumWindowMethods.Sleep(2);
 
@@ -97,7 +98,6 @@ namespace Selenium3
             Portal_Agent.OccupancyStatusTask(driver);
             SeleniumWindowMethods.Sleep(1);
             Logout.Portal(driver, Portals.Agent);
-
 
             // Log back to REO portal.complete occupancy task.
             // List the Property
@@ -146,11 +146,11 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "test";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
+            string valportalusername = Global.qavalportalusername;
+            string valportalpassword = Global.qavalportalpassword;
+            string agentportalusername = Global.qaagentportalusername;
+            string agentportalpassword = Global.qaagentportalpassword;
+            string providersourceid = Global.qaagentsourceid;
 
             // Client, ProductType, Product Details 
             string client = "Beatrice Rental Survey Co";
@@ -174,7 +174,6 @@ namespace Selenium3
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
             Logout.Portal(driver, Portals.ValPortal);
-
         }
 
         public static void RAFlow1Org3(Driver driver, City city)
@@ -223,18 +222,18 @@ namespace Selenium3
         {
             // QA Org 1 Unified53Org1
             ENV environment = ENV.QA;
-            Global.OrderID = "31002";
-            Global.StreetAddress = "423 GreatLawn";
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            Global.subjectstreetnumber = "351";
+            Global.subjectstreetnumber = "Generated";
 
             // Logins
-            string valportalusername = Global.qavalportaluser;
+            string valportalusername = Global.qavalportalusername;
             string valportalpassword = Global.qavalportalpassword;
-            string agentportalusername = Global.qaagentportaluser;
+            string agentportalusername = Global.qaagentportalusername;
             string agentportalpassword = Global.qaagentportalpassword;
-            string providersourceid = Global.qaprovidersourceid;
+            string providersourceid = Global.qaagentsourceid;
 
             // Client, ProductType, Product Details 
             string client = "Unified 53";
@@ -246,7 +245,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -272,11 +271,11 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "test";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
+            string valportalusername = Global.qavalportalusername;
+            string valportalpassword = Global.qavalportalpassword;
+            string agentportalusername = Global.qaagentportalusername;
+            string agentportalpassword = Global.qaagentportalpassword;
+            string providersourceid = Global.qaagentsourceid;
 
             // Client, ProductType, Product Details 
             string client = "PNMAC";
@@ -288,7 +287,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -314,11 +313,11 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "test";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
+            string valportalusername = Global.qavalportalusername;
+            string valportalpassword = Global.qavalportalpassword;
+            string agentportalusername = Global.qaagentportalusername;
+            string agentportalpassword = Global.qaagentportalpassword;
+            string providersourceid = Global.qaagentsourceid;
 
             // Client, ProductType, Product Details 
             string client = "acme";
@@ -330,7 +329,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -384,7 +383,7 @@ namespace Selenium3
             /*              Make changes to above               */
             /*                                                  */
 
-            Login.ValPortal(driver, environment, Global.qavalportaluser, Global.qavalportalpassword);
+            Login.ValPortal(driver, environment, Global.qavalportalusername, Global.qavalportalpassword);
             Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);

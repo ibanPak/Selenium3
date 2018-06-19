@@ -45,17 +45,13 @@ namespace Selenium3
 
         }
 
-        public static void AddNewProperty(Driver driver, string clientid, string streetnumber, string streetname, string city, string state, string zipcode)
+        public static void AddNewProperty(Driver driver, string clientid, string streetname, string city, string state, string zipcode)
         {
-            if (streetnumber == "Random")
+            string streetnumber = Global.streetnumber;
+            if (Global.isstreetnumbergenerated == "true")
             {
-                streetnumber = Global.streetnumber;
+                streetnumber = DateTime.Now.ToString("MMddHH").TrimStart('0');
             }
-            else
-            {
-                Global.streetnumber = streetnumber;
-            }
-
             // Properties - Add New Property
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Properties");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Properties");

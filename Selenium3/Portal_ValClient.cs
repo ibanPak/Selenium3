@@ -32,7 +32,7 @@ namespace Selenium3
         public static void CreateNewOrder(Driver driver, ProductTypes producttypes, string products,
             string streetnumber, string StreetName, string City, string FullState, string ZipCode, CreditCardType cardType)
         {
-            if (streetnumber == "Random")
+            if (streetnumber == "Generated")
             {
                 streetnumber = Global.streetnumber;
             }

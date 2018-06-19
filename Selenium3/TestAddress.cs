@@ -20,7 +20,6 @@ namespace Selenium3
             if (city == City.Irvine)
             {
                 // New Address
-                Global.subjectstreetnumber = "Random";      // "Random";
                 Global.subjectstreetname = "GreatLawn";
                 Global.subjectcity = "Irvine";
                 Global.subjectzipcode = "92620";
@@ -59,7 +58,6 @@ namespace Selenium3
             }
             else if (city == City.IrvineGCFail)
             {
-                Global.subjectstreetnumber = "Random";      // "Random";
                 Global.subjectstreetname = "GreatLawn";
                 Global.subjectcity = "Irvine";
                 Global.subjectzipcode = "92620";
@@ -97,7 +95,6 @@ namespace Selenium3
             }
             else if (city == City.Melvindale)
             {
-                Global.subjectstreetnumber = "Random";      // "Random";
                 Global.subjectstreetname = "Hanna St";
                 Global.subjectcity = "Melvindale";
                 Global.subjectzipcode = "48122";
@@ -135,7 +132,6 @@ namespace Selenium3
             }
             else if (city == City.ModestoGCFail)
             {
-                Global.subjectstreetnumber = "Random";      // "Random";
                 Global.subjectstreetname = "Rose Arch";
                 Global.subjectcity = "Irvine";
                 Global.subjectzipcode = "92620";
@@ -173,7 +169,6 @@ namespace Selenium3
             }
             else if (city == City.Naples)
             {
-                Global.subjectstreetnumber = "Random";      // "Random";
                 Global.subjectstreetname = "Mill Pond Cir";
                 Global.subjectcity = "NAPLES";
                 Global.subjectzipcode = "34109";

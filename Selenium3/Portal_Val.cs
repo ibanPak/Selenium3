@@ -86,7 +86,7 @@ namespace Selenium3
 
         public static void CreateNewAppraisal(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Random")
+            if (streetnumber == "Generated")
             {
                 streetnumber = Global.streetnumber;
             }
@@ -138,17 +138,13 @@ namespace Selenium3
 
         }
 
-        public static void CreateNEWPNMAC(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
+        public static void CreateNEWPNMAC(Driver driver, string clientid, string producttype, string productdetails, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Random")
+            string streetnumber = Global.streetnumber;
+            if (Global.isstreetnumbergenerated == "true")
             {
-                streetnumber = Global.streetnumber;
+                streetnumber = DateTime.Now.ToString("MMddHH").TrimStart('0');
             }
-            else
-            {
-                Global.streetnumber = streetnumber;
-            }
-
             // Order Queue Page
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
@@ -192,7 +188,7 @@ namespace Selenium3
 
         public static void CreateNewRentalAnalysis(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Random")
+            if (streetnumber == "Generated")
             {
                 streetnumber = Global.streetnumber;
             }
@@ -200,7 +196,7 @@ namespace Selenium3
             {
                 Global.streetnumber = streetnumber;
             }
-           
+
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
@@ -242,17 +238,13 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewUnified53(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
+        public static void CreateNewUnified53(Driver driver, string clientid, string producttype, string productdetails, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Random")
+            string streetnumber = Global.streetnumber;
+            if (Global.isstreetnumbergenerated == "true")
             {
-                streetnumber = Global.streetnumber;
+                streetnumber = DateTime.Now.ToString("MMddHH").TrimStart('0');
             }
-            else
-            {
-                Global.streetnumber = streetnumber;
-            }
-
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
@@ -272,7 +264,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
-            Global.StreetAddress = (Global.streetnumber + " " + streetname);
+            Global.StreetAddress = (streetnumber + " " + streetname);
             Global.ConsoleOut(Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
@@ -293,17 +285,13 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewFMBBPO(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
+        public static void CreateNewFMBBPO(Driver driver, string clientid, string producttype, string productdetails, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Random")
+            string streetnumber = Global.streetnumber;
+            if (Global.isstreetnumbergenerated == "true")
             {
-                streetnumber = Global.streetnumber;
+                streetnumber = DateTime.Now.ToString("MMddHH").TrimStart('0');
             }
-            else
-            {
-                Global.streetnumber = streetnumber;
-            }
-
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
@@ -324,7 +312,7 @@ namespace Selenium3
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType", "Single Family");
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "OccupancyStatus", "Unknown");
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "Portfolio", "Automated");
-            Global.StreetAddress = (Global.streetnumber + " " + streetname);
+            Global.StreetAddress = (streetnumber + " " + streetname);
             Global.ConsoleOut("Street Address: " + Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectAddress", Global.StreetAddress);
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "SubjectCity", city);
@@ -340,10 +328,6 @@ namespace Selenium3
             string OrderID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, "div.padding-5:nth-child(3) > b:nth-child(2)").TrimStart();
             Global.OrderID = OrderID;
             Global.ConsoleOut("Order ID: " + OrderID);
-            // Screen Capture
-            // SeleniumWindowMethods.Sleep(1);
-            // SeleniumWindowMethods.ScreenShot(driver, "FMB BPO");
-
         }
 
         public static void CompleteBPOOrder(Driver driver, string orderid)

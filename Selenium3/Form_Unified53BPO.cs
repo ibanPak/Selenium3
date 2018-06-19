@@ -175,7 +175,6 @@ namespace Selenium3
             SeleniumSetMethods.Clear(driver, ElementType.Id, "RepairedListPrice");
             SeleniumSetMethods.Clear(driver, ElementType.Id, "CheckListComments");
             SeleniumSetMethods.Clear(driver, ElementType.Id, "ProviderComments");
-
         }
 
         public static void CompleteBPO(Driver driver)
@@ -877,7 +876,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-collapse-all");
             Global.ConsoleOut("Coffee Break Started at for 60 seconds " + DateTime.Now);
             SeleniumWindowMethods.Sleep(60);
-
         }
 
         public static void Attachments(Driver driver, ENV environment)
@@ -1033,10 +1031,17 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
             }
             // Complete Attachment Section
-            SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_230_fileupload");
-            SeleniumWindowMethods.ThrottlingSleep();
-            SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_230_fileupload", Global.folderpath + "AUpload.pdf");
-            SeleniumWindowMethods.ThrottlingSleep();
+            try
+            {
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_230_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_230_fileupload", Global.folderpath + "AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("Additional Upload Section not found");
+            }
             Global.ConsoleOutTab("Start praying for the next 30 seconds, beginning at  " + DateTime.Now);
             SeleniumWindowMethods.Sleep(30);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)");
@@ -1059,10 +1064,7 @@ namespace Selenium3
                 SeleniumWindowMethods.WindowType(driver, WinType.Popup);
                 SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[10]");
                 SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            }
-        
+            }       
         }
-
     }
-
 }

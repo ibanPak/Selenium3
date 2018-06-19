@@ -21,7 +21,7 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
 
-            string subjectstreetnumber = "10950";       // "Random";
+            string subjectstreetnumber = "10950";       // "Generated";
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
@@ -83,7 +83,6 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
 
-            string subjectstreetnumber = "705";     // "Random"
             string subjectstreetname = "Bougainvillea Rd";
             string subjectcity = "Naples";
             string subjectstate = "Florida";
@@ -94,7 +93,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, ENV.PROD, "Bryan", "Pr0dPa$$021518");
-            Portal_Val.CreateNewUnified53(driver, "5th 3rd Bank", "BPO", "Exterior", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.CreateNewUnified53(driver, "5th 3rd Bank", "BPO", "Exterior", subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "318923");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, ENV.PROD, "Automated214@email.com", "blue123");
@@ -125,7 +124,6 @@ namespace Selenium3
             string providersourceid = "78832";
 
             // New Address
-            string subjectstreetnumber = "220";      // "Random";
             string subjectstreetname = "GreatLawn";
             string subjectcity = "Irvine";
             string subjectstate = "California";
@@ -141,7 +139,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);

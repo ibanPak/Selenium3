@@ -31,11 +31,9 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            //String sValue = ConfigurationManager.AppSettings.Get("Username");
+            Runner_UAT.PNMACFlow1Org1(driver, City.Naples);
 
-            Runner_QA.PCFlow1(driver);
-
-            Global.ApplicationPause("Wait here");
+            //Global.ApplicationPause("Wait here");
 
             // Runner_QA.REOFlowOrg1(driver, City.Irvine);       
 
@@ -50,4 +48,3 @@ namespace Selenium3
     }
 
 }
-

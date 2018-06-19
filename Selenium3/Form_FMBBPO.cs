@@ -1,8 +1,14 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Firefox;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
+using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
@@ -876,26 +882,36 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_124_fileupload", Global.folderpath + "AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
-
             }
-            if (Global.subjectstate == "California" && environment != ENV.STG)
+            try
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "16_fileupload", Global.folderpath + "AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("State Attachment Upload Section not found");
+            }
+            try
+            {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "27_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", Global.folderpath + "AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
             }
-            else if (Global.subjectstate == "Michigan")
+            catch (NoSuchElementException)
             {
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompCityComment", "List Comp 3 City QC");
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompPostalCodeComment", "List Comp 3 Postal QC");
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_QuickSaleValueComment", "30 Day QC");
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_AsIsValueComment", "As IS QC");
+                Global.ConsoleOutAlert("Additional Upload Section not found");
             }
+            //else if (Global.subjectstate == "Michigan")
+            //{
+            //    SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompCityComment", "List Comp 3 City QC");
+            //    SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_ListCompPostalCodeComment", "List Comp 3 Postal QC");
+            //    SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_QuickSaleValueComment", "30 Day QC");
+            //    SeleniumSetMethods.EnterText(driver, ElementType.Id, "BrokenRuleComments_AsIsValueComment", "As IS QC");
+            //}
             // Complete Attachment Section
             Global.ConsoleOutTab("15 Second Sleep for images to upload");
             SeleniumWindowMethods.Sleep(15);
