@@ -105,7 +105,7 @@ namespace Selenium3
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
-            Global.StreetAddress = (Global.streetnumber + " " + streetname);
+            Global.StreetAddress = (streetnumber + " " + streetname);
             Global.ConsoleOutTab("Street Address: " + Global.StreetAddress);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "paPropAddr");

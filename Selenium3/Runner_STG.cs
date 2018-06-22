@@ -23,19 +23,14 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string reoportalusername = "Yeshh1";
-            string reoportalpassword = "Yeshh1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
-            string clientid = "7225";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
+            string reoportalusername = Global.stgreoportalusername;
+            string reoportalpassword = Global.stgreoportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
 
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
             Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -136,14 +131,14 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "Bryan";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest25@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "318923";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
 
             // Client, ProductType, Product Details 
             string client = "Beatrice Rental Survey Co";
@@ -155,7 +150,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -178,14 +173,14 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "test3";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest25@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250418";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
 
             // Client, ProductType, Product Details 
             string client = "Bonnie Org 3";
@@ -197,7 +192,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -220,19 +215,18 @@ namespace Selenium3
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "test";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250922";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
 
             // Client, ProductType, Product Details 
-            string client = "Unified 53";
+            string client = "5th 3rd Bank";
             string producttype = "BPO";
-            string productdetails = "Broker Price Opinion Exterior Inspection";
+            string productdetails = "Exterior";
 
             /*                                                  */
             /*              Make changes to above               */
@@ -265,11 +259,11 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "bryan";
-            string valportalpassword = "qatest10";
-            string agentportalusername = "QATest25@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250418";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
 
             // Client, ProductType, Product Details 
             string client = "PNMAC";
@@ -300,27 +294,24 @@ namespace Selenium3
         {
             // FMB BPO Org1
             ENV environment = ENV.STG;
-            Global.OrderID = "86043";
-            Global.StreetAddress = "225 Rose Arch";
+            Global.OrderID = "86047";
+            Global.StreetAddress = "501 Rose Arch";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "bryan";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "qatestproplus3";
-            string agentportalpassword = "Pr0dPa$$02316";
-            string providersourceid = "78832";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
 
             // Client, ProductType, Product Details 
             string client = "ACME Inc";
             string producttype = "BPO";
             string productdetails = "Exterior";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -362,11 +353,12 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "test3";
-            string valportalpassword = "P@ssw0rd1";
-            string agentportalusername = "QATest25@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250418";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
 
             // Client, ProductType, Product Details 
             string client = "ACME Inc";
@@ -417,11 +409,12 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string valportalusername = "bryan";
-            string valportalpassword = "qatest10";
-            string vendorportalusername = "qaappraisalvendor";
-            string vendorportalpassword = "P@ssw0rd1";
-            string providersourceid = "30005";
+            string valportalusername = Global.stgvalportalusername;
+            string valportalpassword = Global.stgvalportalpassword;
+            string vendorportalusername = Global.stgvendorportalusername;
+            string vendorportalpassword = Global.stgvendorportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
 
             // Client, ProductType, Product Details 
             string client = "acme";
@@ -433,7 +426,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);
@@ -562,6 +555,40 @@ namespace Selenium3
         public static void NewUser(Driver driver)
         {
             AddNewUser.ProPlusAgent(driver, ENV.STG, CreditCardType.MasterCard1);
+
+        }
+
+        public static void ShortSale(Driver driver, City city)
+        {
+            // FMB BPO Org1
+            ENV environment = ENV.STG;
+            Global.OrderID = "0";
+            Global.StreetAddress = "";
+            Global.ThrottleSleep = 3 * (1000);
+            TestAddress.Address(city);
+
+            // Logins
+            string shortsaleportalusername = Global.stgshortsaleportalusername;
+            string shortsaleportalpassword = Global.stgshortsaleportalpassword;
+            string agentportalusername = Global.stgagentportalusername;
+            string agentportalpassword = Global.stgagentportalpassword;
+            string providersourceid = Global.stgagentsourceid;
+            string clientid = Global.stgreoclientid;
+
+            Login.LossMit(driver, environment, shortsaleportalusername, shortsaleportalpassword);
+            //Portal_LossMit.AddNewPropety(driver);
+            Portal_LossMit.GotoProperty(driver, "SS56108");
+            Global.PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, ".contents > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+            Global.ConsoleOutTab("Property ID: " + Global.PropertyID);
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)", "Loan #");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)", "Borrower");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#spClientName", "Client");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.Id, "spClientId", "Client ID");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(2)", "Property Type");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "a.pointer:nth-child(1)", "Current Status");
+             SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#roleManager > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)", "Coordinator");
+
+            
 
         }
 

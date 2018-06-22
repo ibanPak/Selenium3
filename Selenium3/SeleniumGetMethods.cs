@@ -68,36 +68,36 @@ namespace Selenium3
                 // Driver 1
                 if (driver == Driver.driver1 && elementtype == ElementType.Id)
                 {
-                    return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.Name)
                 {
-                    return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
                 {
-                    return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
                 {
-                    return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 // Driver 2
                 else if (driver == Driver.driver2 && elementtype == ElementType.Id)
                 {
-                    return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver2.FindElement(By.Id(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver2 && elementtype == ElementType.Name)
                 {
-                    return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver2.FindElement(By.Name(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
                 {
-                    return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver2.FindElement(By.CssSelector(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
                 {
-                    return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("textContent");
+                    return PropertiesCollection.driver2.FindElement(By.XPath(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else return String.Empty;
             }

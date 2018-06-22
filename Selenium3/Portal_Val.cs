@@ -84,17 +84,13 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewAppraisal(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
+        public static void CreateNewAppraisal(Driver driver, string clientid, string producttype, string productdetails, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Generated")
+            string streetnumber = Global.streetnumber;
+            if (Global.isstreetnumbergenerated == "true")
             {
-                streetnumber = Global.streetnumber;
-            }
-            else
-            {
-                Global.streetnumber = streetnumber;
-            }
-
+                streetnumber = DateTime.Now.ToString("MMddHH").TrimStart('0');
+            }      
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");
@@ -186,17 +182,13 @@ namespace Selenium3
 
         }
 
-        public static void CreateNewRentalAnalysis(Driver driver, string clientid, string producttype, string productdetails, string streetnumber, string streetname, string city, string fullstate, string zipcode)
+        public static void CreateNewRentalAnalysis(Driver driver, string clientid, string producttype, string productdetails, string streetname, string city, string fullstate, string zipcode)
         {
-            if (streetnumber == "Generated")
+            string streetnumber = Global.streetnumber;
+            if (Global.isstreetnumbergenerated == "true")
             {
-                streetnumber = Global.streetnumber;
+                streetnumber = DateTime.Now.ToString("MMddHH").TrimStart('0');
             }
-            else
-            {
-                Global.streetnumber = streetnumber;
-            }
-
             // Order Queue Page
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Clear");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Clear");

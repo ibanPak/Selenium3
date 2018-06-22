@@ -31,11 +31,9 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_UAT.PNMACFlow1Org1(driver, City.Naples);
+            Runner_STG.ShortSale(driver, City.Essex);
 
-            //Global.ApplicationPause("Wait here");
-
-            // Runner_QA.REOFlowOrg1(driver, City.Irvine);       
+           
 
             // Cool Down
             Global.Cooldown();

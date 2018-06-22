@@ -20,8 +20,7 @@ namespace Selenium3
             Global.OrderID = "0";
             Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
-
-            string subjectstreetnumber = "10950";       // "Generated";
+         
             string subjectstreetname = "MODENA DR";
             string subjectcity = "PHILADELPHIA";
             string subjectstate = "Pennsylvania";
@@ -32,7 +31,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, ENV.STG, "bryan", "Pr0dPa$$121917");
-            Portal_Val.CreateNewAppraisal(driver, "ACME II QA Inc", "Appraisal", "Uniform Residential Appraisal (FNMA 1004)", subjectstreetnumber, subjectstreetname, subjectcity, subjectstate, subjectzip);
+            Portal_Val.CreateNewAppraisal(driver, "ACME II QA Inc", "Appraisal", "Uniform Residential Appraisal (FNMA 1004)", subjectstreetname, subjectcity, subjectstate, subjectzip);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, "30005");
             Logout.Portal(driver, Portals.ValPortal);
             Login.Vendor(driver, ENV.UAT, "qaappraisalvendor", "P@ssw0rd1");

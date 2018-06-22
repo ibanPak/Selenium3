@@ -32,10 +32,6 @@ namespace Selenium3
             string providersourceid = Global.qaagentsourceid;
             string clientid = Global.qareoclientid;
 
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
-
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
             Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
@@ -162,7 +158,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -203,7 +199,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -384,7 +380,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, Global.qavalportalusername, Global.qavalportalpassword);
-            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);

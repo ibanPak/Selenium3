@@ -826,15 +826,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "12_1_fileupload", Global.folderpath + "B3.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "28_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "28_fileupload", Global.folderpath + "AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_124_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_124_fileupload", Global.folderpath + "AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-
             }
             else if (environment == ENV.STG)
             {
@@ -874,14 +865,28 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "12_1_fileupload", Global.folderpath + "B3.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
+            }
+            try
+            {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "28_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "28_fileupload", Global.folderpath + "AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("State Attachment Upload Section not found");
+            }
+            try
+            {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_124_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_124_fileupload", Global.folderpath + "AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("Additional Upload Section not found");
             }
             try
             {
@@ -892,7 +897,7 @@ namespace Selenium3
             }
             catch (NoSuchElementException)
             {
-                Global.ConsoleOutAlert("State Attachment Upload Section not found");
+                Global.ConsoleOutAlert("Additional Upload Section not found");
             }
             try
             {

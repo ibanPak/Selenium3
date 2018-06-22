@@ -14,7 +14,43 @@ namespace Selenium3
 {
     class Portal_LossMit
     {
+        public static void GotoProperty(Driver driver, string propertyid)
+        {
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "globalPropertySearch");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "globalPropertySearch", propertyid);
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, ".quick-search-result-address");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".quick-search-result-address");
 
+        }
+        public static void AddNewPropety(Driver driver)
+        {
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Properties/SearchResults']");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Properties/SearchResults']");
+            SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= '/Property/NewProperty']");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/Property/NewProperty']");
+            SeleniumSetMethods.Wait(driver, ElementType.Id, "PropertyAddress");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "PropertyAddress", Global.streetnumber +" "+Global.subjectstreetname);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "City", Global.subjectcity);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "State_Code", "CA");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Zip", Global.subjectzipcode);
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "PropertyType_CodeId", "SFR");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "IsBorrowerMailingAddressSameAsPropertyAddress");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerFirstName", "QAtester");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerLastName", "Automated");
+            SeleniumSetMethods.Click(driver, ElementType.Id, "BorrowerPhone");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "BorrowerPhone", "(949) 222-1234");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "BorrowerPhoneTypeCodeId", "Cell");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, ".pointer > img:nth-child(1)");
+            SeleniumWindowMethods.Sleep(2);
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/div[8]/div[2]/div/form/div[3]/table/tbody/tr[7]/td[1]/input");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/div[8]/div[3]/div/button[2]");
+            SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "DefaultSSCoordinatorUserID", "qaservicer test");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Mortgage1stServicerName", "Bank of USRES");
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Mortgage1stLoanNumber", Global.LoanNum);
+            SeleniumSetMethods.EnterText(driver, ElementType.Id, "Mortgage1stLoanBalance", "500,000");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/div[1]/div[3]/div/div/form/div[3]/input");
+        }
         public static void HODILShortSalePartI(Driver driver)
         {
             // Short Sale Part I
@@ -94,8 +130,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#content > div.col.full > div > div.tabs.ui-tabs-nav.withSubMenu > ul > li:nth-child(5) > a > span");
             // Test Ended Close Window
 
-        }
-
+        }        
     }
-
 }

@@ -17,9 +17,16 @@ namespace Selenium3
 
         public static void Address(City city)
         {
-            if (city == City.Irvine)
+            if (city == City.Essex)
             {
-                // New Address
+                Global.streetnumber = DateTime.Now.ToString("MMddyyyy");
+                Global.subjectstreetname = "Automated";
+                Global.subjectcity = "Essex";
+                Global.subjectzipcode = "92332";
+                Global.subjectstate = "California";
+            }
+            else if (city == City.Irvine1)
+            {
                 Global.subjectstreetname = "GreatLawn";
                 Global.subjectcity = "Irvine";
                 Global.subjectzipcode = "92620";
@@ -54,7 +61,43 @@ namespace Selenium3
                 Global.lc3city = "Irvine";
                 Global.lc3zipcode = "92620";
                 Global.lc3state = "California";
+            }
+            else if (city == City.Irvine2)
+            {
+                Global.subjectstreetname = "Rose Arch";
+                Global.subjectcity = "Irvine";
+                Global.subjectzipcode = "92620";
+                Global.subjectstate = "California";
 
+                Global.sc1street = "100 Rush Lily";
+                Global.sc1city = "Irvine";
+                Global.sc1zipcode = "92620";
+                Global.sc1state = "California";
+
+                Global.sc2street = "255 Rinaldi";
+                Global.sc2city = "Irvine";
+                Global.sc2zipcode = "92620";
+                Global.sc2state = "California";
+
+                Global.sc3street = "100 Townsend";
+                Global.sc3city = "Irvine";
+                Global.sc3zipcode = "92620";
+                Global.sc3state = "California";
+
+                Global.lc1street = "211 Tulip";
+                Global.lc1city = "Irvine";
+                Global.lc1zipcode = "92620";
+                Global.lc1state = "California";
+
+                Global.lc2street = "100 Scented Violet";
+                Global.lc2city = "Irvine";
+                Global.lc2zipcode = "92620";
+                Global.lc2state = "California";
+
+                Global.lc3street = "255 Encore";
+                Global.lc3city = "Irvine";
+                Global.lc3zipcode = "92620";
+                Global.lc3state = "California";
             }
             else if (city == City.IrvineGCFail)
             {
@@ -203,11 +246,7 @@ namespace Selenium3
                 Global.lc3city = "NAPLES";
                 Global.lc3zipcode = "34109";
                 Global.lc3state = "Florida";
-
             }
-
         }
-
     }
-
 }

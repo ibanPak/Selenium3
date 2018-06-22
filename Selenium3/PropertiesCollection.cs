@@ -125,7 +125,9 @@ namespace Selenium3
 
     enum City
     {
-        Irvine,
+        Essex,
+        Irvine1,
+        Irvine2,
         IrvineGCFail,
         Melvindale,
         ModestoGCFail,

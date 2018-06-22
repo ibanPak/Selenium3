@@ -26,12 +26,12 @@ namespace Selenium3
             // Global.subjectstreetnumber = "10001";
 
             // Logins
-            string reoportalusername = "Yeshh1";
-            string reoportalpassword = "Yeshh1";
-            string agentportalusername = "QATest23@usres.com";
-            string agentportalpassword = "blue123";
-            string providersourceid = "250418";
-            string clientid = "7225";
+            string reoportalusername = Global.uatreoportalusername;
+            string reoportalpassword = Global.uatreoportalpassword;
+            string agentportalusername = Global.uatagentportalusername;
+            string agentportalpassword = Global.uatagentportalpassword;
+            string providersourceid = Global.uatagentsourceid;
+            string clientid = Global.uatreoclientid;
 
             /*                                                  */
             /*              Make changes to above               */
@@ -42,7 +42,7 @@ namespace Selenium3
             Portal_REO.AddAgent(driver, Global.PropertyID, providersourceid);
             Portal_REO.PreMarket(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.REO);
-            Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
+            Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
             Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask(driver);
             Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_REOTasks.TaxResearchTask(driver);
@@ -155,7 +155,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -197,7 +197,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
@@ -431,7 +431,7 @@ namespace Selenium3
             /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
             Logout.Portal(driver, Portals.ValPortal);
             Login.Vendor(driver, environment, vendorportalusername, vendorportalpassword);

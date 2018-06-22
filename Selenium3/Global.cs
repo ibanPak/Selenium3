@@ -67,11 +67,29 @@ namespace Selenium3
         public static string qavendorsourceid = ConfigurationManager.AppSettings.Get("QAVendorSourceId");
 
         // UAT Credentials
+        public static string uatreoportalusername = ConfigurationManager.AppSettings.Get("UATREOPortalUsername");
+        public static string uatreoportalpassword = ConfigurationManager.AppSettings.Get("UATREOPortalpassword");
+        public static string uatreoclientid = ConfigurationManager.AppSettings.Get("UATREOClientId");
         public static string uatvalportalusername = ConfigurationManager.AppSettings.Get("UATValPortalUsername");
         public static string uatvalportalpassword = ConfigurationManager.AppSettings.Get("UATValPortalPassword");
         public static string uatagentportalusername = ConfigurationManager.AppSettings.Get("UATAgentPortalUsername");
         public static string uatagentportalpassword = ConfigurationManager.AppSettings.Get("UATAgentPortalPassword");
         public static string uatagentsourceid = ConfigurationManager.AppSettings.Get("UATAgentSourceId");
+
+        // STG Credentials
+        public static string stgreoportalusername = ConfigurationManager.AppSettings.Get("STGREOPortalUsername");
+        public static string stgreoportalpassword = ConfigurationManager.AppSettings.Get("STGREOPortalpassword");
+        public static string stgreoclientid = ConfigurationManager.AppSettings.Get("STGREOClientId");
+        public static string stgvalportalusername = ConfigurationManager.AppSettings.Get("STGValPortalUsername");
+        public static string stgvalportalpassword = ConfigurationManager.AppSettings.Get("STGValPortalPassword");
+        public static string stgagentportalusername = ConfigurationManager.AppSettings.Get("STGAgentPortalUsername");
+        public static string stgagentportalpassword = ConfigurationManager.AppSettings.Get("STGAgentPortalPassword");
+        public static string stgagentsourceid = ConfigurationManager.AppSettings.Get("STGAgentSourceId");
+        public static string stgvendorportalusername = ConfigurationManager.AppSettings.Get("STGVendorPortalUsername");
+        public static string stgvendorportalpassword = ConfigurationManager.AppSettings.Get("STGVendorPortalPassword");
+        public static string stgvendorsourceid = ConfigurationManager.AppSettings.Get("STGVendorSourceId");
+        public static string stgshortsaleportalusername = ConfigurationManager.AppSettings.Get("STGShortSaleUsername");
+        public static string stgshortsaleportalpassword = ConfigurationManager.AppSettings.Get("STGShortSalePassword");
 
         // Test Address
         public static string subjectstreetnumber;
