@@ -91,6 +91,21 @@ namespace Selenium3
         public static string stgshortsaleportalusername = ConfigurationManager.AppSettings.Get("STGShortSaleUsername");
         public static string stgshortsaleportalpassword = ConfigurationManager.AppSettings.Get("STGShortSalePassword");
 
+        // PROD Credentials
+        public static string prodreoportalusername = ConfigurationManager.AppSettings.Get("PRODREOPortalUsername");
+        public static string prodreoportalpassword = ConfigurationManager.AppSettings.Get("PRODREOPortalpassword");
+        public static string prodreoclientid = ConfigurationManager.AppSettings.Get("PRODREOClientId");
+        public static string prodvalportalusername = ConfigurationManager.AppSettings.Get("PRODValPortalUsername");
+        public static string prodvalportalpassword = ConfigurationManager.AppSettings.Get("PRODValPortalPassword");
+        public static string prodagentportalusername = ConfigurationManager.AppSettings.Get("PRODAgentPortalUsername");
+        public static string prodagentportalpassword = ConfigurationManager.AppSettings.Get("PRODAgentPortalPassword");
+        public static string prodagentsourceid = ConfigurationManager.AppSettings.Get("PRODAgentSourceId");
+        public static string prodvendorportalusername = ConfigurationManager.AppSettings.Get("PRODVendorPortalUsername");
+        public static string prodvendorportalpassword = ConfigurationManager.AppSettings.Get("PRODVendorPortalPassword");
+        public static string prodvendorsourceid = ConfigurationManager.AppSettings.Get("PRODVendorSourceId");
+        public static string prodshortsaleportalusername = ConfigurationManager.AppSettings.Get("PRODShortSaleUsername");
+        public static string prodshortsaleportalpassword = ConfigurationManager.AppSettings.Get("PRODShortSalePassword");
+
         // Test Address
         public static string subjectstreetnumber;
         public static string subjectstreetname;
