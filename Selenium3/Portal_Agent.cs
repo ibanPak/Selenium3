@@ -40,12 +40,15 @@ namespace Selenium3
                     IsAppointmentPresent = true;
                     break;
                 }
-                catch (Exception) { }
-                if (tries == 10)
+                catch (Exception)
                 {
+                    if (tries == 10)
+                    {
+                        Global.ConsoleOutAlert("Apoinment Not found & and MAX tries reached: " + tries);
+                        break; // handle error and break/return
+                    }
                     Global.ConsoleOutAlert("Appointment Not Found");
-                    break; // handle error and break/return
-                }
+                }                
                 SeleniumWindowMethods.Sleep(25);
                 SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);
@@ -90,12 +93,15 @@ namespace Selenium3
                     IsOrderPresent = true;
                     break;
                 }
-                catch (Exception) { }
-                if (tries == 15)
+                catch (Exception)
                 {
+                    if (tries == 10)
+                    {
+                        Global.ConsoleOutAlert("BPO Not found & and MAX tries reached: " + tries);
+                        break; // handle error and break/return
+                    }
                     Global.ConsoleOutAlert("BPO not found");
-                    break; // handle error and break/return
-                }
+                }                
                 SeleniumWindowMethods.Sleep(25);
                 SeleniumSetMethods.Click(driver, ElementType.LinkText, "Tasks");
                 SeleniumWindowMethods.Sleep(5);

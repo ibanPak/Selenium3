@@ -135,7 +135,7 @@ namespace Selenium3
         public static void DisplayTextContent(Driver driver, ElementType elementtype, string element, string text)
         {
 
-            Global.Display = SeleniumGetMethods.GetTextContent(Driver.driver1, elementtype, element);
+            Global.Display = SeleniumGetMethods.GetTextContent(driver, elementtype, element);
             if (Global.Display.Trim().Length >= 1)
             {
                 Global.ConsoleOutTab(text + ": " + Global.Display);
@@ -150,7 +150,7 @@ namespace Selenium3
         public static void DisplayTextValue(Driver driver, ElementType elementtype, string element, string text)
         {
 
-            Global.Display = SeleniumGetMethods.GetTextValue(Driver.driver1, elementtype, element);
+            Global.Display = SeleniumGetMethods.GetTextValue(driver, elementtype, element);
             if (Global.Display.Trim().Length >= 1)
             {
                 Global.ConsoleOutTab(text + ": " + Global.Display);
@@ -182,7 +182,7 @@ namespace Selenium3
 
         public static void VerifyTextContent(Driver driver, ElementType elementtype, string element, string text)
         {
-            Global.Display = SeleniumGetMethods.GetTextContent(Driver.driver1, elementtype, element);
+            Global.Display = SeleniumGetMethods.GetTextContent(driver, elementtype, element);
             if (Global.Display == text)
             {
                 Global.ConsoleOutTab(text + " Matched: " + Global.Display);
@@ -196,7 +196,7 @@ namespace Selenium3
 
         public static void VerifyTextValue(Driver driver, ElementType elementtype, string element, string text)
         {
-            Global.Display = SeleniumGetMethods.GetTextValue(Driver.driver1, elementtype, element);
+            Global.Display = SeleniumGetMethods.GetTextValue(driver, elementtype, element);
             if (Global.Display == text)
             {
                 Global.ConsoleOutTab(text + " Matched: " + Global.Display);

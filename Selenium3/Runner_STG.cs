@@ -290,8 +290,8 @@ namespace Selenium3
         {
             // FMB BPO Org1
             ENV environment = ENV.STG;
-            Global.OrderID = "0";
-            Global.StreetAddress = "0";
+            Global.OrderID = "86056";
+            Global.StreetAddress = "701 N Main street";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
             // Global.subjectstreetnumber = "10001";
@@ -309,12 +309,12 @@ namespace Selenium3
             string producttype = "BPO";
             string productdetails = "Exterior";
 
-            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
-            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
-            Logout.Portal(driver, Portals.ValPortal);
+            //Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            //Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
+            //Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            Portal_Agent.AcceptScheduleAppointment(driver);
+            //Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
             Form_FMBBPO.CompletBPO(driver);
             Form_FMBBPO.Attachments(driver, environment);

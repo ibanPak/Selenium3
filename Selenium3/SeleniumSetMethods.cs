@@ -586,6 +586,21 @@ namespace Selenium3
 
         }
 
+        public static void FileUpload(Driver driver, ElementType elementtype, string element, string filename)
+        {
+            try
+            {
+                SeleniumSetMethods.Clear(driver, elementtype, element);
+                SeleniumWindowMethods.Sleep(1);
+                SeleniumSetMethods.EnterText(driver, elementtype, element, Global.folderpath + filename);
+                SeleniumWindowMethods.Sleep(1);
+                Global.
+                    ConsoleOutTab(filename + " was successfully added to: " + element);
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("File Upload Section not found: " + element);
+            }
+        }
     }
-
 }

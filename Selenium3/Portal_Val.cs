@@ -42,12 +42,12 @@ namespace Selenium3
                 {
                     tries = tries + 1;
                     GotoOrder(driver, orderid);
-                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumWindowMethods.Sleep(5);
                     SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "img.lookupPopupIcon");
                     SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img.lookupPopupIcon");
-                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumWindowMethods.Sleep(5);
                     SeleniumSetMethods.Wait(driver, ElementType.Id, "Filters_SourceId");
-                    SeleniumWindowMethods.Sleep(2);
+                    SeleniumWindowMethods.Sleep(3);
                     SeleniumSetMethods.EnterText(driver, ElementType.Id, "Filters_SourceId", sourceid);  // Assign your provider
                     SeleniumSetMethods.Click(driver, ElementType.Id, "Filters_ProviderHasLocationZip");
                     SeleniumSetMethods.SelectDropDown(driver, ElementType.Id, "Filters_PayableStatus", "All");

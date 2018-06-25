@@ -202,9 +202,6 @@ namespace Selenium3
             {
                 Global.ConsoleOutAlert("Element Not Present");
             }
-        
         }
-
     }
-
 }
