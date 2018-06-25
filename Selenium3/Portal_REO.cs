@@ -126,7 +126,7 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
             Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
-            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'Just']");
+            SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/form/table/tbody/tr[4]/td[3]/a[1]/img]");
             // Switch back to main window 
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);

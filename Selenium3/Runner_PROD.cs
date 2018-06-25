@@ -91,5 +91,40 @@ namespace Selenium3
             Portal_Val.GotoOrder(driver, Global.OrderID);
 
         }
+
+        public static void ShortSale(Driver driver, City city)
+        {
+            // FMB BPO Org1
+            ENV environment = ENV.PROD;
+            Global.OrderID = "0";
+            Global.StreetAddress = "";
+            Global.ThrottleSleep = 3 * (1000);
+            TestAddress.Address(city);
+
+            // Logins
+            string shortsaleportalusername = Global.prodshortsaleportalusername;
+            string shortsaleportalpassword = Global.prodshortsaleportalpassword;
+            string agentportalusername = Global.prodagentportalusername;
+            string agentportalpassword = Global.prodagentportalpassword;
+            string providersourceid = Global.prodagentsourceid;
+            string clientid = Global.prodreoclientid;
+
+            Login.LossMit(driver, environment, shortsaleportalusername, shortsaleportalpassword);
+            Portal_LossMit.AddNewPropety(driver);
+            //Portal_LossMit.GotoProperty(driver, "SS56108");
+            SeleniumWindowMethods.Sleep(3);
+            Global.PropertyID = SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, ".contents > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)").TrimStart();
+            Global.ConsoleOutTab("Property ID: " + Global.PropertyID);
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)", "Loan #");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)", "Borrower");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#spClientName", "Client");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.Id, "spClientId", "Client ID");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(2)", "Property Type");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "a.pointer:nth-child(1)", "Current Status");
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#roleManager > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)", "Coordinator");
+
+
+
+        }
     }
 }

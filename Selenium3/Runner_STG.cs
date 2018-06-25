@@ -145,10 +145,6 @@ namespace Selenium3
             string producttype = "Rental Analysis";
             string productdetails = "Rental Analysis Exterior";
 
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
-
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
             Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
@@ -294,8 +290,8 @@ namespace Selenium3
         {
             // FMB BPO Org1
             ENV environment = ENV.STG;
-            Global.OrderID = "86047";
-            Global.StreetAddress = "501 Rose Arch";
+            Global.OrderID = "0";
+            Global.StreetAddress = "0";
             Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
             // Global.subjectstreetnumber = "10001";
@@ -586,9 +582,7 @@ namespace Selenium3
             SeleniumGetMethods.DisplayTextContent(driver, ElementType.Id, "spClientId", "Client ID");
             SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "div.contents:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(2)", "Property Type");
             SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "a.pointer:nth-child(1)", "Current Status");
-             SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#roleManager > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)", "Coordinator");
-
-            
+            SeleniumGetMethods.DisplayTextContent(driver, ElementType.CssSelector, "#roleManager > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > span:nth-child(1)", "Coordinator");
 
         }
 

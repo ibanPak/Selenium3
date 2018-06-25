@@ -922,24 +922,6 @@ namespace Selenium3
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "75_1_fileupload", Global.folderpath + "C9.jpg");
                 SeleniumWindowMethods.ThrottlingSleep();
-                if (Global.subjectstate == "California")
-                {
-                    SeleniumSetMethods.Clear(driver, ElementType.Id, "16_fileupload");
-                    SeleniumWindowMethods.ThrottlingSleep();
-                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "16_fileupload", Global.folderpath + "AUpload.pdf");
-                    SeleniumWindowMethods.ThrottlingSleep();
-                    SeleniumSetMethods.Clear(driver, ElementType.Id, "27_fileupload");
-                    SeleniumWindowMethods.ThrottlingSleep();
-                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "27_fileupload", Global.folderpath + "AUpload.pdf");
-                    SeleniumWindowMethods.ThrottlingSleep();
-                }
-                else if (Global.subjectstate == "Florida")
-                {
-                    SeleniumSetMethods.Clear(driver, ElementType.Id, "244_fileupload");
-                    SeleniumWindowMethods.ThrottlingSleep();
-                    SeleniumSetMethods.EnterText(driver, ElementType.Id, "244_fileupload", Global.folderpath + "AUpload.pdf");
-                    SeleniumWindowMethods.ThrottlingSleep();
-                }       
             }
             else if (environment == ENV.UAT)
             {
@@ -982,12 +964,6 @@ namespace Selenium3
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "28_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "28_fileupload", Global.folderpath + "AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_1554_fileupload");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_1554_fileupload", Global.folderpath + "AUpload.pdf");
-                SeleniumWindowMethods.ThrottlingSleep();
-                SeleniumSetMethods.WaitMinutes(driver, ElementType.CssSelector, ".r-footer > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)", 5);
                 SeleniumWindowMethods.ThrottlingSleep();
             }
             else if (environment == ENV.STG)
@@ -1092,12 +1068,34 @@ namespace Selenium3
             catch (NoSuchElementException)
             {
                 Global.ConsoleOutAlert("Additional Upload Section not found");
-            }
+            }            
             try
             {
                 SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_230_fileupload");
                 SeleniumWindowMethods.ThrottlingSleep();
                 SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_230_fileupload", Global.folderpath + "AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("Additional Upload Section not found");
+            }
+            try
+            {
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "244_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "244_fileupload", Global.folderpath + "AUpload.pdf");
+                SeleniumWindowMethods.ThrottlingSleep();
+            }
+            catch (NoSuchElementException)
+            {
+                Global.ConsoleOutAlert("Additional Upload Section not found");
+            }
+            try
+            {
+                SeleniumSetMethods.Clear(driver, ElementType.Id, "productUpload_1554_fileupload");
+                SeleniumWindowMethods.ThrottlingSleep();
+                SeleniumSetMethods.EnterText(driver, ElementType.Id, "productUpload_1554_fileupload", Global.folderpath + "AUpload.pdf");
                 SeleniumWindowMethods.ThrottlingSleep();
             }
             catch (NoSuchElementException)
