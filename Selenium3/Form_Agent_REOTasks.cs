@@ -12,7 +12,7 @@ using OpenQA.Selenium;
 
 namespace Selenium3
 {
-    class Form_REOTasks
+    class Form_Agent_REOTasks
     {
         public static void Winterization(Driver driver, string AgentName)
         {

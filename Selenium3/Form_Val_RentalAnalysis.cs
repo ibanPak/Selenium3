@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Selenium3
 {
-    class Form_RentalAnalysis
+    class Form_Val_RentalAnalysis
     {
         public static void ClearRA(Driver driver)
         {

@@ -1,5 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Firefox;
 using System;
@@ -9,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium;
 
 namespace Selenium3
 {
-    class Form_REOBPO
+    class Form_Agent_BPOTasks
     {
-        public static void BPOtask(Driver driver)
+        public static void AgentBPOTask(Driver driver)
         {
             SeleniumSetMethods.Wait(driver, ElementType.Name, "abNdList");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "abNdList", "3");
@@ -190,7 +190,6 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSaveWorkPg2");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "btnSaveSubmit");
             SeleniumSetMethods.Click(driver, ElementType.Id, "btnSaveSubmit");
-
         }
 
         public static void BPOPictures(Driver driver, int numberphoto)
@@ -216,7 +215,5 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return");
 
         }
-
     }
-
 }

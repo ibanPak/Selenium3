@@ -44,8 +44,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
-            Form_FMBBPO.CompletBPO(driver);
-            Form_FMBBPO.Attachments(driver, environment);
+            Form_Val_FMBPO.CompletBPO(driver);
+            Form_Val_FMBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.GotoOrder(driver, Global.OrderID);
@@ -84,8 +84,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
-            Form_Unified53BPO.CompleteBPO(driver);
-            Form_Unified53BPO.Attachments(driver, environment);
+            Form_Val_Unified53BPO.CompleteBPO(driver);
+            Form_Val_Unified53BPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.GotoOrder(driver, Global.OrderID);

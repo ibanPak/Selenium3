@@ -38,19 +38,19 @@ namespace Selenium3
             Portal_REO.PreMarket(driver, Global.PropertyID);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, "QATest23@usres.com", "blue123");
-            Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_REOTasks.Winterization(driver, "iben");
-            Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_REOTasks.OccupancyStatusTask(driver);
-            Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_REOTasks.TaxResearchTask(driver);
-            Portal_Agent.OpenREOTasks(driver, "Referral Agreement"); Form_REOTasks.ReferralFeeAgreement(driver, "iben");
-            Portal_Agent.OpenREOTasks(driver, "HOA information task"); Form_REOTasks.HOAInformation(driver);
-            Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_REOTasks.ListingAddendum(driver, "iben");
+            Portal_Agent.OpenREOTasks(driver, "Winterization"); Form_Agent_REOTasks.Winterization(driver, "iben");
+            Portal_Agent.OpenREOTasks(driver, "Occupancy Status Task"); Form_Agent_REOTasks.OccupancyStatusTask(driver);
+            Portal_Agent.OpenREOTasks(driver, "Tax Research Task"); Form_Agent_REOTasks.TaxResearchTask(driver);
+            Portal_Agent.OpenREOTasks(driver, "Referral Agreement"); Form_Agent_REOTasks.ReferralFeeAgreement(driver, "iben");
+            Portal_Agent.OpenREOTasks(driver, "HOA information task"); Form_Agent_REOTasks.HOAInformation(driver);
+            Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_Agent_REOTasks.ListingAddendum(driver, "iben");
             Logout.Portal(driver, Portals.Agent);
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            Form_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)");
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)");
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REOBPO.BPOtask(driver);
-            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REOBPO.BPOPictures(driver, 36);
+            Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REO_BPO.AgentBPOTask(driver);
+            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REO_BPO.BPOPictures(driver, 36);
             Logout.Portal(driver, Portals.Agent);
 
         }
@@ -118,7 +118,7 @@ namespace Selenium3
 
             // Adding REO BPO Pictures
             Login.REO(driver, ENV.STG, "sdqaam15", "P@ssw0rd2");   // QA login
-            Portal_REO.OpenTaskReo(Driver.driver1, Global.PropertyID, "BPO Pictures"); Form_REOBPO.BPOPictures(Driver.driver1, 24);
+            Portal_REO.OpenTaskReo(Driver.driver1, Global.PropertyID, "BPO Pictures"); Form_REO_BPO.BPOPictures(Driver.driver1, 24);
             Logout.Portal(driver, Portals.REO);
 
         }
@@ -152,8 +152,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
-            Form_RentalAnalysis.CompleteRA(driver);
-            Form_RentalAnalysis.Attachments(driver, ENV.STG);
+            Form_Val_RentalAnalysis.CompleteRA(driver);
+            Form_Val_RentalAnalysis.Attachments(driver, ENV.STG);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
@@ -194,8 +194,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenRentalAnalysis(driver);
-            Form_RentalAnalysis.CompleteRA(driver);
-            Form_RentalAnalysis.Attachments(driver, ENV.STG);
+            Form_Val_RentalAnalysis.CompleteRA(driver);
+            Form_Val_RentalAnalysis.Attachments(driver, ENV.STG);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteRAOrder(driver, Global.OrderID);
@@ -235,8 +235,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
-            Form_Unified53BPO.CompleteBPO(driver);
-            Form_Unified53BPO.Attachments(driver, environment);
+            Form_Val_Unified53BPO.CompleteBPO(driver);
+            Form_Val_Unified53BPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
@@ -277,8 +277,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
-            Form_PNMACBPO.CompleteBPO(driver);
-            Form_PNMACBPO.Attachments(driver, environment);
+            Form_Val_PNMACBPO.CompleteBPO(driver);
+            Form_Val_PNMACBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
@@ -309,15 +309,15 @@ namespace Selenium3
             string producttype = "BPO";
             string productdetails = "Exterior";
 
-            //Login.ValPortal(driver, environment, valportalusername, valportalpassword);
-            //Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
-            //Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
-            //Logout.Portal(driver, Portals.ValPortal);
+            Login.ValPortal(driver, environment, valportalusername, valportalpassword);
+            Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
+            Portal_Val.ManualProviderAssign(driver, Global.OrderID, providersourceid);
+            Logout.Portal(driver, Portals.ValPortal);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            //Portal_Agent.AcceptScheduleAppointment(driver);
+            Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
-            Form_FMBBPO.CompletBPO(driver);
-            Form_FMBBPO.Attachments(driver, environment);
+            Form_Val_FMBPO.CompletBPO(driver);
+            Form_Val_FMBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);
@@ -372,8 +372,8 @@ namespace Selenium3
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
             Portal_Agent.AcceptScheduleAppointment(driver);
             Portal_Agent.OpenBPO(driver);
-            Form_FMBBPO.CompletBPO(driver);
-            Form_FMBBPO.Attachments(driver, environment);
+            Form_Val_FMBPO.CompletBPO(driver);
+            Form_Val_FMBPO.Attachments(driver, environment);
             Logout.Portal(driver, Portals.Agent);
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CompleteBPOOrder(driver, Global.OrderID);

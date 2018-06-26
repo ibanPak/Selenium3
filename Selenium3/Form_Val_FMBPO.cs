@@ -12,7 +12,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium3
 {
-    class Form_FMBBPO
+    class Form_Val_FMBPO
     {
         public static void ClearBPO(Driver driver)
         {
