@@ -12,7 +12,7 @@ using OpenQA.Selenium;
 
 namespace Selenium3
 {
-    class FormREOAssetMgrTasks
+    class Form_REO_AssetMgrTasks
     {
         public static void CustomTask(Driver driver)
         {
@@ -46,6 +46,28 @@ namespace Selenium3
 
         }
 
-    }
+        public static void BPOPictures(Driver driver, int numberphoto)
+        {
+            // Loop through attachments
+            SeleniumWindowMethods.Sleep(3);
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
+            int SleepTime = 2;
+            int i = 1;
+            while (i <= numberphoto)
+            {
+                SeleniumSetMethods.EnterText(driver, ElementType.CssSelector, "input.dz-hidden-input:nth-of-type(1)"
+                    , Global.folderpath + "Numbers\\" + i + ".jpg");
+                SeleniumWindowMethods.Sleep(SleepTime);
+                i = i + 1;
+            }
+            // Complete BPO Pictures Section
+            SeleniumSetMethods.Click(driver, ElementType.Name, "upDoneDate");
+            SeleniumSetMethods.Wait(driver, ElementType.Name, "btnUploadPics");
+            SeleniumSetMethods.Click(driver, ElementType.Name, "btnUploadPics");
+            SeleniumWindowMethods.Sleep(5);
+            SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Return");
+            SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Return");
 
+        }
+    }
 }

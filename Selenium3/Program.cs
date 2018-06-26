@@ -31,7 +31,7 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_STG.FMBFlow1Org1(driver, City.Irvine2);
+            Runner_QA.FMBFlow1Org1(driver, City.Irvine2);
 
             // Cool Down
             Global.Cooldown();

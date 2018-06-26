@@ -57,7 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_Agent_BPOTasks.cs" />
+    <Compile Include="Form_Agent_REO.cs" />
     <Compile Include="Form_REOAssetMgrTasks.cs" />
     <Compile Include="Form_REO_FM.cs" />
     <Compile Include="Form_REO_PNMAC.cs" />

@@ -12,7 +12,7 @@ using OpenQA.Selenium;
 
 namespace Selenium3
 {
-    class Form_Agent_BPOTasks
+    class Form_Agent_REO
     {
         public static void AgentBPOTask(Driver driver)
         {

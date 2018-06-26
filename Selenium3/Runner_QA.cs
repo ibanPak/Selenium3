@@ -46,16 +46,16 @@ namespace Selenium3
             Portal_Agent.OpenREOTasks(driver, "Listing Addendum"); Form_Agent_REOTasks.ListingAddendum(driver, "iben");
             Logout.Portal(driver, Portals.Agent);
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
-            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)"); FormREOAssetMgrTasks.CustomTask(driver);
-            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Sivad Custom task (Custom)"); FormREOAssetMgrTasks.CustomTask2(driver);
-            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Home Owners Assoc Information Request"); FormREOAssetMgrTasks.UpdateAsDone(driver);
-            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Tax Research Request"); FormREOAssetMgrTasks.UpdateAsDone(driver);
-            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Listing Acknowledgemen"); FormREOAssetMgrTasks.UpdateAsDone(driver);
-            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Referral Agreement"); FormREOAssetMgrTasks.UpdateAsDone(driver);
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "SCRA Referral (Custom)"); Form_REO_AssetMgrTasks.CustomTask(driver);
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Sivad Custom task (Custom)"); Form_REO_AssetMgrTasks.CustomTask2(driver);
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Home Owners Assoc Information Request"); Form_REO_AssetMgrTasks.UpdateAsDone(driver);
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Tax Research Request"); Form_REO_AssetMgrTasks.UpdateAsDone(driver);
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Listing Acknowledgemen"); Form_REO_AssetMgrTasks.UpdateAsDone(driver);
+            Form_Agent_REOTasks.AssetMGRTasks(driver, Global.PropertyID, "Referral Agreement"); Form_REO_AssetMgrTasks.UpdateAsDone(driver);
             Logout.Portal(driver, Portals.REO);
             Login.Agent(driver, environment, agentportalusername, agentportalpassword);
-            Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_REO_BPO.AgentBPOTask(driver);
-            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_REO_BPO.BPOPictures(driver, 36);
+            Portal_Agent.OpenREOTasks(driver, "BPO task"); Form_Agent_REO.AgentBPOTask(driver);
+            Portal_Agent.OpenREOTasks(driver, "BPO Pictures"); Form_Agent_REO.BPOPictures(driver, 36);
             Logout.Portal(driver, Portals.Agent);
         }
 
@@ -126,7 +126,7 @@ namespace Selenium3
 
             // Adding REO BPO Pictures
             Login.REO(driver, ENV.QA, "sdqaam15", "P@ssw0rd2");   // QA login
-            Portal_REO.OpenTaskReo(Driver.driver1, Global.PropertyID, "BPO Pictures"); Form_REO_BPO.BPOPictures(Driver.driver1, 24);
+            Portal_REO.OpenTaskReo(Driver.driver1, Global.PropertyID, "BPO Pictures"); Form_Agent_REO.BPOPictures(Driver.driver1, 24);
             Logout.Portal(driver, Portals.REO);
 
         }
