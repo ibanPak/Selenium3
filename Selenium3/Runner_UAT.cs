@@ -21,9 +21,7 @@ namespace Selenium3
             ENV environment = ENV.UAT;
             Global.PropertyID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string reoportalusername = Global.uatreoportalusername;
@@ -32,10 +30,6 @@ namespace Selenium3
             string agentportalpassword = Global.uatagentportalpassword;
             string providersourceid = Global.uatagentsourceid;
             string clientid = Global.uatreoclientid;
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.REO(driver, environment, reoportalusername, reoportalpassword);
             Portal_REO.AddNewProperty(driver, clientid, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -65,17 +59,12 @@ namespace Selenium3
             // REO Flow Org1
             Global.PropertyID = "858340";
             Global.StreetAddress = "500 Townsend";
-            Global.ThrottleSleep = 3 * (100);
-
+            
             string clientid = "7225";
             string subjectstreetname = "Townsend";
             string subjectcity = "Irvine";
             string subjectstate = "California";
             string subjectzip = "92620";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             // Log into the REO portal, add property and assign agent.
             Login.REO(driver, ENV.UAT, "sdqaam15", "P@ssw0rd2");
@@ -133,10 +122,8 @@ namespace Selenium3
             // Rental Analysis Org1
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
-            Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (100);
+            Global.StreetAddress = "0";           
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "bryan";
@@ -149,10 +136,6 @@ namespace Selenium3
             string client = "Beatrice Rental Survey Co";
             string producttype = "Rental Analysis";
             string productdetails = "Rental Analysis Exterior";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -176,9 +159,7 @@ namespace Selenium3
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test3";
@@ -191,10 +172,6 @@ namespace Selenium3
             string client = "Bonnie Org 3";
             string producttype = "Rental Analysis";
             string productdetails = "Rental Analysis Exterior";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewRentalAnalysis(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -217,10 +194,8 @@ namespace Selenium3
             // QA Org 1 Unified53Org1
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
-            Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (100);
+            Global.StreetAddress = "0";      
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = Global.uatvalportalusername;
@@ -233,10 +208,6 @@ namespace Selenium3
             string client = "Unified 53";
             string producttype = "BPO";
             string productdetails = "Broker Price Opinion Exterior Inspection";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewUnified53(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -260,7 +231,7 @@ namespace Selenium3
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
+            
             TestAddress.Address(city);
 
             // Logins
@@ -274,10 +245,6 @@ namespace Selenium3
             string client = "PNMAC";
             string producttype = "BPO";
             string productdetails = "Exterior";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNEWPNMAC(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -301,7 +268,6 @@ namespace Selenium3
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
 
             // Logins
@@ -315,10 +281,6 @@ namespace Selenium3
             string client = "ACME Inc";
             string producttype = "BPO";
             string productdetails = "Exterior";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -355,9 +317,7 @@ namespace Selenium3
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
-            // Global.subjectstreetnumber = "10001";
 
             // Logins
             string valportalusername = "test3";
@@ -370,10 +330,6 @@ namespace Selenium3
             string client = "ACME Inc";
             string producttype = "BPO";
             string productdetails = "Exterior";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewFMBBPO(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -410,7 +366,7 @@ namespace Selenium3
             ENV environment = ENV.UAT;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
+            
             TestAddress.Address(city);
             Global.subjectstreetnumber = "10055";
 
@@ -425,10 +381,6 @@ namespace Selenium3
             string client = "ACME Inc";
             string producttype = "Appraisal";
             string productdetails = "1004 Interior Residential";
-
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
 
             Login.ValPortal(driver, environment, valportalusername, valportalpassword);
             Portal_Val.CreateNewAppraisal(driver, client, producttype, productdetails, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode);
@@ -450,7 +402,7 @@ namespace Selenium3
             // ValClient
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
+            
             TestAddress.Address(city);
 
             // Logins
@@ -461,13 +413,8 @@ namespace Selenium3
             ProductTypes producttype = ProductTypes.Appraisal;
             string productdetails = "2055 Exterior Residential";
 
-            /*                                                  */
-            /*              Make changes to above               */
-            /*                                                  */
-
             Login.ValClient(driver, ENV.QA, valclientusername, valclientpassword);
             Portal_ValClient.CreateNewOrder(driver, producttype, productdetails, Global.subjectstreetnumber, Global.subjectstreetname, Global.subjectcity, Global.subjectstate, Global.subjectzipcode, CreditCardType.MasterCard1);
-
         }
 
         public static void PCAddDefaultUsers(Driver driver)
@@ -497,14 +444,12 @@ namespace Selenium3
             Portal_PropertyCure.AddNewNote(driver, Global.PropertyID);
             Portal_PropertyCure.FileUpload(driver, Global.PropertyID, Global.folderpath + "AUpload.pdf");
             Logout.Portal(driver, Portals.PropertyCure);
-
         }
 
         public static void ProAgentSearchAllListing(Driver driver)
         {
             Login.Agent(driver, ENV.UAT, "qa12270935@usres.com", "testing");
             Portal_Agent.ProAgent(driver);
-
         }
 
         public static void HomeownerDILFlow(Driver driver)
@@ -517,7 +462,6 @@ namespace Selenium3
             Portal_LossMit.HODILShortSalePartII(Driver.driver1);
             Login.Vendor(driver, ENV.UAT, "qatitlevendor", "P@ssw0rd1");
             Portal_Vendor.HODILVendorPartI(driver);
-
         }
 
         public static void CreditCard(Driver driver)
@@ -553,15 +497,11 @@ namespace Selenium3
             TestCreditCard.VendorProfile(driver, CreditCardType.MasterCard2);
             TestCreditCard.VendorProfile(driver, CreditCardType.Discover);
             Logout.Portal(driver, Portals.Vendor);
-
         }
 
         public static void NewUser(Driver driver)
         {
             AddNewUser.ProPlusAgent(driver, ENV.UAT, CreditCardType.MasterCard1);
-
         }
-
     }
-
 }

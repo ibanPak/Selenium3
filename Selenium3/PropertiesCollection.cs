@@ -17,7 +17,6 @@ namespace Selenium3
         //Auto-implemented properdty
         public static IWebDriver driver1 { get; set; }
         public static IWebDriver driver2 { get; set; }
-
     }
 
     // Strongly Typed Variable
@@ -30,7 +29,6 @@ namespace Selenium3
         XPath,
         CssSelector,
         Tag
-
     }
 
     // Strongly Typed Variable
@@ -38,7 +36,6 @@ namespace Selenium3
     {
         Maximize,
         Close
-
     }
 
     // Strongly Typed Variable
@@ -55,7 +52,6 @@ namespace Selenium3
         Accept,
         Dismiss,
         Wait
-
     }
 
     // Strongly Typed Variable
@@ -66,7 +62,6 @@ namespace Selenium3
         STG,
         PROD,
         BUILD
-
     }
 
     // Strongly Typed Variable
@@ -78,7 +73,6 @@ namespace Selenium3
         REO,
         PropertyCure,
         Buyer
-
     }
 
     // Strongly Typed Variable
@@ -87,14 +81,12 @@ namespace Selenium3
         Appraisal,
         BPO,
         RentalAnalysis
-
     }
 
     enum Products
     {
         Exterior,
         Interior
-
     }
 
     // Strongly Typed Variable
@@ -102,7 +94,6 @@ namespace Selenium3
     {
         driver1,
         driver2
-
     }
 
     // Strongly Typed Variable
@@ -110,7 +101,6 @@ namespace Selenium3
     {
         One,
         Two
-
     }
 
     enum CreditCardType
@@ -120,7 +110,6 @@ namespace Selenium3
         MasterCard1,
         MasterCard2,
         Visa
-
     }
 
     enum City
@@ -132,7 +121,6 @@ namespace Selenium3
         Melvindale,
         ModestoGCFail,
         Naples
-
     }
 
 }

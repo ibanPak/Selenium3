@@ -11,34 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
+using System.Collections;
 
 namespace Selenium3
 {
     class Global
-    {
-        public static string LastMonth = DateTime.Today.AddMonths(-1).ToString("MM/dd/yyyy");
-        public static string LastYear = DateTime.Today.AddYears(-1).ToString("MM/dd/yyyy");
-        public static string NextMonth = DateTime.Today.AddMonths(1).ToString("MM/dd/yyyy");
-        public static string NextYear = DateTime.Today.AddYears(1).ToString("MM/dd/yyyy");
-        public static string MMddyyDate = DateTime.Today.ToString("MM/dd/yyyy");
-        public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
-        public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
-        public static float passcount = 0;
-        public static float failcount = 0;
-        public static string OrderID = "0";
-        public static string PropertyID = "0";
-        public static string UniversalID = "0";
-        public static string Value = "0";
-        public static string StreetAddress = "0";
-        public static string Display;
-        public static bool IsPresent = false;
-        public static int ThrottleSleep = 2 * (1000);
-        public static DateTime StartDT;
-        public static DateTime EndDT;
-        public static string Username;
-        public static string Password;
-
+    {        
         // App Config
+        public static string ThrottleSleepVal = ConfigurationManager.AppSettings.Get("ThrottlingSleep");
         public static string ismultiplemonitors = ConfigurationManager.AppSettings.Get("MultipleMonitors");        
         public static string ismultiplebrowsers = ConfigurationManager.AppSettings.Get("MultipleBrowsers");        
         public static string isstreetnumbergenerated = ConfigurationManager.AppSettings.Get("IsStreetNumberGenerated");
@@ -107,6 +87,28 @@ namespace Selenium3
         public static string prodvendorsourceid = ConfigurationManager.AppSettings.Get("PRODVendorSourceId");
         public static string prodshortsaleportalusername = ConfigurationManager.AppSettings.Get("PRODShortSaleUsername");
         public static string prodshortsaleportalpassword = ConfigurationManager.AppSettings.Get("PRODShortSalePassword");
+
+        public static string LastMonth = DateTime.Today.AddMonths(-1).ToString("MM/dd/yyyy");
+        public static string LastYear = DateTime.Today.AddYears(-1).ToString("MM/dd/yyyy");
+        public static string NextMonth = DateTime.Today.AddMonths(1).ToString("MM/dd/yyyy");
+        public static string NextYear = DateTime.Today.AddYears(1).ToString("MM/dd/yyyy");
+        public static string MMddyyDate = DateTime.Today.ToString("MM/dd/yyyy");
+        public static string LoanNum = DateTime.Now.ToString("MMddHHmmss").TrimStart('0');
+        public static string UniqueNum = DateTime.Now.ToString("ddHHmmss").TrimStart('0');
+        public static float passcount = 0;
+        public static float failcount = 0;
+        public static string OrderID = "0";
+        public static string PropertyID = "0";
+        public static string UniversalID = "0";
+        public static string Value = "0";
+        public static string StreetAddress = "0";
+        public static string Display;
+        public static bool IsPresent = false;
+        public static DateTime StartDT;
+        public static DateTime EndDT;
+        public static string Username;
+        public static string Password;
+        public static int ThrottleSleep = Int32.Parse(ThrottleSleepVal);
 
         // Test Address
         public static string subjectstreetnumber;

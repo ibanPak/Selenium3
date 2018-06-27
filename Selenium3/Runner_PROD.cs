@@ -20,7 +20,6 @@ namespace Selenium3
             ENV environment = ENV.PROD;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
             // Global.subjectstreetnumber = "10001";
 
@@ -57,7 +56,6 @@ namespace Selenium3
             ENV environment = ENV.PROD;
             Global.OrderID = "0";
             Global.StreetAddress = "0";
-            Global.ThrottleSleep = 3 * (100);
             TestAddress.Address(city);
 
             // Logins
@@ -98,7 +96,6 @@ namespace Selenium3
             ENV environment = ENV.PROD;
             Global.OrderID = "0";
             Global.StreetAddress = "";
-            Global.ThrottleSleep = 3 * (1000);
             TestAddress.Address(city);
 
             // Logins

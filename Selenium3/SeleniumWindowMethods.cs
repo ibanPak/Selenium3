@@ -34,7 +34,6 @@ namespace Selenium3
             {
                 PropertiesCollection.driver2.Close();
             }
-
         }
 
         public static void WindowType(Driver driver, WinType windowsactions)
@@ -48,7 +47,6 @@ namespace Selenium3
             {
                 PropertiesCollection.driver1.SwitchTo().Window(PropertiesCollection.driver1.WindowHandles.First());
             }
-
             // Driver 2
             else if (driver == Driver.driver2 && windowsactions == WinType.Popup)
             {
@@ -58,7 +56,6 @@ namespace Selenium3
             {
                 PropertiesCollection.driver2.SwitchTo().Window(PropertiesCollection.driver2.WindowHandles.First());
             }
-
         }
 
         public static void iFrame(Driver driver, string Frame)
@@ -73,7 +70,6 @@ namespace Selenium3
             {
                 PropertiesCollection.driver2.SwitchTo().Frame(Frame);
             }
-
         }
 
         public static void ScreenShot(Driver driver, string FileName)
@@ -94,19 +90,16 @@ namespace Selenium3
                 ss.SaveAsFile(filename, ScreenshotImageFormat.Png);
                 Global.ConsoleOutTab("Screen Shoot Captured: " + filename);
             }
-
         }
 
         public static void Sleep(int sec)
         {
             System.Threading.Thread.Sleep(sec * (1000));
-
         }
 
         public static void ThrottlingSleep()
         {
             System.Threading.Thread.Sleep(Global.ThrottleSleep);
-
         }
 
         public static void Assertion(Driver driver, Alert alert)
@@ -138,9 +131,7 @@ namespace Selenium3
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
                 wait.Until(ExpectedConditions.AlertIsPresent());
-
             }
-
         }
 
         public static void Refresh(Driver driver)
