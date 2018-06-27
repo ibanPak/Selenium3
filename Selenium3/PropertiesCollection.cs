@@ -28,7 +28,8 @@ namespace Selenium3
         LinkText,
         PartialLinkText,
         XPath,
-        CssSelector
+        CssSelector,
+        Tag
 
     }
 

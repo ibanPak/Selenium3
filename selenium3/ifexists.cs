@@ -35,7 +35,7 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
-                    PropertiesCollection.driver.Navigate().Back();
+                    SeleniumWindowMethods.Back(driver);
                 }
                 if (tries == 15)
                 {
@@ -66,7 +66,7 @@ namespace Selenium3
                 {
                     Global.ConsoleOut("Element not present: " + element);
                     SeleniumWindowMethods.Sleep(1);
-                    PropertiesCollection.driver.Navigate().Refresh();
+                    SeleniumWindowMethods.Refresh(driver);
                 }
                 if (tries == 15)
                 {
@@ -99,7 +99,7 @@ namespace Selenium3
                     SeleniumWindowMethods.Sleep(1);
                     SeleniumWindowMethods.WindowActions(driver, ActType.Close);
                     SeleniumWindowMethods.Sleep(2);
-                    Global.ReadySetGo(NumBrowsers.One);                    
+                    Global.ReadySetGo();                    
                 }
                 if (tries == 15)
                 {

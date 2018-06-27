@@ -40,6 +40,7 @@ namespace Selenium3
                     case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.CssSelector(element)).SendKeys(value); break;
                     case ElementType.LinkText: PropertiesCollection.driver1.FindElement(By.LinkText(element)).SendKeys(value); break;
                     case ElementType.PartialLinkText: PropertiesCollection.driver1.FindElement(By.PartialLinkText(element)).SendKeys(value); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             else if (driver == Driver.driver2)
@@ -52,6 +53,7 @@ namespace Selenium3
                     case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.CssSelector(element)).SendKeys(value); break;
                     case ElementType.LinkText: PropertiesCollection.driver2.FindElement(By.LinkText(element)).SendKeys(value); break;
                     case ElementType.PartialLinkText: PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)).SendKeys(value); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -66,6 +68,7 @@ namespace Selenium3
                     case ElementType.Name: PropertiesCollection.driver1.FindElement(By.Name(element)).Clear(); break;
                     case ElementType.XPath: PropertiesCollection.driver1.FindElement(By.XPath(element)).Clear(); break;
                     case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.CssSelector(element)).Clear(); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             else if (driver == Driver.driver2)
@@ -76,6 +79,7 @@ namespace Selenium3
                     case ElementType.Name: PropertiesCollection.driver2.FindElement(By.Name(element)).Clear(); break;
                     case ElementType.XPath: PropertiesCollection.driver2.FindElement(By.XPath(element)).Clear(); break;
                     case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Clear(); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -92,6 +96,7 @@ namespace Selenium3
                     case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.CssSelector(element)).Click(); break;
                     case ElementType.LinkText: PropertiesCollection.driver1.FindElement(By.LinkText(element)).Click(); break;
                     case ElementType.PartialLinkText: PropertiesCollection.driver1.FindElement(By.PartialLinkText(element)).Click(); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             else if (driver == Driver.driver2)
@@ -104,6 +109,7 @@ namespace Selenium3
                     case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Click(); break;
                     case ElementType.LinkText: PropertiesCollection.driver2.FindElement(By.LinkText(element)).Click(); break;
                     case ElementType.PartialLinkText: PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)).Click(); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -118,6 +124,7 @@ namespace Selenium3
                     case ElementType.Name: new SelectElement(PropertiesCollection.driver1.FindElement(By.Name(element))).SelectByValue(value); break;
                     case ElementType.XPath: new SelectElement(PropertiesCollection.driver1.FindElement(By.XPath(element))).SelectByValue(value); break;
                     case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver1.FindElement(By.CssSelector(element))).SelectByValue(value); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             else if (driver == Driver.driver2)
@@ -128,6 +135,7 @@ namespace Selenium3
                     case ElementType.Name: new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByValue(value); break;
                     case ElementType.XPath: new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByValue(value); break;
                     case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByValue(value); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -142,6 +150,7 @@ namespace Selenium3
                     case ElementType.Name: new SelectElement(PropertiesCollection.driver1.FindElement(By.Name(element))).SelectByText(value); break;
                     case ElementType.XPath: new SelectElement(PropertiesCollection.driver1.FindElement(By.XPath(element))).SelectByText(value); break;
                     case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver1.FindElement(By.CssSelector(element))).SelectByText(value); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             else if (driver == Driver.driver2)
@@ -152,6 +161,7 @@ namespace Selenium3
                     case ElementType.Name: new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByText(value); break;
                     case ElementType.XPath: new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByText(value); break;
                     case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByText(value); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -169,6 +179,7 @@ namespace Selenium3
                     case ElementType.CssSelector: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.CssSelector(element))).Build().Perform(); break;
                     case ElementType.LinkText: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.LinkText(element))).Build().Perform(); break;
                     case ElementType.PartialLinkText: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.PartialLinkText(element))).Build().Perform(); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             else if (driver == Driver.driver2)
@@ -182,6 +193,7 @@ namespace Selenium3
                     case ElementType.CssSelector: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).Build().Perform(); break;
                     case ElementType.LinkText: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.LinkText(element))).Build().Perform(); break;
                     case ElementType.PartialLinkText: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.PartialLinkText(element))).Build().Perform(); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -199,6 +211,7 @@ namespace Selenium3
                     case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
                     case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
                     case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             if (driver == Driver.driver2)
@@ -212,6 +225,7 @@ namespace Selenium3
                     case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
                     case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
                     case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -229,6 +243,7 @@ namespace Selenium3
                     case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
                     case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
                     case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
             if (driver == Driver.driver2)
@@ -242,6 +257,7 @@ namespace Selenium3
                     case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
                     case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
                     case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                    default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                 }
             }
         }
@@ -260,6 +276,7 @@ namespace Selenium3
                         case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.Id(element)); break;
                         case ElementType.LinkText: PropertiesCollection.driver1.FindElement(By.LinkText(element)); break;
                         case ElementType.PartialLinkText: PropertiesCollection.driver1.FindElement(By.PartialLinkText(element)); break;
+                        default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                     }
                     Global.ConsoleOutTab("Element found: " + displaytext);
                 }
@@ -280,6 +297,7 @@ namespace Selenium3
                         case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.Id(element)); break;
                         case ElementType.LinkText: PropertiesCollection.driver2.FindElement(By.LinkText(element)); break;
                         case ElementType.PartialLinkText: PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)); break;
+                        default: Global.ConsoleOutAlert("No Such ElementType: " + elementtype); break;
                     }
                     Global.ConsoleOutTab("Element found: " + displaytext);
                 }
