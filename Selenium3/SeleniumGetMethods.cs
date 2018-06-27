@@ -21,19 +21,19 @@ namespace Selenium3
                 // Driver 1
                 if (driver == Driver.driver1 && elementtype == ElementType.Id)
                 {
-                    return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("value");
+                    return PropertiesCollection.driver1.FindElement(By.Id(element)).GetAttribute("value");
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.Name)
                 {
-                    return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("value");
+                    return PropertiesCollection.driver1.FindElement(By.Name(element)).GetAttribute("value");
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
                 {
-                    return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("value");
+                    return PropertiesCollection.driver1.FindElement(By.CssSelector(element)).GetAttribute("value");
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
                 {
-                    return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("value");
+                    return PropertiesCollection.driver1.FindElement(By.XPath(element)).GetAttribute("value");
                 }
                 // Driver 2
                 else if (driver == Driver.driver2 && elementtype == ElementType.Id)
@@ -68,19 +68,19 @@ namespace Selenium3
                 // Driver 1
                 if (driver == Driver.driver1 && elementtype == ElementType.Id)
                 {
-                    return PropertiesCollection.driver.FindElement(By.Id(element)).GetAttribute("textContent").TrimStart().TrimEnd();
+                    return PropertiesCollection.driver1.FindElement(By.Id(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.Name)
                 {
-                    return PropertiesCollection.driver.FindElement(By.Name(element)).GetAttribute("textContent").TrimStart().TrimEnd();
+                    return PropertiesCollection.driver1.FindElement(By.Name(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
                 {
-                    return PropertiesCollection.driver.FindElement(By.CssSelector(element)).GetAttribute("textContent").TrimStart().TrimEnd();
+                    return PropertiesCollection.driver1.FindElement(By.CssSelector(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
                 {
-                    return PropertiesCollection.driver.FindElement(By.XPath(element)).GetAttribute("textContent").TrimStart().TrimEnd();
+                    return PropertiesCollection.driver1.FindElement(By.XPath(element)).GetAttribute("textContent").TrimStart().TrimEnd();
                 }
                 // Driver 2
                 else if (driver == Driver.driver2 && elementtype == ElementType.Id)
@@ -113,11 +113,11 @@ namespace Selenium3
             // Driver 1
             if (driver == Driver.driver1 && elementtype == ElementType.Id)
             {
-                return new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
+                return new SelectElement(PropertiesCollection.driver1.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
             }
             else if (driver == Driver.driver1 && elementtype == ElementType.Name)
             {
-                return new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
+                return new SelectElement(PropertiesCollection.driver1.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
             }
             // Driver 2
             else if (driver == Driver.driver2 && elementtype == ElementType.Id)
@@ -162,21 +162,85 @@ namespace Selenium3
 
         }
 
-        public static bool IsPresent(Driver driver, ElementType elementtype, string element)
+        public static void IsPresent(Driver driver, ElementType elementtype, string element)
         {
-
-            try
+            if (driver == Driver.driver1 && elementtype == ElementType.Id)
             {
-                PropertiesCollection.driver.FindElement(By.Id(element));
-                Global.IsPresent = true;
-                return true;
+                Boolean ispresent = PropertiesCollection.driver1.FindElement(By.Id(element)).Displayed;
+                if (ispresent == true)
+                {
+                    Global.ConsoleOutTab("Element is Present: " + element);
+                }
+                else if (ispresent == false)
+                {
+                    Global.ConsoleOutAlert("Element NOT Present: " + element);
+                }
             }
-            catch (NoSuchElementException)
+            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
             {
-                Global.ConsoleOutAlert("Element not present: " + element);
-
-                return false;
+                Boolean ispresent = PropertiesCollection.driver1.FindElement(By.Name(element)).Displayed;
+                if (ispresent == true)
+                {
+                    Global.ConsoleOutTab("Element is Present: " + element);
+                }
+                else if (ispresent == false)
+                {
+                    Global.ConsoleOutAlert("Element NOT Present: " + element);
+                }
             }
+            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
+            {
+                Boolean ispresent = PropertiesCollection.driver1.FindElement(By.ClassName(element)).Displayed;
+                if (ispresent == true)
+                {
+                    Global.ConsoleOutTab("Element is Present: " + element);
+                }
+                else if (ispresent == false)
+                {
+                    Global.ConsoleOutAlert("Element NOT Present: " + element);
+                }
+            }
+            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            {
+                Boolean ispresent = PropertiesCollection.driver2.FindElement(By.Id(element)).Displayed;
+                if (ispresent == true)
+                {
+                    Global.ConsoleOutTab("Element is Present: " + element);
+                }
+                else if (ispresent == false)
+                {
+                    Global.ConsoleOutAlert("Element NOT Present: " + element);
+                }
+            }
+        }
+
+        public static void IsSelected(Driver driver, ElementType elementtype, string element)
+        {
+            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            {
+                Boolean isselected = PropertiesCollection.driver1.FindElement(By.Id(element)).Selected;
+                if (isselected == true)
+                {
+                    Global.ConsoleOutAlert("Element is Selected: " + element);
+                }
+                else if (isselected == false)
+                {
+                    Global.ConsoleOutAlert("Element not Selected: " + element);
+                }
+            }
+            else if (driver == Driver.driver2)
+                try
+                {
+                    PropertiesCollection.driver2.FindElement(By.Id(element));
+
+
+                }
+                catch (NoSuchElementException)
+                {
+                    Global.ConsoleOutAlert("Element not present: " + element);
+
+
+                }
 
         }
 
@@ -208,6 +272,22 @@ namespace Selenium3
 
         }
 
+        public static void GetWindowTitle(Driver driver)
+        {
+            // Driver 1
+            if (driver == Driver.driver1)
+            {
+                string path = PropertiesCollection.driver1.ToString();
+                int pos = path.LastIndexOf(".") + 1;
+                Global.ConsoleOutTab(path.Substring(pos, path.Length - pos).ToString() + ":-  Window Title: " + PropertiesCollection.driver1.Title);
+            }
+            // Driver 2
+            else if (driver == Driver.driver2)
+            {
+                string path = PropertiesCollection.driver2.ToString();
+                int pos = path.LastIndexOf(".") + 1;
+                Global.ConsoleOutTab(path.Substring(pos, path.Length - pos).ToString() + ":- Window Title: " + PropertiesCollection.driver2.Title);
+            }
+        }
     }
-
 }

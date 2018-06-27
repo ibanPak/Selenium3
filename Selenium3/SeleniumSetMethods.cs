@@ -19,427 +19,248 @@ namespace Selenium3
             // Driver 1
             if (driver == Driver.driver1)
             {
-                PropertiesCollection.driver.Navigate().GoToUrl(URL);
+                PropertiesCollection.driver1.Navigate().GoToUrl(URL);
             }
             // Driver 2
             else if (driver == Driver.driver2)
             {
                 PropertiesCollection.driver2.Navigate().GoToUrl(URL);
             }
-
         }
 
         public static void EnterText(Driver driver, ElementType elementtype, string element, string value)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                PropertiesCollection.driver.FindElement(By.Id(element)).SendKeys(value);
+                switch (elementtype)
+                {
+                    case ElementType.Id: PropertiesCollection.driver1.FindElement(By.Id(element)).SendKeys(value); break;
+                    case ElementType.Name: PropertiesCollection.driver1.FindElement(By.Name(element)).SendKeys(value); break;
+                    case ElementType.XPath: PropertiesCollection.driver1.FindElement(By.XPath(element)).SendKeys(value); break;
+                    case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.CssSelector(element)).SendKeys(value); break;
+                    case ElementType.LinkText: PropertiesCollection.driver1.FindElement(By.LinkText(element)).SendKeys(value); break;
+                    case ElementType.PartialLinkText: PropertiesCollection.driver1.FindElement(By.PartialLinkText(element)).SendKeys(value); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
-                PropertiesCollection.driver.FindElement(By.Name(element)).SendKeys(value);
+                switch (elementtype)
+                {
+                    case ElementType.Id: PropertiesCollection.driver2.FindElement(By.Id(element)).SendKeys(value); break;
+                    case ElementType.Name: PropertiesCollection.driver2.FindElement(By.Name(element)).SendKeys(value); break;
+                    case ElementType.XPath: PropertiesCollection.driver2.FindElement(By.XPath(element)).SendKeys(value); break;
+                    case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.CssSelector(element)).SendKeys(value); break;
+                    case ElementType.LinkText: PropertiesCollection.driver2.FindElement(By.LinkText(element)).SendKeys(value); break;
+                    case ElementType.PartialLinkText: PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)).SendKeys(value); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                PropertiesCollection.driver.FindElement(By.XPath(element)).SendKeys(value);
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                PropertiesCollection.driver.FindElement(By.CssSelector(element)).SendKeys(value);
-            }
-            // Driver2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                PropertiesCollection.driver2.FindElement(By.Id(element)).SendKeys(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                PropertiesCollection.driver2.FindElement(By.Name(element)).SendKeys(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                PropertiesCollection.driver2.FindElement(By.XPath(element)).SendKeys(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                PropertiesCollection.driver2.FindElement(By.CssSelector(element)).SendKeys(value);
-            }
-
         }
 
         public static void Clear(Driver driver, ElementType elementtype, string element)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                PropertiesCollection.driver.FindElement(By.Id(element)).Clear();
+                switch (elementtype)
+                {
+                    case ElementType.Id: PropertiesCollection.driver1.FindElement(By.Id(element)).Clear(); break;
+                    case ElementType.Name: PropertiesCollection.driver1.FindElement(By.Name(element)).Clear(); break;
+                    case ElementType.XPath: PropertiesCollection.driver1.FindElement(By.XPath(element)).Clear(); break;
+                    case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.CssSelector(element)).Clear(); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
-                PropertiesCollection.driver.FindElement(By.Name(element)).Clear();
+                switch (elementtype)
+                {
+                    case ElementType.Id: PropertiesCollection.driver2.FindElement(By.Id(element)).Clear(); break;
+                    case ElementType.Name: PropertiesCollection.driver2.FindElement(By.Name(element)).Clear(); break;
+                    case ElementType.XPath: PropertiesCollection.driver2.FindElement(By.XPath(element)).Clear(); break;
+                    case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Clear(); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                PropertiesCollection.driver.FindElement(By.CssSelector(element)).Clear();
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                PropertiesCollection.driver2.FindElement(By.Id(element)).Clear();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                PropertiesCollection.driver2.FindElement(By.Name(element)).Clear();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Clear();
-            }
-
         }
 
         public static void Click(Driver driver, ElementType elementtype, string element)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                PropertiesCollection.driver.FindElement(By.Id(element)).Click();
+                switch (elementtype)
+                {
+                    case ElementType.Id: PropertiesCollection.driver1.FindElement(By.Id(element)).Click(); break;
+                    case ElementType.Name: PropertiesCollection.driver1.FindElement(By.Name(element)).Click(); break;
+                    case ElementType.XPath: PropertiesCollection.driver1.FindElement(By.XPath(element)).Click(); break;
+                    case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.CssSelector(element)).Click(); break;
+                    case ElementType.LinkText: PropertiesCollection.driver1.FindElement(By.LinkText(element)).Click(); break;
+                    case ElementType.PartialLinkText: PropertiesCollection.driver1.FindElement(By.PartialLinkText(element)).Click(); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
-                PropertiesCollection.driver.FindElement(By.Name(element)).Click();
+                switch (elementtype)
+                {
+                    case ElementType.Id: PropertiesCollection.driver2.FindElement(By.Id(element)).Click(); break;
+                    case ElementType.Name: PropertiesCollection.driver2.FindElement(By.Name(element)).Click(); break;
+                    case ElementType.XPath: PropertiesCollection.driver2.FindElement(By.XPath(element)).Click(); break;
+                    case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Click(); break;
+                    case ElementType.LinkText: PropertiesCollection.driver2.FindElement(By.LinkText(element)).Click(); break;
+                    case ElementType.PartialLinkText: PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)).Click(); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                PropertiesCollection.driver.FindElement(By.XPath(element)).Click();
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                PropertiesCollection.driver.FindElement(By.CssSelector(element)).Click();
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.LinkText)
-            {
-                PropertiesCollection.driver.FindElement(By.LinkText(element)).Click();
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.PartialLinkText)
-            {
-                PropertiesCollection.driver.FindElement(By.PartialLinkText(element)).Click();
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                PropertiesCollection.driver2.FindElement(By.Id(element)).Click();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                PropertiesCollection.driver2.FindElement(By.Name(element)).Click();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                PropertiesCollection.driver2.FindElement(By.XPath(element)).Click();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                PropertiesCollection.driver2.FindElement(By.CssSelector(element)).Click();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.LinkText)
-            {
-                PropertiesCollection.driver2.FindElement(By.LinkText(element)).Click();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.PartialLinkText)
-            {
-                PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)).Click();
-            }
-
         }
 
         public static void MultiSelect(Driver driver, ElementType elementtype, string element, string value)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).SelectByValue(value);
+                switch (elementtype)
+                {
+                    case ElementType.Id: new SelectElement(PropertiesCollection.driver1.FindElement(By.Id(element))).SelectByValue(value); break;
+                    case ElementType.Name: new SelectElement(PropertiesCollection.driver1.FindElement(By.Name(element))).SelectByValue(value); break;
+                    case ElementType.XPath: new SelectElement(PropertiesCollection.driver1.FindElement(By.XPath(element))).SelectByValue(value); break;
+                    case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver1.FindElement(By.CssSelector(element))).SelectByValue(value); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).SelectByValue(value);
+                switch (elementtype)
+                {
+                    case ElementType.Id: new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).SelectByValue(value); break;
+                    case ElementType.Name: new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByValue(value); break;
+                    case ElementType.XPath: new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByValue(value); break;
+                    case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByValue(value); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByValue(value);
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByValue(value);
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).SelectByValue(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByValue(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByValue(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByValue(value);
-            }
-
         }
 
         public static void SelectDropDown(Driver driver, ElementType elementtype, string element, string value)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.Id(element))).SelectByText(value);
+                switch (elementtype)
+                {
+                    case ElementType.Id: new SelectElement(PropertiesCollection.driver1.FindElement(By.Id(element))).SelectByText(value); break;
+                    case ElementType.Name: new SelectElement(PropertiesCollection.driver1.FindElement(By.Name(element))).SelectByText(value); break;
+                    case ElementType.XPath: new SelectElement(PropertiesCollection.driver1.FindElement(By.XPath(element))).SelectByText(value); break;
+                    case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver1.FindElement(By.CssSelector(element))).SelectByText(value); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.Name(element))).SelectByText(value);
+                switch (elementtype)
+                {
+                    case ElementType.Id: new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).SelectByText(value); break;
+                    case ElementType.Name: new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByText(value); break;
+                    case ElementType.XPath: new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByText(value); break;
+                    case ElementType.CssSelector: new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByText(value); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).SelectByText(value);
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                new SelectElement(PropertiesCollection.driver.FindElement(By.XPath(element))).SelectByText(value);
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.Id(element))).SelectByText(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.Name(element))).SelectByText(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).SelectByText(value);
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                new SelectElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).SelectByText(value);
-            }
-
         }
 
         public static void MouseOver(Driver driver, ElementType elementtype, string element)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                Actions builder = new Actions(PropertiesCollection.driver);
-                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Id(element))).Build().Perform();
+                Actions builder = new Actions(PropertiesCollection.driver1);
+                switch (elementtype)
+                {
+                    case ElementType.Id: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.Id(element))).Build().Perform(); break;
+                    case ElementType.Name: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.Name(element))).Build().Perform(); break;
+                    case ElementType.XPath: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.XPath(element))).Build().Perform(); break;
+                    case ElementType.CssSelector: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.CssSelector(element))).Build().Perform(); break;
+                    case ElementType.LinkText: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.LinkText(element))).Build().Perform(); break;
+                    case ElementType.PartialLinkText: builder.MoveToElement(PropertiesCollection.driver1.FindElement(By.PartialLinkText(element))).Build().Perform(); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
-                Actions builder = new Actions(PropertiesCollection.driver);
-                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.Name(element))).Build().Perform();
+                Actions builder = new Actions(PropertiesCollection.driver2);
+                switch (elementtype)
+                {
+                    case ElementType.Id: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.Id(element))).Build().Perform(); break;
+                    case ElementType.Name: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.Name(element))).Build().Perform(); break;
+                    case ElementType.XPath: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).Build().Perform(); break;
+                    case ElementType.CssSelector: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).Build().Perform(); break;
+                    case ElementType.LinkText: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.LinkText(element))).Build().Perform(); break;
+                    case ElementType.PartialLinkText: builder.MoveToElement(PropertiesCollection.driver2.FindElement(By.PartialLinkText(element))).Build().Perform(); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                Actions builder = new Actions(PropertiesCollection.driver);
-                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.XPath(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                Actions builder = new Actions(PropertiesCollection.driver);
-                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.CssSelector(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.LinkText)
-            {
-                Actions builder = new Actions(PropertiesCollection.driver);
-                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.LinkText(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.PartialLinkText)
-            {
-                Actions builder = new Actions(PropertiesCollection.driver);
-                builder.MoveToElement(PropertiesCollection.driver.FindElement(By.PartialLinkText(element))).Build().Perform();
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                Actions builder2 = new Actions(PropertiesCollection.driver2);
-                builder2.MoveToElement(PropertiesCollection.driver2.FindElement(By.Id(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                Actions builder2 = new Actions(PropertiesCollection.driver2);
-                builder2.MoveToElement(PropertiesCollection.driver2.FindElement(By.Name(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                Actions builder2 = new Actions(PropertiesCollection.driver2);
-                builder2.MoveToElement(PropertiesCollection.driver2.FindElement(By.XPath(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                Actions builder2 = new Actions(PropertiesCollection.driver2);
-                builder2.MoveToElement(PropertiesCollection.driver2.FindElement(By.CssSelector(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.LinkText)
-            {
-                Actions builder2 = new Actions(PropertiesCollection.driver2);
-                builder2.MoveToElement(PropertiesCollection.driver2.FindElement(By.LinkText(element))).Build().Perform();
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.PartialLinkText)
-            {
-                Actions builder2 = new Actions(PropertiesCollection.driver2);
-                builder2.MoveToElement(PropertiesCollection.driver2.FindElement(By.PartialLinkText(element))).Build().Perform();
-            }
-
         }
 
         public static void Wait(Driver driver, ElementType elementtype, string element)
         {
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver1, TimeSpan.FromSeconds(30));
+                switch (elementtype)
+                {
+                    case ElementType.Id: wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element))); break;
+                    case ElementType.Name: wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element))); break;
+                    case ElementType.XPath: wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element))); break;
+                    case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
+                    case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
+                    case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.LinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.PartialLinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
-            }
-            // Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            if (driver == Driver.driver2)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+                switch (elementtype)
+                {
+                    case ElementType.Id: wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element))); break;
+                    case ElementType.Name: wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element))); break;
+                    case ElementType.XPath: wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element))); break;
+                    case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
+                    case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
+                    case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                }
             }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.LinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.PartialLinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromSeconds(30));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
-            }
-
         }
 
         public static void WaitMinutes(Driver driver, ElementType elementtype, string element, int minutes)
         {
-            // Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver1, TimeSpan.FromMinutes(minutes));
+                switch (elementtype)
+                {
+                    case ElementType.Id: wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element))); break;
+                    case ElementType.Name: wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element))); break;
+                    case ElementType.XPath: wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element))); break;
+                    case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
+                    case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
+                    case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.LinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element)));
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.PartialLinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
-            }
-            // Driver 2
-            if (driver == Driver.driver2 && elementtype == ElementType.Id)
+            if (driver == Driver.driver2)
             {
                 WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element)));
+                switch (elementtype)
+                {
+                    case ElementType.Id: wait.Until(ExpectedConditions.ElementIsVisible(By.Id(element))); break;
+                    case ElementType.Name: wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element))); break;
+                    case ElementType.XPath: wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element))); break;
+                    case ElementType.CssSelector: wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element))); break;
+                    case ElementType.LinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element))); break;
+                    case ElementType.PartialLinkText: wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element))); break;
+                }
             }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Name(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.LinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(element)));
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.PartialLinkText)
-            {
-                WebDriverWait wait = new WebDriverWait(PropertiesCollection.driver2, TimeSpan.FromMinutes(minutes));
-                wait.Until(ExpectedConditions.ElementIsVisible(By.PartialLinkText(element)));
-            }
-
         }
 
         public static void Find(Driver driver, ElementType elementtype, string element, string displaytext)
         {
-            //Driver 1
-            if (driver == Driver.driver1 && elementtype == ElementType.Id)
+            if (driver == Driver.driver1)
             {
                 try
                 {
-                    PropertiesCollection.driver.FindElement(By.Id(element));
+                    switch (elementtype)
+                    {
+                        case ElementType.Id: PropertiesCollection.driver1.FindElement(By.Id(element)); break;
+                        case ElementType.Name: PropertiesCollection.driver1.FindElement(By.Id(element)); break;
+                        case ElementType.XPath: PropertiesCollection.driver1.FindElement(By.Id(element)); break;
+                        case ElementType.CssSelector: PropertiesCollection.driver1.FindElement(By.Id(element)); break;
+                        case ElementType.LinkText: PropertiesCollection.driver1.FindElement(By.LinkText(element)); break;
+                        case ElementType.PartialLinkText: PropertiesCollection.driver1.FindElement(By.PartialLinkText(element)); break;
+                    }
                     Global.ConsoleOutTab("Element found: " + displaytext);
                 }
                 catch (Exception)
@@ -447,11 +268,19 @@ namespace Selenium3
                     Global.ConsoleOutAlert("Element not found: " + displaytext);
                 }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.Name)
+            else if (driver == Driver.driver2)
             {
                 try
                 {
-                    PropertiesCollection.driver.FindElement(By.Name(element));
+                    switch (elementtype)
+                    {
+                        case ElementType.Id: PropertiesCollection.driver2.FindElement(By.Id(element)); break;
+                        case ElementType.Name: PropertiesCollection.driver2.FindElement(By.Id(element)); break;
+                        case ElementType.XPath: PropertiesCollection.driver2.FindElement(By.Id(element)); break;
+                        case ElementType.CssSelector: PropertiesCollection.driver2.FindElement(By.Id(element)); break;
+                        case ElementType.LinkText: PropertiesCollection.driver2.FindElement(By.LinkText(element)); break;
+                        case ElementType.PartialLinkText: PropertiesCollection.driver2.FindElement(By.PartialLinkText(element)); break;
+                    }
                     Global.ConsoleOutTab("Element found: " + displaytext);
                 }
                 catch (Exception)
@@ -459,131 +288,6 @@ namespace Selenium3
                     Global.ConsoleOutAlert("Element not found: " + displaytext);
                 }
             }
-            else if (driver == Driver.driver1 && elementtype == ElementType.XPath)
-            {
-                try
-                {
-                    PropertiesCollection.driver.FindElement(By.XPath(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.CssSelector)
-            {
-                try
-                {
-                    PropertiesCollection.driver.FindElement(By.CssSelector(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.LinkText)
-            {
-                try
-                {
-                    PropertiesCollection.driver.FindElement(By.LinkText(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver1 && elementtype == ElementType.PartialLinkText)
-            {
-                try
-                {
-                    PropertiesCollection.driver.FindElement(By.PartialLinkText(element));
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            //Driver 2
-            else if (driver == Driver.driver2 && elementtype == ElementType.Id)
-            {
-                try
-                {
-                    PropertiesCollection.driver2.FindElement(By.Id(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.Name)
-            {
-                try
-                {
-                    PropertiesCollection.driver2.FindElement(By.Name(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.XPath)
-            {
-                try
-                {
-                    PropertiesCollection.driver2.FindElement(By.XPath(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.CssSelector)
-            {
-                try
-                {
-                    PropertiesCollection.driver2.FindElement(By.CssSelector(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.LinkText)
-            {
-                try
-                {
-                    PropertiesCollection.driver2.FindElement(By.LinkText(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-                }
-            }
-            else if (driver == Driver.driver2 && elementtype == ElementType.PartialLinkText)
-            {
-                try
-                {
-                    PropertiesCollection.driver2.FindElement(By.PartialLinkText(element));
-                    Global.ConsoleOutTab("Element found: " + displaytext);
-
-                }
-                catch (Exception)
-                {
-                    Global.ConsoleOutAlert("Element not found: " + displaytext);
-
-                }
-
-            }
-
         }
 
         public static void FileUpload(Driver driver, ElementType elementtype, string element, string filename)

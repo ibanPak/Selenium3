@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 namespace Selenium3
 {
     class ConsoleWindow
-    {
+    {        
         const int SWP_NOSIZE = 0x0001;
         [DllImport("kernel32.dll", ExactSpelling = true)]
         private static extern IntPtr GetConsoleWindow();
@@ -23,16 +23,18 @@ namespace Selenium3
         public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
         public static void ConsoleAttributes()
         {
-            Console.WindowWidth = 99;
-            Console.WindowHeight = 70;
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Gray;
-            int xpos = 2000;
-            int ypos = 100;
-            SetWindowPos(MyConsole, 0, xpos, ypos, 0, 0, SWP_NOSIZE);
-
+            if (Global.ismultiplemonitors == "true")
+            {
+                Console.WindowWidth = 99;
+                Console.WindowHeight = 70;
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Gray;
+                int xpos = 2000;
+                int ypos = 100;
+                SetWindowPos(MyConsole, 0, xpos, ypos, 0, 0, SWP_NOSIZE);
+            }
         }
-
     }
-
 }
+
+

@@ -187,7 +187,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.r-button.r-button-expand-all");
             // Kill maskMoney
             Global.ConsoleOutTab("Kill Money Mask");
-            IJavaScriptExecutor js = PropertiesCollection.driver as IJavaScriptExecutor;
+            IJavaScriptExecutor js = PropertiesCollection.driver1 as IJavaScriptExecutor;
             string killmoneymask1 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number').val('0')");
             string killmoneymask2 = (string)js.ExecuteScript("$(':input').maskMoney('destroy')");
             string killmoneymask3 = (string)js.ExecuteScript("$(':input.maskMoney').maskMoney('destroy').attr('type', 'number')");

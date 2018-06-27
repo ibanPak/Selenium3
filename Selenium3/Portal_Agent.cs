@@ -464,14 +464,14 @@ namespace Selenium3
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnSaveSubmit");
             SeleniumWindowMethods.Sleep(1);
-            Global.ConsoleOut("Active Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             Global.ConsoleOut("Agent submitted OccupancyStatusTask");
 
         }
 
         public static void PublishProperty(Driver driver, string PropertyID)
         {
-            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             // Need to Complete the steps
 
         }
@@ -505,7 +505,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnSubmit");
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.Assertion(driver, Alert.Accept);
-            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Back To Previous Page");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Back To Previous Page");
 
@@ -523,7 +523,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.PartialLinkText, "Click here to View or Upload Signed Contracts");
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Click here to View or Upload Signed Contracts");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOut("Pop Up Window:" + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "pcu_Buyer");
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.SelectDropDown(driver, ElementType.Name, "pcu_Buyer", "TestBuyer1");  //TestBuyer1  , sree buyer       
@@ -536,7 +536,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img");
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(1);
-            Global.ConsoleOut("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Wait(driver, ElementType.LinkText, "Back To Previous Page");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Back To Previous Page");
             SeleniumSetMethods.Wait(driver, ElementType.Id, "ctl00_contentPlaceHolder_ctrPropertyTabControl_CnrGenericOfferTab_ctl00_ctrOffersLog_hplAddNewOffer");
@@ -556,7 +556,7 @@ namespace Selenium3
         public static void OpenAgentTask(Driver driver, string TaskName)
         {
             SeleniumWindowMethods.Sleep(1);
-            PropertiesCollection.driver.Navigate().Refresh();
+            SeleniumWindowMethods.Refresh(driver);
             SeleniumWindowMethods.Sleep(1);
 
             int tries = 0;
@@ -579,7 +579,7 @@ namespace Selenium3
                 catch (Exception)
                 {
                     Global.ConsoleOut(TaskName + " not found");
-                    PropertiesCollection.driver.Navigate().Refresh();
+                    SeleniumWindowMethods.Refresh(driver);
                 }
                 if (tries == 3)
                 {

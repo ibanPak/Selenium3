@@ -101,33 +101,33 @@ namespace Selenium3
 
             // Check for already member link
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
-            SeleniumSetMethods.Click(driver, ElementType.CssName, "#alreadyMember > a:nth-child(1)");
+            SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#alreadyMember > a:nth-child(1)");
             Global.ConsoleOut("Back To Log in Page");
-            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver1.Title);
 
             //Select Vendor Type -- Regristration Step 1
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
-            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver1.Title);
             SeleniumSetMethods.Wait(driver, ElementType.Id, "cbAppraisalServices");
             SeleniumSetMethods.Click(driver, ElementType.Id, "cbAppraisalServices");
 
             //  Verify if the check boxes are enabled
-            Boolean isAppraisalEnabled = PropertiesCollection.driver.FindElement(By.Id("cbAppraisalServices")).Enabled;
+            Boolean isAppraisalEnabled = PropertiesCollection.driver1.FindElement(By.Id("cbAppraisalServices")).Enabled;
             if (isAppraisalEnabled == true)
             { Global.ConsoleOut("Appraisal Enabled"); }
             else { Global.ConsoleOut(" Appraisal not Enabled"); }
             SeleniumWindowMethods.Sleep(1);
-            Boolean isEvictionEnabled = PropertiesCollection.driver.FindElement(By.Id("cbEvictionServices")).Enabled;
+            Boolean isEvictionEnabled = PropertiesCollection.driver1.FindElement(By.Id("cbEvictionServices")).Enabled;
             if (isEvictionEnabled == true)
             { Global.ConsoleOut("Eviction Enabled"); }
             else { Global.ConsoleOut("Eviction not Enabled"); }
-            Boolean isClosingEnabled = PropertiesCollection.driver.FindElement(By.Id("cbRealEstateClosingServices")).Enabled;
+            Boolean isClosingEnabled = PropertiesCollection.driver1.FindElement(By.Id("cbRealEstateClosingServices")).Enabled;
             if (isClosingEnabled == true)
             { Global.ConsoleOut("Closing is Enabled"); }
             else { Global.ConsoleOut("Closing is not Enabled"); }
             SeleniumWindowMethods.Sleep(1);
-            Boolean isTitleEnabled = PropertiesCollection.driver.FindElement(By.Id("cbTitleServices")).Enabled;
+            Boolean isTitleEnabled = PropertiesCollection.driver1.FindElement(By.Id("cbTitleServices")).Enabled;
             if (isTitleEnabled == true)
             { Global.ConsoleOut("Title is Enabled"); }
             else { Global.ConsoleOut("Title is not Enabled"); }
@@ -186,7 +186,7 @@ namespace Selenium3
             SeleniumSetMethods.Wait(driver, ElementType.Id, "navReviewTerms");
             SeleniumSetMethods.Click(driver, ElementType.LinkText, "Terms of Use");
             SeleniumWindowMethods.Sleep(1);
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
             SeleniumSetMethods.Click(driver, ElementType.Id, "reg-step-2");
             SeleniumSetMethods.Click(driver, ElementType.Id, "Accept");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "#btnContinue");
@@ -194,13 +194,13 @@ namespace Selenium3
 
             // Complete profile- Regristration Step 3
             SeleniumSetMethods.Wait(driver, ElementType.Id, "navCompleteProfile");
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
 
             // Vendor Profile 
             SeleniumSetMethods.Wait(driver, ElementType.Id, "sameAddressPayment");
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
             Global.ConsoleOut("Vendor Id is" + SeleniumGetMethods.GetTextContent(driver, ElementType.CssSelector, ".vendor-id"));
 
             // payment Info
@@ -271,7 +271,7 @@ namespace Selenium3
 
             // Property Transaction Types
             Global.ConsoleOut(" Property Transaction Types ");
-            Boolean IsReotransaction = PropertiesCollection.driver.FindElement(By.Id("TransactionTypes_3")).Selected;
+            Boolean IsReotransaction = PropertiesCollection.driver1.FindElement(By.Id("TransactionTypes_3")).Selected;
             if (IsReotransaction == true)
             {
                 Global.ConsoleOut("REO is checked and unchecked the REO. ");
@@ -279,7 +279,7 @@ namespace Selenium3
             }
             else { Global.ConsoleOut("REO is not checked"); }
 
-            Boolean IsResaletransaction = PropertiesCollection.driver.FindElement(By.Id("TransactionTypes_2")).Selected;
+            Boolean IsResaletransaction = PropertiesCollection.driver1.FindElement(By.Id("TransactionTypes_2")).Selected;
             if (IsResaletransaction == true)
             {
                 Global.ConsoleOut("Resale is checked and unchecked the Resale ");
@@ -287,7 +287,7 @@ namespace Selenium3
             }
             else { Global.ConsoleOut("Resale is not checked "); }
 
-            Boolean IsLossMittransaction = PropertiesCollection.driver.FindElement(By.Id("TransactionTypes_1")).Selected;
+            Boolean IsLossMittransaction = PropertiesCollection.driver1.FindElement(By.Id("TransactionTypes_1")).Selected;
             if (IsLossMittransaction == true)
             {
                 Global.ConsoleOut("Loss Mitigation is checked and unchecked the Loss Mitigation ");
@@ -310,7 +310,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "input.btn");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, ".ui-dialog");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "button.primary");
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
 
 
             //   License(s) & Certification(s)     
@@ -360,10 +360,10 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//button[@type='button'])[2]");
 
             // Checking the link from Notice 
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Click here");
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
 
             //  SeleniumSetMethods.Navigate("https://qa-vendor.res.net/Account/Profile");
 
@@ -373,7 +373,7 @@ namespace Selenium3
             SeleniumSetMethods.EnterText(driver, ElementType.Id, "EoInsuranceModels_0__Policy", "test");
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "span.ui-button-text");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "span.ui-button-text");
-            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOut("Page Title: " + PropertiesCollection.driver1.Title);
 
         }
 

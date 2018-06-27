@@ -66,20 +66,20 @@ namespace Selenium3
             // Client - Popup
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "csClientId");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "csClientId", clientid);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "btnRedraw");
             SeleniumSetMethods.Click(driver, ElementType.Name, "btnRedraw");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "img");
             Global.ConsoleOutTab("Popup closing");
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA']");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
@@ -91,7 +91,7 @@ namespace Selenium3
             // Switch back to main window - File Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
             SeleniumWindowMethods.Sleep(2);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_POP_AMGRPA2']");
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
@@ -103,7 +103,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'Jon1']");
             // Switch back to main window - Asset Manager Popup
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             Global.StreetAddress = (streetnumber + " " + streetname);
             Global.ConsoleOutTab("Street Address: " + Global.StreetAddress);
@@ -125,11 +125,11 @@ namespace Selenium3
             Global.ConsoleOutTab("Open Popup - Attorney");
             SeleniumWindowMethods.Sleep(2);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "/html/body/form/table/tbody/tr[4]/td[3]/a[1]/img]");
             // Switch back to main window 
             SeleniumWindowMethods.WindowType(driver, WinType.Main);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumWindowMethods.iFrame(driver, "externalSite");
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Fc_Saledt", Global.LastMonth);
             SeleniumSetMethods.EnterText(driver, ElementType.Name, "Unpd_Bal", "250000");
@@ -183,10 +183,9 @@ namespace Selenium3
             catch
             {
                 Global.ConsoleOutAlert("NO AGENT VERIFICATION AlERT DISPLAYED");
-
             }
             Global.ConsoleOut("Agent Assigned");
-            Global.ConsoleOut("Window Title:" + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
 
         }
 
@@ -268,7 +267,7 @@ namespace Selenium3
         {
             SeleniumWindowMethods.Sleep(2);
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= '/AM_PROPTASKS:']");
-            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Click(driver, ElementType.PartialLinkText, "Occupancy Status Request");
             SeleniumSetMethods.Wait(driver, ElementType.Name, "osCurChkDt");
             SeleniumWindowMethods.Sleep(2);
@@ -299,7 +298,7 @@ namespace Selenium3
             {
                 i = i + 1;
                 SeleniumSetMethods.EnterText(driver, ElementType.Name, "pmNewLP", Listprice);
-                SeleniumSetMethods.Click(driver, ElementType.CssName, "div.status-panel:nth-child(2) > input:nth-child(2)");
+                SeleniumSetMethods.Click(driver, ElementType.CssSelector, "div.status-panel:nth-child(2) > input:nth-child(2)");
                 SeleniumWindowMethods.Sleep(1);
                 SeleniumSetMethods.Click(driver, ElementType.Name, "btnUpdate");
                 SeleniumWindowMethods.Sleep(1);
@@ -327,7 +326,7 @@ namespace Selenium3
 
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
-            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "omApplyCtr" + OfferNum);
             SeleniumSetMethods.Click(driver, ElementType.Name, "omApplyCtr" + OfferNum);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//a[contains(text(),'Copy')])[" + OfferNum + "]");
@@ -353,7 +352,7 @@ namespace Selenium3
 
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
-            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Wait(driver, ElementType.Name, "omApplyCtr" + OfferNum);
             SeleniumSetMethods.Click(driver, ElementType.Name, "omApplyCtr" + OfferNum);
             SeleniumSetMethods.Click(driver, ElementType.XPath, "(//a[contains(text(),'Copy')])[" + OfferNum + "]");
@@ -374,7 +373,7 @@ namespace Selenium3
         {
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
-            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, ("#ofra" + OfferNum + " > td:nth-child(2) > a:nth-child(6)"));
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ("#ofra" + OfferNum + " > td:nth-child(2) > a:nth-child(6)"));
             SeleniumSetMethods.Wait(driver, ElementType.Name, "rbStatNew");
@@ -392,7 +391,7 @@ namespace Selenium3
         {
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "a[href *= 'AM_PROPOFRHIST:']");
-            Global.ConsoleOut("Window: " + PropertiesCollection.driver.Title);
+            SeleniumGetMethods.GetWindowTitle(driver);
             SeleniumWindowMethods.Sleep(1);
             SeleniumSetMethods.Wait(driver, ElementType.CssSelector, ("#ofra" + OfferNum + " > td:nth-child(2) > a:nth-child(6)"));
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, ("#ofra" + OfferNum + " > td:nth-child(2) > a:nth-child(6)"));

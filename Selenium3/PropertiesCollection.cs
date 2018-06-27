@@ -15,7 +15,7 @@ namespace Selenium3
     class PropertiesCollection
     {
         //Auto-implemented properdty
-        public static IWebDriver driver { get; set; }
+        public static IWebDriver driver1 { get; set; }
         public static IWebDriver driver2 { get; set; }
 
     }
@@ -27,7 +27,6 @@ namespace Selenium3
         Name,
         LinkText,
         PartialLinkText,
-        CssName,
         XPath,
         CssSelector
 

@@ -124,14 +124,7 @@ namespace Selenium3
                         break; // handle error and break/return
                     }
                     SeleniumWindowMethods.Sleep(2);
-                    if (driver == Driver.driver1)
-                    {
-                        PropertiesCollection.driver.Navigate().Refresh();
-                    }
-                    else if (driver == Driver.driver2)
-                    {
-                        PropertiesCollection.driver2.Navigate().Refresh();
-                    }
+                    SeleniumWindowMethods.Refresh(driver);
                     SeleniumWindowMethods.Sleep(2);
                 }
 

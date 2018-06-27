@@ -39,6 +39,8 @@ namespace Selenium3
         public static string Password;
 
         // App Config
+        public static string ismultiplemonitors = ConfigurationManager.AppSettings.Get("MultipleMonitors");        
+        public static string ismultiplebrowsers = ConfigurationManager.AppSettings.Get("MultipleBrowsers");        
         public static string isstreetnumbergenerated = ConfigurationManager.AppSettings.Get("IsStreetNumberGenerated");
         public static string streetnumber = ConfigurationManager.AppSettings.Get("StreetNumber");
         public static string folderpath = ConfigurationManager.AppSettings.Get("PublicFolder");
@@ -143,21 +145,22 @@ namespace Selenium3
         public static string lc3zipcode;
         public static string lc3state;
 
-        public static void ReadySetGo(NumBrowsers numbrowsers)
+        public static void ReadySetGo()
         {
+            ConsoleWindow.ConsoleAttributes();
             // IWebDriver driver = new InternetExplorerDriver(); PropertiesCollection.driver = driver;
             // IWebDriver driver = new FirefoxDriver(); PropertiesCollection.driver = driver;
-            if (numbrowsers == NumBrowsers.One)
+            if (Global.ismultiplebrowsers == "false")
             {
-                IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
+                IWebDriver driver1 = new ChromeDriver(); PropertiesCollection.driver1 = driver1;
                 SeleniumWindowMethods.WindowActions(Driver.driver1, ActType.Maximize);
             }
-            else if (numbrowsers == NumBrowsers.Two)
+            else if (Global.ismultiplebrowsers == "true")
             {
-                IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver = driver;
-                var options = new InternetExplorerOptions();
-                options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
-                IWebDriver driver2 = new InternetExplorerDriver(options);
+                IWebDriver driver = new ChromeDriver(); PropertiesCollection.driver1 = driver;
+                /*var options = new InternetExplorerOptions();
+                options.IntroduceInstabilityByIgnoringProtectedModeSettings = true; */
+                IWebDriver driver2 = new FirefoxDriver();
                 PropertiesCollection.driver2 = driver2;
             }
             // Start Time Stamp

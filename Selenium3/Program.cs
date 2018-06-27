@@ -17,11 +17,9 @@ namespace Selenium3
     class Program
     {
   
-
         static void Main(string[] args)
         {
-            ConsoleWindow.ConsoleAttributes();
-            Global.ReadySetGo(NumBrowsers.One);
+            Global.ReadySetGo();
 
             //////////////////////////////////////////////////////////////////////////
             //                                                                      //
@@ -31,7 +29,7 @@ namespace Selenium3
 
             Driver driver = Driver.driver1;
 
-            Runner_QA.FMBFlow1Org1(driver, City.Irvine2);
+            Runner_QA.FMBFlow1Org1(driver, City.Irvine1);
 
             // Cool Down
             Global.Cooldown();

@@ -231,7 +231,7 @@ namespace Selenium3
             SeleniumSetMethods.Click(driver, ElementType.CssSelector, "#comm100-button-138 > a > img");
             SeleniumWindowMethods.Sleep(3);
             SeleniumWindowMethods.WindowType(driver, WinType.Popup);
-            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver.Title);
+            Global.ConsoleOutTab("Window Title: " + PropertiesCollection.driver1.Title);
             SeleniumWindowMethods.Sleep(1);
             SeleniumWindowMethods.iFrame(driver, "chat_window_container");
             
